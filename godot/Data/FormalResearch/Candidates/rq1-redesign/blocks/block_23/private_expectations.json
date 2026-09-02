@@ -1,0 +1,457 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_23",
+  "block_id": "block_23",
+  "condition_order": "agent_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b23-s01",
+      "actor_id": "jonah",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "tools_maintenance",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "jonah",
+        "pressure_id": "rq1-v2-b23-s01"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "b23s01-a1",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "jonah",
+          "destination_kind": "Shop",
+          "destination_id": "smithy-stock",
+          "asset_id": "iron-ore",
+          "quantity": 1
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "iron-ore": -1
+        },
+        "container_balance_delta": {
+          "owner_kind": "Shop",
+          "owner_id": "smithy-stock",
+          "balances": {
+            "iron-ore": 1
+          }
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b23-s02",
+      "actor_id": "alice",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "AffectsPlace",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "alice",
+        "pressure_id": "rq1-v2-b23-s02"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "NoGroundedPath",
+        "visible_fact_ids": [
+          "b23s02-f1",
+          "b23s02-f2",
+          "b23s02-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The only known shift kitchen is physically closed, Alice holds no ingredients or cooking vessel, and her knowledge contains no alternate production action. Further inspection does not create a represented path before tick 568."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b23-s03",
+      "actor_id": "bernard",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "both",
+        "domain": "trade_harvest",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "bernard",
+        "pressure_id": "rq1-v2-b23-s03"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "b23s03-a1",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "bernard",
+          "destination_kind": "Shop",
+          "destination_id": "merchant-stock",
+          "asset_id": "fish",
+          "quantity": 2
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "fish": -2
+        },
+        "container_balance_delta": {
+          "owner_kind": "Shop",
+          "owner_id": "merchant-stock",
+          "balances": {
+            "fish": 2
+          }
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b23-s04",
+      "actor_id": "iris",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "both",
+        "domain": "care_household",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "iris",
+        "pressure_id": "rq1-v2-b23-s04"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "NoGroundedPath",
+        "visible_fact_ids": [
+          "b23s04-f1",
+          "b23s04-f2",
+          "b23s04-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The failed fixed pump has no supported action, compatible part, service, recipe, or Authority target in Iris's visible catalogue. The problem is identified, so verification would not supply the missing execution path."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b23-s05",
+      "actor_id": "opal",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "neither",
+        "domain": "obligation_logistics",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "opal",
+        "pressure_id": "rq1-v2-b23-s05"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "TemporalGate",
+        "visible_fact_ids": [
+          "b23s05-f1",
+          "b23s05-f2",
+          "b23s05-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The timber listing and retail lock are directly observed. The counter reopens at 640, later than the wagon-repair cutoff at 582, so a future purchase cannot satisfy this obligation."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b23-s06",
+      "actor_id": "quinn",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "neither",
+        "domain": "tools_maintenance",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "quinn",
+        "pressure_id": "rq1-v2-b23-s06"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "VerificationRequired",
+        "visible_fact_ids": [
+          "b23s06-f1",
+          "b23s06-f2",
+          "b23s06-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The etched serial and repair ticket give different owners for the same damaged axe. Repair is represented, but no ownership-authentication action is; executing it or planning it after the deadline would remain ungrounded."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b23-s07",
+      "actor_id": "devin",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "food_production",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "devin",
+        "pressure_id": "rq1-v2-b23-s07"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "b23s07-a1",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "devin",
+          "destination_kind": "Shop",
+          "destination_id": "inn-stock",
+          "asset_id": "flour",
+          "quantity": 2
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "flour": -2
+        },
+        "container_balance_delta": {
+          "owner_kind": "Shop",
+          "owner_id": "inn-stock",
+          "balances": {
+            "flour": 2
+          }
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b23-s08",
+      "actor_id": "dorian",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E2",
+        "event_edge_kind": "HoldsRequiredInformation",
+        "admission_role": "neither",
+        "domain": "trade_harvest",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "dorian",
+        "pressure_id": "rq1-v2-b23-s08"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "NoGroundedPath",
+        "visible_fact_ids": [
+          "b23s08-f1",
+          "b23s08-f2",
+          "b23s08-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "Amber is only an ungrounded buyer term: it has no Authority asset ID, source, holder, listing, recipe, or carried stock. Neither a world-changing action nor an information-gathering action is represented."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b23-s09",
+      "actor_id": "elin",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "neither",
+        "domain": "care_household",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "elin",
+        "pressure_id": "rq1-v2-b23-s09"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "TemporalGate",
+        "visible_fact_ids": [
+          "b23s09-f1",
+          "b23s09-f2",
+          "b23s09-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The medicine listing and contamination lock are known. The counter reopens at 620 after Jonah's care deadline at 592, so waiting and purchasing later is not a timely terminal for this need."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b23-s10",
+      "actor_id": "emma",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_23",
+        "block_number": 23,
+        "owner_worker": "C",
+        "worker_block_index": 5,
+        "condition_order": "agent_first",
+        "overlap_tier": 2,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "obligation_logistics",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "emma",
+        "pressure_id": "rq1-v2-b23-s10"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "NoGroundedPath",
+        "visible_fact_ids": [
+          "b23s10-f1",
+          "b23s10-f2",
+          "b23s10-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The cargo and assignee are known, but the docket supplies neither a receiving actor nor a destination container. Without a typed target the catalogue cannot form an AssetTransfer, and no target-lookup action is represented."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    }
+  ]
+}

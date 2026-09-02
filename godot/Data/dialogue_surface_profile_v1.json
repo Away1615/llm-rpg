@@ -1,0 +1,14 @@
+{
+  "profile_id": "town-dialogue-surface",
+  "clarification_message": "I could not bind that safely. Try a shorter message to the selected NPC.",
+  "unavailable_message": "The local dialogue interpreter is unavailable; no semantic turn was recorded.",
+  "fallback_realization_template": "{speaker} responds about {topic}.",
+  "realization_templates": {
+    "Ask": "{speaker} asks about {topic}.",
+    "Inform": "{speaker} shares what they know about {topic}.",
+    "Clarify": "{speaker} asks for clarification about {topic}.",
+    "Thank": "{speaker}: You are welcome.",
+    "CasualComment": "{speaker}: Welcome to town. It is good to meet you.",
+    "ShareNews": "{speaker} shares the latest news about {topic}."
+  }
+}

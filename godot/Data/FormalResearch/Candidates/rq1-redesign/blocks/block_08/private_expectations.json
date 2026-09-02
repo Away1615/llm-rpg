@@ -1,0 +1,434 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_08",
+  "block_id": "block_08",
+  "condition_order": "event_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b08-s01",
+      "actor_id": "lucas",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "RequiresCapability",
+        "admission_role": "agent_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "lucas",
+        "pressure_id": "rq1-v2-b08-s01"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "temporal_gate",
+        "visible_reason_fact_refs": [
+          "item/lucas-axe/repair-cure",
+          "work-order/woodlot-east-fence",
+          "service/smithy-repair-window"
+        ],
+        "grounded_statement": "The axe and repair service become usable only after both the current decision and the work-order deadline.",
+        "verify_exclusion": "The cure time and service window are already known; no unresolved observation can make the axe usable now.",
+        "plan_only_exclusion": "No represented action can cross the time gate before the deadline."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b08-s02",
+      "actor_id": "jonah",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "jonah",
+        "pressure_id": "rq1-v2-b08-s02"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "verification_required",
+        "visible_reason_fact_refs": [
+          "shipment/flour-pair/seals",
+          "record/flour-pair/absent-attestation"
+        ],
+        "grounded_statement": "The conflicting seals cannot establish food safety without the absent signed mill attestation.",
+        "verify_exclusion": "The actor has no supported observation source or verification action; only the absent authorized record can resolve the conflict.",
+        "plan_only_exclusion": "Receiving or using either sack would bypass the warehouse provenance rule."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b08-s03",
+      "actor_id": "nolan",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "agent_only",
+        "domain": "trade_harvest",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "nolan",
+        "pressure_id": "rq1-v2-b08-s03"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "no_grounded_path",
+        "visible_reason_fact_refs": [
+          "container/nolan/harvest-stock",
+          "knowledge/nolan/supply-sources"
+        ],
+        "grounded_statement": "Nolan has no fruit, harvesting basket, gather capability or known supply listing for the order.",
+        "verify_exclusion": "No potentially resolving fact is identified in the actor-visible knowledge state.",
+        "plan_only_exclusion": "A plan cannot name a represented first action because the catalogue is absent."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b08-s04",
+      "actor_id": "farah",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "care_household",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "farah",
+        "pressure_id": "rq1-v2-b08-s04"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "temporal_gate",
+        "visible_reason_fact_refs": [
+          "care/mira-tonic-dose",
+          "item/mira-tonic/seal",
+          "clock/block-08"
+        ],
+        "grounded_statement": "The physician's not-before time is later than the current care-check deadline.",
+        "verify_exclusion": "The label and clock agree, so there is no uncertainty to inspect.",
+        "plan_only_exclusion": "Opening or administering the sealed tonic now is not represented and would violate the care schedule."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b08-s05",
+      "actor_id": "hugo",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E1",
+        "event_edge_kind": "AffectsPlace",
+        "admission_role": "neither",
+        "domain": "obligation_logistics",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "hugo",
+        "pressure_id": "rq1-v2-b08-s05"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "rq1-v2-b08-s05-action",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "hugo",
+          "destination_kind": "Warehouse",
+          "destination_id": "town-supply-stock",
+          "asset_id": "wheat",
+          "quantity": 2
+        },
+        "binding": {
+          "target_ref": "container/Warehouse/town-supply-stock",
+          "contract_id": "asset-transfer",
+          "expected_contract_version": 1,
+          "capability": "asset-transfer",
+          "instrument_ref": null
+        }
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "authority_action_family": "AssetTransfer",
+        "source_balance_delta": {
+          "owner_kind": "Actor",
+          "owner_id": "hugo",
+          "asset_id": "wheat",
+          "delta": -2
+        },
+        "destination_balance_delta": {
+          "owner_kind": "Warehouse",
+          "owner_id": "town-supply-stock",
+          "asset_id": "wheat",
+          "delta": 2
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b08-s06",
+      "actor_id": "aiko",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "aiko",
+        "pressure_id": "rq1-v2-b08-s06"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "temporal_gate",
+        "visible_reason_fact_refs": [
+          "item/aiko-basket/repair",
+          "commitment/aiko-orchard-round",
+          "clock/block-08"
+        ],
+        "grounded_statement": "The basket remains under a repair cure until after the orchard round is due.",
+        "verify_exclusion": "The repair tag supplies a settled usable time; inspecting it again cannot advance that time.",
+        "plan_only_exclusion": "The current catalogue contains no legal orchard operation without a usable basket."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b08-s07",
+      "actor_id": "mira",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "food_production",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "mira",
+        "pressure_id": "rq1-v2-b08-s07"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "verification_required",
+        "visible_reason_fact_refs": [
+          "kitchen/community-pot-2/marks",
+          "record/community-pot-2/sanitation"
+        ],
+        "grounded_statement": "The pot has conflicting sanitation marks and no recognized attestation.",
+        "verify_exclusion": "Mira has no supported inspection tool or steward record to turn a verify response into evidence.",
+        "plan_only_exclusion": "Cooking with a pot held by the sanitation rule is not a represented legal action."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b08-s08",
+      "actor_id": "bernard",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "neither",
+        "domain": "trade_harvest",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "bernard",
+        "pressure_id": "rq1-v2-b08-s08"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "no_grounded_path",
+        "visible_reason_fact_refs": [
+          "stock/fish-visible-zero",
+          "knowledge/bernard/fish-suppliers"
+        ],
+        "grounded_statement": "Every visible fish stock is zero and Bernard knows no supplier or harvest action.",
+        "verify_exclusion": "The visible snapshots are current and no additional actor-visible source is named.",
+        "plan_only_exclusion": "No represented exchange, transfer or region operation can obtain fish from the frozen state."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b08-s09",
+      "actor_id": "bram",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "care_household",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "bram",
+        "pressure_id": "rq1-v2-b08-s09"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "no_grounded_path",
+        "visible_reason_fact_refs": [
+          "stock/common-medicine-visible-zero",
+          "knowledge/bram/treatments"
+        ],
+        "grounded_statement": "Bram and both known dispensaries have no compatible medicine, and he knows no substitute.",
+        "verify_exclusion": "The stock records and treatment knowledge already settle the available paths.",
+        "plan_only_exclusion": "Bram's craft inputs cannot produce medicine under the represented recipes."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b08-s10",
+      "actor_id": "celia",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_08",
+        "block_number": 8,
+        "owner_worker": "C",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "obligation_logistics",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "celia",
+        "pressure_id": "rq1-v2-b08-s10"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "temporal_gate",
+        "visible_reason_fact_refs": [
+          "commitment/celia-rivet-crate",
+          "route/east-bridge/cart-gate"
+        ],
+        "grounded_statement": "The only authorized cart route opens after the commitment deadline.",
+        "verify_exclusion": "The gate schedule and commitment deadline are both settled Authority facts.",
+        "plan_only_exclusion": "No alternate route or transfer target exists in the current catalogue."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    }
+  ]
+}

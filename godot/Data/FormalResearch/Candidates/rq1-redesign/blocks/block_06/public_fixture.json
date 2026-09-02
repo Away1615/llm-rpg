@@ -1,0 +1,2244 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_06",
+  "block_id": "block_06",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b06-s01",
+      "actor_id": "nolan",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Collect the household supper parcel",
+        "situation": "Nolan has the household voucher and enough coin, but the cooperative counter remains locked while the morning ovens cool.",
+        "immediate_objective": "Collect one supper parcel for the Brackenford household as soon as the counter opens.",
+        "subject_ref": "listing/rq1-b06-household-supper",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s01/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "Nolan's household voucher is valid for today's supper parcel."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s01/fact/2",
+            "kind": "ActorState",
+            "statement": "Nolan carries five coin and no food; his satiety is 20."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s01/fact/3",
+            "kind": "WorldRule",
+            "statement": "The cooperative counter opens at tick 420, after the current tick 300."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "body_and_household_need",
+            "source_ref": "listing/rq1-b06-household-supper",
+            "fact_ids": [
+              "rq1-v2-b06-s01/fact/1",
+              "rq1-v2-b06-s01/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s01",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "event/rq1-b06/cooperative-opening"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "place_impact",
+            "source_kind": "PlaceSchedule",
+            "source_id": "event/rq1-b06/cooperative-opening",
+            "affected_actor_id": "nolan"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "nolan",
+        "self": {
+          "identity": {
+            "actor_id": "nolan",
+            "name": "Nolan"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 20,
+            "spirit": 57,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [],
+            "instances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [],
+          "knowledge": {
+            "known_place_refs": [
+              "brackenford-home-07",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "opal",
+              "pavel"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/cooperative-opening"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/nolan/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s01",
+            "kind": "collect-the-household-supper-parcel",
+            "subject_ref": "listing/rq1-b06-household-supper",
+            "status": "Active",
+            "description": "Collect one supper parcel for the Brackenford household as soon as the counter opens."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s01",
+            "label": "Collect one household supper parcel",
+            "action_family": "ListedExchange",
+            "arguments": {
+              "listing_id": "rq1-b06-household-supper"
+            },
+            "validation_state": {
+              "available": false,
+              "reason": "shop is closed"
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "supper-parcel",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Shop",
+            "owner_id": "inn-stock",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 20
+              },
+              {
+                "asset_id": "supper-parcel",
+                "quantity": 2
+              }
+            ]
+          }
+        ],
+        "shop_override": {
+          "shop_id": "brackenford-inn-shop",
+          "place_id": "inn",
+          "container_id": "inn-stock",
+          "opens_at_tick_of_day": 420,
+          "closes_at_tick_of_day": 900,
+          "manager_actor_ids": [
+            "emma",
+            "clara"
+          ],
+          "world_x": 100,
+          "world_y": 100
+        },
+        "listing": {
+          "listing_id": "rq1-b06-household-supper",
+          "shop_id": "brackenford-inn-shop",
+          "asset_id": "supper-parcel",
+          "quantity": 1,
+          "coin_price": 5,
+          "exchange_kind": "ShopToActor",
+          "cooldown_group_id": null,
+          "cooldown_ticks": 0
+        },
+        "occupation_listing_patches": [
+          {
+            "occupation_id": "town-innkeepers",
+            "listing_id": "rq1-b06-household-supper"
+          }
+        ],
+        "recipe": null,
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 20,
+            "spirit": 57,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "instances": [],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": []
+        }
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b06-s02",
+      "actor_id": "elin",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Route the sealed clinic satchel",
+        "situation": "Elin has a sealed clinic satchel, but the dispatch card identifies only a surname shared by two registered recipients.",
+        "immediate_objective": "Hand the satchel to the recipient named by the current dispatch card.",
+        "subject_ref": "dispatch/rq1-b06-clinic-satchel",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s02/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The town carriers ledger assigns the sealed satchel to Elin."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s02/fact/2",
+            "kind": "ActorState",
+            "statement": "Elin carries one clinic satchel with seal 44 intact."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s02/fact/3",
+            "kind": "WorldRule",
+            "statement": "The current card does not distinguish between the two registered Vale recipients, and no sensing entry is present in the catalogue."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "active_obligation",
+            "source_ref": "dispatch/rq1-b06-clinic-satchel",
+            "fact_ids": [
+              "rq1-v2-b06-s02/fact/1",
+              "rq1-v2-b06-s02/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s02",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "event/rq1-b06/carriers-dispatch"
+          },
+          "role_assignment": {
+            "organization_id": "event/rq1-b06/carriers-dispatch",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "event/rq1-b06/carriers-dispatch"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_kind": "OrganizationDispatch",
+            "source_id": "event/rq1-b06/carriers-dispatch",
+            "affected_actor_id": "elin"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "elin",
+        "self": {
+          "identity": {
+            "actor_id": "elin",
+            "name": "Elin"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 54,
+            "spirit": 22,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "clinic-satchel",
+                "quantity": 1
+              }
+            ],
+            "instances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-warehouse",
+              "town-clinic"
+            ],
+            "known_actor_ids": [
+              "jonah",
+              "kara"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/carriers-dispatch"
+            ],
+            "unresolved_refs": [
+              "recipient/vale-current"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/elin/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s02",
+            "kind": "route-the-sealed-clinic-satchel",
+            "subject_ref": "dispatch/rq1-b06-clinic-satchel",
+            "status": "Active",
+            "description": "Hand the satchel to the recipient named by the current dispatch card."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s02",
+            "label": "Hand over the sealed clinic satchel",
+            "action_family": "AssetTransfer",
+            "arguments": null,
+            "validation_state": {
+              "available": false,
+              "reason": "recipient identity is unresolved"
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "clinic-satchel",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "shop_override": null,
+        "listing": null,
+        "recipe": null,
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 54,
+            "spirit": 22,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "clinic-satchel",
+              "quantity": 1
+            }
+          ],
+          "instances": [],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": []
+        }
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b06-s03",
+      "actor_id": "silas",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Buy the required spare fishing rod",
+        "situation": "Silas has his working rod equipped, but the two-boat safety roster requires a spare and the general store has one on the shelf.",
+        "immediate_objective": "Buy one spare fishing rod before the two-boat shift.",
+        "subject_ref": "listing/rq1-b06-fishing-rod",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s03/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The two-boat safety roster requires Silas to carry one spare fishing rod."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s03/fact/2",
+            "kind": "ActorState",
+            "statement": "Silas carries twelve coin, has his working rod equipped, and has gather capability level one."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s03/fact/3",
+            "kind": "WorldRule",
+            "statement": "The store is open and lists one fishing rod for nine coin."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "equipment_failure",
+            "source_ref": "listing/rq1-b06-fishing-rod",
+            "fact_ids": [
+              "rq1-v2-b06-s03/fact/1",
+              "rq1-v2-b06-s03/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s03",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "event/rq1-b06/rod-inspection"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "capability_requirement",
+            "source_kind": "CapabilityNeed",
+            "source_id": "event/rq1-b06/rod-inspection",
+            "affected_actor_id": "silas"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "silas",
+        "self": {
+          "identity": {
+            "actor_id": "silas",
+            "name": "Silas"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 44,
+            "spirit": 33,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [],
+            "instances": [
+              {
+                "item_instance_id": "silas-working-rod",
+                "item_type_id": "fishing-rod",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 12
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": "silas-working-rod"
+          },
+          "capabilities": [
+            {
+              "capability_id": "gather",
+              "value": 1
+            }
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "general-store",
+              "fishing-ground"
+            ],
+            "known_actor_ids": [
+              "aiko",
+              "alice"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/rod-inspection"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/silas/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s03",
+            "kind": "buy-the-required-spare-fishing-rod",
+            "subject_ref": "listing/rq1-b06-fishing-rod",
+            "status": "Active",
+            "description": "Buy one spare fishing rod before the two-boat shift."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s03",
+            "label": "Buy one spare fishing rod",
+            "action_family": "ListedExchange",
+            "arguments": {
+              "listing_id": "rq1-b06-fishing-rod"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "fishing-rod",
+            "storage_kind": "Instance",
+            "maximum_durability": 100
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Shop",
+            "owner_id": "merchant-stock",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 20
+              },
+              {
+                "asset_id": "fishing-rod",
+                "quantity": 2
+              }
+            ]
+          }
+        ],
+        "shop_override": {
+          "shop_id": "brackenford-general-shop",
+          "place_id": "general-store",
+          "container_id": "merchant-stock",
+          "opens_at_tick_of_day": 0,
+          "closes_at_tick_of_day": 900,
+          "manager_actor_ids": [
+            "bernard",
+            "dorian",
+            "hugo"
+          ],
+          "world_x": 100,
+          "world_y": 100
+        },
+        "listing": {
+          "listing_id": "rq1-b06-fishing-rod",
+          "shop_id": "brackenford-general-shop",
+          "asset_id": "fishing-rod",
+          "quantity": 1,
+          "coin_price": 9,
+          "exchange_kind": "ShopToActor",
+          "cooldown_group_id": null,
+          "cooldown_ticks": 0
+        },
+        "occupation_listing_patches": [
+          {
+            "occupation_id": "brackenford-merchants",
+            "listing_id": "rq1-b06-fishing-rod"
+          }
+        ],
+        "recipe": null,
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 44,
+            "spirit": 33,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 12
+            }
+          ],
+          "instances": [
+            {
+              "item_instance_id": "silas-working-rod",
+              "item_type_id": "fishing-rod",
+              "durability": 100,
+              "maximum_durability": 100,
+              "version": 1
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": "silas-working-rod"
+          },
+          "capabilities": [
+            {
+              "capability_id": "gather",
+              "value": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b06-s04",
+      "actor_id": "bram",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Cook the smithy night meal",
+        "situation": "Bram has one fresh fish and a clean pot reserved for the smithy's late crew.",
+        "immediate_objective": "Cook one serving of grilled fish before the late crew returns.",
+        "subject_ref": "recipe/rq1-b06-grilled-fish",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s04/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The smithy roster assigns Bram the late crew meal."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s04/fact/2",
+            "kind": "ActorState",
+            "statement": "Bram carries one fish and one clean pot."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s04/fact/3",
+            "kind": "WorldRule",
+            "statement": "The recipe consumes one fish and requires cooking capability level one plus a pot."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "ready_materials",
+            "source_ref": "recipe/rq1-b06-grilled-fish",
+            "fact_ids": [
+              "rq1-v2-b06-s04/fact/1",
+              "rq1-v2-b06-s04/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s04",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "event/rq1-b06/smithy-night-roster"
+          },
+          "role_assignment": {
+            "organization_id": "event/rq1-b06/smithy-night-roster",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "event/rq1-b06/smithy-night-roster"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_kind": "OrganizationRoster",
+            "source_id": "event/rq1-b06/smithy-night-roster",
+            "affected_actor_id": "bram"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "bram",
+        "self": {
+          "identity": {
+            "actor_id": "bram",
+            "name": "Bram"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 68,
+            "spirit": 42,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "fish",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "bram-pot",
+                "item_type_id": "pot",
+                "durability": null,
+                "maximum_durability": null,
+                "version": 1
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 14
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [
+            {
+              "capability_id": "cook",
+              "value": 1
+            }
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "smithy",
+              "inn"
+            ],
+            "known_actor_ids": [
+              "celia",
+              "bernard"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/smithy-night-roster"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/bram/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s04",
+            "kind": "cook-the-smithy-night-meal",
+            "subject_ref": "recipe/rq1-b06-grilled-fish",
+            "status": "Active",
+            "description": "Cook one serving of grilled fish before the late crew returns."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "Craft"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s04",
+            "label": "Cook one serving of grilled fish",
+            "action_family": "Craft",
+            "arguments": {
+              "recipe_id": "rq1-b06-cook-grilled-fish"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "fish",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "grilled-fish",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "pot",
+            "storage_kind": "Instance",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "shop_override": null,
+        "listing": null,
+        "recipe": {
+          "recipe_id": "rq1-b06-cook-grilled-fish",
+          "place_id": null,
+          "required_capability_id": "cook",
+          "minimum_capability": 1,
+          "required_asset_id": "pot",
+          "inputs": [
+            {
+              "asset_id": "fish",
+              "quantity": 1
+            }
+          ],
+          "outputs": [
+            {
+              "asset_id": "grilled-fish",
+              "quantity": 1
+            }
+          ]
+        },
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 68,
+            "spirit": 42,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 14
+            },
+            {
+              "asset_id": "fish",
+              "quantity": 1
+            }
+          ],
+          "instances": [
+            {
+              "item_instance_id": "bram-pot",
+              "item_type_id": "pot",
+              "durability": null,
+              "maximum_durability": null,
+              "version": 1
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [
+            {
+              "capability_id": "cook",
+              "value": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b06-s05",
+      "actor_id": "opal",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Sell the inspected orchard crate",
+        "situation": "Opal has the stamped orchard crate at the market lane, but the produce counter does not start purchases until the next bell.",
+        "immediate_objective": "Sell the inspected fruit crate when the produce counter begins its buying window.",
+        "subject_ref": "listing/rq1-b06-orchard-crate-buyback",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s05/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The market ledger assigns orchard crate 18 to Opal."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s05/fact/2",
+            "kind": "ActorState",
+            "statement": "Opal carries one inspected fruit crate."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s05/fact/3",
+            "kind": "WorldRule",
+            "statement": "The produce counter opens at tick 420, after the current tick 300."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "assigned_trade_lot",
+            "source_ref": "listing/rq1-b06-orchard-crate-buyback",
+            "fact_ids": [
+              "rq1-v2-b06-s05/fact/1",
+              "rq1-v2-b06-s05/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s05",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "opal"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "actor_assignment",
+            "source_kind": "ActorAssignment",
+            "source_id": "event/rq1-b06/market-lot-assignment",
+            "affected_actor_id": "opal"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "opal",
+        "self": {
+          "identity": {
+            "actor_id": "opal",
+            "name": "Opal"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 44,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "orchard-crate",
+                "quantity": 1
+              }
+            ],
+            "instances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 12
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-square",
+              "orchard"
+            ],
+            "known_actor_ids": [
+              "nolan",
+              "pavel"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/market-lot-assignment"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/opal/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s05",
+            "kind": "sell-the-inspected-orchard-crate",
+            "subject_ref": "listing/rq1-b06-orchard-crate-buyback",
+            "status": "Active",
+            "description": "Sell the inspected fruit crate when the produce counter begins its buying window."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s05",
+            "label": "Sell the inspected orchard crate",
+            "action_family": "ListedExchange",
+            "arguments": {
+              "listing_id": "rq1-b06-orchard-crate-buyback"
+            },
+            "validation_state": {
+              "available": false,
+              "reason": "shop is closed"
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "orchard-crate",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Shop",
+            "owner_id": "merchant-stock",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 20
+              }
+            ]
+          }
+        ],
+        "shop_override": {
+          "shop_id": "brackenford-general-shop",
+          "place_id": "general-store",
+          "container_id": "merchant-stock",
+          "opens_at_tick_of_day": 420,
+          "closes_at_tick_of_day": 900,
+          "manager_actor_ids": [
+            "bernard",
+            "dorian",
+            "hugo"
+          ],
+          "world_x": 100,
+          "world_y": 100
+        },
+        "listing": {
+          "listing_id": "rq1-b06-orchard-crate-buyback",
+          "shop_id": "brackenford-general-shop",
+          "asset_id": "orchard-crate",
+          "quantity": 1,
+          "coin_price": 6,
+          "exchange_kind": "ActorToShop",
+          "cooldown_group_id": null,
+          "cooldown_ticks": 0
+        },
+        "occupation_listing_patches": [
+          {
+            "occupation_id": "brackenford-merchants",
+            "listing_id": "rq1-b06-orchard-crate-buyback"
+          }
+        ],
+        "recipe": null,
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 44,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 12
+            },
+            {
+              "asset_id": "orchard-crate",
+              "quantity": 1
+            }
+          ],
+          "instances": [],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": []
+        }
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b06-s06",
+      "actor_id": "jonah",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Deliver the correct dietary parcel",
+        "situation": "Jonah has two labelled care parcels, but the fresh household note omits which diet applies to the patient.",
+        "immediate_objective": "Deliver the parcel compatible with the patient's current dietary restriction.",
+        "subject_ref": "care-order/rq1-b06-dietary-parcel",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s06/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The household note asks Jonah to bring the patient's evening parcel."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s06/fact/2",
+            "kind": "ActorState",
+            "statement": "Jonah carries one low-salt parcel and one standard parcel."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s06/fact/3",
+            "kind": "WorldRule",
+            "statement": "The note contains no current diet code, and the catalogue has no sensing entry for obtaining it."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "household_care_signal",
+            "source_ref": "care-order/rq1-b06-dietary-parcel",
+            "fact_ids": [
+              "rq1-v2-b06-s06/fact/1",
+              "rq1-v2-b06-s06/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s06",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "event/rq1-b06/care-note"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "capability_requirement",
+            "source_kind": "CapabilityRecord",
+            "source_id": "event/rq1-b06/care-note",
+            "affected_actor_id": "jonah"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "jonah",
+        "self": {
+          "identity": {
+            "actor_id": "jonah",
+            "name": "Jonah"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 28,
+            "spirit": 60,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "low-salt-parcel",
+                "quantity": 1
+              },
+              {
+                "asset_id": "standard-parcel",
+                "quantity": 1
+              }
+            ],
+            "instances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [],
+          "knowledge": {
+            "known_place_refs": [
+              "elin-home",
+              "town-clinic"
+            ],
+            "known_actor_ids": [
+              "elin",
+              "kara"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/care-note"
+            ],
+            "unresolved_refs": [
+              "diet-code/current-patient"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/jonah/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s06",
+            "kind": "deliver-the-correct-dietary-parcel",
+            "subject_ref": "care-order/rq1-b06-dietary-parcel",
+            "status": "Active",
+            "description": "Deliver the parcel compatible with the patient's current dietary restriction."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s06",
+            "label": "Deliver the compatible dietary parcel",
+            "action_family": "AssetTransfer",
+            "arguments": null,
+            "validation_state": {
+              "available": false,
+              "reason": "compatible parcel is not identified"
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "low-salt-parcel",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "standard-parcel",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "shop_override": null,
+        "listing": null,
+        "recipe": null,
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 28,
+            "spirit": 60,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 5
+            },
+            {
+              "asset_id": "low-salt-parcel",
+              "quantity": 1
+            },
+            {
+              "asset_id": "standard-parcel",
+              "quantity": 1
+            }
+          ],
+          "instances": [],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": []
+        }
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b06-s07",
+      "actor_id": "felix",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Send the grain lot to its named depot",
+        "situation": "Felix has the sealed grain lot and a dispatch obligation, but rain has smeared the depot line on the only current manifest.",
+        "immediate_objective": "Send the sealed lot to the depot named on the current manifest.",
+        "subject_ref": "manifest/rq1-b06-grain-depot",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s07/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The dispatch roster assigns grain lot 27 to Felix."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s07/fact/2",
+            "kind": "ActorState",
+            "statement": "Felix carries the sealed lot and its intact lot number."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s07/fact/3",
+            "kind": "WorldRule",
+            "statement": "The current manifest does not identify whether depot east or depot south is the recipient, and no sensing entry is present."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "assigned_delivery",
+            "source_ref": "manifest/rq1-b06-grain-depot",
+            "fact_ids": [
+              "rq1-v2-b06-s07/fact/1",
+              "rq1-v2-b06-s07/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s07",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "felix"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "actor_assignment",
+            "source_kind": "ActorAssignment",
+            "source_id": "event/rq1-b06/grain-dispatch",
+            "affected_actor_id": "felix"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "felix",
+        "self": {
+          "identity": {
+            "actor_id": "felix",
+            "name": "Felix"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 57,
+            "spirit": 72,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "sealed-grain-lot",
+                "quantity": 1
+              }
+            ],
+            "instances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 9
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-warehouse",
+              "mill"
+            ],
+            "known_actor_ids": [
+              "clara",
+              "grace"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/grain-dispatch"
+            ],
+            "unresolved_refs": [
+              "depot/current-grain-lot"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/felix/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s07",
+            "kind": "send-the-grain-lot-to-its-named-depot",
+            "subject_ref": "manifest/rq1-b06-grain-depot",
+            "status": "Active",
+            "description": "Send the sealed lot to the depot named on the current manifest."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s07",
+            "label": "Send the sealed grain lot",
+            "action_family": "AssetTransfer",
+            "arguments": null,
+            "validation_state": {
+              "available": false,
+              "reason": "destination depot is unresolved"
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "sealed-grain-lot",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "shop_override": null,
+        "listing": null,
+        "recipe": null,
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 57,
+            "spirit": 72,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 9
+            },
+            {
+              "asset_id": "sealed-grain-lot",
+              "quantity": 1
+            }
+          ],
+          "instances": [],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": []
+        }
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b06-s08",
+      "actor_id": "bernard",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Import a replacement basket",
+        "situation": "The general store has no spare harvest baskets, while Bernard has wholesale authority and enough business coin for one shipment.",
+        "immediate_objective": "Import one basket into general-store stock.",
+        "subject_ref": "listing/rq1-b06-basket-import",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s08/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The store ledger binds Bernard to restore the basket reserve."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s08/fact/2",
+            "kind": "ActorState",
+            "statement": "General-store stock has zero baskets and twenty coin."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s08/fact/3",
+            "kind": "WorldRule",
+            "statement": "The wholesale listing supplies one basket for four coin and has no active cooldown."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "managed_stock_gap",
+            "source_ref": "listing/rq1-b06-basket-import",
+            "fact_ids": [
+              "rq1-v2-b06-s08/fact/1",
+              "rq1-v2-b06-s08/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s08",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "event/rq1-b06/store-restock-duty"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_kind": "Commitment",
+            "source_id": "event/rq1-b06/store-restock-duty",
+            "affected_actor_id": "bernard"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "bernard",
+        "self": {
+          "identity": {
+            "actor_id": "bernard",
+            "name": "Bernard"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 74,
+            "spirit": 34,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 28
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [],
+          "knowledge": {
+            "known_place_refs": [
+              "general-store",
+              "town-warehouse"
+            ],
+            "known_actor_ids": [
+              "devin",
+              "emma"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/store-restock-duty"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/bernard/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s08",
+            "kind": "import-a-replacement-basket",
+            "subject_ref": "listing/rq1-b06-basket-import",
+            "status": "Active",
+            "description": "Import one basket into general-store stock."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s08",
+            "label": "Import one replacement basket",
+            "action_family": "ListedExchange",
+            "arguments": {
+              "listing_id": "rq1-b06-basket-import"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "basket",
+            "storage_kind": "Instance",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Shop",
+            "owner_id": "merchant-stock",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 20
+              }
+            ]
+          }
+        ],
+        "shop_override": {
+          "shop_id": "brackenford-general-shop",
+          "place_id": "general-store",
+          "container_id": "merchant-stock",
+          "opens_at_tick_of_day": 0,
+          "closes_at_tick_of_day": 900,
+          "manager_actor_ids": [
+            "bernard",
+            "dorian",
+            "hugo"
+          ],
+          "world_x": 100,
+          "world_y": 100
+        },
+        "listing": {
+          "listing_id": "rq1-b06-basket-import",
+          "shop_id": "brackenford-general-shop",
+          "asset_id": "basket",
+          "quantity": 1,
+          "coin_price": 4,
+          "exchange_kind": "ExternalToShop",
+          "cooldown_group_id": "rq1-b06-wholesale",
+          "cooldown_ticks": 120
+        },
+        "occupation_listing_patches": [
+          {
+            "occupation_id": "brackenford-merchants",
+            "listing_id": "rq1-b06-basket-import"
+          }
+        ],
+        "recipe": null,
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 74,
+            "spirit": 34,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 28
+            },
+            {
+              "asset_id": "meal",
+              "quantity": 1
+            }
+          ],
+          "instances": [],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": []
+        }
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b06-s09",
+      "actor_id": "mira",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Buy the morning porridge",
+        "situation": "Mira's meal pouch is empty and the inn counter has warm porridge at a posted price she can pay.",
+        "immediate_objective": "Buy one serving of porridge for the morning meal.",
+        "subject_ref": "listing/rq1-b06-porridge",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s09/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "Mira's current meal pouch contains no food."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s09/fact/2",
+            "kind": "ActorState",
+            "statement": "Mira carries six coin."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s09/fact/3",
+            "kind": "WorldRule",
+            "statement": "The open inn counter has porridge in stock for four coin."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "meal_need",
+            "source_ref": "listing/rq1-b06-porridge",
+            "fact_ids": [
+              "rq1-v2-b06-s09/fact/1",
+              "rq1-v2-b06-s09/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s09",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "event/rq1-b06/inn-board"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "information_custody",
+            "source_kind": "InformationNotice",
+            "source_id": "event/rq1-b06/inn-board",
+            "affected_actor_id": "mira"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "mira",
+        "self": {
+          "identity": {
+            "actor_id": "mira",
+            "name": "Mira"
+          },
+          "body": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [],
+            "instances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [],
+          "knowledge": {
+            "known_place_refs": [
+              "inn",
+              "farah-home"
+            ],
+            "known_actor_ids": [
+              "lucas",
+              "nolan"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/inn-board"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/mira/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s09",
+            "kind": "buy-the-morning-porridge",
+            "subject_ref": "listing/rq1-b06-porridge",
+            "status": "Active",
+            "description": "Buy one serving of porridge for the morning meal."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s09",
+            "label": "Buy one serving of porridge",
+            "action_family": "ListedExchange",
+            "arguments": {
+              "listing_id": "rq1-b06-porridge"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "porridge",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Shop",
+            "owner_id": "inn-stock",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 20
+              },
+              {
+                "asset_id": "porridge",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "shop_override": {
+          "shop_id": "brackenford-inn-shop",
+          "place_id": "inn",
+          "container_id": "inn-stock",
+          "opens_at_tick_of_day": 0,
+          "closes_at_tick_of_day": 900,
+          "manager_actor_ids": [
+            "emma",
+            "clara"
+          ],
+          "world_x": 100,
+          "world_y": 100
+        },
+        "listing": {
+          "listing_id": "rq1-b06-porridge",
+          "shop_id": "brackenford-inn-shop",
+          "asset_id": "porridge",
+          "quantity": 1,
+          "coin_price": 4,
+          "exchange_kind": "ShopToActor",
+          "cooldown_group_id": null,
+          "cooldown_ticks": 0
+        },
+        "occupation_listing_patches": [
+          {
+            "occupation_id": "town-innkeepers",
+            "listing_id": "rq1-b06-porridge"
+          }
+        ],
+        "recipe": null,
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "instances": [],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": []
+        }
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b06-s10",
+      "actor_id": "celia",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Forge the harvest contract sickle",
+        "situation": "Celia has the iron and timber reserved for the south-field harvest contract, and the smithy bench is ready.",
+        "immediate_objective": "Forge one sickle for the south-field harvest crew.",
+        "subject_ref": "recipe/rq1-b06-harvest-sickle",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b06-s10/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The signed harvest contract binds Celia to supply one sickle."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s10/fact/2",
+            "kind": "ActorState",
+            "statement": "Celia carries one iron ore and one timber."
+          },
+          {
+            "fact_id": "rq1-v2-b06-s10/fact/3",
+            "kind": "WorldRule",
+            "statement": "The smithy recipe consumes those inputs and requires craft capability level one."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "contract_materials_ready",
+            "source_ref": "recipe/rq1-b06-harvest-sickle",
+            "fact_ids": [
+              "rq1-v2-b06-s10/fact/1",
+              "rq1-v2-b06-s10/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b06-s10",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "event/rq1-b06/harvest-tool-contract"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_kind": "Commitment",
+            "source_id": "event/rq1-b06/harvest-tool-contract",
+            "affected_actor_id": "celia"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "celia",
+        "self": {
+          "identity": {
+            "actor_id": "celia",
+            "name": "Celia"
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 22,
+            "spirit": 70,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "asset_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "instances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [
+            {
+              "capability_id": "craft",
+              "value": 1
+            }
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "smithy",
+              "community-garden"
+            ],
+            "known_actor_ids": [
+              "bram",
+              "devin"
+            ],
+            "source_event_ids": [
+              "event/rq1-b06/harvest-tool-contract"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/celia/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b06-s10",
+            "kind": "forge-the-harvest-contract-sickle",
+            "subject_ref": "recipe/rq1-b06-harvest-sickle",
+            "status": "Active",
+            "description": "Forge one sickle for the south-field harvest crew."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "Craft"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b06-s10",
+            "label": "Forge one harvest sickle",
+            "action_family": "Craft",
+            "arguments": {
+              "recipe_id": "rq1-b06-harvest-sickle"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "asset_definitions": [
+          {
+            "asset_id": "iron-ore",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "timber",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "sickle",
+            "storage_kind": "Instance",
+            "maximum_durability": 100
+          }
+        ],
+        "container_overrides": [],
+        "shop_override": null,
+        "listing": null,
+        "recipe": {
+          "recipe_id": "rq1-b06-harvest-sickle",
+          "place_id": null,
+          "required_capability_id": "craft",
+          "minimum_capability": 1,
+          "required_asset_id": null,
+          "inputs": [
+            {
+              "asset_id": "iron-ore",
+              "quantity": 1
+            },
+            {
+              "asset_id": "timber",
+              "quantity": 1
+            }
+          ],
+          "outputs": [
+            {
+              "asset_id": "sickle",
+              "quantity": 1
+            }
+          ]
+        },
+        "service": null,
+        "region": null,
+        "farm_plot": null,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 22,
+            "spirit": 70,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 5
+            },
+            {
+              "asset_id": "iron-ore",
+              "quantity": 1
+            },
+            {
+              "asset_id": "timber",
+              "quantity": 1
+            }
+          ],
+          "instances": [],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          },
+          "capabilities": [
+            {
+              "capability_id": "craft",
+              "value": 1
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

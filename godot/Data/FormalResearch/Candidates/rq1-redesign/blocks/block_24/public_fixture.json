@@ -1,0 +1,1560 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_24",
+  "block_id": "block_24",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b24-s01",
+      "actor_id": "opal",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s01",
+        "actor_id": "opal",
+        "task_domain": "food_production",
+        "problem_kind": "soaking_grain_batch",
+        "subject_ref": "food/porridge-grain/batch-o24",
+        "decision_tick": 300,
+        "summary": "Opal is assigned the carpentry-house breakfast batch, but the grain began soaking at tick 180 and the kitchen record releases it at tick 420. At tick 300 it is still in the soaking vessel rather than Opal's pack.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s01/fact-1",
+          "rq1-v2-b24-s01/fact-2",
+          "rq1-v2-b24-s01/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s01/fact-1",
+          "source_event_id": "event/rq1-b24/opal-breakfast-assignment",
+          "text": "The batch started soaking at tick 180."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s01/fact-2",
+          "source_event_id": "event/rq1-b24/opal-breakfast-assignment",
+          "text": "The kitchen release tick is 420 and the decision tick is 300."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s01/fact-3",
+          "source_event_id": "event/rq1-b24/opal-breakfast-assignment",
+          "text": "The grain is not yet in Opal's actor inventory and the release is automatic."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "immediate_self_pressure",
+            "source_ref": "food/porridge-grain/batch-o24",
+            "description": "Cook the breakfast batch after the soaked grain is released."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s01",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "opal"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "actor_assignment",
+            "source_event_id": "event/rq1-b24/opal-breakfast-assignment",
+            "source_kind": "ActorWorkAssignment",
+            "bridge_ref": "actor/opal",
+            "actor_visible_text": "The household breakfast ledger assigns batch O24 directly to Opal."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "opal",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/opal",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 44,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 12
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "brackenford-home-07",
+              "inn"
+            ],
+            "known_actor_ids": [
+              "nolan"
+            ],
+            "source_event_ids": [
+              "event/rq1-b24/opal-breakfast-assignment"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/opal/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s01",
+            "kind": "soaking_grain_batch",
+            "subject_ref": "food/porridge-grain/batch-o24",
+            "status": "Active",
+            "description": "Cook the breakfast batch after the soaked grain is released."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/0/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "porridge-grain-o24-release",
+            "opens_at_tick": 420,
+            "current_tick": 300,
+            "automatic_release": true,
+            "preparatory_proposal_id": null
+          }
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b24-s02",
+      "actor_id": "devin",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s02",
+        "actor_id": "devin",
+        "task_domain": "trade_harvest",
+        "problem_kind": "drying_trade_lot",
+        "subject_ref": "trade/mill-grain-lot-d24",
+        "decision_tick": 300,
+        "summary": "Devin is custodian of the mill's buyer lot, but its moisture record keeps the grain in the drying bin until tick 500. At tick 300 no actor or shop container owns a transferable lot.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s02/fact-1",
+          "rq1-v2-b24-s02/fact-2",
+          "rq1-v2-b24-s02/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s02/fact-1",
+          "source_event_id": "event/rq1-b24/mill-lot-custody",
+          "text": "The drying record releases lot D24 at tick 500."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s02/fact-2",
+          "source_event_id": "event/rq1-b24/mill-lot-custody",
+          "text": "The decision tick is 300."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s02/fact-3",
+          "source_event_id": "event/rq1-b24/mill-lot-custody",
+          "text": "The lot is not present in Devin's actor container or mill-stock."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "immediate_self_pressure",
+            "source_ref": "trade/mill-grain-lot-d24",
+            "description": "Offer the dried mill grain lot after its Authority release."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s02",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "asset/wheat-lot-d24"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "resource_custody",
+            "source_event_id": "event/rq1-b24/mill-lot-custody",
+            "source_kind": "ResourceCustodyRecorded",
+            "bridge_ref": "asset/wheat-lot-d24",
+            "actor_visible_text": "The mill record names Devin as custodian while lot D24 remains in the drying bin."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "devin",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/devin",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 48,
+            "spirit": 61,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 7
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "mill",
+              "general-store"
+            ],
+            "known_actor_ids": [
+              "iris"
+            ],
+            "source_event_ids": [
+              "event/rq1-b24/mill-lot-custody"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/devin/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s02",
+            "kind": "drying_trade_lot",
+            "subject_ref": "trade/mill-grain-lot-d24",
+            "status": "Active",
+            "description": "Offer the dried mill grain lot after its Authority release."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/1/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "mill-lot-d24-release",
+            "opens_at_tick": 500,
+            "current_tick": 300,
+            "automatic_release": true,
+            "preparatory_proposal_id": null
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b24-s03",
+      "actor_id": "dorian",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s03",
+        "actor_id": "dorian",
+        "task_domain": "care_household",
+        "problem_kind": "medicine_seal_record_conflict",
+        "subject_ref": "care/medicine-pouch/seal-44",
+        "decision_tick": 300,
+        "summary": "Dorian is carrying a closed household medicine pouch, but the clinic seal register assigns number 44 to common medicine while the household receipt assigns it to advanced medicine. The pouch has not been admitted as either product asset.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s03/fact-1",
+          "rq1-v2-b24-s03/fact-2",
+          "rq1-v2-b24-s03/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s03/fact-1",
+          "source_event_id": "event/rq1-b24/clinic-seal-register",
+          "text": "The clinic register maps seal 44 to common medicine."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s03/fact-2",
+          "source_event_id": "event/rq1-b24/clinic-seal-register",
+          "text": "The household receipt maps seal 44 to advanced medicine."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s03/fact-3",
+          "source_event_id": "event/rq1-b24/clinic-seal-register",
+          "text": "Dorian's inventory contains neither medicine asset and no seal-check proposal exists."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "near_term_active_goal",
+            "source_ref": "care/medicine-pouch/seal-44",
+            "description": "Resolve seal 44 before supplying the household medicine."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s03",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/medicine-seal-44"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "information_custody",
+            "source_event_id": "event/rq1-b24/clinic-seal-register",
+            "source_kind": "InformationRecordLocated",
+            "bridge_ref": "information/medicine-seal-44",
+            "actor_visible_text": "The clinic register holds one of the required seal records, which conflicts with the household receipt."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "dorian",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/dorian",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 71,
+            "spirit": 65,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 24
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "general-store",
+              "town-clinic",
+              "dorian-home"
+            ],
+            "known_actor_ids": [
+              "hugo"
+            ],
+            "source_event_ids": [
+              "event/rq1-b24/clinic-seal-register"
+            ],
+            "unresolved_refs": [
+              "item/medicine-pouch-44/type"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/dorian/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s03",
+            "kind": "medicine_seal_record_conflict",
+            "subject_ref": "care/medicine-pouch/seal-44",
+            "status": "Active",
+            "description": "Resolve seal 44 before supplying the household medicine."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/2/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "evidence_conflict",
+            "subject_ref": "item/medicine-pouch-44",
+            "claims": [
+              {
+                "source_ref": "clinic/seal-register",
+                "value": "common-medicine"
+              },
+              {
+                "source_ref": "household/receipt",
+                "value": "advanced-medicine"
+              }
+            ],
+            "registered_resolution_proposal": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b24-s04",
+      "actor_id": "elin",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s04",
+        "actor_id": "elin",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "freight_mass_record_conflict",
+        "subject_ref": "commitment/elin-warehouse-crate-24",
+        "decision_tick": 300,
+        "summary": "Elin's signed freight obligation names a 20-unit seed crate, while the warehouse weigh slip for the same seal records 12 units. The crate is sealed and is not represented as a fungible balance in Elin's pack.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s04/fact-1",
+          "rq1-v2-b24-s04/fact-2",
+          "rq1-v2-b24-s04/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s04/fact-1",
+          "source_event_id": "event/rq1-b24/elin-freight-obligation",
+          "text": "The signed freight docket records 20 seed units."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s04/fact-2",
+          "source_event_id": "event/rq1-b24/elin-freight-obligation",
+          "text": "The warehouse weigh slip records 12 units for the same seal."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s04/fact-3",
+          "source_event_id": "event/rq1-b24/elin-freight-obligation",
+          "text": "No weighing or seal-opening proposal is registered, and Elin carries no seed balance."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "near_term_active_goal",
+            "source_ref": "commitment/elin-warehouse-crate-24",
+            "description": "Establish the crate quantity before settling the warehouse obligation."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s04",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/elin-warehouse-crate-24"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "event/rq1-b24/elin-freight-obligation",
+            "source_kind": "CommitmentActivated",
+            "bridge_ref": "commitment/elin-warehouse-crate-24",
+            "actor_visible_text": "The signed freight obligation binds Elin to a crate whose quantity records disagree."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "elin",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/elin",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 54,
+            "spirit": 22,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-warehouse",
+              "general-store"
+            ],
+            "known_actor_ids": [
+              "jonah"
+            ],
+            "source_event_ids": [
+              "event/rq1-b24/elin-freight-obligation"
+            ],
+            "unresolved_refs": [
+              "cargo/crate-24/quantity"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/elin/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s04",
+            "kind": "freight_mass_record_conflict",
+            "subject_ref": "commitment/elin-warehouse-crate-24",
+            "status": "Active",
+            "description": "Establish the crate quantity before settling the warehouse obligation."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/3/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "evidence_conflict",
+            "subject_ref": "cargo/crate-24",
+            "claims": [
+              {
+                "source_ref": "freight/docket",
+                "value": "20 seeds"
+              },
+              {
+                "source_ref": "warehouse/weigh-slip",
+                "value": "12 seeds"
+              }
+            ],
+            "registered_resolution_proposal": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b24-s05",
+      "actor_id": "emma",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s05",
+        "actor_id": "emma",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "hot_pot_cooling_gate",
+        "subject_ref": "tool/inn-pot-3/cooling",
+        "decision_tick": 300,
+        "summary": "Emma is assigned to return inn pot 3 to service, but the heat-safety seal remains active until tick 390. At tick 300 the pot is held by the kitchen fixture rather than her inventory, and the seal clears automatically.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s05/fact-1",
+          "rq1-v2-b24-s05/fact-2",
+          "rq1-v2-b24-s05/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s05/fact-1",
+          "source_event_id": "event/rq1-b24/inn-pot-assignment",
+          "text": "The heat-safety seal clears at tick 390."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s05/fact-2",
+          "source_event_id": "event/rq1-b24/inn-pot-assignment",
+          "text": "The decision tick is 300."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s05/fact-3",
+          "source_event_id": "event/rq1-b24/inn-pot-assignment",
+          "text": "Inn pot 3 is not in Emma's actor inventory while the seal is active."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_work_interruption",
+            "source_ref": "tool/inn-pot-3/cooling",
+            "description": "Return inn pot 3 to service after its cooling seal clears."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s05",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "emma"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "actor_assignment",
+            "source_event_id": "event/rq1-b24/inn-pot-assignment",
+            "source_kind": "ActorWorkAssignment",
+            "bridge_ref": "actor/emma",
+            "actor_visible_text": "The inn equipment board assigns pot 3's return-to-service task directly to Emma."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "emma",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/emma",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 63,
+            "spirit": 46,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 16
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "cook",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "inn"
+            ],
+            "known_actor_ids": [
+              "clara"
+            ],
+            "source_event_ids": [
+              "event/rq1-b24/inn-pot-assignment"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/emma/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s05",
+            "kind": "hot_pot_cooling_gate",
+            "subject_ref": "tool/inn-pot-3/cooling",
+            "status": "Active",
+            "description": "Return inn pot 3 to service after its cooling seal clears."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/4/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "inn-pot-3-cooling-seal",
+            "opens_at_tick": 390,
+            "current_tick": 300,
+            "automatic_release": true,
+            "preparatory_proposal_id": null
+          }
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b24-s06",
+      "actor_id": "farah",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s06",
+        "actor_id": "farah",
+        "task_domain": "food_production",
+        "problem_kind": "soup_allergen_record_missing",
+        "subject_ref": "food/community-soup/jar-f24",
+        "decision_tick": 300,
+        "summary": "Farah found a sealed soup jar intended for the builders' meal. Its allergen card is missing, the jar is not represented as a product food asset, and no food-analysis capability or proposal exists.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s06/fact-1",
+          "rq1-v2-b24-s06/fact-2",
+          "rq1-v2-b24-s06/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s06/fact-1",
+          "source_event_id": "event/rq1-b24/builders-allergen-requirement",
+          "text": "The builders' meal requires an allergen-cleared serving."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s06/fact-2",
+          "source_event_id": "event/rq1-b24/builders-allergen-requirement",
+          "text": "Jar F24 has no attached allergen card."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s06/fact-3",
+          "source_event_id": "event/rq1-b24/builders-allergen-requirement",
+          "text": "Farah's inventory contains no registered food asset for the jar and the catalogue has no analysis proposal."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_work_interruption",
+            "source_ref": "food/community-soup/jar-f24",
+            "description": "Establish whether jar F24 satisfies the builders' allergen rule."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s06",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/food-allergen-analysis"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "capability_requirement",
+            "source_event_id": "event/rq1-b24/builders-allergen-requirement",
+            "source_kind": "CapabilityRequirementPublished",
+            "bridge_ref": "capability/food-allergen-analysis",
+            "actor_visible_text": "The builders' meal notice requires a food-analysis capability that the product catalogue does not expose."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "farah",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/farah",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 31,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 10
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "community-garden",
+              "town-clinic"
+            ],
+            "known_actor_ids": [
+              "mira"
+            ],
+            "source_event_ids": [
+              "event/rq1-b24/builders-allergen-requirement"
+            ],
+            "unresolved_refs": [
+              "item/soup-jar-f24/type",
+              "capability/food-allergen-analysis"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/farah/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s06",
+            "kind": "soup_allergen_record_missing",
+            "subject_ref": "food/community-soup/jar-f24",
+            "status": "Active",
+            "description": "Establish whether jar F24 satisfies the builders' allergen rule."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/5/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "missing_evidence",
+            "subject_ref": "item/soup-jar-f24",
+            "required_record_ref": "allergen-card/f24",
+            "record_present": false,
+            "registered_resolution_proposal": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b24-s07",
+      "actor_id": "lucas",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s07",
+        "actor_id": "lucas",
+        "task_domain": "trade_harvest",
+        "problem_kind": "timber_buyback_sale",
+        "subject_ref": "trade/lucas-timber-surplus",
+        "decision_tick": 300,
+        "summary": "Lucas has two timber after finishing the household repair and knows the general store's posted buyback. The shop is open and has enough coin for the fixed one-timber purchase.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s07/fact-1",
+          "rq1-v2-b24-s07/fact-2",
+          "rq1-v2-b24-s07/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s07/fact-1",
+          "source_event_id": "event/rq1-b24/merchant-buyback-board",
+          "text": "Lucas's actor inventory contains two timber."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s07/fact-2",
+          "source_event_id": "event/rq1-b24/merchant-buyback-board",
+          "text": "The general store buyback pays two coins for one timber."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s07/fact-3",
+          "source_event_id": "event/rq1-b24/merchant-buyback-board",
+          "text": "The open merchant stock has forty coins."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "non_immediate_opportunity",
+            "source_ref": "trade/lucas-timber-surplus",
+            "description": "Sell one surplus timber through the posted merchant buyback."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s07",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/merchant-timber-buyback"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "information_custody",
+            "source_event_id": "event/rq1-b24/merchant-buyback-board",
+            "source_kind": "InformationRecordLocated",
+            "bridge_ref": "information/merchant-timber-buyback",
+            "actor_visible_text": "The general store price board holds the fixed buyback terms Lucas needs."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "lucas",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/lucas",
+        "self": {
+          "body": {
+            "health_current": 88,
+            "health_maximum": 100,
+            "satiety": 70,
+            "spirit": 73,
+            "disease": "Ill"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "timber",
+                "quantity": 2
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "lucas-axe",
+                "item_type_id": "axe",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "lucas-axe"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 13
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "gather",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "woodlot",
+              "general-store"
+            ],
+            "known_actor_ids": [],
+            "source_event_ids": [
+              "event/rq1-b24/merchant-buyback-board"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/lucas/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s07",
+            "kind": "timber_buyback_sale",
+            "subject_ref": "trade/lucas-timber-surplus",
+            "status": "Active",
+            "description": "Sell one surplus timber through the posted merchant buyback."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/6/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "shop_listing",
+            "listing_id": "merchant-timber-buyback",
+            "shop_id": "brackenford-general-shop",
+            "shop_open": true,
+            "shop_container": {
+              "owner_kind": "Shop",
+              "owner_id": "merchant-stock",
+              "revision": 1,
+              "balances": [
+                {
+                  "asset_id": "coin",
+                  "quantity": 40
+                },
+                {
+                  "asset_id": "timber",
+                  "quantity": 5
+                }
+              ]
+            },
+            "asset_id": "timber",
+            "quantity": 1,
+            "coin_price": 2
+          }
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b24-s08",
+      "actor_id": "grace",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s08",
+        "actor_id": "grace",
+        "task_domain": "care_household",
+        "problem_kind": "tonic_dose_record_conflict",
+        "subject_ref": "care/household-tonic/dose",
+        "decision_tick": 300,
+        "summary": "Grace promised to bring Clara the household tonic, but the bottle label says one spoon while the care card says three. The bottle is not a registered medicine asset and no dose-check proposal exists.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s08/fact-1",
+          "rq1-v2-b24-s08/fact-2",
+          "rq1-v2-b24-s08/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s08/fact-1",
+          "source_event_id": "event/rq1-b24/grace-clara-tonic-promise",
+          "text": "The bottle label records one spoon."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s08/fact-2",
+          "source_event_id": "event/rq1-b24/grace-clara-tonic-promise",
+          "text": "The care card records three spoons for the same tonic."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s08/fact-3",
+          "source_event_id": "event/rq1-b24/grace-clara-tonic-promise",
+          "text": "Grace's inventory contains no registered medicine corresponding to the tonic."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "non_immediate_opportunity",
+            "source_ref": "care/household-tonic/dose",
+            "description": "Resolve the tonic dose before fulfilling the household care promise."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s08",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/grace-clara-tonic"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "event/rq1-b24/grace-clara-tonic-promise",
+            "source_kind": "CommitmentActivated",
+            "bridge_ref": "commitment/grace-clara-tonic",
+            "actor_visible_text": "The household care promise binds Grace to a tonic with conflicting dose records."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "grace",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/grace",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 46,
+            "spirit": 29,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "grace-sickle",
+                "item_type_id": "sickle",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "grace-sickle"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "clara-home",
+              "town-clinic"
+            ],
+            "known_actor_ids": [
+              "clara"
+            ],
+            "source_event_ids": [
+              "event/rq1-b24/grace-clara-tonic-promise"
+            ],
+            "unresolved_refs": [
+              "item/household-tonic/dose"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/grace/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s08",
+            "kind": "tonic_dose_record_conflict",
+            "subject_ref": "care/household-tonic/dose",
+            "status": "Active",
+            "description": "Resolve the tonic dose before fulfilling the household care promise."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/7/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "evidence_conflict",
+            "subject_ref": "item/household-tonic",
+            "claims": [
+              {
+                "source_ref": "tonic/bottle-label",
+                "value": "one spoon"
+              },
+              {
+                "source_ref": "care/card",
+                "value": "three spoons"
+              }
+            ],
+            "registered_resolution_proposal": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b24-s09",
+      "actor_id": "bram",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s09",
+        "actor_id": "bram",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "promised_bridge_axe",
+        "subject_ref": "commitment/bram-bridge-axe",
+        "decision_tick": 300,
+        "summary": "Bram promised the builders a new axe for the footbridge repair. He has craft skill plus one iron ore and one timber, exactly matching the configured axe recipe.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s09/fact-1",
+          "rq1-v2-b24-s09/fact-2",
+          "rq1-v2-b24-s09/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s09/fact-1",
+          "source_event_id": "event/rq1-b24/bridge-axe-capability",
+          "text": "The bridge repair promise calls for one new axe."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s09/fact-2",
+          "source_event_id": "event/rq1-b24/bridge-axe-capability",
+          "text": "Bram carries one iron ore and one timber."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s09/fact-3",
+          "source_event_id": "event/rq1-b24/bridge-axe-capability",
+          "text": "The craft-axe recipe consumes those inputs and Bram has craft capability."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "background_concern",
+            "source_ref": "commitment/bram-bridge-axe",
+            "description": "Craft one axe for the footbridge repair promise."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s09",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/craft"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "capability_requirement",
+            "source_event_id": "event/rq1-b24/bridge-axe-capability",
+            "source_kind": "CapabilityRequirementPublished",
+            "bridge_ref": "capability/craft",
+            "actor_visible_text": "The repair record requires craft capability, which Bram currently has."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "bram",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/bram",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 68,
+            "spirit": 42,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 14
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "craft",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "smithy",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "farah"
+            ],
+            "source_event_ids": [
+              "event/rq1-b24/bridge-axe-capability"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/bram/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s09",
+            "kind": "promised_bridge_axe",
+            "subject_ref": "commitment/bram-bridge-axe",
+            "status": "Active",
+            "description": "Craft one axe for the footbridge repair promise."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/8/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "recipe",
+            "recipe_id": "craft-axe",
+            "required_capability_id": "craft",
+            "minimum_capability": 1,
+            "required_asset_id": null,
+            "inputs": [
+              {
+                "asset_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "asset_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "outputs": [
+              {
+                "asset_id": "axe",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b24-s10",
+      "actor_id": "silas",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b24-s10",
+        "actor_id": "silas",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "fishing_rod_load_test",
+        "subject_ref": "region/fishing-ground/rod-load-test",
+        "decision_tick": 300,
+        "summary": "The fishing crew has finished servicing Silas's rod and requires one ordinary catch as its load test before returning the tool to the rota. Silas is at the fishing ground with the rod equipped and the region has fish stock.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b24-s10/fact-1",
+          "rq1-v2-b24-s10/fact-2",
+          "rq1-v2-b24-s10/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b24-s10/fact-1",
+          "source_event_id": "event/rq1-b24/fishing-crew-dock-dispatch",
+          "text": "The fishing-workers maintenance dispatch requires one ordinary catch as the serviced rod's load test."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s10/fact-2",
+          "source_event_id": "event/rq1-b24/fishing-crew-dock-dispatch",
+          "text": "The fishing-ground stock is twenty before this operation."
+        },
+        {
+          "evidence_id": "rq1-v2-b24-s10/fact-3",
+          "source_event_id": "event/rq1-b24/fishing-crew-dock-dispatch",
+          "text": "Silas has gather capability and carries the serviced fishing rod equipped at full durability."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "background_concern",
+            "source_ref": "region/fishing-ground/rod-load-test",
+            "description": "Complete one fishing operation as the serviced rod's load test."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b24-s10",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/fishing-workers"
+          },
+          "role_assignment": {
+            "organization_id": "organization/fishing-workers",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/fishing-workers"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "event/rq1-b24/fishing-crew-dock-dispatch",
+            "source_kind": "OrganizationDispatch",
+            "bridge_ref": "organization/fishing-workers",
+            "actor_visible_text": "The fishing-workers dispatch links the serviced-rod load test to Silas's crew membership."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "silas",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/silas",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 44,
+            "spirit": 33,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "silas-fishing-rod",
+                "item_type_id": "fishing-rod",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "silas-fishing-rod"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 7
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "gather",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "fishing-ground",
+              "woodlot"
+            ],
+            "known_actor_ids": [],
+            "source_event_ids": [
+              "event/rq1-b24/fishing-crew-dock-dispatch"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/silas/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b24-s10",
+            "kind": "fishing_rod_load_test",
+            "subject_ref": "region/fishing-ground/rod-load-test",
+            "status": "Active",
+            "description": "Complete one fishing operation as the serviced rod's load test."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/9/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "region",
+            "region_id": "fishing-ground",
+            "stock": 20,
+            "capacity": 20,
+            "revision": 1,
+            "required_tool_type_id": "fishing-rod",
+            "required_capability_id": "gather",
+            "minimum_capability": 1
+          }
+        ]
+      }
+    }
+  ]
+}

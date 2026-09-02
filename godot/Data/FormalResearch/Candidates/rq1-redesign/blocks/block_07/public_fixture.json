@@ -1,0 +1,1683 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_07",
+  "block_id": "block_07",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b07-s01",
+      "actor_id": "kara",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s01",
+        "actor_id": "kara",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "relief_wagon_loading",
+        "subject_ref": "farm-plot-1",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Kara's signed wagon duty needs the ripe south plot harvested before the relief cart arrives.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s01/fact-1",
+          "rq1-v2-b07-s01/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s01/fact-1",
+          "source_event_id": "rq1-v2-b07-s01/event",
+          "text": "Plot one is ripe and still holds its full harvest."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s01/fact-2",
+          "source_event_id": "rq1-v2-b07-s01/event",
+          "text": "Kara carries and has equipped a sound sickle."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "body_or_hard_obligation",
+            "source_ref": "rq1-v2-b07-s01/goal",
+            "description": "Load the relief wagon with the ripe plot's wheat."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s01",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/farm-workers"
+          },
+          "role_assignment": {
+            "organization_id": "organization/farm-workers",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/farm-workers"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "rq1-v2-b07-s01/event",
+            "source_kind": "OrganizationMembershipRecord",
+            "bridge_ref": "organization/farm-workers",
+            "actor_visible_text": "The farm-workers roster places Kara on today's relief-wagon loading team."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "kara",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/kara",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 62,
+            "spirit": 40,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "seeds",
+                "quantity": 10
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "kara-sickle",
+                "item_type_id": "sickle",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "kara-sickle"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 7
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            }
+          ],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:kara"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "elin-home",
+              "kara-private-room",
+              "community-garden",
+              "town-square",
+              "inn",
+              "farm-plot-1"
+            ],
+            "known_actor_ids": [
+              "jonah",
+              "farah",
+              "lucas"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s01/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/kara/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s01/goal",
+            "kind": "obligation_logistics",
+            "subject_ref": "farm-plot-1",
+            "status": "Active",
+            "description": "Load the relief wagon with the ripe plot's wheat."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/0/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "farm_plot",
+            "plot_id": "farm-plot-1",
+            "stage": "Harvestable",
+            "revision": 1,
+            "required_capability_id": "farm",
+            "minimum_capability": 1,
+            "harvest_tool_type_id": "sickle",
+            "yield_asset_id": "wheat",
+            "yield_quantity": 20
+          }
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b07-s02",
+      "actor_id": "iris",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s02",
+        "actor_id": "iris",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "mill_axle_material",
+        "subject_ref": "mill-axle-kit",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "The mill repair crew is waiting for Iris to hand Bram one unit of iron ore for the axle collar.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s02/fact-1",
+          "rq1-v2-b07-s02/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s02/fact-1",
+          "source_event_id": "rq1-v2-b07-s02/event",
+          "text": "Iris holds one tagged unit of iron ore for the axle collar."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s02/fact-2",
+          "source_event_id": "rq1-v2-b07-s02/event",
+          "text": "Bram's actor container is registered to receive the material."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "body_or_hard_obligation",
+            "source_ref": "rq1-v2-b07-s02/goal",
+            "description": "Put the axle material into the smith's custody."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s02",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/material-handling"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "capability_requirement",
+            "source_event_id": "rq1-v2-b07-s02/event",
+            "source_kind": "CapabilityRequirement",
+            "bridge_ref": "capability/material-handling",
+            "actor_visible_text": "The axle repair card names material handling as the missing capability and names Iris as the carrier."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "iris",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/iris",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 66,
+            "spirit": 68,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "iron-ore",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 11
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:iris"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "dorian-home",
+              "iris-private-room",
+              "mill",
+              "town-square",
+              "inn",
+              "mill-axle-kit"
+            ],
+            "known_actor_ids": [
+              "hugo",
+              "elin",
+              "jonah"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s02/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/iris/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s02/goal",
+            "kind": "tools_maintenance",
+            "subject_ref": "mill-axle-kit",
+            "status": "Active",
+            "description": "Put the axle material into the smith's custody."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/1/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "asset_container",
+            "owner_kind": "Actor",
+            "owner_id": "iris",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 11
+              },
+              {
+                "asset_id": "meal",
+                "quantity": 1
+              },
+              {
+                "asset_id": "iron-ore",
+                "quantity": 1
+              }
+            ],
+            "revision": 1
+          },
+          {
+            "kind": "asset_container",
+            "owner_kind": "Actor",
+            "owner_id": "bram",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 14
+              },
+              {
+                "asset_id": "meal",
+                "quantity": 1
+              },
+              {
+                "asset_id": "iron-ore",
+                "quantity": 3
+              },
+              {
+                "asset_id": "timber",
+                "quantity": 3
+              }
+            ],
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b07-s03",
+      "actor_id": "nolan",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s03",
+        "actor_id": "nolan",
+        "task_domain": "food_production",
+        "problem_kind": "flour_batch",
+        "subject_ref": "milling",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Nolan needs one sack of wheat milled for the carpenters' noon meal while the mill desk is open.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s03/fact-1",
+          "rq1-v2-b07-s03/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s03/fact-1",
+          "source_event_id": "rq1-v2-b07-s03/event",
+          "text": "Nolan carries one wheat and five Coin."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s03/fact-2",
+          "source_event_id": "rq1-v2-b07-s03/event",
+          "text": "Iris is an authorized milling provider and the mill has room for the fee."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "active_goal",
+            "source_ref": "rq1-v2-b07-s03/goal",
+            "description": "Turn the carried wheat into flour before meal preparation starts."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s03",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/town-carpenters"
+          },
+          "role_assignment": {
+            "organization_id": "organization/town-carpenters",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/town-carpenters"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "rq1-v2-b07-s03/event",
+            "source_kind": "OrganizationMembershipRecord",
+            "bridge_ref": "organization/town-carpenters",
+            "actor_visible_text": "The carpenters' meal roster assigns Nolan the flour batch for today."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "nolan",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/nolan",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 20,
+            "spirit": 57,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "wheat",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:nolan"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "brackenford-home-07",
+              "nolan-private-room",
+              "carpentry",
+              "town-square",
+              "inn",
+              "milling"
+            ],
+            "known_actor_ids": [
+              "mira",
+              "opal",
+              "pavel"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s03/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/nolan/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s03/goal",
+            "kind": "food_production",
+            "subject_ref": "milling",
+            "status": "Active",
+            "description": "Turn the carried wheat into flour before meal preparation starts."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/2/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "service",
+            "service_id": "milling",
+            "provider_actor_id": "iris",
+            "provider_owner_kind": "Shop",
+            "provider_container_id": "mill-stock",
+            "provider_container_revision": 1,
+            "coin_fee": 1,
+            "customer_inputs": [
+              {
+                "asset_id": "wheat",
+                "quantity": 1
+              }
+            ],
+            "customer_outputs": [
+              {
+                "asset_id": "flour",
+                "quantity": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b07-s04",
+      "actor_id": "hugo",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s04",
+        "actor_id": "hugo",
+        "task_domain": "trade_harvest",
+        "problem_kind": "sealed_berry_lot",
+        "subject_ref": "east-berry-lot-9",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "A note asks Hugo to sell a sealed berry lot, but the named lot has no registered holder or business container.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s04/fact-1",
+          "rq1-v2-b07-s04/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s04/fact-1",
+          "source_event_id": "rq1-v2-b07-s04/event",
+          "text": "No actor, shop, or warehouse container is registered for east-berry-lot-9."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s04/fact-2",
+          "source_event_id": "rq1-v2-b07-s04/event",
+          "text": "The tick-312 deadline leaves no registered terminal proposal for that lot."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "active_goal",
+            "source_ref": "rq1-v2-b07-s04/goal",
+            "description": "Resolve the berry-lot request without inventing a holder."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s04",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "resource/east-berry-lot-9"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "resource_custody",
+            "source_event_id": "rq1-v2-b07-s04/event",
+            "source_kind": "AssetCustodyRecord",
+            "bridge_ref": "resource/east-berry-lot-9",
+            "actor_visible_text": "The note cites custody of east-berry-lot-9, while the town registry has no matching custody entry."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "hugo",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/hugo",
+        "self": {
+          "body": {
+            "health_current": 85,
+            "health_maximum": 100,
+            "satiety": 24,
+            "spirit": 49,
+            "disease": "Ill",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 4
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:hugo"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "dorian-home",
+              "hugo-private-room",
+              "general-store",
+              "town-square",
+              "inn",
+              "east-berry-lot-9"
+            ],
+            "known_actor_ids": [
+              "dorian",
+              "iris",
+              "elin"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s04/event"
+            ],
+            "unresolved_refs": [
+              "east-berry-lot-9"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/hugo/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s04/goal",
+            "kind": "trade_harvest",
+            "subject_ref": "east-berry-lot-9",
+            "status": "Active",
+            "description": "Resolve the berry-lot request without inventing a holder."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/3/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "reference_resolution",
+            "reference_id": "east-berry-lot-9",
+            "registered_place": false,
+            "registered_actor": false,
+            "registered_container": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b07-s05",
+      "actor_id": "silas",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s05",
+        "actor_id": "silas",
+        "task_domain": "care_household",
+        "problem_kind": "household_fish",
+        "subject_ref": "fishing-ground",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Silas promised Rosa a fresh fish for a household meal and the fishing ground still has stock.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s05/fact-1",
+          "rq1-v2-b07-s05/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s05/fact-1",
+          "source_event_id": "rq1-v2-b07-s05/event",
+          "text": "The fishing ground holds twenty fish units."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s05/fact-2",
+          "source_event_id": "rq1-v2-b07-s05/event",
+          "text": "Silas carries and has equipped his fishing rod."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_schedule",
+            "source_ref": "rq1-v2-b07-s05/goal",
+            "description": "Fulfil the household fish promise."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s05",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/silas-rosa-fish"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "rq1-v2-b07-s05/event",
+            "source_kind": "CommitmentRecord",
+            "bridge_ref": "commitment/silas-rosa-fish",
+            "actor_visible_text": "Silas's household promise names one fresh fish due before the evening meal."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "silas",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/silas",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 44,
+            "spirit": 33,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "silas-fishing-rod",
+                "item_type_id": "fishing-rod",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "silas-fishing-rod"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 7
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "gather",
+              "value": 1
+            }
+          ],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:silas"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "brackenford-home-08",
+              "silas-private-room",
+              "fishing-ground",
+              "town-square",
+              "inn"
+            ],
+            "known_actor_ids": [
+              "rosa",
+              "aiko",
+              "alice"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s05/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/silas/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s05/goal",
+            "kind": "care_household",
+            "subject_ref": "fishing-ground",
+            "status": "Active",
+            "description": "Fulfil the household fish promise."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/4/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "resource_region",
+            "region_id": "fishing-ground",
+            "stock": 20,
+            "capacity": 20,
+            "revision": 1,
+            "required_tool_type_id": "fishing-rod",
+            "required_capability_id": "gather",
+            "minimum_capability": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b07-s06",
+      "actor_id": "elin",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s06",
+        "actor_id": "elin",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "route_meal_handoff",
+        "subject_ref": "jonah-route-meal",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Elin has been assigned to hand Jonah the packed meal for his long warehouse route.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s06/fact-1",
+          "rq1-v2-b07-s06/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s06/fact-1",
+          "source_event_id": "rq1-v2-b07-s06/event",
+          "text": "Elin holds one packed meal."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s06/fact-2",
+          "source_event_id": "rq1-v2-b07-s06/event",
+          "text": "Jonah's actor container is registered and currently has no meal."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_schedule",
+            "source_ref": "rq1-v2-b07-s06/goal",
+            "description": "Complete the route meal handoff."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s06",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "elin"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "actor_assignment",
+            "source_event_id": "rq1-v2-b07-s06/event",
+            "source_kind": "AssignmentRecord",
+            "bridge_ref": "assignment/warehouse-route-12",
+            "actor_visible_text": "Warehouse route 12 assigns the packed-meal handoff to Elin."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "elin",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/elin",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 54,
+            "spirit": 22,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:elin"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "elin-home",
+              "elin-private-room",
+              "town-warehouse",
+              "town-square",
+              "inn",
+              "jonah-route-meal"
+            ],
+            "known_actor_ids": [
+              "iris",
+              "jonah",
+              "kara"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s06/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/elin/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s06/goal",
+            "kind": "obligation_logistics",
+            "subject_ref": "jonah-route-meal",
+            "status": "Active",
+            "description": "Complete the route meal handoff."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/5/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "asset_container",
+            "owner_kind": "Actor",
+            "owner_id": "elin",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 8
+              },
+              {
+                "asset_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "revision": 1
+          },
+          {
+            "kind": "asset_container",
+            "owner_kind": "Actor",
+            "owner_id": "jonah",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 5
+              },
+              {
+                "asset_id": "meal",
+                "quantity": 0
+              }
+            ],
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b07-s07",
+      "actor_id": "emma",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s07",
+        "actor_id": "emma",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "inn_wood_axe",
+        "subject_ref": "craft-axe",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "The inn wood team needs a replacement axe, and Emma has the smithy training and materials for one.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s07/fact-1",
+          "rq1-v2-b07-s07/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s07/fact-1",
+          "source_event_id": "rq1-v2-b07-s07/event",
+          "text": "Emma has one iron ore and one timber reserved for the axe."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s07/fact-2",
+          "source_event_id": "rq1-v2-b07-s07/event",
+          "text": "Her current capability record includes smithy craft level one."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "role_relevance",
+            "source_ref": "rq1-v2-b07-s07/goal",
+            "description": "Make the replacement axe for the inn wood team."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s07",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/inn-wood-team"
+          },
+          "role_assignment": {
+            "organization_id": "organization/inn-wood-team",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/inn-wood-team"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "rq1-v2-b07-s07/event",
+            "source_kind": "OrganizationMembershipRecord",
+            "bridge_ref": "organization/inn-wood-team",
+            "actor_visible_text": "The inn wood-team roster lists Emma for replacement-tool preparation."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "emma",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/emma",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 63,
+            "spirit": 46,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 16
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "cook",
+              "value": 1
+            },
+            {
+              "capability_id": "craft",
+              "value": 1
+            }
+          ],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:emma"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "bernard-home",
+              "emma-private-room",
+              "inn",
+              "town-square",
+              "craft-axe"
+            ],
+            "known_actor_ids": [
+              "devin",
+              "clara",
+              "felix"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s07/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/emma/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s07/goal",
+            "kind": "tools_maintenance",
+            "subject_ref": "craft-axe",
+            "status": "Active",
+            "description": "Make the replacement axe for the inn wood team."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/6/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "recipe",
+            "recipe_id": "craft-axe",
+            "place_id": "smithy",
+            "required_capability_id": "craft",
+            "minimum_capability": 1,
+            "required_asset_id": null,
+            "inputs": [
+              {
+                "asset_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "asset_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "outputs": [
+              {
+                "asset_id": "axe",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b07-s08",
+      "actor_id": "devin",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s08",
+        "actor_id": "devin",
+        "task_domain": "food_production",
+        "problem_kind": "kitchen_pot_order",
+        "subject_ref": "smith-customer-pot",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Devin is assigned to obtain a new pot for the mill kitchen from the smithy service desk.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s08/fact-1",
+          "rq1-v2-b07-s08/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s08/fact-1",
+          "source_event_id": "rq1-v2-b07-s08/event",
+          "text": "Devin carries two iron ore and seven Coin."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s08/fact-2",
+          "source_event_id": "rq1-v2-b07-s08/event",
+          "text": "Celia is an authorized provider for the smithy pot service."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "role_relevance",
+            "source_ref": "rq1-v2-b07-s08/goal",
+            "description": "Settle the smithy pot order for the mill kitchen."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s08",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "devin"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "actor_assignment",
+            "source_event_id": "rq1-v2-b07-s08/event",
+            "source_kind": "AssignmentRecord",
+            "bridge_ref": "assignment/mill-kitchen-pot",
+            "actor_visible_text": "The mill kitchen order assigns Devin to settle the pot service with Celia."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "devin",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/devin",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 48,
+            "spirit": 61,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "iron-ore",
+                "quantity": 2
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 7
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:devin"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "bernard-home",
+              "devin-private-room",
+              "mill",
+              "town-square",
+              "inn",
+              "smith-customer-pot"
+            ],
+            "known_actor_ids": [
+              "bernard",
+              "emma",
+              "clara"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s08/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/devin/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s08/goal",
+            "kind": "food_production",
+            "subject_ref": "smith-customer-pot",
+            "status": "Active",
+            "description": "Settle the smithy pot order for the mill kitchen."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/7/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "service",
+            "service_id": "smith-customer-pot",
+            "provider_actor_id": "celia",
+            "provider_owner_kind": "Shop",
+            "provider_container_id": "smithy-stock",
+            "provider_container_revision": 1,
+            "coin_fee": 5,
+            "customer_inputs": [
+              {
+                "asset_id": "iron-ore",
+                "quantity": 2
+              }
+            ],
+            "customer_outputs": [
+              {
+                "asset_id": "pot",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b07-s09",
+      "actor_id": "clara",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s09",
+        "actor_id": "clara",
+        "task_domain": "trade_harvest",
+        "problem_kind": "missing_export_listing",
+        "subject_ref": "north-orchard-export",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Clara remembers a promise to sell a north-orchard crate, but no fixed listing or crate record exists.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s09/fact-1",
+          "rq1-v2-b07-s09/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s09/fact-1",
+          "source_event_id": "rq1-v2-b07-s09/event",
+          "text": "The public shop catalogue has no north-orchard export listing."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s09/fact-2",
+          "source_event_id": "rq1-v2-b07-s09/event",
+          "text": "Clara's inventory and all registered shop stocks contain no referenced crate."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "known_fact_only",
+            "source_ref": "rq1-v2-b07-s09/goal",
+            "description": "Avoid inventing a sale route for the absent export record."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s09",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/clara-north-orchard"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "rq1-v2-b07-s09/event",
+            "source_kind": "CommitmentRecord",
+            "bridge_ref": "commitment/clara-north-orchard",
+            "actor_visible_text": "The remembered promise names a north-orchard export but carries no listing or container reference."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "clara",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/clara",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 31,
+            "spirit": 55,
+            "disease": "Ill",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 10
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "cook",
+              "value": 1
+            }
+          ],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:clara"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "clara-home",
+              "clara-private-room",
+              "inn",
+              "town-square",
+              "north-orchard-export"
+            ],
+            "known_actor_ids": [
+              "emma",
+              "felix",
+              "grace"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s09/event"
+            ],
+            "unresolved_refs": [
+              "north-orchard-export",
+              "north-orchard-crate"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/clara/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s09/goal",
+            "kind": "trade_harvest",
+            "subject_ref": "north-orchard-export",
+            "status": "Active",
+            "description": "Avoid inventing a sale route for the absent export record."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/8/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "reference_resolution",
+            "reference_id": "north-orchard-export",
+            "registered_place": false,
+            "registered_actor": false,
+            "registered_container": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b07-s10",
+      "actor_id": "grace",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b07-s10",
+        "actor_id": "grace",
+        "task_domain": "care_household",
+        "problem_kind": "household_herbs",
+        "subject_ref": "herb-garden",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Grace knows the clinic household shelf is empty and can gather one herb from the stocked public garden.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b07-s10/fact-1",
+          "rq1-v2-b07-s10/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b07-s10/fact-1",
+          "source_event_id": "rq1-v2-b07-s10/event",
+          "text": "The herb garden holds twelve herb units."
+        },
+        {
+          "evidence_id": "rq1-v2-b07-s10/fact-2",
+          "source_event_id": "rq1-v2-b07-s10/event",
+          "text": "Grace's current capability record includes herbalism level one."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "known_fact_only",
+            "source_ref": "rq1-v2-b07-s10/goal",
+            "description": "Gather one herb for the household medicine shelf."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b07-s10",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "resource/herb-garden"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "resource_custody",
+            "source_event_id": "rq1-v2-b07-s10/event",
+            "source_kind": "AssetCustodyRecord",
+            "bridge_ref": "resource/herb-garden",
+            "actor_visible_text": "The garden ledger records twelve herb units available under public custody."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "grace",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/grace",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 46,
+            "spirit": 29,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "grace-sickle",
+                "item_type_id": "sickle",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "grace-sickle"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            },
+            {
+              "capability_id": "herbalism",
+              "value": 1
+            }
+          ],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:grace"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "clara-home",
+              "grace-private-room",
+              "community-garden",
+              "town-square",
+              "inn",
+              "herb-garden"
+            ],
+            "known_actor_ids": [
+              "felix",
+              "dorian",
+              "hugo"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b07-s10/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/grace/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b07-s10/goal",
+            "kind": "care_household",
+            "subject_ref": "herb-garden",
+            "status": "Active",
+            "description": "Gather one herb for the household medicine shelf."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/9/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "resource_region",
+            "region_id": "herb-garden",
+            "stock": 12,
+            "capacity": 12,
+            "revision": 1,
+            "required_tool_type_id": "",
+            "required_capability_id": "herbalism",
+            "minimum_capability": 1
+          }
+        ]
+      }
+    }
+  ]
+}

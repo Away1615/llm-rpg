@@ -1,0 +1,1651 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_21",
+  "block_id": "block_21",
+  "decision_tick": 540,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": "Late-afternoon production is active. Garden, clinic, market, smithy, mill, and inn records all refer to the same town snapshot."
+  },
+  "authority_setup": {
+    "source_state": {
+      "state_id": "worker-a-block-21-state",
+      "baseline_world_path": "godot/Config/town_world.json",
+      "shop_hours": [
+        {
+          "shop_id": "brackenford-general-shop",
+          "opens_at_tick_of_day": 192,
+          "closes_at_tick_of_day": 768
+        },
+        {
+          "shop_id": "brackenford-smithy-shop",
+          "opens_at_tick_of_day": 192,
+          "closes_at_tick_of_day": 768
+        },
+        {
+          "shop_id": "brackenford-mill-shop",
+          "opens_at_tick_of_day": 192,
+          "closes_at_tick_of_day": 768
+        },
+        {
+          "shop_id": "brackenford-inn-shop",
+          "opens_at_tick_of_day": 144,
+          "closes_at_tick_of_day": 864
+        }
+      ],
+      "container_balances": [
+        {
+          "owner_kind": "Shop",
+          "owner_id": "merchant-stock",
+          "asset_id": "seeds",
+          "quantity": 50
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "mill-stock",
+          "asset_id": "flour",
+          "quantity": 10
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "smithy-stock",
+          "asset_id": "pickaxe",
+          "quantity": 3
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "inn-stock",
+          "asset_id": "porridge",
+          "quantity": 4
+        }
+      ]
+    }
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b21-s01",
+      "actor_id": "iris",
+      "domain": "care_household",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "care/iris-household-dose",
+        "summary": "Iris holds a household medicine pouch labelled common medicine, while the clinic issue log records advanced medicine under the same seal.",
+        "facts": [
+          {
+            "fact_id": "b21s01-label-common",
+            "predicate": "recorded_asset",
+            "subject": "medicine-pouch-21",
+            "source": "pouch-label",
+            "value": "common-medicine"
+          },
+          {
+            "fact_id": "b21s01-log-advanced",
+            "predicate": "recorded_asset",
+            "subject": "medicine-pouch-21",
+            "source": "clinic-issue-log",
+            "value": "advanced-medicine"
+          },
+          {
+            "fact_id": "b21s01-seal",
+            "predicate": "recorded_seal",
+            "subject": "medicine-pouch-21",
+            "value": "clinic-seal-21"
+          },
+          {
+            "fact_id": "b21s01-check-missing",
+            "predicate": "pouch_check_record_count",
+            "subject": "medicine-pouch-21",
+            "quantity": 0
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s01-label-common",
+          "predicate": "recorded_asset",
+          "subject": "medicine-pouch-21",
+          "source": "pouch-label",
+          "value": "common-medicine"
+        },
+        {
+          "fact_id": "b21s01-log-advanced",
+          "predicate": "recorded_asset",
+          "subject": "medicine-pouch-21",
+          "source": "clinic-issue-log",
+          "value": "advanced-medicine"
+        },
+        {
+          "fact_id": "b21s01-seal",
+          "predicate": "recorded_seal",
+          "subject": "medicine-pouch-21",
+          "value": "clinic-seal-21"
+        },
+        {
+          "fact_id": "b21s01-check-missing",
+          "predicate": "pouch_check_record_count",
+          "subject": "medicine-pouch-21",
+          "quantity": 0
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "priority_basis": "critical_current_need",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s01",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/iris-household-dose"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/iris-medicine-label/21",
+            "affected_node": {
+              "kind": "Commitment",
+              "id": "commitment/iris-household-dose"
+            },
+            "role_assignment": null
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 56,
+          "spirit": 50,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [
+            {
+              "item_type_id": "common-medicine",
+              "quantity": 1
+            }
+          ],
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 0
+          }
+        ],
+        "capabilities": [],
+        "active_goal_ref": "goal/give-correct-household-medicine",
+        "knowledge": {
+          "known_target_refs": [
+            "care/iris-household-dose",
+            "record/pouch-label",
+            "record/clinic-issue-log"
+          ],
+          "known_fact_ids": [
+            "b21s01-label-common",
+            "b21s01-log-advanced",
+            "b21s01-seal",
+            "b21s01-check-missing"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b21-s02",
+      "actor_id": "farah",
+      "domain": "obligation_logistics",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "assignment/farah-garden-seeds",
+        "summary": "Farah is assigned to supply ten seeds to the community garden; she has ten coin and the open general store lists a ten-seed packet.",
+        "facts": [
+          {
+            "fact_id": "b21s02-assigned",
+            "predicate": "assignment_actor",
+            "subject": "farah-garden-seeds",
+            "actor_id": "farah"
+          },
+          {
+            "fact_id": "b21s02-seed-gap",
+            "predicate": "asset_needed",
+            "subject": "community-garden",
+            "asset_id": "seeds",
+            "quantity": 10
+          },
+          {
+            "fact_id": "b21s02-store-stock",
+            "predicate": "container_balance",
+            "subject": "merchant-stock",
+            "asset_id": "seeds",
+            "quantity": 50
+          },
+          {
+            "fact_id": "b21s02-coin",
+            "predicate": "actor_balance",
+            "subject": "farah",
+            "asset_id": "coin",
+            "quantity": 10
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s02-assigned",
+          "predicate": "assignment_actor",
+          "subject": "farah-garden-seeds",
+          "actor_id": "farah"
+        },
+        {
+          "fact_id": "b21s02-seed-gap",
+          "predicate": "asset_needed",
+          "subject": "community-garden",
+          "asset_id": "seeds",
+          "quantity": 10
+        },
+        {
+          "fact_id": "b21s02-store-stock",
+          "predicate": "container_balance",
+          "subject": "merchant-stock",
+          "asset_id": "seeds",
+          "quantity": 50
+        },
+        {
+          "fact_id": "b21s02-coin",
+          "predicate": "actor_balance",
+          "subject": "farah",
+          "asset_id": "coin",
+          "quantity": 10
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "priority_basis": "hard_obligation_due",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s02",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "farah"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/farah-seed-assignment/21",
+            "affected_node": {
+              "kind": "Actor",
+              "id": "farah"
+            },
+            "role_assignment": null
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 61,
+          "spirit": 57,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [],
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 10
+          }
+        ],
+        "capabilities": [],
+        "active_goal_ref": "goal/supply-assigned-garden-seeds",
+        "knowledge": {
+          "known_target_refs": [
+            "assignment/farah-garden-seeds",
+            "listing/merchant-seeds-retail",
+            "place/general-store"
+          ],
+          "known_fact_ids": [
+            "b21s02-assigned",
+            "b21s02-seed-gap",
+            "b21s02-store-stock",
+            "b21s02-coin"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b21-s03",
+      "actor_id": "lucas",
+      "domain": "tools_maintenance",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "tool/lucas-axe",
+        "summary": "The woodworkers register assigns Lucas's axe serial to both an in-service axe and a retired axe, with no later custody entry.",
+        "facts": [
+          {
+            "fact_id": "b21s03-service-entry",
+            "predicate": "recorded_condition",
+            "subject": "lucas-axe",
+            "source": "active-tool-register",
+            "value": "in-service"
+          },
+          {
+            "fact_id": "b21s03-retired-entry",
+            "predicate": "recorded_condition",
+            "subject": "lucas-axe",
+            "source": "retired-tool-register",
+            "value": "retired"
+          },
+          {
+            "fact_id": "b21s03-custody-missing",
+            "predicate": "later_custody_record_count",
+            "subject": "lucas-axe",
+            "quantity": 0
+          },
+          {
+            "fact_id": "b21s03-carried",
+            "predicate": "actor_carries_instance",
+            "subject": "lucas",
+            "item_instance_id": "lucas-axe",
+            "item_type_id": "axe"
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s03-service-entry",
+          "predicate": "recorded_condition",
+          "subject": "lucas-axe",
+          "source": "active-tool-register",
+          "value": "in-service"
+        },
+        {
+          "fact_id": "b21s03-retired-entry",
+          "predicate": "recorded_condition",
+          "subject": "lucas-axe",
+          "source": "retired-tool-register",
+          "value": "retired"
+        },
+        {
+          "fact_id": "b21s03-custody-missing",
+          "predicate": "later_custody_record_count",
+          "subject": "lucas-axe",
+          "quantity": 0
+        },
+        {
+          "fact_id": "b21s03-carried",
+          "predicate": "actor_carries_instance",
+          "subject": "lucas",
+          "item_instance_id": "lucas-axe",
+          "item_type_id": "axe"
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "priority_basis": "blocked_active_task",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s03",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "resource/woodworkers-tool-register"
+          },
+          "role_assignment": {
+            "organization_id": "woodcutters",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "resource/woodworkers-tool-register"
+          },
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/woodworkers-tool-register/21",
+            "affected_node": {
+              "kind": "Resource",
+              "id": "resource/woodworkers-tool-register"
+            },
+            "role_assignment": {
+              "organization_id": "woodcutters",
+              "responsibility_kind": "Resource",
+              "responsibility_id": "resource/woodworkers-tool-register"
+            }
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 49,
+          "spirit": 60,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [],
+          "instances": [
+            {
+              "item_instance_id": "lucas-axe",
+              "item_type_id": "axe"
+            }
+          ],
+          "equipped_hand_instance_id": "lucas-axe"
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 13
+          }
+        ],
+        "capabilities": [
+          {
+            "capability_id": "gather",
+            "value": 1
+          }
+        ],
+        "active_goal_ref": "goal/establish-current-axe-custody",
+        "knowledge": {
+          "known_target_refs": [
+            "tool/lucas-axe",
+            "record/active-tool-register",
+            "record/retired-tool-register"
+          ],
+          "known_fact_ids": [
+            "b21s03-service-entry",
+            "b21s03-retired-entry",
+            "b21s03-custody-missing",
+            "b21s03-carried"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b21-s04",
+      "actor_id": "mira",
+      "domain": "food_production",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "stock/farah-home-flour",
+        "summary": "Mira's household pantry lacks flour for its evening batch; the open mill lists flour for two coin and she has four.",
+        "facts": [
+          {
+            "fact_id": "b21s04-flour-gap",
+            "predicate": "asset_needed",
+            "subject": "farah-home-pantry",
+            "asset_id": "flour",
+            "quantity": 1
+          },
+          {
+            "fact_id": "b21s04-mill-stock",
+            "predicate": "container_balance",
+            "subject": "mill-stock",
+            "asset_id": "flour",
+            "quantity": 10
+          },
+          {
+            "fact_id": "b21s04-price",
+            "predicate": "listed_price",
+            "subject": "mill-flour-retail",
+            "asset_id": "coin",
+            "quantity": 2
+          },
+          {
+            "fact_id": "b21s04-coin",
+            "predicate": "actor_balance",
+            "subject": "mira",
+            "asset_id": "coin",
+            "quantity": 4
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s04-flour-gap",
+          "predicate": "asset_needed",
+          "subject": "farah-home-pantry",
+          "asset_id": "flour",
+          "quantity": 1
+        },
+        {
+          "fact_id": "b21s04-mill-stock",
+          "predicate": "container_balance",
+          "subject": "mill-stock",
+          "asset_id": "flour",
+          "quantity": 10
+        },
+        {
+          "fact_id": "b21s04-price",
+          "predicate": "listed_price",
+          "subject": "mill-flour-retail",
+          "asset_id": "coin",
+          "quantity": 2
+        },
+        {
+          "fact_id": "b21s04-coin",
+          "predicate": "actor_balance",
+          "subject": "mira",
+          "asset_id": "coin",
+          "quantity": 4
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "priority_basis": "current_production_failure",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s04",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "farah-home"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/farah-home-pantry/21",
+            "affected_node": {
+              "kind": "Place",
+              "id": "farah-home"
+            },
+            "role_assignment": null
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 47,
+          "spirit": 53,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [],
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 4
+          }
+        ],
+        "capabilities": [],
+        "active_goal_ref": "goal/fill-household-flour-gap",
+        "knowledge": {
+          "known_target_refs": [
+            "stock/farah-home-flour",
+            "listing/mill-flour-retail",
+            "place/mill"
+          ],
+          "known_fact_ids": [
+            "b21s04-flour-gap",
+            "b21s04-mill-stock",
+            "b21s04-price",
+            "b21s04-coin"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b21-s05",
+      "actor_id": "nolan",
+      "domain": "trade_harvest",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "commitment/nolan-timber-sale",
+        "summary": "Nolan's sale note prices dry timber, but the yard moisture card marks the same lot wet and no repeat reading is recorded.",
+        "facts": [
+          {
+            "fact_id": "b21s05-sale-grade",
+            "predicate": "required_grade",
+            "subject": "nolan-timber-sale",
+            "value": "dry"
+          },
+          {
+            "fact_id": "b21s05-yard-grade",
+            "predicate": "recorded_grade",
+            "subject": "nolan-timber-lot",
+            "source": "moisture-card",
+            "value": "wet"
+          },
+          {
+            "fact_id": "b21s05-timber",
+            "predicate": "actor_balance",
+            "subject": "nolan",
+            "asset_id": "timber",
+            "quantity": 1
+          },
+          {
+            "fact_id": "b21s05-repeat-missing",
+            "predicate": "repeat_reading_count",
+            "subject": "nolan-timber-lot",
+            "quantity": 0
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s05-sale-grade",
+          "predicate": "required_grade",
+          "subject": "nolan-timber-sale",
+          "value": "dry"
+        },
+        {
+          "fact_id": "b21s05-yard-grade",
+          "predicate": "recorded_grade",
+          "subject": "nolan-timber-lot",
+          "source": "moisture-card",
+          "value": "wet"
+        },
+        {
+          "fact_id": "b21s05-timber",
+          "predicate": "actor_balance",
+          "subject": "nolan",
+          "asset_id": "timber",
+          "quantity": 1
+        },
+        {
+          "fact_id": "b21s05-repeat-missing",
+          "predicate": "repeat_reading_count",
+          "subject": "nolan-timber-lot",
+          "quantity": 0
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "priority_basis": "scheduled_duty_risk",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s05",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/nolan-timber-sale"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/nolan-timber-sale/21",
+            "affected_node": {
+              "kind": "Commitment",
+              "id": "commitment/nolan-timber-sale"
+            },
+            "role_assignment": null
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 43,
+          "spirit": 46,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [
+            {
+              "item_type_id": "timber",
+              "quantity": 1
+            }
+          ],
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 0
+          }
+        ],
+        "capabilities": [],
+        "active_goal_ref": "goal/settle-timber-grade-before-sale",
+        "knowledge": {
+          "known_target_refs": [
+            "commitment/nolan-timber-sale",
+            "harvest/nolan-timber-lot",
+            "record/moisture-card"
+          ],
+          "known_fact_ids": [
+            "b21s05-sale-grade",
+            "b21s05-yard-grade",
+            "b21s05-timber",
+            "b21s05-repeat-missing"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b21-s06",
+      "actor_id": "opal",
+      "domain": "care_household",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "care/carpentry-meal-handoff",
+        "summary": "Opal knows the shared meal is released at the carpentry break at tick 600; the current tick is 540 and no meal is yet in her custody.",
+        "facts": [
+          {
+            "fact_id": "b21s06-break-start",
+            "predicate": "gate_opens_at",
+            "subject": "carpentry-meal-handoff",
+            "tick": 600
+          },
+          {
+            "fact_id": "b21s06-now",
+            "predicate": "current_tick",
+            "subject": "block_21",
+            "tick": 540
+          },
+          {
+            "fact_id": "b21s06-no-meal",
+            "predicate": "actor_balance",
+            "subject": "opal",
+            "asset_id": "meal",
+            "quantity": 0
+          },
+          {
+            "fact_id": "b21s06-release-state",
+            "predicate": "release_state",
+            "subject": "carpentry-shared-meal",
+            "value": "scheduled"
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s06-break-start",
+          "predicate": "gate_opens_at",
+          "subject": "carpentry-meal-handoff",
+          "tick": 600
+        },
+        {
+          "fact_id": "b21s06-now",
+          "predicate": "current_tick",
+          "subject": "block_21",
+          "tick": 540
+        },
+        {
+          "fact_id": "b21s06-no-meal",
+          "predicate": "actor_balance",
+          "subject": "opal",
+          "asset_id": "meal",
+          "quantity": 0
+        },
+        {
+          "fact_id": "b21s06-release-state",
+          "predicate": "release_state",
+          "subject": "carpentry-shared-meal",
+          "value": "scheduled"
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "priority_basis": "household_shortfall",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s06",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/carpentry-meal-window"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/carpentry-meal-window/21",
+            "affected_node": {
+              "kind": "Resource",
+              "id": "information/carpentry-meal-window"
+            },
+            "role_assignment": null
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 64,
+          "spirit": 44,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [],
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 2
+          }
+        ],
+        "capabilities": [],
+        "active_goal_ref": "goal/collect-carpentry-household-meal",
+        "knowledge": {
+          "known_target_refs": [
+            "care/carpentry-meal-handoff",
+            "resource/carpentry-shared-meal",
+            "place/carpentry"
+          ],
+          "known_fact_ids": [
+            "b21s06-break-start",
+            "b21s06-now",
+            "b21s06-no-meal",
+            "b21s06-release-state"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b21-s07",
+      "actor_id": "pavel",
+      "domain": "obligation_logistics",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "delivery/clinic-herb-donation",
+        "summary": "Pavel has two herbs for a clinic donation, but the receiving form names two different households and neither recipient has signed.",
+        "facts": [
+          {
+            "fact_id": "b21s07-form-household-a",
+            "predicate": "recorded_recipient",
+            "subject": "clinic-herb-donation",
+            "source": "form-front",
+            "value": "household-bracken-07"
+          },
+          {
+            "fact_id": "b21s07-form-household-b",
+            "predicate": "recorded_recipient",
+            "subject": "clinic-herb-donation",
+            "source": "form-back",
+            "value": "household-bracken-08"
+          },
+          {
+            "fact_id": "b21s07-signature-missing",
+            "predicate": "recipient_signature_count",
+            "subject": "clinic-herb-donation",
+            "quantity": 0
+          },
+          {
+            "fact_id": "b21s07-herb",
+            "predicate": "actor_balance",
+            "subject": "pavel",
+            "asset_id": "herb",
+            "quantity": 2
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s07-form-household-a",
+          "predicate": "recorded_recipient",
+          "subject": "clinic-herb-donation",
+          "source": "form-front",
+          "value": "household-bracken-07"
+        },
+        {
+          "fact_id": "b21s07-form-household-b",
+          "predicate": "recorded_recipient",
+          "subject": "clinic-herb-donation",
+          "source": "form-back",
+          "value": "household-bracken-08"
+        },
+        {
+          "fact_id": "b21s07-signature-missing",
+          "predicate": "recipient_signature_count",
+          "subject": "clinic-herb-donation",
+          "quantity": 0
+        },
+        {
+          "fact_id": "b21s07-herb",
+          "predicate": "actor_balance",
+          "subject": "pavel",
+          "asset_id": "herb",
+          "quantity": 2
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "priority_basis": "quality_or_audit_risk",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s07",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "town-clinic"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/clinic-donation-place/21",
+            "affected_node": {
+              "kind": "Place",
+              "id": "town-clinic"
+            },
+            "role_assignment": null
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 52,
+          "spirit": 36,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [
+            {
+              "item_type_id": "herb",
+              "quantity": 2
+            }
+          ],
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 9
+          }
+        ],
+        "capabilities": [
+          {
+            "capability_id": "medicine",
+            "value": 1
+          }
+        ],
+        "active_goal_ref": "goal/route-clinic-donation-correctly",
+        "knowledge": {
+          "known_target_refs": [
+            "delivery/clinic-herb-donation",
+            "record/donation-form-front",
+            "record/donation-form-back",
+            "place/town-clinic"
+          ],
+          "known_fact_ids": [
+            "b21s07-form-household-a",
+            "b21s07-form-household-b",
+            "b21s07-signature-missing",
+            "b21s07-herb"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b21-s08",
+      "actor_id": "quinn",
+      "domain": "tools_maintenance",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "assignment/quinn-clinic-cellar-pickaxe",
+        "summary": "Quinn is assigned to replace the retired clinic-cellar pickaxe; the smithy lists one for thirteen coin and he has thirteen.",
+        "facts": [
+          {
+            "fact_id": "b21s08-assigned",
+            "predicate": "assignment_actor",
+            "subject": "quinn-clinic-cellar-pickaxe",
+            "actor_id": "quinn"
+          },
+          {
+            "fact_id": "b21s08-tool-gap",
+            "predicate": "asset_needed",
+            "subject": "clinic-cellar-kit",
+            "asset_id": "pickaxe",
+            "quantity": 1
+          },
+          {
+            "fact_id": "b21s08-smithy-stock",
+            "predicate": "container_balance",
+            "subject": "smithy-stock",
+            "asset_id": "pickaxe",
+            "quantity": 3
+          },
+          {
+            "fact_id": "b21s08-coin",
+            "predicate": "actor_balance",
+            "subject": "quinn",
+            "asset_id": "coin",
+            "quantity": 13
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s08-assigned",
+          "predicate": "assignment_actor",
+          "subject": "quinn-clinic-cellar-pickaxe",
+          "actor_id": "quinn"
+        },
+        {
+          "fact_id": "b21s08-tool-gap",
+          "predicate": "asset_needed",
+          "subject": "clinic-cellar-kit",
+          "asset_id": "pickaxe",
+          "quantity": 1
+        },
+        {
+          "fact_id": "b21s08-smithy-stock",
+          "predicate": "container_balance",
+          "subject": "smithy-stock",
+          "asset_id": "pickaxe",
+          "quantity": 3
+        },
+        {
+          "fact_id": "b21s08-coin",
+          "predicate": "actor_balance",
+          "subject": "quinn",
+          "asset_id": "coin",
+          "quantity": 13
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "priority_basis": "maintenance_warning",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s08",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "quinn"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/quinn-cellar-tool/21",
+            "affected_node": {
+              "kind": "Actor",
+              "id": "quinn"
+            },
+            "role_assignment": null
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 54,
+          "spirit": 62,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [],
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 13
+          }
+        ],
+        "capabilities": [
+          {
+            "capability_id": "medicine",
+            "value": 1
+          }
+        ],
+        "active_goal_ref": "goal/replace-clinic-cellar-pickaxe",
+        "knowledge": {
+          "known_target_refs": [
+            "assignment/quinn-clinic-cellar-pickaxe",
+            "listing/smithy-pickaxe-retail",
+            "place/smithy"
+          ],
+          "known_fact_ids": [
+            "b21s08-assigned",
+            "b21s08-tool-gap",
+            "b21s08-smithy-stock",
+            "b21s08-coin"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b21-s09",
+      "actor_id": "rosa",
+      "domain": "food_production",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "duty/herb-workers-meal-rotation",
+        "summary": "Rosa's meal rotation lacks one serving; the open inn lists porridge for four coin and she has four.",
+        "facts": [
+          {
+            "fact_id": "b21s09-meal-gap",
+            "predicate": "asset_needed",
+            "subject": "herb-workers-meal-rotation",
+            "asset_id": "porridge",
+            "quantity": 1
+          },
+          {
+            "fact_id": "b21s09-inn-stock",
+            "predicate": "container_balance",
+            "subject": "inn-stock",
+            "asset_id": "porridge",
+            "quantity": 4
+          },
+          {
+            "fact_id": "b21s09-price",
+            "predicate": "listed_price",
+            "subject": "inn-porridge-retail",
+            "asset_id": "coin",
+            "quantity": 4
+          },
+          {
+            "fact_id": "b21s09-coin",
+            "predicate": "actor_balance",
+            "subject": "rosa",
+            "asset_id": "coin",
+            "quantity": 4
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s09-meal-gap",
+          "predicate": "asset_needed",
+          "subject": "herb-workers-meal-rotation",
+          "asset_id": "porridge",
+          "quantity": 1
+        },
+        {
+          "fact_id": "b21s09-inn-stock",
+          "predicate": "container_balance",
+          "subject": "inn-stock",
+          "asset_id": "porridge",
+          "quantity": 4
+        },
+        {
+          "fact_id": "b21s09-price",
+          "predicate": "listed_price",
+          "subject": "inn-porridge-retail",
+          "asset_id": "coin",
+          "quantity": 4
+        },
+        {
+          "fact_id": "b21s09-coin",
+          "predicate": "actor_balance",
+          "subject": "rosa",
+          "asset_id": "coin",
+          "quantity": 4
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "priority_basis": "optional_optimization",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s09",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "duty/herb-workers-meal-rotation"
+          },
+          "role_assignment": {
+            "organization_id": "herb-workers",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "duty/herb-workers-meal-rotation"
+          },
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/herb-workers-meal-duty/21",
+            "affected_node": {
+              "kind": "Duty",
+              "id": "duty/herb-workers-meal-rotation"
+            },
+            "role_assignment": {
+              "organization_id": "herb-workers",
+              "responsibility_kind": "Duty",
+              "responsibility_id": "duty/herb-workers-meal-rotation"
+            }
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 59,
+          "spirit": 48,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [],
+          "instances": [
+            {
+              "item_instance_id": "rosa-basket",
+              "item_type_id": "basket"
+            }
+          ],
+          "equipped_hand_instance_id": "rosa-basket"
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 4
+          }
+        ],
+        "capabilities": [
+          {
+            "capability_id": "herbalism",
+            "value": 1
+          }
+        ],
+        "active_goal_ref": "goal/fill-herb-workers-meal-rotation",
+        "knowledge": {
+          "known_target_refs": [
+            "duty/herb-workers-meal-rotation",
+            "listing/inn-porridge-retail",
+            "place/inn"
+          ],
+          "known_fact_ids": [
+            "b21s09-meal-gap",
+            "b21s09-inn-stock",
+            "b21s09-price",
+            "b21s09-coin"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b21-s10",
+      "actor_id": "emma",
+      "domain": "trade_harvest",
+      "decision_tick": 540,
+      "deadline_tick": 780,
+      "pressure_packet": {
+        "subject_ref": "trade/inn-grilled-fish-batch",
+        "summary": "The inn trade shelf lacks grilled fish; Emma has one fish, a pot, and the cooking capability for one batch.",
+        "facts": [
+          {
+            "fact_id": "b21s10-batch-gap",
+            "predicate": "asset_needed",
+            "subject": "inn-trade-shelf",
+            "asset_id": "grilled-fish",
+            "quantity": 1
+          },
+          {
+            "fact_id": "b21s10-fish",
+            "predicate": "actor_balance",
+            "subject": "emma",
+            "asset_id": "fish",
+            "quantity": 1
+          },
+          {
+            "fact_id": "b21s10-pot",
+            "predicate": "actor_carries_instance",
+            "subject": "emma",
+            "item_instance_id": "emma-pot",
+            "item_type_id": "pot"
+          },
+          {
+            "fact_id": "b21s10-cook",
+            "predicate": "actor_capability",
+            "subject": "emma",
+            "capability_id": "cook",
+            "value": 1
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b21s10-batch-gap",
+          "predicate": "asset_needed",
+          "subject": "inn-trade-shelf",
+          "asset_id": "grilled-fish",
+          "quantity": 1
+        },
+        {
+          "fact_id": "b21s10-fish",
+          "predicate": "actor_balance",
+          "subject": "emma",
+          "asset_id": "fish",
+          "quantity": 1
+        },
+        {
+          "fact_id": "b21s10-pot",
+          "predicate": "actor_carries_instance",
+          "subject": "emma",
+          "item_instance_id": "emma-pot",
+          "item_type_id": "pot"
+        },
+        {
+          "fact_id": "b21s10-cook",
+          "predicate": "actor_capability",
+          "subject": "emma",
+          "capability_id": "cook",
+          "value": 1
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "priority_basis": "long_horizon_opportunity",
+            "deadline_tick": 780,
+            "direct_actor_binding": true
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b21-s10",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "inn"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "Pressure",
+            "source_id": "pressure/inn-fish-trade/21",
+            "affected_node": {
+              "kind": "Place",
+              "id": "inn"
+            },
+            "role_assignment": null
+          }
+        }
+      },
+      "actor_decision_view": {
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 48,
+          "spirit": 54,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": [
+            {
+              "item_type_id": "fish",
+              "quantity": 1
+            }
+          ],
+          "instances": [
+            {
+              "item_instance_id": "emma-pot",
+              "item_type_id": "pot"
+            }
+          ],
+          "equipped_hand_instance_id": null
+        },
+        "currency": [
+          {
+            "currency_id": "coin",
+            "quantity": 0
+          }
+        ],
+        "capabilities": [
+          {
+            "capability_id": "cook",
+            "value": 1
+          }
+        ],
+        "active_goal_ref": "goal/prepare-inn-fish-trade-batch",
+        "knowledge": {
+          "known_target_refs": [
+            "trade/inn-grilled-fish-batch",
+            "recipe/cook-grilled-fish",
+            "place/inn"
+          ],
+          "known_fact_ids": [
+            "b21s10-batch-gap",
+            "b21s10-fish",
+            "b21s10-pot",
+            "b21s10-cook"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange",
+          "Craft",
+          "RegionOperation",
+          "AssetTransfer",
+          "ServiceExchange"
+        ],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "shared_state_ref": "worker-a-block-21-state"
+      }
+    }
+  ]
+}

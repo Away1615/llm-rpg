@@ -1,0 +1,397 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_14",
+  "block_id": "block_14",
+  "condition_order": "agent_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b14-s01",
+      "actor_id": "farah",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "RequiresCapability",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "farah",
+        "pressure_id": "rq1-v2-b14-s01"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "no_grounded_path",
+        "reason": "The dietary property closes over no registered asset, listing or recipe, so the present action vocabulary has no grounded food-source path.",
+        "basis_refs": [
+          "rq1-v2-b14-s01/fact-1",
+          "rq1-v2-b14-s01/fact-2",
+          "rq1-v2-b14-s01/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b14-s02",
+      "actor_id": "quinn",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "trade_harvest",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "quinn",
+        "pressure_id": "rq1-v2-b14-s02"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "temporal_gate",
+        "reason": "The lot is Authority-sealed until a future automatic release and is absent from Quinn's inventory now; no supported preparatory step changes that gate.",
+        "basis_refs": [
+          "rq1-v2-b14-s02/fact-1",
+          "rq1-v2-b14-s02/fact-2",
+          "rq1-v2-b14-s02/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b14-s03",
+      "actor_id": "grace",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "agent_only",
+        "domain": "care_household",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "grace",
+        "pressure_id": "rq1-v2-b14-s03"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "verification_required",
+        "reason": "Two actor-visible batch marks conflict and the product exposes no identification proposal; committing a care transfer would invent the vial's asset identity.",
+        "basis_refs": [
+          "rq1-v2-b14-s03/fact-1",
+          "rq1-v2-b14-s03/fact-2",
+          "rq1-v2-b14-s03/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b14-s04",
+      "actor_id": "hugo",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "both",
+        "domain": "obligation_logistics",
+        "task_family": "commit_listed_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ListedExchange",
+        "actor_id": "hugo",
+        "pressure_id": "rq1-v2-b14-s04"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ListedExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b14-s04-action",
+        "action_family": "ListedExchange",
+        "arguments": {
+          "listing_id": "merchant-timber-retail"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b14-s05",
+      "actor_id": "iris",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E2",
+        "event_edge_kind": "HoldsRequiredInformation",
+        "admission_role": "neither",
+        "domain": "tools_maintenance",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "iris",
+        "pressure_id": "rq1-v2-b14-s05"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "verification_required",
+        "reason": "The two required specifications conflict and no current proposal can measure the belt or establish document precedence.",
+        "basis_refs": [
+          "rq1-v2-b14-s05/fact-1",
+          "rq1-v2-b14-s05/fact-2",
+          "rq1-v2-b14-s05/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b14-s06",
+      "actor_id": "jonah",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "food_production",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "jonah",
+        "pressure_id": "rq1-v2-b14-s06"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "no_grounded_path",
+        "reason": "The promise's only compatibility term has no world definition, so no recipe or exchange can be grounded as satisfying it.",
+        "basis_refs": [
+          "rq1-v2-b14-s06/fact-1",
+          "rq1-v2-b14-s06/fact-2",
+          "rq1-v2-b14-s06/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b14-s07",
+      "actor_id": "kara",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E1",
+        "event_edge_kind": "RequiresCapability",
+        "admission_role": "neither",
+        "domain": "trade_harvest",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "kara",
+        "pressure_id": "rq1-v2-b14-s07"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "no_grounded_path",
+        "reason": "The requested grade and its certification have no registered semantics, leaving no grounded harvest or exchange terminal.",
+        "basis_refs": [
+          "rq1-v2-b14-s07/fact-1",
+          "rq1-v2-b14-s07/fact-2",
+          "rq1-v2-b14-s07/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b14-s08",
+      "actor_id": "lucas",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "care_household",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "lucas",
+        "pressure_id": "rq1-v2-b14-s08"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "temporal_gate",
+        "reason": "The prescribed dose remains in clinic custody until its automatic release tick, and Lucas has no supported step that can lawfully advance the schedule.",
+        "basis_refs": [
+          "rq1-v2-b14-s08/fact-1",
+          "rq1-v2-b14-s08/fact-2",
+          "rq1-v2-b14-s08/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b14-s09",
+      "actor_id": "mira",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E2",
+        "event_edge_kind": "HoldsRequiredInformation",
+        "admission_role": "neither",
+        "domain": "obligation_logistics",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "mira",
+        "pressure_id": "rq1-v2-b14-s09"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "temporal_gate",
+        "reason": "The Authority-issued destination token does not exist until the future automatic slot opening, so no current transfer can be bound.",
+        "basis_refs": [
+          "rq1-v2-b14-s09/fact-1",
+          "rq1-v2-b14-s09/fact-2",
+          "rq1-v2-b14-s09/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b14-s10",
+      "actor_id": "nolan",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_14",
+        "block_number": 14,
+        "owner_worker": "D",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "nolan",
+        "pressure_id": "rq1-v2-b14-s10"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "verification_required",
+        "reason": "The promised tool has two incompatible unregistered identities and the current catalogue exposes no inspection or serial-resolution operation.",
+        "basis_refs": [
+          "rq1-v2-b14-s10/fact-1",
+          "rq1-v2-b14-s10/fact-2",
+          "rq1-v2-b14-s10/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    }
+  ]
+}

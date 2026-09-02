@@ -1,0 +1,97 @@
+{
+  "schema_version": "alice.formal-research-readiness.v1",
+  "readiness_id": "formal-prerequisites-current",
+  "preregistration_status": "Frozen / Preregistered",
+  "preregistration_artifact_version": "alice-formal-preregistration-current",
+  "formal_collection_allowed": true,
+  "demo_values_may_resolve_formal_tbd": false,
+  "shared_unresolved_input_ids": [],
+  "shared_resolved_parameters": {
+    "formal_population": 25,
+    "formal_pair_max_in_flight": 30,
+    "formal_provider_max_in_flight": 30,
+    "formal_provider_timeout_seconds": 300,
+    "formal_transport_max_attempts": 3,
+    "formal_transport_retry_backoff_ms": [5000, 15000],
+    "provider_service_version_tracking": false,
+    "pricing_is_diagnostic_only": true,
+    "formal_planner_compatibility_pilot": {
+      "status": "host_compatible_not_formal_success",
+      "artifact_directory": "godot/Artifacts/FormalPilot/20260830T113222078Z",
+      "output_token_ceiling": 8192,
+      "rq1_host_compatible_conditions": 2,
+      "rq2_host_compatible_conditions": 2,
+      "authority_world_action_successes": 0
+    },
+    "live_escalation_diagnostic": {
+      "status": "passed",
+      "artifact_path": "user://recordings/live-escalation-diagnostic-20260830T132206562Z.json",
+      "local_profile_id": "product-live-local-ministral-3-8b",
+      "remote_profile_id": "product-live-remote-deepseek-v4-pro"
+    },
+    "live_escalation_gate": {
+      "scenario_count": 3,
+      "language_count": 1,
+      "repeats_per_cell": 5,
+      "minimum_structured_decode_successes": 15,
+      "minimum_correct_routes_per_cell": 4,
+      "minimum_host_invariant_successes": 15,
+      "minimum_remote_l2_terminal_successes": 5
+    },
+    "prompt_development_gate": {
+      "status": "passed",
+      "independent_fixture_cells": 12,
+      "repeats_per_cell": 2,
+      "treatments": 2,
+      "required_valid_calls": 48,
+      "valid_calls": 48,
+      "artifact_path": "godot/Artifacts/PromptDevelopment/prompt-development-20260830T194927672Z.json",
+      "artifact_sha256": "e13724ea1ec538a278483e8eaa63ad087b6db048e4e6d2f583b0d117f4001aab"
+    }
+  },
+  "rq1": {
+    "runtime_implementation_id": "Alice.Cognition.FormalRq1ConditionRuntime",
+    "manifest_binding_id": "formal-rq1-condition-manifest-v1",
+    "unresolved_input_ids": [],
+    "resolved_parameters": {
+      "population_count": 25,
+      "logical_l2_budget": 4,
+      "pressure_case_count": 10,
+      "simultaneous_pressure_snapshot": true,
+      "condition_count": 2,
+      "town_context_blocks": 30,
+      "repeats_per_block": 1,
+      "matched_pair_count": 30,
+      "formal_live_calls": 240,
+      "meaningful_absolute_delta": 0.15,
+      "starvation_age_ticks": 240,
+      "provider_max_in_flight": 30,
+      "max_transport_attempts": 3,
+      "retry_backoff_ms": [5000, 15000],
+      "pressure_evaluator_profile_id": "rq1-pressure-evaluator-v1",
+      "stratum_directions_frozen": true
+    }
+  },
+  "rq2": {
+    "runtime_implementation_id": "Alice.Cognition.FormalRq2PairCompositionRuntime",
+    "manifest_binding_id": "formal-rq2-matched-pair-manifest-v1",
+    "unresolved_input_ids": [],
+    "resolved_parameters": {
+      "template_count": 6,
+      "load_tier_count": 6,
+      "condition_count": 2,
+      "repeats_per_cell": 8,
+      "matched_pair_count": 288,
+      "formal_live_calls": 576,
+      "summary_generation_calls": 36,
+      "context_token_ceiling": 8192,
+      "maximum_core_tokens": 5734,
+      "output_token_ceiling": 16384,
+      "candidate_scorer": "normalized relevance + recency + importance; weights 1:1:1",
+      "recency_base": 0.995,
+      "ticks_per_hour": 40,
+      "required_source_missing_rate": 0,
+      "primary_outcome": "typed action validation plus terminal Authority receipt"
+    }
+  }
+}

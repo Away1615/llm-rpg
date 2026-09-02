@@ -1,0 +1,1950 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_12",
+  "block_id": "block_12",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b12-s01",
+      "actor_id": "aiko",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Open the bridge dispatch lane",
+        "situation": "Aiko must remove the temporary barrier from the signed dispatch lane before the supply carts arrive.",
+        "immediate_objective": "Open the dispatch lane and record that the route is clear.",
+        "subject_ref": "region/bridge-dispatch-lane",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s01/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "Aiko can see the barrier across the signed dispatch lane."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s01/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "The first supply cart is due before the next route window."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "immediate_self_state",
+            "source_ref": "actor/aiko/region/bridge-dispatch-lane",
+            "fact_ids": [
+              "rq1-v2-b12-s01/fact/1",
+              "rq1-v2-b12-s01/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s01",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "place/bridge-dispatch-lane"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "PlaceImpact",
+            "source_kind": "Place",
+            "source_id": "place/bridge-dispatch-lane",
+            "affected_actor_id": "aiko"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "aiko",
+        "self": {
+          "identity": {
+            "actor_id": "aiko",
+            "name": "Aiko",
+            "age": 24
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 18,
+            "spirit": 75,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s01",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s01"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "RegionOperation"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b12-s01",
+            "label": "Open the dispatch lane and record that the route is clear.",
+            "action_family": "RegionOperation",
+            "arguments": {
+              "region_id": "wb-rq1-v2-b12-s01-region"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 18,
+            "spirit": 75,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "barrier-tag",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "open-lane-token",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": {
+          "region_id": "wb-rq1-v2-b12-s01-region",
+          "output_asset_id": "open-lane-token",
+          "yield_quantity": 1,
+          "capacity": 3,
+          "refresh_ticks": 180,
+          "replenish_quantity": 1,
+          "operation_ticks": 12,
+          "interaction_range": 8.0,
+          "required_tool_type_id": "",
+          "required_capability_id": "gather",
+          "minimum_capability": 0,
+          "durability_cost": 0,
+          "world_x": 100.0,
+          "world_y": 100.0
+        },
+        "region_override": {
+          "stock": 3,
+          "refresh_at_ticks": null,
+          "revision": 1
+        },
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b12-s02",
+      "actor_id": "devin",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Wait for the mill kiln isolation window",
+        "situation": "Devin's mill inspection is assigned, but the kiln isolation cycle remains locked until tick 480.",
+        "immediate_objective": "Do not enter the kiln service bay before the isolation cycle releases.",
+        "subject_ref": "region/mill-kiln-bay",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s02/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The isolation board shows a release time of tick 480."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s02/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "The current town clock reads tick 300."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "immediate_self_state",
+            "source_ref": "actor/devin/region/mill-kiln-bay",
+            "fact_ids": [
+              "rq1-v2-b12-s02/fact/1",
+              "rq1-v2-b12-s02/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s02",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/kiln-isolation"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "CommitmentBinding",
+            "source_kind": "Commitment",
+            "source_id": "commitment/kiln-isolation",
+            "affected_actor_id": "devin"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "devin",
+        "self": {
+          "identity": {
+            "actor_id": "devin",
+            "name": "Devin",
+            "age": 48
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 48,
+            "spirit": 61,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s02",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s02"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "RegionOperation"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b12-s02",
+            "label": "Do not enter the kiln service bay before the isolation cycle releases.",
+            "action_family": "RegionOperation",
+            "arguments": {
+              "region_id": "wb-rq1-v2-b12-s02-region"
+            },
+            "validation_state": {
+              "available": false,
+              "reason": "resource depleted until tick 480"
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 48,
+            "spirit": 61,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "inspection-sample",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "kiln-residue",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": {
+          "region_id": "wb-rq1-v2-b12-s02-region",
+          "output_asset_id": "inspection-sample",
+          "yield_quantity": 1,
+          "capacity": 3,
+          "refresh_ticks": 180,
+          "replenish_quantity": 1,
+          "operation_ticks": 12,
+          "interaction_range": 8.0,
+          "required_tool_type_id": "",
+          "required_capability_id": "gather",
+          "minimum_capability": 0,
+          "durability_cost": 0,
+          "world_x": 100.0,
+          "world_y": 100.0
+        },
+        "region_override": {
+          "stock": 0,
+          "refresh_at_ticks": 480,
+          "revision": 1
+        },
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b12-s03",
+      "actor_id": "bernard",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Issue grain rations to the bakery",
+        "situation": "Bernard holds the municipal grain ration allocated to Bram's bakery after the bridge delay.",
+        "immediate_objective": "Transfer the rationed grain to Bram before the dough shift.",
+        "subject_ref": "transfer/bakery-grain-ration",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s03/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The signed ration ledger names Bram's bakery."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s03/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Bernard carries four rationed grain measures."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "active_goal_or_deadline",
+            "source_ref": "actor/bernard/transfer/bakery-grain-ration",
+            "fact_ids": [
+              "rq1-v2-b12-s03/fact/1",
+              "rq1-v2-b12-s03/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s03",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/grain-ration-ledger"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "InformationCustody",
+            "source_kind": "Information",
+            "source_id": "information/grain-ration-ledger",
+            "affected_actor_id": "bernard"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "bernard",
+        "self": {
+          "identity": {
+            "actor_id": "bernard",
+            "name": "Bernard",
+            "age": 41
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 74,
+            "spirit": 34,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "rationed-grain",
+                "quantity": 4
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s03",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s03"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b12-s03",
+            "label": "Transfer the rationed grain to Bram before the dough shift.",
+            "action_family": "AssetTransfer",
+            "arguments": {
+              "source_kind": "Actor",
+              "source_id": "bernard",
+              "destination_kind": "Actor",
+              "destination_id": "bram",
+              "asset_id": "rationed-grain",
+              "quantity": 2
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 74,
+            "spirit": 34,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "rationed-grain",
+              "quantity": 4
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "rationed-grain",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Actor",
+            "owner_id": "bram",
+            "balances": []
+          }
+        ],
+        "recipe": null,
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b12-s04",
+      "actor_id": "bram",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Pause the orchard export with no broker route",
+        "situation": "Bram has packed orchard crates, but he knows no licensed export broker, posted listing or carrier route for this lot.",
+        "immediate_objective": "Keep the crates secured while no grounded export path is known.",
+        "subject_ref": "trade/orchard-export-gap",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s04/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The crates are secured at the orchard loading yard."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s04/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Bram's known catalogue contains no broker, listing, carrier or transfer route."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "active_goal_or_deadline",
+            "source_ref": "actor/bram/trade/orchard-export-gap",
+            "fact_ids": [
+              "rq1-v2-b12-s04/fact/1",
+              "rq1-v2-b12-s04/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s04",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "place/orchard-loading-yard"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "PlaceImpact",
+            "source_kind": "Place",
+            "source_id": "place/orchard-loading-yard",
+            "affected_actor_id": "bram"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "bram",
+        "self": {
+          "identity": {
+            "actor_id": "bram",
+            "name": "Bram",
+            "age": 27
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 68,
+            "spirit": 42,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s04",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s04"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 68,
+            "spirit": 42,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "export-receipt",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "orchard-crate",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b12-s05",
+      "actor_id": "celia",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Make the fever compress",
+        "situation": "Celia has fresh willow herb and clean cloth for a household fever compress.",
+        "immediate_objective": "Craft one fever compress for the shared household medicine box.",
+        "subject_ref": "household/fever-compress",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s05/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The care note specifies willow herb and clean cloth."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s05/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Both measured inputs are in Celia's carried stock."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "known_commitment_or_schedule",
+            "source_ref": "actor/celia/household/fever-compress",
+            "fact_ids": [
+              "rq1-v2-b12-s05/fact/1",
+              "rq1-v2-b12-s05/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s05",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/household-care-note"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "InformationCustody",
+            "source_kind": "Information",
+            "source_id": "information/household-care-note",
+            "affected_actor_id": "celia"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "celia",
+        "self": {
+          "identity": {
+            "actor_id": "celia",
+            "name": "Celia",
+            "age": 34
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 22,
+            "spirit": 70,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "willow-herb",
+                "quantity": 2
+              },
+              {
+                "asset_id": "clean-cloth",
+                "quantity": 1
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s05",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s05"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "Craft"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b12-s05",
+            "label": "Craft one fever compress for the shared household medicine box.",
+            "action_family": "Craft",
+            "arguments": {
+              "recipe_id": "wb-rq1-v2-b12-s05-recipe"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 22,
+            "spirit": 70,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "willow-herb",
+              "quantity": 2
+            },
+            {
+              "asset_id": "clean-cloth",
+              "quantity": 1
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "clean-cloth",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "fever-compress",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "willow-herb",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": {
+          "recipe_id": "wb-rq1-v2-b12-s05-recipe",
+          "place_id": null,
+          "required_capability_id": "craft",
+          "minimum_capability": 0,
+          "required_asset_id": null,
+          "inputs": [
+            {
+              "asset_id": "willow-herb",
+              "quantity": 2
+            },
+            {
+              "asset_id": "clean-cloth",
+              "quantity": 1
+            }
+          ],
+          "outputs": [
+            {
+              "asset_id": "fever-compress",
+              "quantity": 1
+            }
+          ]
+        },
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b12-s06",
+      "actor_id": "rosa",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Secure the wagon brake station",
+        "situation": "Rosa must engage the marked brake station before a loaded wagon can be handed to the next route team.",
+        "immediate_objective": "Engage the brake station and record the wagon as secured.",
+        "subject_ref": "region/wagon-brake-station",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s06/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The route ledger requires a secured-wagon mark before handoff."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s06/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "The brake station is clear and within Rosa's assigned route."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "known_commitment_or_schedule",
+            "source_ref": "actor/rosa/region/wagon-brake-station",
+            "fact_ids": [
+              "rq1-v2-b12-s06/fact/1",
+              "rq1-v2-b12-s06/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s06",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/wagon-handoff"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "CommitmentBinding",
+            "source_kind": "Commitment",
+            "source_id": "commitment/wagon-handoff",
+            "affected_actor_id": "rosa"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "rosa",
+        "self": {
+          "identity": {
+            "actor_id": "rosa",
+            "name": "Rosa",
+            "age": 51
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 59,
+            "spirit": 48,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s06",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s06"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "RegionOperation"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b12-s06",
+            "label": "Engage the brake station and record the wagon as secured.",
+            "action_family": "RegionOperation",
+            "arguments": {
+              "region_id": "wb-rq1-v2-b12-s06-region"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 59,
+            "spirit": 48,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "brake-wedge",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "secured-wagon-token",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": {
+          "region_id": "wb-rq1-v2-b12-s06-region",
+          "output_asset_id": "secured-wagon-token",
+          "yield_quantity": 1,
+          "capacity": 3,
+          "refresh_ticks": 180,
+          "replenish_quantity": 1,
+          "operation_ticks": 12,
+          "interaction_range": 8.0,
+          "required_tool_type_id": "",
+          "required_capability_id": "gather",
+          "minimum_capability": 0,
+          "durability_cost": 0,
+          "world_x": 100.0,
+          "world_y": 100.0
+        },
+        "region_override": {
+          "stock": 3,
+          "refresh_at_ticks": null,
+          "revision": 1
+        },
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b12-s07",
+      "actor_id": "alice",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Reset the ore lift guide rail",
+        "situation": "Alice can reach the ore lift guide rail that has shifted out of its marked maintenance notch.",
+        "immediate_objective": "Reset the guide rail before the next empty cage test.",
+        "subject_ref": "region/ore-lift-guide",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s07/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The guide rail sits outside its painted alignment notch."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s07/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "The next lift test uses an empty cage and the bay is clear."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "weak_local_context",
+            "source_ref": "actor/alice/region/ore-lift-guide",
+            "fact_ids": [
+              "rq1-v2-b12-s07/fact/1",
+              "rq1-v2-b12-s07/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s07",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "place/mine-lift"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "PlaceImpact",
+            "source_kind": "Place",
+            "source_id": "place/mine-lift",
+            "affected_actor_id": "alice"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "alice",
+        "self": {
+          "identity": {
+            "actor_id": "alice",
+            "name": "Alice",
+            "age": 20
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 42,
+            "spirit": 58,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s07",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s07"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "RegionOperation"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b12-s07",
+            "label": "Reset the guide rail before the next empty cage test.",
+            "action_family": "RegionOperation",
+            "arguments": {
+              "region_id": "wb-rq1-v2-b12-s07-region"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 42,
+            "spirit": 58,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "aligned-guide-token",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "guide-rail-shim",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": {
+          "region_id": "wb-rq1-v2-b12-s07-region",
+          "output_asset_id": "aligned-guide-token",
+          "yield_quantity": 1,
+          "capacity": 3,
+          "refresh_ticks": 180,
+          "replenish_quantity": 1,
+          "operation_ticks": 12,
+          "interaction_range": 8.0,
+          "required_tool_type_id": "",
+          "required_capability_id": "gather",
+          "minimum_capability": 0,
+          "durability_cost": 0,
+          "world_x": 100.0,
+          "world_y": 100.0
+        },
+        "region_override": {
+          "stock": 3,
+          "refresh_at_ticks": null,
+          "revision": 1
+        },
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b12-s08",
+      "actor_id": "dorian",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Deliver flour to the inn pastry bench",
+        "situation": "Dorian holds flour released from the mill for Emma's pastry bench.",
+        "immediate_objective": "Transfer the released flour to Emma before the breakfast preparation window.",
+        "subject_ref": "transfer/inn-pastry-flour",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s08/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The mill release note names Emma's pastry bench."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s08/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Dorian carries four sealed flour measures."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "weak_local_context",
+            "source_ref": "actor/dorian/transfer/inn-pastry-flour",
+            "fact_ids": [
+              "rq1-v2-b12-s08/fact/1",
+              "rq1-v2-b12-s08/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s08",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/mill-inn-flour"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "CommitmentBinding",
+            "source_kind": "Commitment",
+            "source_id": "commitment/mill-inn-flour",
+            "affected_actor_id": "dorian"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "dorian",
+        "self": {
+          "identity": {
+            "actor_id": "dorian",
+            "name": "Dorian",
+            "age": 42
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 71,
+            "spirit": 65,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "pastry-flour",
+                "quantity": 4
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s08",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s08"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b12-s08",
+            "label": "Transfer the released flour to Emma before the breakfast preparation window.",
+            "action_family": "AssetTransfer",
+            "arguments": {
+              "source_kind": "Actor",
+              "source_id": "dorian",
+              "destination_kind": "Actor",
+              "destination_id": "emma",
+              "asset_id": "pastry-flour",
+              "quantity": 2
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 71,
+            "spirit": 65,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "pastry-flour",
+              "quantity": 4
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "pastry-flour",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Actor",
+            "owner_id": "emma",
+            "balances": []
+          }
+        ],
+        "recipe": null,
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b12-s09",
+      "actor_id": "mira",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Move the herb auction samples",
+        "situation": "Mira holds the sealed herb samples assigned to Bernard's market inspection table.",
+        "immediate_objective": "Transfer the samples to Bernard before auction registration closes.",
+        "subject_ref": "transfer/herb-auction-samples",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s09/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The auction manifest names Bernard as sample custodian."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s09/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Mira carries four sealed sample cases."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "background_context",
+            "source_ref": "actor/mira/transfer/herb-auction-samples",
+            "fact_ids": [
+              "rq1-v2-b12-s09/fact/1",
+              "rq1-v2-b12-s09/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s09",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/herb-auction-manifest"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "InformationCustody",
+            "source_kind": "Information",
+            "source_id": "information/herb-auction-manifest",
+            "affected_actor_id": "mira"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "mira",
+        "self": {
+          "identity": {
+            "actor_id": "mira",
+            "name": "Mira",
+            "age": 57
+          },
+          "body": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "herb-sample-case",
+                "quantity": 4
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s09",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s09"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b12-s09",
+            "label": "Transfer the samples to Bernard before auction registration closes.",
+            "action_family": "AssetTransfer",
+            "arguments": {
+              "source_kind": "Actor",
+              "source_id": "mira",
+              "destination_kind": "Actor",
+              "destination_id": "bernard",
+              "asset_id": "herb-sample-case",
+              "quantity": 2
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "herb-sample-case",
+              "quantity": 4
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "herb-sample-case",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Actor",
+            "owner_id": "bernard",
+            "balances": []
+          }
+        ],
+        "recipe": null,
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b12-s10",
+      "actor_id": "opal",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Pause the rare-treatment search with no known source",
+        "situation": "Opal's household note calls for a rare treatment, but her visible knowledge contains no source, recipe, service, listing or holder for it.",
+        "immediate_objective": "Keep the household member stable while no grounded acquisition route is known.",
+        "subject_ref": "care/rare-treatment-gap",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b12-s10/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The care note names the required rare treatment precisely."
+          },
+          {
+            "fact_id": "rq1-v2-b12-s10/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Opal's known catalogue has no compatible source or substitute."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "background_context",
+            "source_ref": "actor/opal/care/rare-treatment-gap",
+            "fact_ids": [
+              "rq1-v2-b12-s10/fact/1",
+              "rq1-v2-b12-s10/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b12-s10",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/opal-household-care"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "CommitmentBinding",
+            "source_kind": "Commitment",
+            "source_id": "commitment/opal-household-care",
+            "affected_actor_id": "opal"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "opal",
+        "self": {
+          "identity": {
+            "actor_id": "opal",
+            "name": "Opal",
+            "age": 30
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 44,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b12-s10",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b12-s10"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 44,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "care-resolution",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "rare-treatment",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    }
+  ]
+}

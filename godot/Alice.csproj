@@ -1,0 +1,14 @@
+<Project Sdk="Godot.NET.Sdk/4.7.2">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Alice</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Data\FormalResearch\**\*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Alice.FormalStudyExperiment" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,488 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_18",
+  "block_id": "block_18",
+  "condition_order": "event_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b18-s01",
+      "actor_id": "jonah",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "AffectsPlace",
+        "admission_role": "agent_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "jonah",
+        "pressure_id": "rq1-v2-b18-s01"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "temporal_gate",
+        "visible_reason_fact_refs": [
+          "cart/warehouse-handcart/wheel",
+          "delivery/clinic-linen-route",
+          "clock/block-18"
+        ],
+        "grounded_statement": "The handcart becomes load-ready after the clinic delivery slot closes.",
+        "verify_exclusion": "The cure completion and route closing times are settled and agree.",
+        "plan_only_exclusion": "No represented delivery action can use a load-locked cart before the deadline."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b18-s02",
+      "actor_id": "kara",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "kara",
+        "pressure_id": "rq1-v2-b18-s02"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "verification_required",
+        "visible_reason_fact_refs": [
+          "seed-lot/north-field-4/tags",
+          "record/north-field-4/germination"
+        ],
+        "grounded_statement": "The seed lot has conflicting storage provenance and lacks the certified germination record required for release.",
+        "verify_exclusion": "Kara has no supported test or authorized evidence source in the current catalogue.",
+        "plan_only_exclusion": "Planting the held lot would bypass its release condition."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b18-s03",
+      "actor_id": "lucas",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E1",
+        "event_edge_kind": "RequiresCapability",
+        "admission_role": "agent_only",
+        "domain": "trade_harvest",
+        "task_family": "commit_listed_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ListedExchange",
+        "actor_id": "lucas",
+        "pressure_id": "rq1-v2-b18-s03"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ListedExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b18-s03-action",
+        "action_family": "ListedExchange",
+        "arguments": {
+          "listing_id": "merchant-timber-buyback"
+        },
+        "binding": {
+          "target_ref": "shop/general-store",
+          "contract_id": "listed-exchange/merchant-timber-buyback",
+          "expected_contract_version": 7,
+          "capability": "listed-exchange",
+          "instrument_ref": null
+        }
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "authority_action_family": "ListedExchange",
+        "actor_balance_deltas": {
+          "timber": -1,
+          "coin": 2
+        },
+        "shop_balance_deltas": {
+          "timber": 1,
+          "coin": -2
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b18-s04",
+      "actor_id": "mira",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "both",
+        "domain": "care_household",
+        "task_family": "commit_service_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ServiceExchange",
+        "actor_id": "mira",
+        "pressure_id": "rq1-v2-b18-s04"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ServiceExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b18-s04-action",
+        "action_family": "ServiceExchange",
+        "arguments": {
+          "service_id": "diagnosis",
+          "provider_actor_id": "pavel",
+          "expected_provider_container_revision": 1,
+          "target_item_instance_id": null
+        },
+        "binding": {
+          "target_ref": "place/town-clinic",
+          "contract_id": "service/diagnosis",
+          "expected_contract_version": 1,
+          "capability": "service-exchange",
+          "instrument_ref": null
+        }
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "authority_action_family": "ServiceExchange",
+        "customer_coin_delta": -2,
+        "provider_coin_delta": 2
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b18-s05",
+      "actor_id": "nolan",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E2",
+        "event_edge_kind": "HoldsRequiredInformation",
+        "admission_role": "neither",
+        "domain": "obligation_logistics",
+        "task_family": "commit_listed_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ListedExchange",
+        "actor_id": "nolan",
+        "pressure_id": "rq1-v2-b18-s05"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ListedExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b18-s05-action",
+        "action_family": "ListedExchange",
+        "arguments": {
+          "listing_id": "merchant-basket-retail"
+        },
+        "binding": {
+          "target_ref": "shop/general-store",
+          "contract_id": "listed-exchange/merchant-basket-retail",
+          "expected_contract_version": 7,
+          "capability": "listed-exchange",
+          "instrument_ref": null
+        }
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "authority_action_family": "ListedExchange",
+        "actor_coin_delta": -6,
+        "actor_asset_delta": {
+          "asset_id": "basket",
+          "delta": 1
+        },
+        "shop_coin_delta": 6,
+        "shop_asset_delta": {
+          "asset_id": "basket",
+          "delta": -1
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b18-s06",
+      "actor_id": "opal",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "opal",
+        "pressure_id": "rq1-v2-b18-s06"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "temporal_gate",
+        "visible_reason_fact_refs": [
+          "tool/carpentry-bench-saw",
+          "commitment/opal-window-frames",
+          "clock/block-18"
+        ],
+        "grounded_statement": "The safety lock ends after the active window-frame commitment is due.",
+        "verify_exclusion": "The lock end time is already visible and has no uncertain observation.",
+        "plan_only_exclusion": "The catalogue has no legal saw operation while the guard is locked."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b18-s07",
+      "actor_id": "pavel",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E1",
+        "event_edge_kind": "AffectsPlace",
+        "admission_role": "neither",
+        "domain": "food_production",
+        "task_family": "commit_craft",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "Craft",
+        "actor_id": "pavel",
+        "pressure_id": "rq1-v2-b18-s07"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "Craft",
+      "action_template": {
+        "game_action_id": "rq1-v2-b18-s07-action",
+        "action_family": "Craft",
+        "arguments": {
+          "recipe_id": "cook-porridge"
+        },
+        "binding": {
+          "target_ref": "actor/pavel/craft",
+          "contract_id": "craft/cook-porridge",
+          "expected_contract_version": 2,
+          "capability": "cook",
+          "instrument_ref": null
+        }
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "authority_action_family": "Craft",
+        "actor_balance_deltas": {
+          "wheat": -1,
+          "porridge": 1
+        },
+        "unchanged_item_instance_id": "pavel-pot"
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b18-s08",
+      "actor_id": "quinn",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "trade_harvest",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "quinn",
+        "pressure_id": "rq1-v2-b18-s08"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_code": "verification_required",
+        "visible_reason_fact_refs": [
+          "shipment/herb-crate-q4/tags",
+          "record/herb-crate-q4/scale"
+        ],
+        "grounded_statement": "The harvest and receipt quantities conflict, and the authorized scale record is absent.",
+        "verify_exclusion": "No scale reading or clerk-signed record is reachable through a supported current action.",
+        "plan_only_exclusion": "Accepting or transferring the held crate would bypass its provenance requirement."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b18-s09",
+      "actor_id": "rosa",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E2",
+        "event_edge_kind": "HoldsRequiredInformation",
+        "admission_role": "neither",
+        "domain": "care_household",
+        "task_family": "commit_region_operation",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "RegionOperation",
+        "actor_id": "rosa",
+        "pressure_id": "rq1-v2-b18-s09"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "RegionOperation",
+      "action_template": {
+        "game_action_id": "rq1-v2-b18-s09-action",
+        "action_family": "RegionOperation",
+        "arguments": {
+          "region_id": "herb-garden",
+          "expected_instrument_version": null
+        },
+        "binding": {
+          "target_ref": "region/herb-garden",
+          "contract_id": "region-operation",
+          "expected_contract_version": 1,
+          "capability": "herbalism",
+          "instrument_ref": null
+        }
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "authority_action_family": "RegionOperation",
+        "region_stock_delta": -1,
+        "actor_balance_delta": {
+          "asset_id": "herb",
+          "delta": 1
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b18-s10",
+      "actor_id": "farah",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_18",
+        "block_number": 18,
+        "owner_worker": "C",
+        "worker_block_index": 4,
+        "condition_order": "event_first",
+        "overlap_tier": 1,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "obligation_logistics",
+        "task_family": "commit_listed_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ListedExchange",
+        "actor_id": "farah",
+        "pressure_id": "rq1-v2-b18-s10"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ListedExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b18-s10-action",
+        "action_family": "ListedExchange",
+        "arguments": {
+          "listing_id": "merchant-timber-retail"
+        },
+        "binding": {
+          "target_ref": "shop/general-store",
+          "contract_id": "listed-exchange/merchant-timber-retail",
+          "expected_contract_version": 7,
+          "capability": "listed-exchange",
+          "instrument_ref": null
+        }
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "authority_action_family": "ListedExchange",
+        "actor_balance_deltas": {
+          "timber": 1,
+          "coin": -3
+        },
+        "shop_balance_deltas": {
+          "timber": -1,
+          "coin": 3
+        }
+      },
+      "validator_precheck": null
+    }
+  ]
+}

@@ -1,0 +1,1556 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_04",
+  "block_id": "block_04",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b04-s01",
+      "actor_id": "pavel",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s01",
+        "actor_id": "pavel",
+        "task_domain": "food_production",
+        "problem_kind": "clinic_meal_batch",
+        "subject_ref": "recipe/cook-porridge/clinic-breakfast",
+        "decision_tick": 300,
+        "summary": "Pavel has taken responsibility for a clinic breakfast batch. One measure of wheat and his clean cooking pot are in his pack, and the waiting patients need the batch before morning rounds.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s01/fact-1",
+          "rq1-v2-b04-s01/fact-2",
+          "rq1-v2-b04-s01/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s01/fact-1",
+          "source_event_id": "event/rq1-b04/clinic-pantry-handoff",
+          "text": "The clinic breakfast ledger assigns this batch to Pavel."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s01/fact-2",
+          "source_event_id": "event/rq1-b04/clinic-pantry-handoff",
+          "text": "Pavel carries one measure of wheat and one clean cooking pot."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s01/fact-3",
+          "source_event_id": "event/rq1-b04/clinic-pantry-handoff",
+          "text": "The porridge recipe consumes one wheat and requires cooking skill plus a pot."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "immediate_self_pressure",
+            "source_ref": "recipe/cook-porridge/clinic-breakfast",
+            "description": "Produce one serving of porridge for the clinic breakfast batch."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s01",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "asset/wheat"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "resource_custody",
+            "source_event_id": "event/rq1-b04/clinic-pantry-handoff",
+            "source_kind": "InventoryHandoff",
+            "bridge_ref": "asset/wheat",
+            "actor_visible_text": "The clinic pantry handoff records Pavel as custodian of the wheat allocated to breakfast."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "pavel",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/pavel",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 52,
+            "spirit": 61,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "wheat",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "pavel-pot",
+                "item_type_id": "pot",
+                "durability": null,
+                "maximum_durability": null,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 9
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "cook",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-clinic",
+              "inn"
+            ],
+            "known_actor_ids": [
+              "quinn"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/clinic-pantry-handoff"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/pavel/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s01",
+            "kind": "clinic_meal_batch",
+            "subject_ref": "recipe/cook-porridge/clinic-breakfast",
+            "status": "Active",
+            "description": "Produce one serving of porridge for the clinic breakfast batch."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/0/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "recipe",
+            "recipe_id": "cook-porridge",
+            "required_capability_id": "cook",
+            "minimum_capability": 1,
+            "required_asset_id": "pot",
+            "inputs": [
+              {
+                "asset_id": "wheat",
+                "quantity": 1
+              }
+            ],
+            "outputs": [
+              {
+                "asset_id": "porridge",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b04-s02",
+      "actor_id": "aiko",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s02",
+        "actor_id": "aiko",
+        "task_domain": "trade_harvest",
+        "problem_kind": "orchard_sample_order",
+        "subject_ref": "region/orchard/sample-crate",
+        "decision_tick": 300,
+        "summary": "Aiko's orchard cooperative accepted a same-day sample order. Ripe fruit remains on the marked row, and Aiko is at the orchard with her basket equipped.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s02/fact-1",
+          "rq1-v2-b04-s02/fact-2",
+          "rq1-v2-b04-s02/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s02/fact-1",
+          "source_event_id": "event/rq1-b04/orchard-cooperative-order",
+          "text": "The orchard cooperative logged a sample-crate request for today's buyer visit."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s02/fact-2",
+          "source_event_id": "event/rq1-b04/orchard-cooperative-order",
+          "text": "The orchard has twenty fruit units before this operation."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s02/fact-3",
+          "source_event_id": "event/rq1-b04/orchard-cooperative-order",
+          "text": "Aiko carries and equips her basket and has gather capability."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "immediate_self_pressure",
+            "source_ref": "region/orchard/sample-crate",
+            "description": "Gather one fruit unit for the cooperative sample crate."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s02",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/orchard-workers"
+          },
+          "role_assignment": {
+            "organization_id": "organization/orchard-workers",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/orchard-workers"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "event/rq1-b04/orchard-cooperative-order",
+            "source_kind": "OrganizationDispatch",
+            "bridge_ref": "organization/orchard-workers",
+            "actor_visible_text": "The orchard-workers dispatch links the sample order to Aiko's cooperative role."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "aiko",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/aiko",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 75,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [
+              {
+                "item_instance_id": "aiko-basket",
+                "item_type_id": "basket",
+                "durability": null,
+                "maximum_durability": null,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "aiko-basket"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 3
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "gather",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "orchard",
+              "town-square"
+            ],
+            "known_actor_ids": [],
+            "source_event_ids": [
+              "event/rq1-b04/orchard-cooperative-order"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/aiko/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s02",
+            "kind": "orchard_sample_order",
+            "subject_ref": "region/orchard/sample-crate",
+            "status": "Active",
+            "description": "Gather one fruit unit for the cooperative sample crate."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/1/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "region",
+            "region_id": "orchard",
+            "stock": 20,
+            "capacity": 20,
+            "revision": 1,
+            "required_tool_type_id": "basket",
+            "required_capability_id": "gather",
+            "minimum_capability": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b04-s03",
+      "actor_id": "opal",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s03",
+        "actor_id": "opal",
+        "task_domain": "care_household",
+        "problem_kind": "household_food_rescue",
+        "subject_ref": "household/brackenford-home-07/meal-shortage",
+        "decision_tick": 300,
+        "summary": "The cold cupboard in Nolan and Opal's home failed, spoiling Nolan's last ready meal. Opal has two sealed meals in her pack and is beside Nolan.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s03/fact-1",
+          "rq1-v2-b04-s03/fact-2",
+          "rq1-v2-b04-s03/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s03/fact-1",
+          "source_event_id": "event/rq1-b04/home07-cold-cupboard-failure",
+          "text": "A cupboard failure at brackenford-home-07 spoiled Nolan's ready meal."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s03/fact-2",
+          "source_event_id": "event/rq1-b04/home07-cold-cupboard-failure",
+          "text": "Opal carries two sealed meals."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s03/fact-3",
+          "source_event_id": "event/rq1-b04/home07-cold-cupboard-failure",
+          "text": "Nolan's actor container is present and currently holds no meal."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "near_term_active_goal",
+            "source_ref": "household/brackenford-home-07/meal-shortage",
+            "description": "Move one sealed meal from Opal's pack to Nolan."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s03",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "place/brackenford-home-07"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "place_impact",
+            "source_event_id": "event/rq1-b04/home07-cold-cupboard-failure",
+            "source_kind": "PlaceConditionChanged",
+            "bridge_ref": "place/brackenford-home-07",
+            "actor_visible_text": "The cupboard failure affects the home shared by Opal and Nolan."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "opal",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/opal",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 44,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 2
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 12
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "brackenford-home-07"
+            ],
+            "known_actor_ids": [
+              "nolan"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/home07-cold-cupboard-failure"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/opal/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s03",
+            "kind": "household_food_rescue",
+            "subject_ref": "household/brackenford-home-07/meal-shortage",
+            "status": "Active",
+            "description": "Move one sealed meal from Opal's pack to Nolan."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/2/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "container",
+            "owner_kind": "Actor",
+            "owner_id": "nolan",
+            "balances": [
+              {
+                "asset_id": "meal",
+                "quantity": 0
+              }
+            ],
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b04-s04",
+      "actor_id": "mira",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s04",
+        "actor_id": "mira",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "unresolved_delivery_destination",
+        "subject_ref": "parcel/builders-sealed-17",
+        "decision_tick": 300,
+        "summary": "Mira was given a sealed builders' parcel whose tag contains only the obsolete key 'north annex'. Her known places and actors contain no matching destination or recipient, and the current catalogue has no delivery proposal for that key.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s04/fact-1",
+          "rq1-v2-b04-s04/fact-2",
+          "rq1-v2-b04-s04/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s04/fact-1",
+          "source_event_id": "event/rq1-b04/builders-freight-rota",
+          "text": "The parcel tag contains only the destination key 'north annex'."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s04/fact-2",
+          "source_event_id": "event/rq1-b04/builders-freight-rota",
+          "text": "No known place or known actor resolves that key."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s04/fact-3",
+          "source_event_id": "event/rq1-b04/builders-freight-rota",
+          "text": "No typed delivery proposal binds the parcel to a current Authority container."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "near_term_active_goal",
+            "source_ref": "parcel/builders-sealed-17",
+            "description": "Deliver the sealed builders' parcel to its recorded recipient."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s04",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/town-builders"
+          },
+          "role_assignment": {
+            "organization_id": "organization/town-builders",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/town-builders"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "event/rq1-b04/builders-freight-rota",
+            "source_kind": "OrganizationRosterEntry",
+            "bridge_ref": "organization/town-builders",
+            "actor_visible_text": "The builders' freight rota records Mira as the member carrying parcel 17."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "mira",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/mira",
+        "self": {
+          "body": {
+            "health_current": 82,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "farah-home",
+              "community-garden"
+            ],
+            "known_actor_ids": [
+              "farah"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/builders-freight-rota"
+            ],
+            "unresolved_refs": [
+              "place/north-annex",
+              "actor/parcel-17-recipient"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/mira/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s04",
+            "kind": "unresolved_delivery_destination",
+            "subject_ref": "parcel/builders-sealed-17",
+            "status": "Active",
+            "description": "Deliver the sealed builders' parcel to its recorded recipient."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/3/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "unresolved_reference",
+            "reference_id": "north-annex",
+            "registered_place": false,
+            "registered_actor": false,
+            "registered_container": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b04-s05",
+      "actor_id": "quinn",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s05",
+        "actor_id": "quinn",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "clinic_tool_replacement",
+        "subject_ref": "tool/clinic-cart-pickaxe",
+        "decision_tick": 300,
+        "summary": "The clinic's rubble cart needs a replacement pickaxe before the blocked rear entrance can be cleared. Quinn has one iron ore, one timber and the smithing competence recorded for this emergency shift.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s05/fact-1",
+          "rq1-v2-b04-s05/fact-2",
+          "rq1-v2-b04-s05/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s05/fact-1",
+          "source_event_id": "event/rq1-b04/clinic-maintenance-assignment",
+          "text": "The clinic maintenance ticket names a replacement pickaxe."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s05/fact-2",
+          "source_event_id": "event/rq1-b04/clinic-maintenance-assignment",
+          "text": "Quinn carries one iron ore and one timber."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s05/fact-3",
+          "source_event_id": "event/rq1-b04/clinic-maintenance-assignment",
+          "text": "The craft-pickaxe recipe consumes those inputs and Quinn has craft capability."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_work_interruption",
+            "source_ref": "tool/clinic-cart-pickaxe",
+            "description": "Craft one replacement pickaxe for the clinic rubble cart."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s05",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "quinn"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "actor_assignment",
+            "source_event_id": "event/rq1-b04/clinic-maintenance-assignment",
+            "source_kind": "ActorWorkAssignment",
+            "bridge_ref": "actor/quinn",
+            "actor_visible_text": "The clinic maintenance ticket is assigned directly to Quinn."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "quinn",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/quinn",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 48,
+            "spirit": 62,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 4
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "craft",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-clinic",
+              "smithy"
+            ],
+            "known_actor_ids": [
+              "pavel"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/clinic-maintenance-assignment"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/quinn/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s05",
+            "kind": "clinic_tool_replacement",
+            "subject_ref": "tool/clinic-cart-pickaxe",
+            "status": "Active",
+            "description": "Craft one replacement pickaxe for the clinic rubble cart."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/4/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "recipe",
+            "recipe_id": "craft-pickaxe",
+            "required_capability_id": "craft",
+            "minimum_capability": 1,
+            "required_asset_id": null,
+            "inputs": [
+              {
+                "asset_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "asset_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "outputs": [
+              {
+                "asset_id": "pickaxe",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b04-s06",
+      "actor_id": "felix",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s06",
+        "actor_id": "felix",
+        "task_domain": "food_production",
+        "problem_kind": "committed_plot_harvest",
+        "subject_ref": "farm-plot/farm-plot-1/inn-breakfast",
+        "decision_tick": 300,
+        "summary": "Felix promised the inn a plot's ripe wheat for tomorrow's breakfast service. Farm plot 1 is harvestable, and Felix has his sickle equipped.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s06/fact-1",
+          "rq1-v2-b04-s06/fact-2",
+          "rq1-v2-b04-s06/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s06/fact-1",
+          "source_event_id": "event/rq1-b04/inn-wheat-promise",
+          "text": "The inn supply promise binds Felix to the ripe plot."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s06/fact-2",
+          "source_event_id": "event/rq1-b04/inn-wheat-promise",
+          "text": "Farm plot 1 is harvestable at the decision tick."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s06/fact-3",
+          "source_event_id": "event/rq1-b04/inn-wheat-promise",
+          "text": "Felix has farm capability and carries an equipped sickle at full durability."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_work_interruption",
+            "source_ref": "farm-plot/farm-plot-1/inn-breakfast",
+            "description": "Harvest farm plot 1 into Felix's pack."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s06",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/felix-inn-breakfast-wheat"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "event/rq1-b04/inn-wheat-promise",
+            "source_kind": "CommitmentActivated",
+            "bridge_ref": "commitment/felix-inn-breakfast-wheat",
+            "actor_visible_text": "The accepted wheat promise binds Felix to the inn breakfast supply."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "felix",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/felix",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 57,
+            "spirit": 72,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [
+              {
+                "item_instance_id": "felix-sickle",
+                "item_type_id": "sickle",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "felix-sickle"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 9
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "community-garden",
+              "inn"
+            ],
+            "known_actor_ids": [
+              "emma"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/inn-wheat-promise"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/felix/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s06",
+            "kind": "committed_plot_harvest",
+            "subject_ref": "farm-plot/farm-plot-1/inn-breakfast",
+            "status": "Active",
+            "description": "Harvest farm plot 1 into Felix's pack."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/5/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "farm_plot",
+            "plot_id": "farm-plot-1",
+            "stage": "Harvestable",
+            "revision": 1,
+            "required_capability_id": "farm",
+            "minimum_capability": 1,
+            "harvest_tool_type_id": "sickle",
+            "yield_asset_id": "wheat",
+            "yield_quantity": 20
+          }
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b04-s07",
+      "actor_id": "jonah",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s07",
+        "actor_id": "jonah",
+        "task_domain": "trade_harvest",
+        "problem_kind": "warehouse_fish_landing",
+        "subject_ref": "cargo/jonah-fish-crate",
+        "decision_tick": 300,
+        "summary": "Jonah is custodian of a two-fish landing crate. The town warehouse intake sheet names one fish for immediate storage and leaves the second with him for the carrier route.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s07/fact-1",
+          "rq1-v2-b04-s07/fact-2",
+          "rq1-v2-b04-s07/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s07/fact-1",
+          "source_event_id": "event/rq1-b04/fish-crate-custody",
+          "text": "Jonah's pack contains two fish from the landing crate."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s07/fact-2",
+          "source_event_id": "event/rq1-b04/fish-crate-custody",
+          "text": "The town-supply-stock warehouse currently records twelve fish."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s07/fact-3",
+          "source_event_id": "event/rq1-b04/fish-crate-custody",
+          "text": "The intake sheet names a one-fish transfer to that warehouse."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "non_immediate_opportunity",
+            "source_ref": "cargo/jonah-fish-crate",
+            "description": "Transfer one fish from Jonah's pack to town-supply-stock."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s07",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "asset/fish"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "resource_custody",
+            "source_event_id": "event/rq1-b04/fish-crate-custody",
+            "source_kind": "ResourceCustodyRecorded",
+            "bridge_ref": "asset/fish",
+            "actor_visible_text": "The landing record identifies Jonah as custodian of the two-fish crate."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "jonah",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/jonah",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 28,
+            "spirit": 60,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "fish",
+                "quantity": 2
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-warehouse",
+              "fishing-ground"
+            ],
+            "known_actor_ids": [
+              "silas"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/fish-crate-custody"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/jonah/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s07",
+            "kind": "warehouse_fish_landing",
+            "subject_ref": "cargo/jonah-fish-crate",
+            "status": "Active",
+            "description": "Transfer one fish from Jonah's pack to town-supply-stock."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/6/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "container",
+            "owner_kind": "Warehouse",
+            "owner_id": "town-supply-stock",
+            "balances": [
+              {
+                "asset_id": "fish",
+                "quantity": 12
+              }
+            ],
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b04-s08",
+      "actor_id": "nolan",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s08",
+        "actor_id": "nolan",
+        "task_domain": "care_household",
+        "problem_kind": "household_medicine_handoff",
+        "subject_ref": "commitment/nolan-opal-medicine",
+        "decision_tick": 300,
+        "summary": "Nolan promised Opal the sealed common medicine in his pack after her fever returned. Opal is present and her actor container can receive it.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s08/fact-1",
+          "rq1-v2-b04-s08/fact-2",
+          "rq1-v2-b04-s08/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s08/fact-1",
+          "source_event_id": "event/rq1-b04/nolan-opal-care-promise",
+          "text": "The household promise names Nolan as giver and Opal as recipient."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s08/fact-2",
+          "source_event_id": "event/rq1-b04/nolan-opal-care-promise",
+          "text": "Nolan carries one sealed common medicine."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s08/fact-3",
+          "source_event_id": "event/rq1-b04/nolan-opal-care-promise",
+          "text": "Opal's actor container currently has no common medicine."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "non_immediate_opportunity",
+            "source_ref": "commitment/nolan-opal-medicine",
+            "description": "Transfer one common medicine from Nolan to Opal."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s08",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/nolan-opal-medicine"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "event/rq1-b04/nolan-opal-care-promise",
+            "source_kind": "CommitmentActivated",
+            "bridge_ref": "commitment/nolan-opal-medicine",
+            "actor_visible_text": "The household care promise binds Nolan to hand the medicine to Opal."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "nolan",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/nolan",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 20,
+            "spirit": 57,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "common-medicine",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "brackenford-home-07"
+            ],
+            "known_actor_ids": [
+              "opal"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/nolan-opal-care-promise"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/nolan/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s08",
+            "kind": "household_medicine_handoff",
+            "subject_ref": "commitment/nolan-opal-medicine",
+            "status": "Active",
+            "description": "Transfer one common medicine from Nolan to Opal."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/7/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "container",
+            "owner_kind": "Actor",
+            "owner_id": "opal",
+            "balances": [
+              {
+                "asset_id": "common-medicine",
+                "quantity": 0
+              }
+            ],
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b04-s09",
+      "actor_id": "bram",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s09",
+        "actor_id": "bram",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "unresolved_cargo_recipient",
+        "subject_ref": "cargo/smithy-sealed-blue",
+        "decision_tick": 300,
+        "summary": "Bram's courier ticket says to release the blue crate to recipient code 'R-41'. His actor knowledge has no actor, place or container for R-41, and the sealed crate may not be redirected by guesswork.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s09/fact-1",
+          "rq1-v2-b04-s09/fact-2",
+          "rq1-v2-b04-s09/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s09/fact-1",
+          "source_event_id": "event/rq1-b04/smithy-courier-ticket",
+          "text": "The courier ticket contains recipient code R-41 and no name."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s09/fact-2",
+          "source_event_id": "event/rq1-b04/smithy-courier-ticket",
+          "text": "Bram knows no actor or place indexed by R-41."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s09/fact-3",
+          "source_event_id": "event/rq1-b04/smithy-courier-ticket",
+          "text": "The product catalogue contains no container target for that code."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "background_concern",
+            "source_ref": "cargo/smithy-sealed-blue",
+            "description": "Release the sealed blue crate to recipient R-41."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s09",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "bram"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "actor_assignment",
+            "source_event_id": "event/rq1-b04/smithy-courier-ticket",
+            "source_kind": "ActorWorkAssignment",
+            "bridge_ref": "actor/bram",
+            "actor_visible_text": "The courier ticket assigns the sealed blue crate directly to Bram."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "bram",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/bram",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 68,
+            "spirit": 42,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 14
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "craft",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "smithy",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "celia"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/smithy-courier-ticket"
+            ],
+            "unresolved_refs": [
+              "actor/R-41",
+              "place/R-41",
+              "container/R-41"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/bram/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s09",
+            "kind": "unresolved_cargo_recipient",
+            "subject_ref": "cargo/smithy-sealed-blue",
+            "status": "Active",
+            "description": "Release the sealed blue crate to recipient R-41."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/8/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "unresolved_reference",
+            "reference_id": "R-41",
+            "registered_place": false,
+            "registered_actor": false,
+            "registered_container": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b04-s10",
+      "actor_id": "iris",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b04-s10",
+        "actor_id": "iris",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "mill_tool_service",
+        "subject_ref": "service/smith-customer-hoe/mill-sluice",
+        "decision_tick": 300,
+        "summary": "The mill crew needs a hoe to clear packed grain beside the sluice. Iris has the smith's fee plus the iron and timber required by the configured customer service.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b04-s10/fact-1",
+          "rq1-v2-b04-s10/fact-2",
+          "rq1-v2-b04-s10/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b04-s10/fact-1",
+          "source_event_id": "event/rq1-b04/mill-maintenance-roster",
+          "text": "The mill maintenance note requests one hoe rather than a repair inspection."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s10/fact-2",
+          "source_event_id": "event/rq1-b04/mill-maintenance-roster",
+          "text": "Iris carries one iron ore, one timber and five coins."
+        },
+        {
+          "evidence_id": "rq1-v2-b04-s10/fact-3",
+          "source_event_id": "event/rq1-b04/mill-maintenance-roster",
+          "text": "The smith-customer-hoe service accepts those materials and fee through Bram."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "background_concern",
+            "source_ref": "service/smith-customer-hoe/mill-sluice",
+            "description": "Use the smith service to obtain one hoe for the mill crew."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b04-s10",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/mill-workers"
+          },
+          "role_assignment": {
+            "organization_id": "organization/mill-workers",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/mill-workers"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "event/rq1-b04/mill-maintenance-roster",
+            "source_kind": "OrganizationDispatch",
+            "bridge_ref": "organization/mill-workers",
+            "actor_visible_text": "The mill-workers maintenance roster links the sluice tool request to Iris."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "iris",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/iris",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 66,
+            "spirit": 68,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 11
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "mill",
+              "smithy"
+            ],
+            "known_actor_ids": [
+              "bram",
+              "devin"
+            ],
+            "source_event_ids": [
+              "event/rq1-b04/mill-maintenance-roster"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/iris/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b04-s10",
+            "kind": "mill_tool_service",
+            "subject_ref": "service/smith-customer-hoe/mill-sluice",
+            "status": "Active",
+            "description": "Use the smith service to obtain one hoe for the mill crew."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/9/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "service",
+            "service_id": "smith-customer-hoe",
+            "provider_actor_id": "bram",
+            "provider_owner_kind": "Shop",
+            "provider_container_id": "smithy-stock",
+            "provider_container_revision": 1,
+            "coin_fee": 5,
+            "customer_inputs": [
+              {
+                "asset_id": "iron-ore",
+                "quantity": 1
+              },
+              {
+                "asset_id": "timber",
+                "quantity": 1
+              }
+            ],
+            "customer_outputs": [
+              {
+                "asset_id": "hoe",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

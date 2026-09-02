@@ -1,0 +1,46 @@
+# Secrets and machine-specific credentials
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa*
+id_ed25519*
+
+# Local editor state
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Generated output
+/tmp/
+/runs/
+/godot/Artifacts/
+TestResults/
+[Bb]in/
+[Oo]bj/
+__pycache__/
+.pytest_cache/
+.venv/
+
+# Godot-generated files
+/godot/.godot/
+/godot/.import/
+/godot/.mono/
+/godot/.nomedia
+/godot/export.cfg
+/godot/export_credentials.cfg
+/godot/**/*.tmp
+/godot/**/*.translation
+/godot/**/~*.dll
+/godot/**/data_*/
+/godot/**/mono_crash.*.json
+
+# Common local noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log

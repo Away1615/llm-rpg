@@ -1,0 +1,2 @@
+using Alice.Activities;using Alice.Authority;using Alice.Interaction;using Alice.Perception;using Alice.Validation;
+namespace Alice.Execution;public static class PickupActionExecutor{public static PickupActionOutcomeReceipt Execute(WorldDropPickupAuthorityRuntime a,GameActionSpec s,GameActionId id,PickupValidationContext c,SimTime t){ArgumentNullException.ThrowIfNull(a);ArgumentNullException.ThrowIfNull(s);ArgumentNullException.ThrowIfNull(id);ArgumentNullException.ThrowIfNull(c);return PickupActionOutcomeProjector.Project(s,id,a.TryCommitPickup(s,id,c),t);}}

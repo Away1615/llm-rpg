@@ -1,0 +1,484 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://Scenes/Actors/NpcEntity.tscn" id="1_npc"]
+[ext_resource type="PackedScene" path="res://Scenes/Actors/PlayerEntity.tscn" id="3_player"]
+[ext_resource type="Script" path="res://Src/Alice.LivingTown/LivingTownRuntimeNode.cs" id="4_runtime"]
+[ext_resource type="Script" path="res://Src/Alice.LivingTown/TownMapInteractionShell.cs" id="5_shell"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.035, 0.055, 0.075, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.72, 0.62, 0.9)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_town"]
+
+[node name="TownMap" type="Node2D" node_paths=PackedStringArray("NpcContainer", "DialogueInput", "DialogueTranscript", "DialogueTargetLabel", "DialogueRouteLabel", "PlayerInventoryPanel", "PlayerInventoryLabel", "Rq1ActivationOption", "Rq2MemoryOption", "ActivityLogActorOption", "ActivityLogToggle", "ActivityLogPanel", "ResearchDebugToggle", "ResearchDebugPanel", "ResearchDebugActorOption", "ResearchDebugText", "NpcDebugPanel", "TraceLabel", "TimeProgressLabel", "TimeProgressBar", "TownNavigationRegion", "PlayerEntity", "NpcDebugCamera", "InteractionShell")]
+script = ExtResource("4_runtime")
+NpcEntityScene = ExtResource("1_npc")
+NpcContainer = NodePath("NpcRoster")
+DialogueInput = NodePath("UI/DialoguePanel/DialogueLayout/InputRow/Input")
+DialogueTranscript = NodePath("UI/DialoguePanel/DialogueLayout/Transcript")
+DialogueTargetLabel = NodePath("UI/DialoguePanel/DialogueLayout/DialogueTarget")
+DialogueRouteLabel = NodePath("UI/DialoguePanel/DialogueLayout/DialogueRoute")
+PlayerInventoryPanel = NodePath("UI/InventoryPanel")
+PlayerInventoryLabel = NodePath("UI/InventoryPanel/Inventory")
+Rq1ActivationOption = NodePath("UI/ResearchPanel/Controls/Rq1Activation")
+Rq2MemoryOption = NodePath("UI/ResearchPanel/Controls/Rq2Memory")
+ActivityLogActorOption = NodePath("UI/ActivityLogPanel/ActivityLogLayout/Header/ActorFilter")
+ActivityLogToggle = NodePath("UI/ResearchPanel/Controls/ActivityLogToggle")
+ActivityLogPanel = NodePath("UI/ActivityLogPanel")
+ResearchDebugToggle = NodePath("UI/ResearchPanel/Controls/ResearchDebugToggle")
+ResearchDebugPanel = NodePath("UI/ResearchDebugPanel")
+ResearchDebugActorOption = NodePath("UI/ResearchDebugPanel/Layout/Actor")
+ResearchDebugText = NodePath("UI/ResearchDebugPanel/Layout/Trace")
+NpcDebugPanel = NodePath("UI/DetailPanel")
+TraceLabel = NodePath("UI/ActivityLogPanel/ActivityLogLayout/Trace")
+TimeProgressLabel = NodePath("UI/TimePanel/TimeLayout/TimeLabel")
+TimeProgressBar = NodePath("UI/TimePanel/TimeLayout/TimeProgress")
+TownNavigationRegion = NodePath("NavigationRegion2D")
+PlayerEntity = NodePath("Player")
+NpcDebugCamera = NodePath("NpcDebugCamera")
+InteractionShell = NodePath("MapShell")
+
+[node name="MapShell" type="Node2D" parent="." node_paths=PackedStringArray("TargetLabel", "DetailPanel", "DetailTitle", "DetailLabel", "DebugOverviewButton", "DebugMemoriesButton", "DebugKnowledgeButton", "ContextMenu")]
+z_index = -10
+script = ExtResource("5_shell")
+TargetLabel = NodePath("../UI/TargetPanel/Target")
+DetailPanel = NodePath("../UI/DetailPanel")
+DetailTitle = NodePath("../UI/DetailPanel/DebugLayout/Header/Title")
+DetailLabel = NodePath("../UI/DetailPanel/DebugLayout/Scroll/Detail")
+DebugOverviewButton = NodePath("../UI/DetailPanel/DebugLayout/Sections/Overview")
+DebugMemoriesButton = NodePath("../UI/DetailPanel/DebugLayout/Sections/Memories")
+DebugKnowledgeButton = NodePath("../UI/DetailPanel/DebugLayout/Sections/Knowledge")
+ContextMenu = NodePath("../UI/ContextMenu")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_town")
+
+[node name="NpcRoster" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+position = Vector2(160, 120)
+ActorIdentity = "player-traveller"
+
+[node name="NpcDebugCamera" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(8, 8)
+process_callback = 0
+limit_left = 0
+limit_top = 0
+limit_right = 320
+limit_bottom = 240
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 520.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.92, 0.96, 0.84, 1)
+theme_override_font_sizes/font_size = 24
+text = "ALICE — Region Social Demo"
+
+[node name="Hint" type="Label" parent="UI"]
+offset_left = 22.0
+offset_top = 50.0
+offset_right = 620.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0.78, 0.84, 0.8, 0.92)
+text = "Left-click: move / select NPC · Right-click: actions / debug · Mouse wheel: zoom"
+
+[node name="TimePanel" type="PanelContainer" parent="UI"]
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 14.0
+offset_right = 170.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="TimeLayout" type="VBoxContainer" parent="UI/TimePanel"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="TimeLabel" type="Label" parent="UI/TimePanel/TimeLayout"]
+layout_mode = 2
+text = "Day 1 · Daytime · 0/100"
+horizontal_alignment = 1
+
+[node name="TimeProgress" type="ProgressBar" parent="UI/TimePanel/TimeLayout"]
+custom_minimum_size = Vector2(300, 12)
+layout_mode = 2
+show_percentage = false
+
+[node name="ResearchPanel" type="PanelContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -880.0
+offset_top = 14.0
+offset_right = -20.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Controls" type="HBoxContainer" parent="UI/ResearchPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Rq1Label" type="Label" parent="UI/ResearchPanel/Controls"]
+layout_mode = 2
+text = "RQ1"
+vertical_alignment = 1
+
+[node name="Rq1Activation" type="OptionButton" parent="UI/ResearchPanel/Controls"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+tooltip_text = "Select the RQ1 activation policy"
+
+[node name="Rq2Label" type="Label" parent="UI/ResearchPanel/Controls"]
+layout_mode = 2
+text = "RQ2"
+vertical_alignment = 1
+
+[node name="Rq2Memory" type="OptionButton" parent="UI/ResearchPanel/Controls"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+tooltip_text = "Select the RQ2 memory representation"
+
+[node name="Save" type="Button" parent="UI/ResearchPanel/Controls"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+tooltip_text = "Save the complete Demo state"
+text = "Save Game"
+
+[node name="Load" type="Button" parent="UI/ResearchPanel/Controls"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+tooltip_text = "Load the previously saved Demo state"
+text = "Load Save"
+
+[node name="ActivityLogToggle" type="CheckButton" parent="UI/ResearchPanel/Controls"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+tooltip_text = "Show the per-NPC L0 / L1 / L2 activity log"
+text = "Activity Log"
+
+[node name="ResearchDebugToggle" type="CheckButton" parent="UI/ResearchPanel/Controls"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+tooltip_text = "Show RQ comparison and trigger the existing L0 / L1 / L2 pipelines"
+text = "Research Debug"
+
+[node name="DetailPanel" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 20.0
+offset_top = 86.0
+offset_right = 680.0
+offset_bottom = 940.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="DebugLayout" type="VBoxContainer" parent="UI/DetailPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Header" type="HBoxContainer" parent="UI/DetailPanel/DebugLayout"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/DetailPanel/DebugLayout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Debug"
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="UI/DetailPanel/DebugLayout/Header"]
+custom_minimum_size = Vector2(40, 34)
+layout_mode = 2
+tooltip_text = "Close debug panel"
+text = "×"
+
+[node name="Sections" type="HBoxContainer" parent="UI/DetailPanel/DebugLayout"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Overview" type="Button" parent="UI/DetailPanel/DebugLayout/Sections"]
+layout_mode = 2
+text = "Overview"
+
+[node name="Memories" type="Button" parent="UI/DetailPanel/DebugLayout/Sections"]
+layout_mode = 2
+text = "Memories"
+
+[node name="Knowledge" type="Button" parent="UI/DetailPanel/DebugLayout/Sections"]
+layout_mode = 2
+text = "Knowledge"
+
+[node name="Scroll" type="ScrollContainer" parent="UI/DetailPanel/DebugLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Detail" type="Label" parent="UI/DetailPanel/DebugLayout/Scroll"]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Target detail"
+autowrap_mode = 2
+
+[node name="DialoguePanel" type="PanelContainer" parent="UI"]
+anchors_preset = 3
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -320.0
+offset_right = 470.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="DialogueLayout" type="VBoxContainer" parent="UI/DialoguePanel"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="DialogueTarget" type="Label" parent="UI/DialoguePanel/DialogueLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.94, 0.82, 1)
+text = "Dialogue — select an NPC"
+
+[node name="DialogueRoute" type="Label" parent="UI/DialoguePanel/DialogueLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.84, 0.8, 0.92)
+theme_override_font_sizes/font_size = 13
+text = "Cognition route: waiting for a semantic turn"
+
+[node name="Transcript" type="RichTextLabel" parent="UI/DialoguePanel/DialogueLayout"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+size_flags_vertical = 3
+scroll_active = true
+
+[node name="InputRow" type="HBoxContainer" parent="UI/DialoguePanel/DialogueLayout"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Input" type="LineEdit" parent="UI/DialoguePanel/DialogueLayout/InputRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Select an NPC, then type a message…"
+
+[node name="Send" type="Button" parent="UI/DialoguePanel/DialogueLayout/InputRow"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+tooltip_text = "Send this message to the selected NPC"
+text = "Send Message"
+
+[node name="ActivityLogPanel" type="PanelContainer" parent="UI"]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1064.0
+offset_top = 86.0
+offset_right = -20.0
+offset_bottom = -126.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="ActivityLogLayout" type="VBoxContainer" parent="UI/ActivityLogPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Header" type="HBoxContainer" parent="UI/ActivityLogPanel/ActivityLogLayout"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="UI/ActivityLogPanel/ActivityLogLayout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NPC activity / cognition log"
+vertical_alignment = 1
+
+[node name="ActorFilter" type="OptionButton" parent="UI/ActivityLogPanel/ActivityLogLayout/Header"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+tooltip_text = "Show all activity or one NPC's activity"
+
+[node name="SourceFilters" type="HBoxContainer" parent="UI/ActivityLogPanel/ActivityLogLayout"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="All" type="Button" parent="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "All"
+
+[node name="Authority" type="Button" parent="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+toggle_mode = true
+text = "Authority"
+
+[node name="Runtime" type="Button" parent="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+toggle_mode = true
+text = "Runtime"
+
+[node name="Provider" type="Button" parent="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+toggle_mode = true
+text = "Provider"
+
+[node name="LiveDialogue" type="Button" parent="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+toggle_mode = true
+text = "Live Dialogue"
+
+[node name="Trace" type="RichTextLabel" parent="UI/ActivityLogPanel/ActivityLogLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+scroll_active = true
+selection_enabled = true
+
+[node name="ResearchDebugPanel" type="PanelContainer" parent="UI"]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -620.0
+offset_top = 86.0
+offset_right = -20.0
+offset_bottom = -126.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Layout" type="VBoxContainer" parent="UI/ResearchDebugPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Header" type="HBoxContainer" parent="UI/ResearchDebugPanel/Layout"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/ResearchDebugPanel/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Research route debugger — DEBUG PREVIEW"
+
+[node name="Close" type="Button" parent="UI/ResearchDebugPanel/Layout/Header"]
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+text = "×"
+
+[node name="Actor" type="OptionButton" parent="UI/ResearchDebugPanel/Layout"]
+layout_mode = 2
+tooltip_text = "NPC used by the three cognition trigger buttons"
+
+[node name="Triggers" type="HBoxContainer" parent="UI/ResearchDebugPanel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="L0" type="Button" parent="UI/ResearchDebugPanel/Layout/Triggers"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trigger L0"
+
+[node name="L1" type="Button" parent="UI/ResearchDebugPanel/Layout/Triggers"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trigger L1"
+
+[node name="L2" type="Button" parent="UI/ResearchDebugPanel/Layout/Triggers"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trigger L2"
+
+[node name="Trace" type="RichTextLabel" parent="UI/ResearchDebugPanel/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+scroll_active = true
+selection_enabled = true
+
+[node name="InventoryPanel" type="PanelContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_top = 86.0
+offset_right = -20.0
+offset_bottom = 174.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Inventory" type="RichTextLabel" parent="UI/InventoryPanel"]
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+text = "Bag: loading…\nHand: loading…"
+fit_content = false
+scroll_active = true
+
+[node name="TargetPanel" type="PanelContainer" parent="UI"]
+anchors_preset = 8
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -106.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Target" type="Label" parent="UI/TargetPanel"]
+layout_mode = 2
+text = "No target"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContextMenu" type="PopupMenu" parent="UI"]
+
+[connection signal="pressed" from="UI/ResearchPanel/Controls/Save" to="." method="OnSaveGamePressed"]
+[connection signal="pressed" from="UI/ResearchPanel/Controls/Load" to="." method="OnLoadGamePressed"]
+[connection signal="toggled" from="UI/ResearchPanel/Controls/ActivityLogToggle" to="." method="OnActivityLogToggled"]
+[connection signal="toggled" from="UI/ResearchPanel/Controls/ResearchDebugToggle" to="." method="OnResearchDebugToggled"]
+[connection signal="item_selected" from="UI/ResearchPanel/Controls/Rq1Activation" to="." method="OnRq1ActivationSelected"]
+[connection signal="item_selected" from="UI/ResearchPanel/Controls/Rq2Memory" to="." method="OnRq2MemorySelected"]
+[connection signal="item_selected" from="UI/ActivityLogPanel/ActivityLogLayout/Header/ActorFilter" to="." method="OnActivityLogActorSelected"]
+[connection signal="pressed" from="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters/All" to="." method="OnActivityLogAllPressed"]
+[connection signal="pressed" from="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters/Authority" to="." method="OnActivityLogAuthorityPressed"]
+[connection signal="pressed" from="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters/Runtime" to="." method="OnActivityLogRuntimePressed"]
+[connection signal="pressed" from="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters/Provider" to="." method="OnActivityLogProviderPressed"]
+[connection signal="pressed" from="UI/ActivityLogPanel/ActivityLogLayout/SourceFilters/LiveDialogue" to="." method="OnActivityLogDialoguePressed"]
+[connection signal="item_selected" from="UI/ResearchDebugPanel/Layout/Actor" to="." method="OnResearchDebugActorSelected"]
+[connection signal="pressed" from="UI/ResearchDebugPanel/Layout/Header/Close" to="." method="OnResearchDebugClosePressed"]
+[connection signal="pressed" from="UI/ResearchDebugPanel/Layout/Triggers/L0" to="." method="OnResearchDebugL0Pressed"]
+[connection signal="pressed" from="UI/ResearchDebugPanel/Layout/Triggers/L1" to="." method="OnResearchDebugL1Pressed"]
+[connection signal="pressed" from="UI/ResearchDebugPanel/Layout/Triggers/L2" to="." method="OnResearchDebugL2Pressed"]
+[connection signal="pressed" from="UI/DialoguePanel/DialogueLayout/InputRow/Send" to="." method="OnDialogueSubmitPressed"]
+[connection signal="text_submitted" from="UI/DialoguePanel/DialogueLayout/InputRow/Input" to="." method="OnDialogueTextSubmitted"]
+[connection signal="pressed" from="UI/DetailPanel/DebugLayout/Header/Close" to="MapShell" method="OnDebugClosePressed"]
+[connection signal="pressed" from="UI/DetailPanel/DebugLayout/Sections/Overview" to="MapShell" method="OnDebugOverviewPressed"]
+[connection signal="pressed" from="UI/DetailPanel/DebugLayout/Sections/Memories" to="MapShell" method="OnDebugMemoriesPressed"]
+[connection signal="pressed" from="UI/DetailPanel/DebugLayout/Sections/Knowledge" to="MapShell" method="OnDebugKnowledgePressed"]

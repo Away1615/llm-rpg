@@ -1,0 +1,1647 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_08",
+  "block_id": "block_08",
+  "decision_tick": 620,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b08-s01",
+      "actor_id": "lucas",
+      "domain": "tools_maintenance",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "Lucas must replace two fence rails before the afternoon livestock move, but his only axe is still in the smithy's curing rack.",
+        "fact_refs": [
+          "item/lucas-axe/repair-cure",
+          "work-order/woodlot-east-fence",
+          "service/smithy-repair-window"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "item/lucas-axe/repair-cure",
+          "kind": "EquipmentCondition",
+          "item_instance_id": "lucas-axe",
+          "condition": "resin_curing",
+          "usable_at_tick": 700
+        },
+        {
+          "fact_ref": "work-order/woodlot-east-fence",
+          "kind": "WorkOrder",
+          "actor_id": "lucas",
+          "required_capability_id": "tool-repair",
+          "due_at_tick": 680
+        },
+        {
+          "fact_ref": "service/smithy-repair-window",
+          "kind": "ServiceWindow",
+          "place_ref": "smithy",
+          "opens_at_tick": 700
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "EquipmentCondition",
+            "source_ref": "item/lucas-axe",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s01",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/tool-repair"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "kind": "RequiresCapability",
+            "source_id": "work-order/woodlot-east-fence",
+            "source_type": "WorkOrder",
+            "target_ref": "capability/tool-repair"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 70,
+            "spirit": 73,
+            "disease": "Ill"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 13
+          }
+        },
+        "capabilities": {
+          "gather": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "woodlot",
+            "smithy"
+          ],
+          "known_actor_ids": [
+            "bram",
+            "celia"
+          ],
+          "fact_refs": [
+            "item/lucas-axe/repair-cure",
+            "work-order/woodlot-east-fence",
+            "service/smithy-repair-window"
+          ]
+        },
+        "active_goal_refs": [
+          "finish-east-fence-rails"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 70,
+            "spirit": 73,
+            "disease": "Ill"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 13
+          },
+          "capabilities": {
+            "gather": 1
+          },
+          "knowledge_fact_refs": [
+            "item/lucas-axe/repair-cure",
+            "work-order/woodlot-east-fence",
+            "service/smithy-repair-window"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "item/lucas-axe",
+            "owner_kind": "Shop",
+            "owner_id": "smithy-stock",
+            "condition": "resin_curing",
+            "usable_at_tick": 700
+          },
+          {
+            "entity_ref": "service/smithy-repair-window",
+            "open": false,
+            "opens_at_tick": 700
+          }
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b08-s02",
+      "actor_id": "jonah",
+      "domain": "food_production",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "Two flour sacks reached the warehouse with different mill seals, and Jonah has no signed lot record that identifies which sack is food-safe.",
+        "fact_refs": [
+          "shipment/flour-pair/seals",
+          "record/flour-pair/absent-attestation",
+          "duty/jonah-flour-intake"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "shipment/flour-pair/seals",
+          "kind": "ConflictingProvenance",
+          "asset_id": "flour",
+          "seal_ids": [
+            "mill-blue-17",
+            "mill-amber-17"
+          ]
+        },
+        {
+          "fact_ref": "record/flour-pair/absent-attestation",
+          "kind": "RecordAvailability",
+          "record_type": "food-safety-attestation",
+          "present": false,
+          "authorized_issuer": "mill-inspector"
+        },
+        {
+          "fact_ref": "duty/jonah-flour-intake",
+          "kind": "AssignedDuty",
+          "actor_id": "jonah",
+          "organization_id": "town-carriers",
+          "due_at_tick": 690
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "AssignedStockCheck",
+            "source_ref": "duty/jonah-flour-intake",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s02",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/town-carriers"
+          },
+          "role_assignment": {
+            "organization_id": "organization/town-carriers",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/town-carriers"
+          },
+          "raw_evidence": {
+            "kind": "MemberOfOrganization",
+            "source_id": "organization/town-carriers",
+            "source_type": "Occupation",
+            "target_ref": "actor/jonah"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 28,
+            "spirit": 60,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 5
+          }
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "town-warehouse",
+            "mill"
+          ],
+          "known_actor_ids": [
+            "elin",
+            "iris"
+          ],
+          "fact_refs": [
+            "shipment/flour-pair/seals",
+            "record/flour-pair/absent-attestation",
+            "duty/jonah-flour-intake"
+          ]
+        },
+        "active_goal_refs": [
+          "receive-safe-flour-lot"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 28,
+            "spirit": 60,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 5
+          },
+          "capabilities": {},
+          "knowledge_fact_refs": [
+            "shipment/flour-pair/seals",
+            "record/flour-pair/absent-attestation",
+            "duty/jonah-flour-intake"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "shipment/flour-pair",
+            "custody_owner": "town-warehouse",
+            "release_status": "held_for_attestation"
+          },
+          {
+            "entity_ref": "record/flour-pair/attestation",
+            "present": false,
+            "issuer_role": "mill-inspector"
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b08-s03",
+      "actor_id": "nolan",
+      "domain": "trade_harvest",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "The carpentry stall accepted an order for orchard fruit baskets, but Nolan holds neither a harvesting basket nor a known source of fruit or basket stock.",
+        "fact_refs": [
+          "order/carpentry-fruit-baskets",
+          "container/nolan/harvest-stock",
+          "knowledge/nolan/supply-sources"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "order/carpentry-fruit-baskets",
+          "kind": "TradeOrder",
+          "asset_id": "fruit",
+          "quantity": 4,
+          "due_at_tick": 710
+        },
+        {
+          "fact_ref": "container/nolan/harvest-stock",
+          "kind": "InventorySnapshot",
+          "fruit": 0,
+          "basket_instances": 0
+        },
+        {
+          "fact_ref": "knowledge/nolan/supply-sources",
+          "kind": "KnowledgeBoundary",
+          "known_fruit_sources": [],
+          "known_basket_listings": []
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "StockShortfall",
+            "source_ref": "order/carpentry-fruit-baskets",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s03",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "actor/nolan"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "kind": "ControlsOrHoldsResource",
+            "source_id": "container/carpentry-stock",
+            "source_type": "AssetContainer",
+            "target_ref": "actor/nolan"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 20,
+            "spirit": 57,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 5
+          }
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "carpentry"
+          ],
+          "known_actor_ids": [
+            "opal"
+          ],
+          "fact_refs": [
+            "order/carpentry-fruit-baskets",
+            "container/nolan/harvest-stock",
+            "knowledge/nolan/supply-sources"
+          ]
+        },
+        "active_goal_refs": [
+          "fill-fruit-basket-order"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 20,
+            "spirit": 57,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 5
+          },
+          "capabilities": {},
+          "knowledge_fact_refs": [
+            "order/carpentry-fruit-baskets",
+            "container/nolan/harvest-stock",
+            "knowledge/nolan/supply-sources"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "container/Actor/nolan",
+            "revision": 1,
+            "balances": {
+              "fruit": 0
+            },
+            "item_instances": []
+          },
+          {
+            "entity_ref": "catalogue/nolan",
+            "known_terminal_entries": []
+          }
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b08-s04",
+      "actor_id": "farah",
+      "domain": "care_household",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "Farah is holding Mira's sealed tonic, whose physician label forbids administration before tick 690; the current care check closes at tick 675.",
+        "fact_refs": [
+          "care/mira-tonic-dose",
+          "item/mira-tonic/seal",
+          "clock/block-08"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "care/mira-tonic-dose",
+          "kind": "CareSchedule",
+          "recipient_actor_id": "mira",
+          "not_before_tick": 690
+        },
+        {
+          "fact_ref": "item/mira-tonic/seal",
+          "kind": "MedicineSeal",
+          "holder_actor_id": "farah",
+          "sealed": true,
+          "label_source": "pavel"
+        },
+        {
+          "fact_ref": "clock/block-08",
+          "kind": "Clock",
+          "current_tick": 620,
+          "care_check_deadline_tick": 675
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "CareSchedule",
+            "source_ref": "care/mira-tonic-dose",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s04",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/town-builders"
+          },
+          "role_assignment": {
+            "organization_id": "organization/town-builders",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/town-builders"
+          },
+          "raw_evidence": {
+            "kind": "MemberOfOrganization",
+            "source_id": "organization/town-builders",
+            "source_type": "Occupation",
+            "target_ref": "actor/farah"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 31,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 10
+          }
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "farah-home",
+            "town-clinic"
+          ],
+          "known_actor_ids": [
+            "mira",
+            "pavel"
+          ],
+          "fact_refs": [
+            "care/mira-tonic-dose",
+            "item/mira-tonic/seal",
+            "clock/block-08"
+          ]
+        },
+        "active_goal_refs": [
+          "follow-mira-tonic-label"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 31,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 10
+          },
+          "capabilities": {},
+          "knowledge_fact_refs": [
+            "care/mira-tonic-dose",
+            "item/mira-tonic/seal",
+            "clock/block-08"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "item/mira-tonic",
+            "holder_actor_id": "farah",
+            "sealed": true,
+            "not_before_tick": 690
+          },
+          {
+            "entity_ref": "clock/block-08",
+            "current_tick": 620
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b08-s05",
+      "actor_id": "hugo",
+      "domain": "obligation_logistics",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "Hugo is carrying the two wheat sacks named on the warehouse intake note, and the receiving bin remains open until tick 700.",
+        "fact_refs": [
+          "delivery/hugo-wheat-intake",
+          "container/Actor/hugo/wheat",
+          "container/Warehouse/town-supply-stock/intake"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "delivery/hugo-wheat-intake",
+          "kind": "DeliveryDuty",
+          "actor_id": "hugo",
+          "asset_id": "wheat",
+          "quantity": 2,
+          "destination_id": "town-supply-stock",
+          "due_at_tick": 700
+        },
+        {
+          "fact_ref": "container/Actor/hugo/wheat",
+          "kind": "InventorySnapshot",
+          "quantity": 2,
+          "revision": 1
+        },
+        {
+          "fact_ref": "container/Warehouse/town-supply-stock/intake",
+          "kind": "ContainerIntake",
+          "accepts_asset_id": "wheat",
+          "open": true,
+          "revision": 1
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "CarriedDelivery",
+            "source_ref": "container/Actor/hugo",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s05",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "place/town-warehouse"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "kind": "AffectsPlace",
+            "source_id": "supply-request/town-warehouse-wheat",
+            "source_type": "PlaceSupplyRequest",
+            "target_ref": "place/town-warehouse"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 85,
+            "health_maximum": 100,
+            "satiety": 24,
+            "spirit": 49,
+            "disease": "Ill"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "wheat",
+                "quantity": 2
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 4
+          }
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "general-store",
+            "town-warehouse"
+          ],
+          "known_actor_ids": [
+            "bernard",
+            "jonah"
+          ],
+          "fact_refs": [
+            "delivery/hugo-wheat-intake",
+            "container/Actor/hugo/wheat",
+            "container/Warehouse/town-supply-stock/intake"
+          ]
+        },
+        "active_goal_refs": [
+          "deliver-warehouse-wheat"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b08-s05-action",
+            "kind": "asset_transfer",
+            "label": "Place two wheat sacks in the town supply bin",
+            "target_ref": "container/Warehouse/town-supply-stock"
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 85,
+            "health_maximum": 100,
+            "satiety": 24,
+            "spirit": 49,
+            "disease": "Ill"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "wheat",
+                "quantity": 2
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 4
+          },
+          "capabilities": {},
+          "knowledge_fact_refs": [
+            "delivery/hugo-wheat-intake",
+            "container/Actor/hugo/wheat",
+            "container/Warehouse/town-supply-stock/intake"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "container/Actor/hugo",
+            "owner_kind": "Actor",
+            "owner_id": "hugo",
+            "revision": 1,
+            "balances": {
+              "wheat": 2
+            }
+          },
+          {
+            "entity_ref": "container/Warehouse/town-supply-stock",
+            "owner_kind": "Warehouse",
+            "owner_id": "town-supply-stock",
+            "revision": 1,
+            "balances": {
+              "wheat": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b08-s06",
+      "actor_id": "aiko",
+      "domain": "tools_maintenance",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "Aiko's basket rim has been rebound, but the repair tag keeps it out of service until tick 685, after the current orchard round closes.",
+        "fact_refs": [
+          "item/aiko-basket/repair",
+          "commitment/aiko-orchard-round",
+          "clock/block-08"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "item/aiko-basket/repair",
+          "kind": "EquipmentCondition",
+          "item_instance_id": "aiko-basket",
+          "condition": "binding_cure",
+          "usable_at_tick": 685
+        },
+        {
+          "fact_ref": "commitment/aiko-orchard-round",
+          "kind": "Commitment",
+          "debtor_actor_id": "aiko",
+          "target_ref": "region/orchard",
+          "due_at_tick": 675
+        },
+        {
+          "fact_ref": "clock/block-08",
+          "kind": "Clock",
+          "current_tick": 620
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "EquipmentCondition",
+            "source_ref": "item/aiko-basket/repair",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s06",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/aiko-orchard-round"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "kind": "BoundByCommitment",
+            "source_id": "commitment/aiko-orchard-round",
+            "source_type": "Commitment",
+            "target_ref": "actor/aiko"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 18,
+            "spirit": 75,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 2,
+            "stacks": [],
+            "instances": [
+              {
+                "item_instance_id": "aiko-basket",
+                "item_type_id": "basket",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1,
+                "condition": "binding_cure"
+              }
+            ],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 3
+          }
+        },
+        "capabilities": {
+          "gather": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "orchard"
+          ],
+          "known_actor_ids": [],
+          "fact_refs": [
+            "item/aiko-basket/repair",
+            "commitment/aiko-orchard-round",
+            "clock/block-08"
+          ]
+        },
+        "active_goal_refs": [
+          "complete-orchard-round"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 18,
+            "spirit": 75,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 2,
+            "stacks": [],
+            "instances": [
+              {
+                "item_instance_id": "aiko-basket",
+                "item_type_id": "basket",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1,
+                "condition": "binding_cure"
+              }
+            ],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 3
+          },
+          "capabilities": {
+            "gather": 1
+          },
+          "knowledge_fact_refs": [
+            "item/aiko-basket/repair",
+            "commitment/aiko-orchard-round",
+            "clock/block-08"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "item/aiko-basket",
+            "owner_kind": "Actor",
+            "owner_id": "aiko",
+            "condition": "binding_cure",
+            "usable_at_tick": 685
+          },
+          {
+            "entity_ref": "region/orchard",
+            "stock": 20,
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b08-s07",
+      "actor_id": "mira",
+      "domain": "food_production",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "The community kitchen's second pot carries two incompatible cleaning marks, and Mira cannot identify an authorized sanitation record for it.",
+        "fact_refs": [
+          "kitchen/community-pot-2/marks",
+          "record/community-pot-2/sanitation",
+          "duty/mira-community-supper"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "kitchen/community-pot-2/marks",
+          "kind": "ConflictingProvenance",
+          "item_instance_id": "community-pot-2",
+          "mark_ids": [
+            "washed-red",
+            "hold-black"
+          ]
+        },
+        {
+          "fact_ref": "record/community-pot-2/sanitation",
+          "kind": "RecordAvailability",
+          "present": false,
+          "authorized_issuer": "kitchen-steward"
+        },
+        {
+          "fact_ref": "duty/mira-community-supper",
+          "kind": "AssignedDuty",
+          "actor_id": "mira",
+          "place_ref": "community-garden",
+          "due_at_tick": 695
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "KitchenHold",
+            "source_ref": "kitchen/community-pot-2",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s07",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "mira"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "kind": "AssignedToActor",
+            "source_id": "duty/mira-community-supper",
+            "source_type": "AssignedDuty",
+            "target_ref": "actor/mira"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 6
+          }
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "community-garden"
+          ],
+          "known_actor_ids": [
+            "farah"
+          ],
+          "fact_refs": [
+            "kitchen/community-pot-2/marks",
+            "record/community-pot-2/sanitation",
+            "duty/mira-community-supper"
+          ]
+        },
+        "active_goal_refs": [
+          "prepare-community-supper-safely"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 6
+          },
+          "capabilities": {},
+          "knowledge_fact_refs": [
+            "kitchen/community-pot-2/marks",
+            "record/community-pot-2/sanitation",
+            "duty/mira-community-supper"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "item/community-pot-2",
+            "condition": "sanitation_hold",
+            "recognized_attestation_ref": null
+          },
+          {
+            "entity_ref": "record/community-pot-2/sanitation",
+            "present": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b08-s08",
+      "actor_id": "bernard",
+      "domain": "trade_harvest",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "The inn requests a fish crate, while Bernard can see that the shop, warehouse and his own pack all hold no fish and he knows no current fishing supplier.",
+        "fact_refs": [
+          "order/inn-fish-crates",
+          "stock/fish-visible-zero",
+          "knowledge/bernard/fish-suppliers"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "order/inn-fish-crates",
+          "kind": "TradeOrder",
+          "asset_id": "fish",
+          "quantity": 3,
+          "due_at_tick": 720
+        },
+        {
+          "fact_ref": "stock/fish-visible-zero",
+          "kind": "AggregateVisibleStock",
+          "actor_quantity": 0,
+          "merchant_quantity": 0,
+          "warehouse_quantity": 0
+        },
+        {
+          "fact_ref": "knowledge/bernard/fish-suppliers",
+          "kind": "KnowledgeBoundary",
+          "known_supplier_ids": []
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "TradeShortfall",
+            "source_ref": "order/inn-fish-crates",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s08",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/brackenford-merchants"
+          },
+          "role_assignment": {
+            "organization_id": "organization/brackenford-merchants",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/brackenford-merchants"
+          },
+          "raw_evidence": {
+            "kind": "MemberOfOrganization",
+            "source_id": "organization/brackenford-merchants",
+            "source_type": "Occupation",
+            "target_ref": "actor/bernard"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 74,
+            "spirit": 34,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 28
+          }
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "general-store",
+            "town-warehouse",
+            "inn"
+          ],
+          "known_actor_ids": [
+            "emma",
+            "hugo"
+          ],
+          "fact_refs": [
+            "order/inn-fish-crates",
+            "stock/fish-visible-zero",
+            "knowledge/bernard/fish-suppliers"
+          ]
+        },
+        "active_goal_refs": [
+          "fill-inn-fish-order"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 74,
+            "spirit": 34,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 28
+          },
+          "capabilities": {},
+          "knowledge_fact_refs": [
+            "order/inn-fish-crates",
+            "stock/fish-visible-zero",
+            "knowledge/bernard/fish-suppliers"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "container/Actor/bernard",
+            "revision": 1,
+            "balances": {
+              "fish": 0
+            }
+          },
+          {
+            "entity_ref": "container/Shop/merchant-stock",
+            "revision": 1,
+            "balances": {
+              "fish": 0
+            }
+          },
+          {
+            "entity_ref": "container/Warehouse/town-supply-stock",
+            "revision": 1,
+            "balances": {
+              "fish": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b08-s09",
+      "actor_id": "bram",
+      "domain": "care_household",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "Alice's care note calls for common medicine, but Bram has none, both known dispensaries report zero stock, and no substitute treatment appears in his knowledge.",
+        "fact_refs": [
+          "care/alice-fever",
+          "stock/common-medicine-visible-zero",
+          "knowledge/bram/treatments"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "care/alice-fever",
+          "kind": "HouseholdCareNeed",
+          "recipient_actor_id": "alice",
+          "required_asset_id": "common-medicine",
+          "due_at_tick": 700
+        },
+        {
+          "fact_ref": "stock/common-medicine-visible-zero",
+          "kind": "AggregateVisibleStock",
+          "actor_quantity": 0,
+          "merchant_quantity": 0,
+          "clinic_quantity": 0
+        },
+        {
+          "fact_ref": "knowledge/bram/treatments",
+          "kind": "KnowledgeBoundary",
+          "known_compatible_asset_ids": [
+            "common-medicine"
+          ],
+          "known_available_sources": []
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "HouseholdCareNeed",
+            "source_ref": "care/alice-fever",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s09",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "bram"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "kind": "AssignedToActor",
+            "source_id": "duty/bram-alice-care",
+            "source_type": "AssignedDuty",
+            "target_ref": "actor/bram"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 68,
+            "spirit": 42,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "iron-ore",
+                "quantity": 3
+              },
+              {
+                "item_type_id": "timber",
+                "quantity": 3
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 14
+          }
+        },
+        "capabilities": {
+          "craft": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "alice-home",
+            "town-clinic",
+            "general-store"
+          ],
+          "known_actor_ids": [
+            "alice",
+            "pavel"
+          ],
+          "fact_refs": [
+            "care/alice-fever",
+            "stock/common-medicine-visible-zero",
+            "knowledge/bram/treatments"
+          ]
+        },
+        "active_goal_refs": [
+          "obtain-alice-medicine"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 68,
+            "spirit": 42,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "iron-ore",
+                "quantity": 3
+              },
+              {
+                "item_type_id": "timber",
+                "quantity": 3
+              }
+            ],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 14
+          },
+          "capabilities": {
+            "craft": 1
+          },
+          "knowledge_fact_refs": [
+            "care/alice-fever",
+            "stock/common-medicine-visible-zero",
+            "knowledge/bram/treatments"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "container/Actor/bram",
+            "revision": 1,
+            "balances": {
+              "common-medicine": 0
+            }
+          },
+          {
+            "entity_ref": "container/Shop/merchant-stock",
+            "revision": 1,
+            "balances": {
+              "common-medicine": 0
+            }
+          },
+          {
+            "entity_ref": "container/Shop/clinic-stock",
+            "revision": 1,
+            "balances": {
+              "common-medicine": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b08-s10",
+      "actor_id": "celia",
+      "domain": "obligation_logistics",
+      "decision_tick": 620,
+      "deadline_tick": 860,
+      "pressure_packet": {
+        "summary": "Celia's rivet crate is ready, but the only authorized bridge cart is locked out until tick 705, after the delivery window ends.",
+        "fact_refs": [
+          "commitment/celia-rivet-crate",
+          "route/east-bridge/cart-gate",
+          "delivery/celia-rivet-crate"
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_ref": "commitment/celia-rivet-crate",
+          "kind": "Commitment",
+          "debtor_actor_id": "celia",
+          "destination_ref": "east-bridge-yard",
+          "due_at_tick": 690
+        },
+        {
+          "fact_ref": "route/east-bridge/cart-gate",
+          "kind": "RouteGate",
+          "authorized_vehicle_id": "smithy-cart",
+          "open": false,
+          "opens_at_tick": 705
+        },
+        {
+          "fact_ref": "delivery/celia-rivet-crate",
+          "kind": "DeliveryLoad",
+          "holder_actor_id": "celia",
+          "sealed": true
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "DeliverySchedule",
+            "source_ref": "delivery/celia-rivet-crate",
+            "observed_at_tick": 620
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b08-s10",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/celia-rivet-crate"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "kind": "BoundByCommitment",
+            "source_id": "commitment/celia-rivet-crate",
+            "source_type": "Commitment",
+            "target_ref": "actor/celia"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "current_self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 22,
+            "spirit": 70,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 5
+          }
+        },
+        "capabilities": {
+          "craft": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "smithy",
+            "east-bridge-yard"
+          ],
+          "known_actor_ids": [
+            "bram"
+          ],
+          "fact_refs": [
+            "commitment/celia-rivet-crate",
+            "route/east-bridge/cart-gate",
+            "delivery/celia-rivet-crate"
+          ]
+        },
+        "active_goal_refs": [
+          "deliver-rivet-crate"
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 22,
+            "spirit": 70,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "revision": 1,
+            "stacks": [],
+            "instances": [],
+            "hand_equipment": null
+          },
+          "currency": {
+            "coin": 5
+          },
+          "capabilities": {
+            "craft": 1
+          },
+          "knowledge_fact_refs": [
+            "commitment/celia-rivet-crate",
+            "route/east-bridge/cart-gate",
+            "delivery/celia-rivet-crate"
+          ]
+        },
+        "entities": [
+          {
+            "entity_ref": "route/east-bridge/cart-gate",
+            "open": false,
+            "opens_at_tick": 705
+          },
+          {
+            "entity_ref": "commitment/celia-rivet-crate",
+            "status": "Active",
+            "due_at_tick": 690
+          }
+        ]
+      }
+    }
+  ]
+}

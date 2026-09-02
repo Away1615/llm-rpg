@@ -1,0 +1,1507 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_14",
+  "block_id": "block_14",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b14-s01",
+      "actor_id": "farah",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s01",
+        "actor_id": "farah",
+        "task_domain": "food_production",
+        "problem_kind": "missing_safe_food_source",
+        "subject_ref": "food/allergy-safe-flour/clinic-kitchen",
+        "decision_tick": 300,
+        "summary": "Farah is helping the clinic kitchen find flour certified free of nut residue. None of her known places, assets or proposals identifies that certified ingredient, and ordinary wheat cannot satisfy the recorded dietary constraint.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s01/fact-1",
+          "rq1-v2-b14-s01/fact-2",
+          "rq1-v2-b14-s01/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s01/fact-1",
+          "source_event_id": "event/rq1-b14/clinic-dietary-capability-note",
+          "text": "The clinic request requires the registered property nut-residue-free."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s01/fact-2",
+          "source_event_id": "event/rq1-b14/clinic-dietary-capability-note",
+          "text": "Farah knows the general store and mill, but neither visible catalogue contains that certified asset."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s01/fact-3",
+          "source_event_id": "event/rq1-b14/clinic-dietary-capability-note",
+          "text": "No current product asset or recipe is registered under the requested property."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "immediate_self_pressure",
+            "source_ref": "food/allergy-safe-flour/clinic-kitchen",
+            "description": "Obtain a registered allergy-safe flour input for the clinic kitchen."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s01",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/allergen-certification"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "capability_requirement",
+            "source_event_id": "event/rq1-b14/clinic-dietary-capability-note",
+            "source_kind": "CapabilityRequirementPublished",
+            "bridge_ref": "capability/allergen-certification",
+            "actor_visible_text": "The clinic note states that an allergen-certification capability is required for this food source."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "farah",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/farah",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 31,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 10
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "community-garden",
+              "town-clinic",
+              "mill",
+              "general-store"
+            ],
+            "known_actor_ids": [
+              "pavel"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/clinic-dietary-capability-note"
+            ],
+            "unresolved_refs": [
+              "asset/allergy-safe-flour",
+              "capability/allergen-certification"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/farah/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s01",
+            "kind": "missing_safe_food_source",
+            "subject_ref": "food/allergy-safe-flour/clinic-kitchen",
+            "status": "Active",
+            "description": "Obtain a registered allergy-safe flour input for the clinic kitchen."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/0/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "unresolved_reference",
+            "reference_id": "allergy-safe-flour",
+            "registered_asset": false,
+            "registered_listing": false,
+            "registered_recipe": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b14-s02",
+      "actor_id": "quinn",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s02",
+        "actor_id": "quinn",
+        "task_domain": "trade_harvest",
+        "problem_kind": "scheduled_market_lot",
+        "subject_ref": "lot/clinic-herb-surplus-14",
+        "decision_tick": 300,
+        "summary": "Quinn is listed to sell the clinic's surplus herb lot, but the cooperative record keeps the lot sealed until tick 420. At tick 300 it is not in Quinn's actor inventory and no exchange proposal exists for it.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s02/fact-1",
+          "rq1-v2-b14-s02/fact-2",
+          "rq1-v2-b14-s02/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s02/fact-1",
+          "source_event_id": "event/rq1-b14/clinic-cooperative-lot",
+          "text": "The cooperative lot release tick is 420."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s02/fact-2",
+          "source_event_id": "event/rq1-b14/clinic-cooperative-lot",
+          "text": "The decision tick is 300."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s02/fact-3",
+          "source_event_id": "event/rq1-b14/clinic-cooperative-lot",
+          "text": "The sealed herb lot is not yet owned by Quinn's actor container."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "immediate_self_pressure",
+            "source_ref": "lot/clinic-herb-surplus-14",
+            "description": "Sell the clinic cooperative's surplus herb lot after it is released."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s02",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/town-clinicians"
+          },
+          "role_assignment": {
+            "organization_id": "organization/town-clinicians",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/town-clinicians"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "event/rq1-b14/clinic-cooperative-lot",
+            "source_kind": "OrganizationMarketNotice",
+            "bridge_ref": "organization/town-clinicians",
+            "actor_visible_text": "The clinic cooperative notice links Quinn's membership to the scheduled herb lot."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "quinn",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/quinn",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 27,
+            "spirit": 62,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 4
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "medicine",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-clinic",
+              "general-store"
+            ],
+            "known_actor_ids": [
+              "pavel"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/clinic-cooperative-lot"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/quinn/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s02",
+            "kind": "scheduled_market_lot",
+            "subject_ref": "lot/clinic-herb-surplus-14",
+            "status": "Active",
+            "description": "Sell the clinic cooperative's surplus herb lot after it is released."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/1/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "clinic-herb-lot-release",
+            "opens_at_tick": 420,
+            "current_tick": 300,
+            "automatic_release": true,
+            "preparatory_proposal_id": null
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b14-s03",
+      "actor_id": "grace",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s03",
+        "actor_id": "grace",
+        "task_domain": "care_household",
+        "problem_kind": "medicine_batch_identity_check",
+        "subject_ref": "medicine/vial-green/batch-identity",
+        "decision_tick": 300,
+        "summary": "Grace found a green medicine vial after the household shelf broke. The cap mark says batch C17 while the loose paper beside it says C71; neither record binds the vial to a safe medicine asset.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s03/fact-1",
+          "rq1-v2-b14-s03/fact-2",
+          "rq1-v2-b14-s03/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s03/fact-1",
+          "source_event_id": "event/rq1-b14/household-vial-custody",
+          "text": "The cap mark reads C17 and the loose paper reads C71."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s03/fact-2",
+          "source_event_id": "event/rq1-b14/household-vial-custody",
+          "text": "The vial is not represented in Grace's product inventory as common or advanced medicine."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s03/fact-3",
+          "source_event_id": "event/rq1-b14/household-vial-custody",
+          "text": "No identification or laboratory proposal is registered in the current catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "near_term_active_goal",
+            "source_ref": "medicine/vial-green/batch-identity",
+            "description": "Establish the vial's batch identity before it is used in household care."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s03",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "item/green-vial"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "resource_custody",
+            "source_event_id": "event/rq1-b14/household-vial-custody",
+            "source_kind": "ResourceCustodyRecorded",
+            "bridge_ref": "item/green-vial",
+            "actor_visible_text": "The household log records Grace as the person holding the unidentified vial."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "grace",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/grace",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 46,
+            "spirit": 29,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "clara-home",
+              "town-clinic"
+            ],
+            "known_actor_ids": [
+              "felix",
+              "clara"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/household-vial-custody"
+            ],
+            "unresolved_refs": [
+              "item/green-vial/batch"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/grace/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s03",
+            "kind": "medicine_batch_identity_check",
+            "subject_ref": "medicine/vial-green/batch-identity",
+            "status": "Active",
+            "description": "Establish the vial's batch identity before it is used in household care."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/2/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "evidence_conflict",
+            "subject_ref": "item/green-vial",
+            "claims": [
+              {
+                "source_ref": "mark/vial-cap",
+                "value": "C17"
+              },
+              {
+                "source_ref": "paper/loose-label",
+                "value": "C71"
+              }
+            ],
+            "registered_resolution_proposal": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b14-s04",
+      "actor_id": "hugo",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s04",
+        "actor_id": "hugo",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "supply_commitment_purchase",
+        "subject_ref": "commitment/hugo-farah-stair-timber",
+        "decision_tick": 300,
+        "summary": "Hugo promised Farah one timber for the clinic stair repair. He has ten coins, the general store is open, and its listed timber stock is available at the fixed price.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s04/fact-1",
+          "rq1-v2-b14-s04/fact-2",
+          "rq1-v2-b14-s04/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s04/fact-1",
+          "source_event_id": "event/rq1-b14/stair-repair-promise",
+          "text": "The repair promise names one timber as Hugo's obligation."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s04/fact-2",
+          "source_event_id": "event/rq1-b14/stair-repair-promise",
+          "text": "Hugo has ten coins in his actor container."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s04/fact-3",
+          "source_event_id": "event/rq1-b14/stair-repair-promise",
+          "text": "The open general store lists one timber for three coins and holds five timber."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "near_term_active_goal",
+            "source_ref": "commitment/hugo-farah-stair-timber",
+            "description": "Buy one timber from the general store for the stair-repair promise."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s04",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/hugo-farah-stair-timber"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "event/rq1-b14/stair-repair-promise",
+            "source_kind": "CommitmentActivated",
+            "bridge_ref": "commitment/hugo-farah-stair-timber",
+            "actor_visible_text": "The accepted stair-repair promise binds Hugo to obtain one timber for Farah."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "hugo",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/hugo",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 24,
+            "spirit": 49,
+            "disease": "Ill"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 10
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "general-store",
+              "town-clinic"
+            ],
+            "known_actor_ids": [
+              "farah"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/stair-repair-promise"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/hugo/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s04",
+            "kind": "supply_commitment_purchase",
+            "subject_ref": "commitment/hugo-farah-stair-timber",
+            "status": "Active",
+            "description": "Buy one timber from the general store for the stair-repair promise."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/3/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "shop_listing",
+            "listing_id": "merchant-timber-retail",
+            "shop_id": "brackenford-general-shop",
+            "shop_open": true,
+            "shop_container": {
+              "owner_kind": "Shop",
+              "owner_id": "merchant-stock",
+              "revision": 1,
+              "balances": [
+                {
+                  "asset_id": "timber",
+                  "quantity": 5
+                },
+                {
+                  "asset_id": "coin",
+                  "quantity": 40
+                }
+              ]
+            },
+            "asset_id": "timber",
+            "quantity": 1,
+            "coin_price": 3
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b14-s05",
+      "actor_id": "iris",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s05",
+        "actor_id": "iris",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "mill_belt_specification_conflict",
+        "subject_ref": "tool/mill-drive-belt/specification",
+        "decision_tick": 300,
+        "summary": "Iris needs a replacement drive belt, but the mill archive presents two current-looking widths for the same belt: 18 mm on the maintenance card and 22 mm on the parts sheet. The catalogue contains no measurement or archive-resolution proposal.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s05/fact-1",
+          "rq1-v2-b14-s05/fact-2",
+          "rq1-v2-b14-s05/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s05/fact-1",
+          "source_event_id": "event/rq1-b14/mill-parts-archive",
+          "text": "The maintenance card records an 18 mm belt."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s05/fact-2",
+          "source_event_id": "event/rq1-b14/mill-parts-archive",
+          "text": "The parts sheet records a 22 mm belt for the same drive."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s05/fact-3",
+          "source_event_id": "event/rq1-b14/mill-parts-archive",
+          "text": "No actor-visible provenance establishes which record supersedes the other."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_work_interruption",
+            "source_ref": "tool/mill-drive-belt/specification",
+            "description": "Resolve the drive-belt width before ordering or fitting a replacement."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s05",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/mill-belt-spec"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "information_custody",
+            "source_event_id": "event/rq1-b14/mill-parts-archive",
+            "source_kind": "InformationRecordLocated",
+            "bridge_ref": "information/mill-belt-spec",
+            "actor_visible_text": "The mill archive is the holder of both required but conflicting belt specifications."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "iris",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/iris",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 66,
+            "spirit": 68,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 11
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "mill",
+              "smithy"
+            ],
+            "known_actor_ids": [
+              "devin"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/mill-parts-archive"
+            ],
+            "unresolved_refs": [
+              "spec/mill-drive-belt/current"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/iris/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s05",
+            "kind": "mill_belt_specification_conflict",
+            "subject_ref": "tool/mill-drive-belt/specification",
+            "status": "Active",
+            "description": "Resolve the drive-belt width before ordering or fitting a replacement."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/4/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "evidence_conflict",
+            "subject_ref": "tool/mill-drive-belt",
+            "claims": [
+              {
+                "source_ref": "mill/maintenance-card",
+                "value": "18mm"
+              },
+              {
+                "source_ref": "mill/parts-sheet",
+                "value": "22mm"
+              }
+            ],
+            "registered_resolution_proposal": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b14-s06",
+      "actor_id": "jonah",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s06",
+        "actor_id": "jonah",
+        "task_domain": "food_production",
+        "problem_kind": "unresolved_dietary_rule",
+        "subject_ref": "food/carrier-meal/request-amber",
+        "decision_tick": 300,
+        "summary": "Jonah accepted a request for an 'amber-safe' carrier meal, but the request never defines that term. His known recipes and assets carry no amber-safe property, so choosing any dish would add a rule that the world does not contain.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s06/fact-1",
+          "rq1-v2-b14-s06/fact-2",
+          "rq1-v2-b14-s06/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s06/fact-1",
+          "source_event_id": "event/rq1-b14/carrier-meal-promise",
+          "text": "The request uses the term amber-safe without a definition."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s06/fact-2",
+          "source_event_id": "event/rq1-b14/carrier-meal-promise",
+          "text": "No known recipe, asset or source event carries that property."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s06/fact-3",
+          "source_event_id": "event/rq1-b14/carrier-meal-promise",
+          "text": "Jonah has no food ingredient in his current actor inventory."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_work_interruption",
+            "source_ref": "food/carrier-meal/request-amber",
+            "description": "Provide a meal that satisfies the recorded amber-safe requirement."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s06",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/jonah-carrier-meal"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "event/rq1-b14/carrier-meal-promise",
+            "source_kind": "CommitmentActivated",
+            "bridge_ref": "commitment/jonah-carrier-meal",
+            "actor_visible_text": "Jonah's accepted carrier promise contains the undefined meal requirement."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "jonah",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/jonah",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 28,
+            "spirit": 60,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "town-warehouse",
+              "inn"
+            ],
+            "known_actor_ids": [
+              "elin"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/carrier-meal-promise"
+            ],
+            "unresolved_refs": [
+              "property/amber-safe"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/jonah/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s06",
+            "kind": "unresolved_dietary_rule",
+            "subject_ref": "food/carrier-meal/request-amber",
+            "status": "Active",
+            "description": "Provide a meal that satisfies the recorded amber-safe requirement."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/5/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "unresolved_reference",
+            "reference_id": "amber-safe",
+            "registered_asset": false,
+            "registered_recipe": false,
+            "registered_rule": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b14-s07",
+      "actor_id": "kara",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s07",
+        "actor_id": "kara",
+        "task_domain": "trade_harvest",
+        "problem_kind": "undefined_harvest_grade",
+        "subject_ref": "trade/grade-l-produce-order",
+        "decision_tick": 300,
+        "summary": "Kara received a buyer note requesting ten units of grade-L produce. The product world defines wheat, fruit and herbs but no grade-L asset property, grading capability or matching listing.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s07/fact-1",
+          "rq1-v2-b14-s07/fact-2",
+          "rq1-v2-b14-s07/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s07/fact-1",
+          "source_event_id": "event/rq1-b14/grade-l-capability-demand",
+          "text": "The buyer note requires grade L."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s07/fact-2",
+          "source_event_id": "event/rq1-b14/grade-l-capability-demand",
+          "text": "No configured asset, stock target or listing has a grade-L field."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s07/fact-3",
+          "source_event_id": "event/rq1-b14/grade-l-capability-demand",
+          "text": "No grading capability or grading proposal exists in Kara's catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "non_immediate_opportunity",
+            "source_ref": "trade/grade-l-produce-order",
+            "description": "Prepare the requested grade-L produce order."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s07",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/grade-l-certification"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "capability_requirement",
+            "source_event_id": "event/rq1-b14/grade-l-capability-demand",
+            "source_kind": "CapabilityRequirementPublished",
+            "bridge_ref": "capability/grade-l-certification",
+            "actor_visible_text": "The buyer note names a grade-L certification capability that is absent from the product vocabulary."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "kara",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/kara",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 62,
+            "spirit": 40,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "seeds",
+                "quantity": 10
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 7
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "community-garden",
+              "general-store"
+            ],
+            "known_actor_ids": [],
+            "source_event_ids": [
+              "event/rq1-b14/grade-l-capability-demand"
+            ],
+            "unresolved_refs": [
+              "property/grade-l",
+              "capability/grade-l-certification"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/kara/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s07",
+            "kind": "undefined_harvest_grade",
+            "subject_ref": "trade/grade-l-produce-order",
+            "status": "Active",
+            "description": "Prepare the requested grade-L produce order."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/6/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "unresolved_reference",
+            "reference_id": "grade-l",
+            "registered_asset_property": false,
+            "registered_capability": false,
+            "registered_listing": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b14-s08",
+      "actor_id": "lucas",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s08",
+        "actor_id": "lucas",
+        "task_domain": "care_household",
+        "problem_kind": "medicine_dose_schedule",
+        "subject_ref": "care/lucas/second-dose",
+        "decision_tick": 300,
+        "summary": "Lucas's clinic note schedules his second dose for tick 480. At tick 300 the clinic still holds that dose, and the release is automatic; Lucas has no dose in his pack and no preparatory proposal is registered.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s08/fact-1",
+          "rq1-v2-b14-s08/fact-2",
+          "rq1-v2-b14-s08/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s08/fact-1",
+          "source_event_id": "event/rq1-b14/lucas-dose-promise",
+          "text": "The second-dose release tick is 480."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s08/fact-2",
+          "source_event_id": "event/rq1-b14/lucas-dose-promise",
+          "text": "The decision tick is 300."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s08/fact-3",
+          "source_event_id": "event/rq1-b14/lucas-dose-promise",
+          "text": "Lucas's actor inventory contains no medicine dose."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "non_immediate_opportunity",
+            "source_ref": "care/lucas/second-dose",
+            "description": "Take the scheduled second dose when the clinic releases it."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s08",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/clinic-lucas-second-dose"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "event/rq1-b14/lucas-dose-promise",
+            "source_kind": "CommitmentActivated",
+            "bridge_ref": "commitment/clinic-lucas-second-dose",
+            "actor_visible_text": "The treatment commitment binds Lucas to the dose window recorded by the clinic."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "lucas",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/lucas",
+        "self": {
+          "body": {
+            "health_current": 88,
+            "health_maximum": 100,
+            "satiety": 70,
+            "spirit": 73,
+            "disease": "Ill"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "lucas-axe",
+                "item_type_id": "axe",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "lucas-axe"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 13
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "gather",
+              "value": 1
+            }
+          ],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "farah-home",
+              "town-clinic"
+            ],
+            "known_actor_ids": [
+              "pavel"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/lucas-dose-promise"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/lucas/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s08",
+            "kind": "medicine_dose_schedule",
+            "subject_ref": "care/lucas/second-dose",
+            "status": "Active",
+            "description": "Take the scheduled second dose when the clinic releases it."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/7/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "lucas-second-dose-release",
+            "opens_at_tick": 480,
+            "current_tick": 300,
+            "automatic_release": true,
+            "preparatory_proposal_id": null
+          }
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b14-s09",
+      "actor_id": "mira",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s09",
+        "actor_id": "mira",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "scheduled_wagon_slot",
+        "subject_ref": "logistics/wagon-slot/mira-420",
+        "decision_tick": 300,
+        "summary": "Mira's freight docket assigns her cargo to the wagon slot that opens at tick 420. At tick 300 the warehouse has not issued a destination container token, and the slot opens without actor preparation.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s09/fact-1",
+          "rq1-v2-b14-s09/fact-2",
+          "rq1-v2-b14-s09/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s09/fact-1",
+          "source_event_id": "event/rq1-b14/dispatcher-slot-ledger",
+          "text": "The freight slot opens at tick 420."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s09/fact-2",
+          "source_event_id": "event/rq1-b14/dispatcher-slot-ledger",
+          "text": "The decision tick is 300."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s09/fact-3",
+          "source_event_id": "event/rq1-b14/dispatcher-slot-ledger",
+          "text": "The destination container token is issued automatically when the slot opens."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "background_concern",
+            "source_ref": "logistics/wagon-slot/mira-420",
+            "description": "Load the assigned cargo when Mira's wagon slot opens."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s09",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/wagon-slot-420"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "information_custody",
+            "source_event_id": "event/rq1-b14/dispatcher-slot-ledger",
+            "source_kind": "InformationRecordLocated",
+            "bridge_ref": "information/wagon-slot-420",
+            "actor_visible_text": "The dispatcher ledger holds the required slot and token-release times."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "mira",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/mira",
+        "self": {
+          "body": {
+            "health_current": 82,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "community-garden",
+              "town-warehouse"
+            ],
+            "known_actor_ids": [
+              "farah"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/dispatcher-slot-ledger"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/mira/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s09",
+            "kind": "scheduled_wagon_slot",
+            "subject_ref": "logistics/wagon-slot/mira-420",
+            "status": "Active",
+            "description": "Load the assigned cargo when Mira's wagon slot opens."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/8/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "wagon-slot-mira-420",
+            "opens_at_tick": 420,
+            "current_tick": 300,
+            "automatic_release": true,
+            "preparatory_proposal_id": null
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b14-s10",
+      "actor_id": "nolan",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b14-s10",
+        "actor_id": "nolan",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "carpenter_jig_identity_check",
+        "subject_ref": "tool/carpentry-jig/serial",
+        "decision_tick": 300,
+        "summary": "Nolan's repair promise concerns a cracked carpenter jig, but the jig plate reads J-204 while the maintenance card reads J-240. Neither identifier is registered as an item instance and no inspection proposal is available.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b14-s10/fact-1",
+          "rq1-v2-b14-s10/fact-2",
+          "rq1-v2-b14-s10/fact-3"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b14-s10/fact-1",
+          "source_event_id": "event/rq1-b14/carpentry-jig-repair-promise",
+          "text": "The jig plate reads J-204."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s10/fact-2",
+          "source_event_id": "event/rq1-b14/carpentry-jig-repair-promise",
+          "text": "The maintenance card reads J-240."
+        },
+        {
+          "evidence_id": "rq1-v2-b14-s10/fact-3",
+          "source_event_id": "event/rq1-b14/carpentry-jig-repair-promise",
+          "text": "Nolan's actor inventory contains no registered item instance for either serial."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "background_concern",
+            "source_ref": "tool/carpentry-jig/serial",
+            "description": "Establish the jig identity before arranging its repair."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b14-s10",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/nolan-jig-repair"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "event/rq1-b14/carpentry-jig-repair-promise",
+            "source_kind": "CommitmentActivated",
+            "bridge_ref": "commitment/nolan-jig-repair",
+            "actor_visible_text": "The workshop repair promise binds Nolan to a jig whose identity records disagree."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "nolan",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/nolan",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 20,
+            "spirit": 57,
+            "disease": "Healthy"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [],
+          "knowledge": {
+            "known_place_refs": [
+              "carpentry",
+              "smithy"
+            ],
+            "known_actor_ids": [
+              "opal"
+            ],
+            "source_event_ids": [
+              "event/rq1-b14/carpentry-jig-repair-promise"
+            ],
+            "unresolved_refs": [
+              "item/J-204",
+              "item/J-240"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/nolan/personality",
+        "active_goals": [
+          {
+            "goal_id": "goal/rq1-v2-b14-s10",
+            "kind": "carpenter_jig_identity_check",
+            "subject_ref": "tool/carpentry-jig/serial",
+            "status": "Active",
+            "description": "Establish the jig identity before arranging its repair."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/9/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "evidence_conflict",
+            "subject_ref": "tool/carpentry-jig",
+            "claims": [
+              {
+                "source_ref": "jig/plate",
+                "value": "J-204"
+              },
+              {
+                "source_ref": "jig/maintenance-card",
+                "value": "J-240"
+              }
+            ],
+            "registered_resolution_proposal": false
+          }
+        ]
+      }
+    }
+  ]
+}

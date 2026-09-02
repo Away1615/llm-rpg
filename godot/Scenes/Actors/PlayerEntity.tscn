@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Src/Alice.PlayerControl/PlayerEntity.cs" id="1_player"]
+[ext_resource type="Script" path="res://Src/Alice.Presentation/GeometricActorMarker.cs" id="2_marker"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_player"]
+radius = 0.45
+
+[node name="PlayerEntity" type="CharacterBody2D" node_paths=PackedStringArray("NavigationAgent", "Marker", "Camera")]
+script = ExtResource("1_player")
+NavigationAgent = NodePath("NavigationAgent")
+Marker = NodePath("Marker")
+Camera = NodePath("Camera2D")
+ActorIdentity = "player-preview"
+MovementSpeed = 4.5
+AgentRadius = 0.45
+PathDesiredDistance = 0.1
+TargetDesiredDistance = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_player")
+
+[node name="NavigationAgent" type="NavigationAgent2D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+radius = 0.45
+avoidance_enabled = false
+
+[node name="Marker" type="Node2D" parent="."]
+script = ExtResource("2_marker")
+PlayerTriangle = true
+Radius = 0.7
+FillColor = Color(0.95, 0.82, 0.2, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8, 8)
+process_callback = 0
+limit_left = 0
+limit_top = 0
+limit_right = 320
+limit_bottom = 240
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0

@@ -1,0 +1,3311 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_05",
+  "block_id": "block_05",
+  "decision_tick": 180,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": {
+      "ticks_per_day": 960,
+      "shops": [
+        {
+          "shop_id": "brackenford-general-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-smithy-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-clinic-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-mill-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-inn-shop",
+          "opens_at_tick": 144,
+          "closes_at_tick": 864
+        }
+      ],
+      "containers": [
+        {
+          "owner_kind": "Shop",
+          "owner_id": "merchant-stock",
+          "balances": {
+            "coin": 40,
+            "timber": 5,
+            "iron-ore": 5,
+            "herb": 5,
+            "seeds": 50,
+            "common-medicine": 5,
+            "advanced-medicine": 5,
+            "fishing-rod": 3,
+            "basket": 3
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "smithy-stock",
+          "balances": {
+            "coin": 30,
+            "axe": 3,
+            "pickaxe": 3,
+            "sickle": 3,
+            "hoe": 3,
+            "pot": 2
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "clinic-stock",
+          "balances": {
+            "coin": 20,
+            "common-medicine": 3,
+            "advanced-medicine": 3
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "mill-stock",
+          "balances": {
+            "coin": 20,
+            "wheat": 5,
+            "flour": 10
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "inn-stock",
+          "balances": {
+            "coin": 20,
+            "grilled-fish": 4,
+            "porridge": 4,
+            "noodles": 4,
+            "seafood-noodles": 4
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "woodlot",
+          "stock": 24,
+          "capacity": 24,
+          "refresh_at_tick": 960
+        },
+        {
+          "region_id": "mine",
+          "stock": 12,
+          "capacity": 12,
+          "refresh_at_tick": 1920
+        },
+        {
+          "region_id": "fishing-ground",
+          "stock": 20,
+          "capacity": 20,
+          "refresh_at_tick": 960
+        },
+        {
+          "region_id": "herb-garden",
+          "stock": 12,
+          "capacity": 12,
+          "refresh_at_tick": 1920
+        }
+      ],
+      "farm_plots": [
+        {
+          "plot_id": "farm-plot-2",
+          "stage": "Growing",
+          "growing_until_tick": 3840
+        },
+        {
+          "plot_id": "farm-plot-3",
+          "stage": "Growing",
+          "growing_until_tick": 1920
+        }
+      ],
+      "catalogue_scope": [
+        "ListedExchange",
+        "Craft",
+        "RegionOperation",
+        "AssetTransfer",
+        "ServiceExchange"
+      ]
+    }
+  },
+  "authority_setup": {
+    "source_state": {
+      "ticks_per_day": 960,
+      "shops": [
+        {
+          "shop_id": "brackenford-general-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-smithy-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-clinic-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-mill-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-inn-shop",
+          "opens_at_tick": 144,
+          "closes_at_tick": 864
+        }
+      ],
+      "containers": [
+        {
+          "owner_kind": "Shop",
+          "owner_id": "merchant-stock",
+          "balances": {
+            "coin": 40,
+            "timber": 5,
+            "iron-ore": 5,
+            "herb": 5,
+            "seeds": 50,
+            "common-medicine": 5,
+            "advanced-medicine": 5,
+            "fishing-rod": 3,
+            "basket": 3
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "smithy-stock",
+          "balances": {
+            "coin": 30,
+            "axe": 3,
+            "pickaxe": 3,
+            "sickle": 3,
+            "hoe": 3,
+            "pot": 2
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "clinic-stock",
+          "balances": {
+            "coin": 20,
+            "common-medicine": 3,
+            "advanced-medicine": 3
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "mill-stock",
+          "balances": {
+            "coin": 20,
+            "wheat": 5,
+            "flour": 10
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "inn-stock",
+          "balances": {
+            "coin": 20,
+            "grilled-fish": 4,
+            "porridge": 4,
+            "noodles": 4,
+            "seafood-noodles": 4
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "woodlot",
+          "stock": 24,
+          "capacity": 24,
+          "refresh_at_tick": 960
+        },
+        {
+          "region_id": "mine",
+          "stock": 12,
+          "capacity": 12,
+          "refresh_at_tick": 1920
+        },
+        {
+          "region_id": "fishing-ground",
+          "stock": 20,
+          "capacity": 20,
+          "refresh_at_tick": 960
+        },
+        {
+          "region_id": "herb-garden",
+          "stock": 12,
+          "capacity": 12,
+          "refresh_at_tick": 1920
+        }
+      ],
+      "farm_plots": [
+        {
+          "plot_id": "farm-plot-2",
+          "stage": "Growing",
+          "growing_until_tick": 3840
+        },
+        {
+          "plot_id": "farm-plot-3",
+          "stage": "Growing",
+          "growing_until_tick": 1920
+        }
+      ],
+      "catalogue_scope": [
+        "ListedExchange",
+        "Craft",
+        "RegionOperation",
+        "AssetTransfer",
+        "ServiceExchange"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b05-s01",
+      "actor_id": "opal",
+      "domain": "trade_harvest",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "listing/merchant-timber-buyback",
+        "statement": "Opal has two planed timber boards to sell for the carpentry account, but the general-store counter has not opened.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s01-f1",
+            "kind": "domain_fact",
+            "text": "The general store opens at tick 192."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s01-f2",
+            "kind": "domain_fact",
+            "text": "The current tick is 180."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s01-f3",
+            "kind": "domain_fact",
+            "text": "Opal carries two timber and knows the posted hours."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s01-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s01-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "timber": 2
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s01-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 12
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s01-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "brackenford-home-07",
+                "carpentry",
+                "general-store",
+                "inn",
+                "opal-private-room",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "bernard",
+                "nolan",
+                "pavel",
+                "quinn"
+              ],
+              "source_event_ids": [
+                "history/g03/e00",
+                "history/g03/e03",
+                "history/g03/e07",
+                "history/g03/e08",
+                "history/g03/e10",
+                "history/g03/e11",
+                "history/g03/e18",
+                "history/g03/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s01-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s01-f1",
+          "kind": "domain_fact",
+          "text": "The general store opens at tick 192."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s01-f2",
+          "kind": "domain_fact",
+          "text": "The current tick is 180."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s01-f3",
+          "kind": "domain_fact",
+          "text": "Opal carries two timber and knows the posted hours."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s01-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s01-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "timber": 2
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s01-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 12
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s01-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "brackenford-home-07",
+              "carpentry",
+              "general-store",
+              "inn",
+              "opal-private-room",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "bernard",
+              "nolan",
+              "pavel",
+              "quinn"
+            ],
+            "source_event_ids": [
+              "history/g03/e00",
+              "history/g03/e03",
+              "history/g03/e07",
+              "history/g03/e08",
+              "history/g03/e10",
+              "history/g03/e11",
+              "history/g03/e18",
+              "history/g03/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s01-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s01-actor-signal",
+            "description": "A same-morning carpentry cash target is active."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s01",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/listing/merchant-timber-buyback"
+          },
+          "role_assignment": {
+            "organization_id": "organization/listing/merchant-timber-buyback",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/listing/merchant-timber-buyback"
+          },
+          "raw_evidence": {
+            "source_kind": "organization",
+            "source_id": "organization/listing/merchant-timber-buyback",
+            "affected_node": "pressure/rq1-v2-b05-s01",
+            "edge_kind": "MemberOfOrganization"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "opal",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "timber": 2
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 12
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "brackenford-home-07",
+            "carpentry",
+            "general-store",
+            "inn",
+            "opal-private-room",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "bernard",
+            "nolan",
+            "pavel",
+            "quinn"
+          ],
+          "source_event_ids": [
+            "history/g03/e00",
+            "history/g03/e03",
+            "history/g03/e07",
+            "history/g03/e08",
+            "history/g03/e10",
+            "history/g03/e11",
+            "history/g03/e18",
+            "history/g03/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s01",
+            "description": "Sell two timber boards after the counter opens."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b05-s01-timber-buyback",
+            "label": "Sell one timber board to the general store",
+            "action_family": "ListedExchange",
+            "availability_state": "blocked",
+            "authority_reason": "shop is closed until tick 192"
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/opal",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s01-f1",
+          "rq1-v2-b05-s01-f2",
+          "rq1-v2-b05-s01-f3",
+          "rq1-v2-b05-s01-body",
+          "rq1-v2-b05-s01-inventory",
+          "rq1-v2-b05-s01-currency",
+          "rq1-v2-b05-s01-knowledge",
+          "rq1-v2-b05-s01-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b05-s02",
+      "actor_id": "pavel",
+      "domain": "care_household",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "record/household-patient-severity",
+        "statement": "Pavel has been asked to choose medicine for a household resident, but the delivered note records illness without its severity.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s02-f1",
+            "kind": "domain_fact",
+            "text": "Common and advanced medicine treat different recorded disease levels."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s02-f2",
+            "kind": "domain_fact",
+            "text": "The resident severity field is absent from the note."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s02-f3",
+            "kind": "domain_fact",
+            "text": "The catalogue has no examination of another actor."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s02-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s02-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "herb": 2
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s02-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 9
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s02-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "brackenford-home-07",
+                "inn",
+                "pavel-private-room",
+                "town-clinic",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "opal",
+                "quinn",
+                "rosa"
+              ],
+              "source_event_ids": [
+                "history/g03/e00",
+                "history/g03/e03",
+                "history/g03/e07",
+                "history/g03/e08",
+                "history/g03/e10",
+                "history/g03/e11",
+                "history/g03/e18",
+                "history/g03/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s02-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "medicine": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s02-f1",
+          "kind": "domain_fact",
+          "text": "Common and advanced medicine treat different recorded disease levels."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s02-f2",
+          "kind": "domain_fact",
+          "text": "The resident severity field is absent from the note."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s02-f3",
+          "kind": "domain_fact",
+          "text": "The catalogue has no examination of another actor."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s02-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s02-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "herb": 2
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s02-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 9
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s02-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "brackenford-home-07",
+              "inn",
+              "pavel-private-room",
+              "town-clinic",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "opal",
+              "quinn",
+              "rosa"
+            ],
+            "source_event_ids": [
+              "history/g03/e00",
+              "history/g03/e03",
+              "history/g03/e07",
+              "history/g03/e08",
+              "history/g03/e10",
+              "history/g03/e11",
+              "history/g03/e18",
+              "history/g03/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s02-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "medicine": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s02-actor-signal",
+            "description": "A household treatment request names a patient but omits the deciding clinical fact."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s02",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "place/record/household-patient-severity"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "place",
+            "source_id": "place/record/household-patient-severity",
+            "affected_node": "pressure/rq1-v2-b05-s02",
+            "edge_kind": "AffectsPlace"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "pavel",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "herb": 2
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 9
+        },
+        "capabilities": {
+          "medicine": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "brackenford-home-07",
+            "inn",
+            "pavel-private-room",
+            "town-clinic",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "opal",
+            "quinn",
+            "rosa"
+          ],
+          "source_event_ids": [
+            "history/g03/e00",
+            "history/g03/e03",
+            "history/g03/e07",
+            "history/g03/e08",
+            "history/g03/e10",
+            "history/g03/e11",
+            "history/g03/e18",
+            "history/g03/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s02",
+            "description": "Avoid selecting an incompatible medicine for the resident."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/pavel",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s02-f1",
+          "rq1-v2-b05-s02-f2",
+          "rq1-v2-b05-s02-f3",
+          "rq1-v2-b05-s02-body",
+          "rq1-v2-b05-s02-inventory",
+          "rq1-v2-b05-s02-currency",
+          "rq1-v2-b05-s02-knowledge",
+          "rq1-v2-b05-s02-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b05-s03",
+      "actor_id": "quinn",
+      "domain": "obligation_logistics",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "service/milling",
+        "statement": "Quinn must turn the clinic household rota wheat into flour before the promised meal handoff.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s03-f1",
+            "kind": "domain_fact",
+            "text": "Quinn carries one wheat and one coin."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s03-f2",
+            "kind": "domain_fact",
+            "text": "Devin is an authorized milling provider."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s03-f3",
+            "kind": "domain_fact",
+            "text": "Milling consumes one wheat and one coin and returns two flour."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s03-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s03-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "wheat": 1
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s03-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 1
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s03-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "brackenford-home-08",
+                "inn",
+                "mill",
+                "quinn-private-room",
+                "town-clinic",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "devin",
+                "pavel",
+                "rosa",
+                "silas"
+              ],
+              "source_event_ids": [
+                "history/g03/e00",
+                "history/g03/e03",
+                "history/g03/e07",
+                "history/g03/e08",
+                "history/g03/e10",
+                "history/g03/e11",
+                "history/g03/e18",
+                "history/g03/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s03-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "medicine": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s03-f1",
+          "kind": "domain_fact",
+          "text": "Quinn carries one wheat and one coin."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s03-f2",
+          "kind": "domain_fact",
+          "text": "Devin is an authorized milling provider."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s03-f3",
+          "kind": "domain_fact",
+          "text": "Milling consumes one wheat and one coin and returns two flour."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s03-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s03-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "wheat": 1
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s03-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 1
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s03-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "brackenford-home-08",
+              "inn",
+              "mill",
+              "quinn-private-room",
+              "town-clinic",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "devin",
+              "pavel",
+              "rosa",
+              "silas"
+            ],
+            "source_event_ids": [
+              "history/g03/e00",
+              "history/g03/e03",
+              "history/g03/e07",
+              "history/g03/e08",
+              "history/g03/e10",
+              "history/g03/e11",
+              "history/g03/e18",
+              "history/g03/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s03-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "medicine": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s03-actor-signal",
+            "description": "The clinic meal handoff is the nearest active obligation."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s03",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/service/milling"
+          },
+          "role_assignment": {
+            "organization_id": "organization/service/milling",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/service/milling"
+          },
+          "raw_evidence": {
+            "source_kind": "organization",
+            "source_id": "organization/service/milling",
+            "affected_node": "pressure/rq1-v2-b05-s03",
+            "edge_kind": "MemberOfOrganization"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "quinn",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "wheat": 1
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 1
+        },
+        "capabilities": {
+          "medicine": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "brackenford-home-08",
+            "inn",
+            "mill",
+            "quinn-private-room",
+            "town-clinic",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "devin",
+            "pavel",
+            "rosa",
+            "silas"
+          ],
+          "source_event_ids": [
+            "history/g03/e00",
+            "history/g03/e03",
+            "history/g03/e07",
+            "history/g03/e08",
+            "history/g03/e10",
+            "history/g03/e11",
+            "history/g03/e18",
+            "history/g03/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s03",
+            "description": "Obtain two flour for the clinic meal handoff."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ServiceExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b05-s03-action",
+            "label": "Pay Devin to mill one wheat into two flour",
+            "action_family": "ServiceExchange",
+            "availability_state": "ready",
+            "authority_reason": null
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/quinn",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s03-f1",
+          "rq1-v2-b05-s03-f2",
+          "rq1-v2-b05-s03-f3",
+          "rq1-v2-b05-s03-body",
+          "rq1-v2-b05-s03-inventory",
+          "rq1-v2-b05-s03-currency",
+          "rq1-v2-b05-s03-knowledge",
+          "rq1-v2-b05-s03-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b05-s04",
+      "actor_id": "emma",
+      "domain": "tools_maintenance",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "fixture/inn-oven-hinge",
+        "statement": "The inn oven door hinge has separated from its fixed frame during breakfast preparation.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s04-f1",
+            "kind": "domain_fact",
+            "text": "The hinge is part of the inn fixture, not a carried item."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s04-f2",
+            "kind": "domain_fact",
+            "text": "The repair services accept only listed carried tools."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s04-f3",
+            "kind": "domain_fact",
+            "text": "No place-fixture repair family is in the catalogue."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s04-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s04-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "fish": 2,
+                "wheat": 1,
+                "flour": 2
+              },
+              "instances": [
+                {
+                  "item_instance_id": "emma-pot",
+                  "item_type_id": "pot",
+                  "durability": null,
+                  "maximum_durability": null
+                }
+              ],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s04-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 16
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s04-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "bernard-home",
+                "emma-private-room",
+                "inn",
+                "smithy",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "bram",
+                "clara",
+                "devin",
+                "felix"
+              ],
+              "source_event_ids": [
+                "history/g00/e00",
+                "history/g00/e03",
+                "history/g00/e07",
+                "history/g00/e08",
+                "history/g00/e10",
+                "history/g00/e11",
+                "history/g00/e18",
+                "history/g00/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s04-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "cook": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s04-f1",
+          "kind": "domain_fact",
+          "text": "The hinge is part of the inn fixture, not a carried item."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s04-f2",
+          "kind": "domain_fact",
+          "text": "The repair services accept only listed carried tools."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s04-f3",
+          "kind": "domain_fact",
+          "text": "No place-fixture repair family is in the catalogue."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s04-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s04-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "fish": 2,
+              "wheat": 1,
+              "flour": 2
+            },
+            "instances": [
+              {
+                "item_instance_id": "emma-pot",
+                "item_type_id": "pot",
+                "durability": null,
+                "maximum_durability": null
+              }
+            ],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s04-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 16
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s04-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "bernard-home",
+              "emma-private-room",
+              "inn",
+              "smithy",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "bram",
+              "clara",
+              "devin",
+              "felix"
+            ],
+            "source_event_ids": [
+              "history/g00/e00",
+              "history/g00/e03",
+              "history/g00/e07",
+              "history/g00/e08",
+              "history/g00/e10",
+              "history/g00/e11",
+              "history/g00/e18",
+              "history/g00/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s04-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "cook": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s04-actor-signal",
+            "description": "A failed oven blocks the current kitchen shift for Emma."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s04",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/fixture/inn-oven-hinge"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "capability",
+            "source_id": "capability/fixture/inn-oven-hinge",
+            "affected_node": "pressure/rq1-v2-b05-s04",
+            "edge_kind": "RequiresCapability"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "emma",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "fish": 2,
+            "wheat": 1,
+            "flour": 2
+          },
+          "instances": [
+            {
+              "item_instance_id": "emma-pot",
+              "item_type_id": "pot",
+              "durability": null,
+              "maximum_durability": null
+            }
+          ],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 16
+        },
+        "capabilities": {
+          "cook": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "bernard-home",
+            "emma-private-room",
+            "inn",
+            "smithy",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "bram",
+            "clara",
+            "devin",
+            "felix"
+          ],
+          "source_event_ids": [
+            "history/g00/e00",
+            "history/g00/e03",
+            "history/g00/e07",
+            "history/g00/e08",
+            "history/g00/e10",
+            "history/g00/e11",
+            "history/g00/e18",
+            "history/g00/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s04",
+            "description": "Restore the fixed oven hinge."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/emma",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s04-f1",
+          "rq1-v2-b05-s04-f2",
+          "rq1-v2-b05-s04-f3",
+          "rq1-v2-b05-s04-body",
+          "rq1-v2-b05-s04-inventory",
+          "rq1-v2-b05-s04-currency",
+          "rq1-v2-b05-s04-knowledge",
+          "rq1-v2-b05-s04-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b05-s05",
+      "actor_id": "mira",
+      "domain": "trade_harvest",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "listing/meal-sale",
+        "statement": "Mira needs to sell a spare meal to pay the builders material account.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s05-f1",
+            "kind": "domain_fact",
+            "text": "Mira carries one meal."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s05-f2",
+            "kind": "domain_fact",
+            "text": "No fixed listing buys meals."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s05-f3",
+            "kind": "domain_fact",
+            "text": "AssetTransfer can move the meal but cannot settle a sale or create coin."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s05-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 70,
+              "health_maximum": 100,
+              "satiety": 58,
+              "spirit": 18,
+              "disease": "SevereIllness",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s05-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s05-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 6
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s05-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "community-garden",
+                "farah-home",
+                "general-store",
+                "inn",
+                "mira-private-room",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "bernard",
+                "farah",
+                "lucas",
+                "nolan",
+                "opal"
+              ],
+              "source_event_ids": [
+                "history/g02/e00",
+                "history/g02/e03",
+                "history/g02/e07",
+                "history/g02/e08",
+                "history/g02/e10",
+                "history/g02/e11",
+                "history/g02/e18",
+                "history/g02/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s05-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s05-f1",
+          "kind": "domain_fact",
+          "text": "Mira carries one meal."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s05-f2",
+          "kind": "domain_fact",
+          "text": "No fixed listing buys meals."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s05-f3",
+          "kind": "domain_fact",
+          "text": "AssetTransfer can move the meal but cannot settle a sale or create coin."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s05-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s05-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s05-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 6
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s05-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "community-garden",
+              "farah-home",
+              "general-store",
+              "inn",
+              "mira-private-room",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "bernard",
+              "farah",
+              "lucas",
+              "nolan",
+              "opal"
+            ],
+            "source_event_ids": [
+              "history/g02/e00",
+              "history/g02/e03",
+              "history/g02/e07",
+              "history/g02/e08",
+              "history/g02/e10",
+              "history/g02/e11",
+              "history/g02/e18",
+              "history/g02/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s05-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s05-actor-signal",
+            "description": "The builders material account is due today, but no listed buyer exists."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s05",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/listing/meal-sale"
+          },
+          "role_assignment": {
+            "organization_id": "organization/listing/meal-sale",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/listing/meal-sale"
+          },
+          "raw_evidence": {
+            "source_kind": "organization",
+            "source_id": "organization/listing/meal-sale",
+            "affected_node": "pressure/rq1-v2-b05-s05",
+            "edge_kind": "MemberOfOrganization"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "mira",
+        "body": {
+          "health_current": 70,
+          "health_maximum": 100,
+          "satiety": 58,
+          "spirit": 18,
+          "disease": "SevereIllness",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 6
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "community-garden",
+            "farah-home",
+            "general-store",
+            "inn",
+            "mira-private-room",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "bernard",
+            "farah",
+            "lucas",
+            "nolan",
+            "opal"
+          ],
+          "source_event_ids": [
+            "history/g02/e00",
+            "history/g02/e03",
+            "history/g02/e07",
+            "history/g02/e08",
+            "history/g02/e10",
+            "history/g02/e11",
+            "history/g02/e18",
+            "history/g02/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s05",
+            "description": "Exchange the spare meal for coin."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/mira",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s05-f1",
+          "rq1-v2-b05-s05-f2",
+          "rq1-v2-b05-s05-f3",
+          "rq1-v2-b05-s05-body",
+          "rq1-v2-b05-s05-inventory",
+          "rq1-v2-b05-s05-currency",
+          "rq1-v2-b05-s05-knowledge",
+          "rq1-v2-b05-s05-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b05-s06",
+      "actor_id": "aiko",
+      "domain": "food_production",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "listing/merchant-seeds-retail",
+        "statement": "Aiko has the orchard seed budget, but the general-store counter has not opened for the planting parcel.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s06-f1",
+            "kind": "domain_fact",
+            "text": "The general store opens at tick 192."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s06-f2",
+            "kind": "domain_fact",
+            "text": "The current tick is 180."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s06-f3",
+            "kind": "domain_fact",
+            "text": "Aiko carries ten coin and knows the seed listing."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s06-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s06-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {},
+              "instances": [
+                {
+                  "item_instance_id": "aiko-basket",
+                  "item_type_id": "basket",
+                  "durability": null,
+                  "maximum_durability": null
+                }
+              ],
+              "equipped_hand_instance_id": "aiko-basket"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s06-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 10
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s06-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "aiko-home",
+                "aiko-private-room",
+                "general-store",
+                "inn",
+                "orchard",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "alice",
+                "bernard",
+                "bram",
+                "felix",
+                "silas"
+              ],
+              "source_event_ids": [
+                "history/g04/e00",
+                "history/g04/e03",
+                "history/g04/e07",
+                "history/g04/e08",
+                "history/g04/e10",
+                "history/g04/e11",
+                "history/g04/e18",
+                "history/g04/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s06-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "gather": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s06-f1",
+          "kind": "domain_fact",
+          "text": "The general store opens at tick 192."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s06-f2",
+          "kind": "domain_fact",
+          "text": "The current tick is 180."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s06-f3",
+          "kind": "domain_fact",
+          "text": "Aiko carries ten coin and knows the seed listing."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s06-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s06-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {},
+            "instances": [
+              {
+                "item_instance_id": "aiko-basket",
+                "item_type_id": "basket",
+                "durability": null,
+                "maximum_durability": null
+              }
+            ],
+            "equipped_hand_instance_id": "aiko-basket"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s06-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 10
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s06-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "aiko-home",
+              "aiko-private-room",
+              "general-store",
+              "inn",
+              "orchard",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "alice",
+              "bernard",
+              "bram",
+              "felix",
+              "silas"
+            ],
+            "source_event_ids": [
+              "history/g04/e00",
+              "history/g04/e03",
+              "history/g04/e07",
+              "history/g04/e08",
+              "history/g04/e10",
+              "history/g04/e11",
+              "history/g04/e18",
+              "history/g04/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s06-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "gather": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s06-actor-signal",
+            "description": "The next orchard planting window requires one seed parcel."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s06",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "aiko"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "assignment",
+            "source_id": "assignment/listing/merchant-seeds-retail",
+            "affected_node": "pressure/rq1-v2-b05-s06",
+            "edge_kind": "AssignedToActor"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "aiko",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {},
+          "instances": [
+            {
+              "item_instance_id": "aiko-basket",
+              "item_type_id": "basket",
+              "durability": null,
+              "maximum_durability": null
+            }
+          ],
+          "equipped_hand_instance_id": "aiko-basket"
+        },
+        "currency": {
+          "coin": 10
+        },
+        "capabilities": {
+          "gather": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "aiko-home",
+            "aiko-private-room",
+            "general-store",
+            "inn",
+            "orchard",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "alice",
+            "bernard",
+            "bram",
+            "felix",
+            "silas"
+          ],
+          "source_event_ids": [
+            "history/g04/e00",
+            "history/g04/e03",
+            "history/g04/e07",
+            "history/g04/e08",
+            "history/g04/e10",
+            "history/g04/e11",
+            "history/g04/e18",
+            "history/g04/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s06",
+            "description": "Buy the seed parcel after the counter opens."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b05-s06-seeds-retail",
+            "label": "Buy one seed parcel",
+            "action_family": "ListedExchange",
+            "availability_state": "blocked",
+            "authority_reason": "shop is closed until tick 192"
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/aiko",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s06-f1",
+          "rq1-v2-b05-s06-f2",
+          "rq1-v2-b05-s06-f3",
+          "rq1-v2-b05-s06-body",
+          "rq1-v2-b05-s06-inventory",
+          "rq1-v2-b05-s06-currency",
+          "rq1-v2-b05-s06-knowledge",
+          "rq1-v2-b05-s06-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b05-s07",
+      "actor_id": "alice",
+      "domain": "care_household",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "record/meal-allergen-ledger",
+        "statement": "Alice has a sealed household meal for an ill resident, but its ingredient ledger is missing.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s07-f1",
+            "kind": "domain_fact",
+            "text": "The resident note records a severe nut allergy."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s07-f2",
+            "kind": "domain_fact",
+            "text": "The meal ingredient field is absent."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s07-f3",
+            "kind": "domain_fact",
+            "text": "The product catalogue has no inspection of sealed food."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s07-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s07-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1
+              },
+              "instances": [
+                {
+                  "item_instance_id": "alice-pickaxe",
+                  "item_type_id": "pickaxe",
+                  "durability": 100,
+                  "maximum_durability": 100
+                }
+              ],
+              "equipped_hand_instance_id": "alice-pickaxe"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s07-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 8
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s07-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "alice-home",
+                "alice-private-room",
+                "inn",
+                "mine",
+                "town-clinic",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "aiko",
+                "bram",
+                "celia",
+                "pavel"
+              ],
+              "source_event_ids": [
+                "history/g00/e00",
+                "history/g00/e03",
+                "history/g00/e07",
+                "history/g00/e08",
+                "history/g00/e10",
+                "history/g00/e11",
+                "history/g00/e18",
+                "history/g00/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s07-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "gather": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s07-f1",
+          "kind": "domain_fact",
+          "text": "The resident note records a severe nut allergy."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s07-f2",
+          "kind": "domain_fact",
+          "text": "The meal ingredient field is absent."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s07-f3",
+          "kind": "domain_fact",
+          "text": "The product catalogue has no inspection of sealed food."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s07-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s07-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1
+            },
+            "instances": [
+              {
+                "item_instance_id": "alice-pickaxe",
+                "item_type_id": "pickaxe",
+                "durability": 100,
+                "maximum_durability": 100
+              }
+            ],
+            "equipped_hand_instance_id": "alice-pickaxe"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s07-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 8
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s07-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "alice-home",
+              "alice-private-room",
+              "inn",
+              "mine",
+              "town-clinic",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "aiko",
+              "bram",
+              "celia",
+              "pavel"
+            ],
+            "source_event_ids": [
+              "history/g00/e00",
+              "history/g00/e03",
+              "history/g00/e07",
+              "history/g00/e08",
+              "history/g00/e10",
+              "history/g00/e11",
+              "history/g00/e18",
+              "history/g00/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s07-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "gather": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s07-actor-signal",
+            "description": "A household care handoff is active and the safety fact is missing."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s07",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/record/meal-allergen-ledger"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "commitment",
+            "source_id": "commitment/record/meal-allergen-ledger",
+            "affected_node": "pressure/rq1-v2-b05-s07",
+            "edge_kind": "BoundByCommitment"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "alice",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1
+          },
+          "instances": [
+            {
+              "item_instance_id": "alice-pickaxe",
+              "item_type_id": "pickaxe",
+              "durability": 100,
+              "maximum_durability": 100
+            }
+          ],
+          "equipped_hand_instance_id": "alice-pickaxe"
+        },
+        "currency": {
+          "coin": 8
+        },
+        "capabilities": {
+          "gather": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "alice-home",
+            "alice-private-room",
+            "inn",
+            "mine",
+            "town-clinic",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "aiko",
+            "bram",
+            "celia",
+            "pavel"
+          ],
+          "source_event_ids": [
+            "history/g00/e00",
+            "history/g00/e03",
+            "history/g00/e07",
+            "history/g00/e08",
+            "history/g00/e10",
+            "history/g00/e11",
+            "history/g00/e18",
+            "history/g00/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s07",
+            "description": "Avoid handing over food whose ingredients are unknown."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/alice",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s07-f1",
+          "rq1-v2-b05-s07-f2",
+          "rq1-v2-b05-s07-f3",
+          "rq1-v2-b05-s07-body",
+          "rq1-v2-b05-s07-inventory",
+          "rq1-v2-b05-s07-currency",
+          "rq1-v2-b05-s07-knowledge",
+          "rq1-v2-b05-s07-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b05-s08",
+      "actor_id": "bernard",
+      "domain": "obligation_logistics",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "listing/merchant-seeds-retail",
+        "statement": "Bernard promised to bring a seed parcel to the community garden, but the retail counter is not open yet.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s08-f1",
+            "kind": "domain_fact",
+            "text": "The general store opens at tick 192."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s08-f2",
+            "kind": "domain_fact",
+            "text": "The current tick is 180."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s08-f3",
+            "kind": "domain_fact",
+            "text": "Bernard has ten coin for the posted seed parcel."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s08-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s08-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s08-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 10
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s08-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "bernard-home",
+                "bernard-private-room",
+                "community-garden",
+                "general-store",
+                "inn",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "celia",
+                "devin",
+                "dorian",
+                "emma",
+                "kara"
+              ],
+              "source_event_ids": [
+                "history/g00/e00",
+                "history/g00/e03",
+                "history/g00/e07",
+                "history/g00/e08",
+                "history/g00/e10",
+                "history/g00/e11",
+                "history/g00/e18",
+                "history/g00/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s08-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s08-f1",
+          "kind": "domain_fact",
+          "text": "The general store opens at tick 192."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s08-f2",
+          "kind": "domain_fact",
+          "text": "The current tick is 180."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s08-f3",
+          "kind": "domain_fact",
+          "text": "Bernard has ten coin for the posted seed parcel."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s08-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s08-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s08-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 10
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s08-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "bernard-home",
+              "bernard-private-room",
+              "community-garden",
+              "general-store",
+              "inn",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "celia",
+              "devin",
+              "dorian",
+              "emma",
+              "kara"
+            ],
+            "source_event_ids": [
+              "history/g00/e00",
+              "history/g00/e03",
+              "history/g00/e07",
+              "history/g00/e08",
+              "history/g00/e10",
+              "history/g00/e11",
+              "history/g00/e18",
+              "history/g00/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s08-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s08-actor-signal",
+            "description": "A named garden delivery commitment is active this morning."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s08",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "place/listing/merchant-seeds-retail"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "place",
+            "source_id": "place/listing/merchant-seeds-retail",
+            "affected_node": "pressure/rq1-v2-b05-s08",
+            "edge_kind": "AffectsPlace"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "bernard",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 10
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "bernard-home",
+            "bernard-private-room",
+            "community-garden",
+            "general-store",
+            "inn",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "celia",
+            "devin",
+            "dorian",
+            "emma",
+            "kara"
+          ],
+          "source_event_ids": [
+            "history/g00/e00",
+            "history/g00/e03",
+            "history/g00/e07",
+            "history/g00/e08",
+            "history/g00/e10",
+            "history/g00/e11",
+            "history/g00/e18",
+            "history/g00/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s08",
+            "description": "Buy the seed parcel after the retail counter opens."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b05-s08-seeds-retail",
+            "label": "Buy one seed parcel",
+            "action_family": "ListedExchange",
+            "availability_state": "blocked",
+            "authority_reason": "shop is closed until tick 192"
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/bernard",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s08-f1",
+          "rq1-v2-b05-s08-f2",
+          "rq1-v2-b05-s08-f3",
+          "rq1-v2-b05-s08-body",
+          "rq1-v2-b05-s08-inventory",
+          "rq1-v2-b05-s08-currency",
+          "rq1-v2-b05-s08-knowledge",
+          "rq1-v2-b05-s08-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b05-s09",
+      "actor_id": "jonah",
+      "domain": "tools_maintenance",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "item/jonah-axe",
+        "statement": "The warehouse axe carried by Jonah has thirty durability and must be restored before the next crate shift.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s09-f1",
+            "kind": "domain_fact",
+            "text": "Jonah carries the damaged axe, one iron ore, and two coin."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s09-f2",
+            "kind": "domain_fact",
+            "text": "Bram is an authorized repair provider."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s09-f3",
+            "kind": "domain_fact",
+            "text": "The customer-material repair accepts a carried axe and restores fifty durability."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s09-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s09-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "iron-ore": 1
+              },
+              "instances": [
+                {
+                  "item_instance_id": "jonah-axe",
+                  "item_type_id": "axe",
+                  "durability": 30,
+                  "maximum_durability": 100
+                }
+              ],
+              "equipped_hand_instance_id": "jonah-axe"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s09-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 2
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s09-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "elin-home",
+                "inn",
+                "jonah-private-room",
+                "smithy",
+                "town-square",
+                "town-warehouse"
+              ],
+              "known_actor_ids": [
+                "bram",
+                "elin",
+                "farah",
+                "kara"
+              ],
+              "source_event_ids": [
+                "history/g02/e00",
+                "history/g02/e03",
+                "history/g02/e07",
+                "history/g02/e08",
+                "history/g02/e10",
+                "history/g02/e11",
+                "history/g02/e18",
+                "history/g02/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s09-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s09-f1",
+          "kind": "domain_fact",
+          "text": "Jonah carries the damaged axe, one iron ore, and two coin."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s09-f2",
+          "kind": "domain_fact",
+          "text": "Bram is an authorized repair provider."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s09-f3",
+          "kind": "domain_fact",
+          "text": "The customer-material repair accepts a carried axe and restores fifty durability."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s09-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s09-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "iron-ore": 1
+            },
+            "instances": [
+              {
+                "item_instance_id": "jonah-axe",
+                "item_type_id": "axe",
+                "durability": 30,
+                "maximum_durability": 100
+              }
+            ],
+            "equipped_hand_instance_id": "jonah-axe"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s09-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 2
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s09-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "elin-home",
+              "inn",
+              "jonah-private-room",
+              "smithy",
+              "town-square",
+              "town-warehouse"
+            ],
+            "known_actor_ids": [
+              "bram",
+              "elin",
+              "farah",
+              "kara"
+            ],
+            "source_event_ids": [
+              "history/g02/e00",
+              "history/g02/e03",
+              "history/g02/e07",
+              "history/g02/e08",
+              "history/g02/e10",
+              "history/g02/e11",
+              "history/g02/e18",
+              "history/g02/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s09-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s09-actor-signal",
+            "description": "The damaged equipped work tool blocks the next warehouse shift."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s09",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/item/jonah-axe"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "commitment",
+            "source_id": "commitment/item/jonah-axe",
+            "affected_node": "pressure/rq1-v2-b05-s09",
+            "edge_kind": "BoundByCommitment"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "jonah",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "iron-ore": 1
+          },
+          "instances": [
+            {
+              "item_instance_id": "jonah-axe",
+              "item_type_id": "axe",
+              "durability": 30,
+              "maximum_durability": 100
+            }
+          ],
+          "equipped_hand_instance_id": "jonah-axe"
+        },
+        "currency": {
+          "coin": 2
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "elin-home",
+            "inn",
+            "jonah-private-room",
+            "smithy",
+            "town-square",
+            "town-warehouse"
+          ],
+          "known_actor_ids": [
+            "bram",
+            "elin",
+            "farah",
+            "kara"
+          ],
+          "source_event_ids": [
+            "history/g02/e00",
+            "history/g02/e03",
+            "history/g02/e07",
+            "history/g02/e08",
+            "history/g02/e10",
+            "history/g02/e11",
+            "history/g02/e18",
+            "history/g02/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s09",
+            "description": "Restore the carried warehouse axe."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ServiceExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b05-s09-action",
+            "label": "Ask Bram to repair the carried axe with customer material",
+            "action_family": "ServiceExchange",
+            "availability_state": "ready",
+            "authority_reason": null
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/jonah",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s09-f1",
+          "rq1-v2-b05-s09-f2",
+          "rq1-v2-b05-s09-f3",
+          "rq1-v2-b05-s09-body",
+          "rq1-v2-b05-s09-inventory",
+          "rq1-v2-b05-s09-currency",
+          "rq1-v2-b05-s09-knowledge",
+          "rq1-v2-b05-s09-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b05-s10",
+      "actor_id": "lucas",
+      "domain": "food_production",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "recipe/hot-fish-meal",
+        "statement": "Lucas needs a hot fish meal for the woodlot shift but has only raw fish.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b05-s10-f1",
+            "kind": "domain_fact",
+            "text": "Lucas carries one raw fish."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s10-f2",
+            "kind": "domain_fact",
+            "text": "Lucas has no cook capability and carries no pot."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s10-f3",
+            "kind": "domain_fact",
+            "text": "No prepared food or coin is in his state."
+          },
+          {
+            "fact_id": "rq1-v2-b05-s10-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s10-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "fish": 1
+              },
+              "instances": [
+                {
+                  "item_instance_id": "lucas-axe",
+                  "item_type_id": "axe",
+                  "durability": 100,
+                  "maximum_durability": 100
+                }
+              ],
+              "equipped_hand_instance_id": "lucas-axe"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s10-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 0
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s10-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "farah-home",
+                "inn",
+                "lucas-private-room",
+                "town-square",
+                "woodlot"
+              ],
+              "known_actor_ids": [
+                "emma",
+                "farah",
+                "mira",
+                "nolan"
+              ],
+              "source_event_ids": [
+                "history/g02/e00",
+                "history/g02/e03",
+                "history/g02/e07",
+                "history/g02/e08",
+                "history/g02/e10",
+                "history/g02/e11",
+                "history/g02/e18",
+                "history/g02/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b05-s10-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "gather": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b05-s10-f1",
+          "kind": "domain_fact",
+          "text": "Lucas carries one raw fish."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s10-f2",
+          "kind": "domain_fact",
+          "text": "Lucas has no cook capability and carries no pot."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s10-f3",
+          "kind": "domain_fact",
+          "text": "No prepared food or coin is in his state."
+        },
+        {
+          "fact_id": "rq1-v2-b05-s10-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s10-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "fish": 1
+            },
+            "instances": [
+              {
+                "item_instance_id": "lucas-axe",
+                "item_type_id": "axe",
+                "durability": 100,
+                "maximum_durability": 100
+              }
+            ],
+            "equipped_hand_instance_id": "lucas-axe"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s10-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 0
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s10-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "farah-home",
+              "inn",
+              "lucas-private-room",
+              "town-square",
+              "woodlot"
+            ],
+            "known_actor_ids": [
+              "emma",
+              "farah",
+              "mira",
+              "nolan"
+            ],
+            "source_event_ids": [
+              "history/g02/e00",
+              "history/g02/e03",
+              "history/g02/e07",
+              "history/g02/e08",
+              "history/g02/e10",
+              "history/g02/e11",
+              "history/g02/e18",
+              "history/g02/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b05-s10-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "gather": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b05-s10-actor-signal",
+            "description": "Low food readiness threatens the current woodlot shift."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b05-s10",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "lucas"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "assignment",
+            "source_id": "assignment/recipe/hot-fish-meal",
+            "affected_node": "pressure/rq1-v2-b05-s10",
+            "edge_kind": "AssignedToActor"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "lucas",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "fish": 1
+          },
+          "instances": [
+            {
+              "item_instance_id": "lucas-axe",
+              "item_type_id": "axe",
+              "durability": 100,
+              "maximum_durability": 100
+            }
+          ],
+          "equipped_hand_instance_id": "lucas-axe"
+        },
+        "currency": {
+          "coin": 0
+        },
+        "capabilities": {
+          "gather": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "farah-home",
+            "inn",
+            "lucas-private-room",
+            "town-square",
+            "woodlot"
+          ],
+          "known_actor_ids": [
+            "emma",
+            "farah",
+            "mira",
+            "nolan"
+          ],
+          "source_event_ids": [
+            "history/g02/e00",
+            "history/g02/e03",
+            "history/g02/e07",
+            "history/g02/e08",
+            "history/g02/e10",
+            "history/g02/e11",
+            "history/g02/e18",
+            "history/g02/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b05-s10",
+            "description": "Prepare or obtain a hot fish meal."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/lucas",
+        "world_state_ref": "block_05",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b05-s10-f1",
+          "rq1-v2-b05-s10-f2",
+          "rq1-v2-b05-s10-f3",
+          "rq1-v2-b05-s10-body",
+          "rq1-v2-b05-s10-inventory",
+          "rq1-v2-b05-s10-currency",
+          "rq1-v2-b05-s10-knowledge",
+          "rq1-v2-b05-s10-capabilities"
+        ]
+      }
+    }
+  ]
+}

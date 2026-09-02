@@ -1,0 +1,450 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_03",
+  "block_id": "block_03",
+  "condition_order": "agent_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b03-s01",
+      "actor_id": "emma",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "emma",
+        "pressure_id": "rq1-v2-b03-s01"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "NoGroundedPath",
+        "visible_fact_ids": [
+          "b03s01-f1",
+          "b03s01-f2",
+          "b03s01-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The observed blocker is a fixed oven component outside every represented repair target; additional inspection does not create a compatible Authority action, and no represented path can finish before tick 318."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b03-s02",
+      "actor_id": "alice",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "alice",
+        "pressure_id": "rq1-v2-b03-s02"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "TemporalGate",
+        "visible_fact_ids": [
+          "b03s02-f1",
+          "b03s02-f2",
+          "b03s02-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The mine state and refresh tick are already known. Its refresh at 960 is later than the mill repair cutoff at 330, so the represented ore-gathering operation cannot satisfy this decision after waiting."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b03-s03",
+      "actor_id": "grace",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "trade_harvest",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "grace",
+        "pressure_id": "rq1-v2-b03-s03"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "VerificationRequired",
+        "visible_fact_ids": [
+          "b03s03-f1",
+          "b03s03-f2",
+          "b03s03-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The two actor-visible custody sources disagree about ownership. The catalogue contains disposition actions but no provenance-check action, and a future-only plan would miss the intake cutoff."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b03-s04",
+      "actor_id": "silas",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E1",
+        "event_edge_kind": "AffectsPlace",
+        "admission_role": "agent_only",
+        "domain": "care_household",
+        "task_family": "commit_listed_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ListedExchange",
+        "actor_id": "silas",
+        "pressure_id": "rq1-v2-b03-s04"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ListedExchange",
+      "action_template": {
+        "game_action_id": "b03s04-a1",
+        "action_family": "ListedExchange",
+        "arguments": {
+          "listing_id": "inn-porridge-retail"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "coin": -4,
+          "porridge": 1
+        },
+        "container_balance_delta": {
+          "owner_kind": "Shop",
+          "owner_id": "inn-stock",
+          "balances": {
+            "coin": 4,
+            "porridge": -1
+          }
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b03-s05",
+      "actor_id": "dorian",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "obligation_logistics",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "dorian",
+        "pressure_id": "rq1-v2-b03-s05"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "NoGroundedPath",
+        "visible_fact_ids": [
+          "b03s05-f1",
+          "b03s05-f2",
+          "b03s05-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The required bridge-pin asset is absent from Dorian's holdings and from every source, recipe, service, and listing he knows. The current catalogue therefore has no typed world-changing path for the commitment."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b03-s06",
+      "actor_id": "pavel",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E2",
+        "event_edge_kind": "HoldsRequiredInformation",
+        "admission_role": "neither",
+        "domain": "tools_maintenance",
+        "task_family": "commit_craft",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "Craft",
+        "actor_id": "pavel",
+        "pressure_id": "rq1-v2-b03-s06"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "Craft",
+      "action_template": {
+        "game_action_id": "b03s06-a1",
+        "action_family": "Craft",
+        "arguments": {
+          "recipe_id": "make-common-medicine"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "herb": -2,
+          "common-medicine": 1
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b03-s07",
+      "actor_id": "kara",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "food_production",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "kara",
+        "pressure_id": "rq1-v2-b03-s07"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "TemporalGate",
+        "visible_fact_ids": [
+          "b03s07-f1",
+          "b03s07-f2",
+          "b03s07-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The plot is known to remain Growing until 1920, later than the supper cutoff at 344. The represented harvest operation is temporally unavailable and waiting cannot meet the present commitment."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b03-s08",
+      "actor_id": "celia",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "trade_harvest",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "celia",
+        "pressure_id": "rq1-v2-b03-s08"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "VerificationRequired",
+        "visible_fact_ids": [
+          "b03s08-f1",
+          "b03s08-f2",
+          "b03s08-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The dispatch card and physical seal name different owners for the same bundle. No catalogue entry can authenticate the lot, so executing the sale would be ungrounded and a later plan would miss the sale window."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b03-s09",
+      "actor_id": "felix",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E1",
+        "event_edge_kind": "RequiresCapability",
+        "admission_role": "neither",
+        "domain": "care_household",
+        "task_family": "commit_region_operation",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "RegionOperation",
+        "actor_id": "felix",
+        "pressure_id": "rq1-v2-b03-s09"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "RegionOperation",
+      "action_template": {
+        "game_action_id": "b03s09-a1",
+        "action_family": "RegionOperation",
+        "arguments": {
+          "region_id": "farm-plot-4"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "seeds": -10
+        },
+        "farm_plot": {
+          "plot_id": "farm-plot-4",
+          "stage": "Growing",
+          "revision_delta": 1
+        },
+        "item_instance": {
+          "item_instance_id": "felix-hoe",
+          "durability_delta": -10
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b03-s10",
+      "actor_id": "clara",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_03",
+        "block_number": 3,
+        "owner_worker": "C",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "obligation_logistics",
+        "task_family": "commit_listed_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ListedExchange",
+        "actor_id": "clara",
+        "pressure_id": "rq1-v2-b03-s10"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ListedExchange",
+      "action_template": {
+        "game_action_id": "b03s10-a1",
+        "action_family": "ListedExchange",
+        "arguments": {
+          "listing_id": "mill-flour-retail"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "coin": -2,
+          "flour": 1
+        },
+        "container_balance_delta": {
+          "owner_kind": "Shop",
+          "owner_id": "mill-stock",
+          "balances": {
+            "coin": 2,
+            "flour": -1
+          }
+        }
+      },
+      "validator_precheck": null
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_07",
+  "block_id": "block_07",
+  "condition_order": "event_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b07-s01",
+      "actor_id": "kara",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "obligation_logistics",
+        "task_family": "commit_region_operation",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "RegionOperation",
+        "actor_id": "kara",
+        "pressure_id": "rq1-v2-b07-s01"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "RegionOperation",
+      "action_template": {
+        "game_action_id": "rq1-v2-b07-s01-action",
+        "action_family": "RegionOperation",
+        "arguments": {
+          "region_id": "farm-plot-1"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b07-s02",
+      "actor_id": "iris",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "RequiresCapability",
+        "admission_role": "agent_only",
+        "domain": "tools_maintenance",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "iris",
+        "pressure_id": "rq1-v2-b07-s02"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "rq1-v2-b07-s02-action",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "iris",
+          "destination_kind": "Actor",
+          "destination_id": "bram",
+          "asset_id": "iron-ore",
+          "quantity": 1
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b07-s03",
+      "actor_id": "nolan",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "commit_service_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ServiceExchange",
+        "actor_id": "nolan",
+        "pressure_id": "rq1-v2-b07-s03"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ServiceExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b07-s03-action",
+        "action_family": "ServiceExchange",
+        "arguments": {
+          "service_id": "milling",
+          "provider_actor_id": "iris",
+          "target_item_instance_id": null
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b07-s04",
+      "actor_id": "hugo",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "agent_only",
+        "domain": "trade_harvest",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "hugo",
+        "pressure_id": "rq1-v2-b07-s04"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "NoGroundedPath",
+        "reason": "The requested lot has no registered place, actor, or container, and the bounded catalogue contains no terminal proposal.",
+        "basis_refs": [
+          "rq1-v2-b07-s04/fact-1",
+          "rq1-v2-b07-s04/fact-2"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b07-s05",
+      "actor_id": "silas",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "care_household",
+        "task_family": "commit_region_operation",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "RegionOperation",
+        "actor_id": "silas",
+        "pressure_id": "rq1-v2-b07-s05"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "RegionOperation",
+      "action_template": {
+        "game_action_id": "rq1-v2-b07-s05-action",
+        "action_family": "RegionOperation",
+        "arguments": {
+          "region_id": "fishing-ground"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b07-s06",
+      "actor_id": "elin",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "obligation_logistics",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "elin",
+        "pressure_id": "rq1-v2-b07-s06"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "rq1-v2-b07-s06-action",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "elin",
+          "destination_kind": "Actor",
+          "destination_id": "jonah",
+          "asset_id": "meal",
+          "quantity": 1
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b07-s07",
+      "actor_id": "emma",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "neither",
+        "domain": "tools_maintenance",
+        "task_family": "commit_craft",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "Craft",
+        "actor_id": "emma",
+        "pressure_id": "rq1-v2-b07-s07"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "Craft",
+      "action_template": {
+        "game_action_id": "rq1-v2-b07-s07-action",
+        "action_family": "Craft",
+        "arguments": {
+          "recipe_id": "craft-axe"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b07-s08",
+      "actor_id": "devin",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "food_production",
+        "task_family": "commit_service_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ServiceExchange",
+        "actor_id": "devin",
+        "pressure_id": "rq1-v2-b07-s08"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ServiceExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b07-s08-action",
+        "action_family": "ServiceExchange",
+        "arguments": {
+          "service_id": "smith-customer-pot",
+          "provider_actor_id": "celia",
+          "target_item_instance_id": null
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b07-s09",
+      "actor_id": "clara",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "trade_harvest",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "clara",
+        "pressure_id": "rq1-v2-b07-s09"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "NoGroundedPath",
+        "reason": "Neither the item reference nor a fixed listing exists in the visible world records, so no supported terminal can be formed.",
+        "basis_refs": [
+          "rq1-v2-b07-s09/fact-1",
+          "rq1-v2-b07-s09/fact-2"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b07-s10",
+      "actor_id": "grace",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_07",
+        "block_number": 7,
+        "owner_worker": "B",
+        "worker_block_index": 2,
+        "condition_order": "event_first",
+        "overlap_tier": 0,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "neither",
+        "domain": "care_household",
+        "task_family": "commit_region_operation",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "RegionOperation",
+        "actor_id": "grace",
+        "pressure_id": "rq1-v2-b07-s10"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "RegionOperation",
+      "action_template": {
+        "game_action_id": "rq1-v2-b07-s10-action",
+        "action_family": "RegionOperation",
+        "arguments": {
+          "region_id": "herb-garden"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    }
+  ]
+}

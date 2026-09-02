@@ -1,0 +1,1617 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_10",
+  "block_id": "block_10",
+  "decision_tick": 100,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": {
+      "world_revision": 10
+    }
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b10-s01",
+      "actor_id": "silas",
+      "domain": "trade_harvest",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "The east quay manifest needs four sealed flax bales before the noon cart leaves.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s01-f1",
+            "text": "Warehouse quay-flax holds six sealed flax bales."
+          },
+          {
+            "fact_id": "b10-s01-f2",
+            "text": "Silas is the named restocker for the east-quay stall and the cart departs at tick 118."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s01-f1",
+          "text": "Warehouse quay-flax holds six sealed flax bales."
+        },
+        {
+          "fact_id": "b10-s01-f2",
+          "text": "Silas is the named restocker for the east-quay stall and the cart departs at tick 118."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "goal_id": "b10-s01-goal",
+            "evidence_type": "imminent_personal_commitment",
+            "statement": "Complete the assigned quay restock before tick 118."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s01",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b10-s01-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b10-s01-dep",
+            "source_type": "resource_holder_observation",
+            "subject": "warehouse/quay-flax",
+            "statement": "The sealed tally records the stock needed by the quay manifest."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "silas",
+          "body": {
+            "health_current": 92,
+            "health_maximum": 100,
+            "satiety": 43,
+            "spirit": 61,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-warehouse"
+          },
+          "inventory": [
+            {
+              "asset_id": "twine",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 7
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "cooperative"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s01-goal",
+            "evidence_type": "imminent_personal_commitment",
+            "statement": "Complete the assigned quay restock before tick 118."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s01-f1",
+            "source_type": "sealed_stock_tally",
+            "statement": "Six sealed flax bales are in quay-flax."
+          },
+          {
+            "fact_id": "b10-s01-f2",
+            "source_type": "signed_duty_roster",
+            "statement": "Silas may move four bales to east-quay-stock."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 92,
+            "health_maximum": 100,
+            "satiety": 43,
+            "spirit": 61,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 7
+              },
+              {
+                "asset_id": "twine",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "quay-flax",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "flax-bale",
+                "quantity": 6
+              }
+            ]
+          },
+          {
+            "owner_kind": "Shop",
+            "owner_id": "east-quay-stock",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "flax-bale",
+                "quantity": 0
+              }
+            ]
+          }
+        ],
+        "restock_rule": {
+          "actor_id": "silas",
+          "source_id": "quay-flax",
+          "destination_id": "east-quay-stock",
+          "asset_id": "flax-bale",
+          "quantity": 4
+        }
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b10-s02",
+      "actor_id": "devin",
+      "domain": "care_household",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "A feverish child at alice-home needs the clinic's cooling visit before the next temperature check.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s02-f1",
+            "text": "Felix is on the clinic home-visit roster until tick 116."
+          },
+          {
+            "fact_id": "b10-s02-f2",
+            "text": "The visit costs two coin and uses one cooling cloth from the clinic kit."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s02-f1",
+          "text": "Felix is on the clinic home-visit roster until tick 116."
+        },
+        {
+          "fact_id": "b10-s02-f2",
+          "text": "The visit costs two coin and uses one cooling cloth from the clinic kit."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "goal_id": "b10-s02-goal",
+            "evidence_type": "urgent_household_care",
+            "statement": "Arrange the cooling visit before tick 116."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s02",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b10-s02-dep"
+          },
+          "role_assignment": {
+            "organization_id": "b10-s02-dep",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "b10-s02-dep"
+          },
+          "raw_evidence": {
+            "source_id": "b10-s02-dep",
+            "source_type": "organization_membership_record",
+            "subject": "clinic-home-visit-roster",
+            "statement": "Felix's clinic role permits the listed home visit."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "devin",
+          "body": {
+            "health_current": 88,
+            "health_maximum": 100,
+            "satiety": 66,
+            "spirit": 52,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "alice-home"
+          },
+          "inventory": [
+            {
+              "asset_id": "water-flask",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 5
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "supportive"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s02-goal",
+            "evidence_type": "urgent_household_care",
+            "statement": "Arrange the cooling visit before tick 116."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s02-f1",
+            "source_type": "clinic_roster",
+            "statement": "Felix is the listed visitor for alice-home."
+          },
+          {
+            "fact_id": "b10-s02-f2",
+            "source_type": "posted_service_terms",
+            "statement": "The visit costs two coin and the clinic kit has cooling cloths."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 88,
+            "health_maximum": 100,
+            "satiety": 66,
+            "spirit": 52,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 5
+              },
+              {
+                "asset_id": "water-flask",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "clinic-visit-kit",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "cooling-cloth",
+                "quantity": 3
+              },
+              {
+                "asset_id": "coin",
+                "quantity": 0
+              }
+            ]
+          }
+        ],
+        "service": {
+          "service_id": "cooling-home-visit",
+          "place_id": "alice-home",
+          "provider_actor_ids": [
+            "felix"
+          ],
+          "provider_owner_kind": "Warehouse",
+          "provider_container_id": "clinic-visit-kit",
+          "coin_fee": 2,
+          "customer_inputs": [],
+          "provider_inputs": [
+            {
+              "asset_id": "cooling-cloth",
+              "quantity": 1
+            }
+          ],
+          "customer_outputs": [
+            {
+              "asset_id": "care-note",
+              "quantity": 1
+            }
+          ],
+          "target_item_type_ids": [],
+          "durability_restore": 0
+        }
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b10-s03",
+      "actor_id": "dorian",
+      "domain": "obligation_logistics",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "The signed ferry ledger must reach the north archive before its intake closes.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s03-f1",
+            "text": "Flood water has closed the north footbridge through tick 132."
+          },
+          {
+            "fact_id": "b10-s03-f2",
+            "text": "The ferry is beached for hull work and the archive intake closes at tick 114."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s03-f1",
+          "text": "Flood water has closed the north footbridge through tick 132."
+        },
+        {
+          "fact_id": "b10-s03-f2",
+          "text": "The ferry is beached for hull work and the archive intake closes at tick 114."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "goal_id": "b10-s03-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Deliver the signed ferry ledger by tick 114."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s03",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "b10-s03-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b10-s03-dep",
+            "source_type": "place_impact_notice",
+            "subject": "north-footbridge",
+            "statement": "The flood notice removes the only represented route to the archive."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "dorian",
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 47,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-square"
+          },
+          "inventory": [
+            {
+              "asset_id": "signed-ferry-ledger",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 3
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "dutiful"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s03-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Deliver the signed ferry ledger by tick 114."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s03-f1",
+            "source_type": "bridge_closure_board",
+            "statement": "The only land crossing remains shut beyond the deadline."
+          },
+          {
+            "fact_id": "b10-s03-f2",
+            "source_type": "harbour_work_notice",
+            "statement": "No ferry trip leaves before the archive closes."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 47,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 3
+              },
+              {
+                "asset_id": "signed-ferry-ledger",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "route_gates": [
+          {
+            "route_id": "north-footbridge",
+            "opens_at_tick": 132
+          },
+          {
+            "route_id": "north-ferry",
+            "opens_at_tick": 140
+          }
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b10-s04",
+      "actor_id": "elin",
+      "domain": "tools_maintenance",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "Elin's survey level must be calibrated before the ridge team leaves at tick 128.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s04-f1",
+            "text": "The guild calibration bench is sealed for its scheduled reference cycle until tick 140."
+          },
+          {
+            "fact_id": "b10-s04-f2",
+            "text": "Guild rules permit calibration only at that bench."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s04-f1",
+          "text": "The guild calibration bench is sealed for its scheduled reference cycle until tick 140."
+        },
+        {
+          "fact_id": "b10-s04-f2",
+          "text": "Guild rules permit calibration only at that bench."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "goal_id": "b10-s04-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Calibrate the survey level before tick 128."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s04",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b10-s04-dep"
+          },
+          "role_assignment": {
+            "organization_id": "b10-s04-dep",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "b10-s04-dep"
+          },
+          "raw_evidence": {
+            "source_id": "b10-s04-dep",
+            "source_type": "organization_membership_record",
+            "subject": "surveyors-guild",
+            "statement": "The guild method card binds members to the sealed reference bench."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "elin",
+          "body": {
+            "health_current": 96,
+            "health_maximum": 100,
+            "satiety": 62,
+            "spirit": 55,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "carpentry"
+          },
+          "inventory": [
+            {
+              "asset_id": "survey-level",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 6
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "methodical"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s04-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Calibrate the survey level before tick 128."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s04-f1",
+            "source_type": "bench_cycle_notice",
+            "statement": "The calibration bench cannot be used before tick 140."
+          },
+          {
+            "fact_id": "b10-s04-f2",
+            "source_type": "guild_method_card",
+            "statement": "No alternate bench is licensed for this instrument."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 96,
+            "health_maximum": 100,
+            "satiety": 62,
+            "spirit": 55,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 6
+              },
+              {
+                "asset_id": "survey-level",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "temporal_gates": [
+          {
+            "gate_id": "guild-calibration-bench",
+            "opens_at_tick": 140
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b10-s05",
+      "actor_id": "rosa",
+      "domain": "food_production",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "Three sealed meal crates are due at the community kitchen before the lunch count.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s05-f1",
+            "text": "Warehouse garden-meals holds five sealed meal crates."
+          },
+          {
+            "fact_id": "b10-s05-f2",
+            "text": "Rosa's kitchen restock slip calls for three crates at tick 121."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s05-f1",
+          "text": "Warehouse garden-meals holds five sealed meal crates."
+        },
+        {
+          "fact_id": "b10-s05-f2",
+          "text": "Rosa's kitchen restock slip calls for three crates at tick 121."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "goal_id": "b10-s05-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Fill the kitchen restock slip with three sealed crates."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s05",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "rosa"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b10-s05-dep",
+            "source_type": "actor_assignment_notice",
+            "subject": "rosa",
+            "statement": "The signed slip assigns the kitchen delivery to Rosa."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "rosa",
+          "body": {
+            "health_current": 94,
+            "health_maximum": 100,
+            "satiety": 54,
+            "spirit": 67,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "community-garden"
+          },
+          "inventory": [
+            {
+              "asset_id": "kitchen-tag",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 4
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "communal"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s05-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Fill the kitchen restock slip with three sealed crates."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s05-f1",
+            "source_type": "warehouse_count",
+            "statement": "Five sealed meal crates are in garden-meals."
+          },
+          {
+            "fact_id": "b10-s05-f2",
+            "source_type": "signed_restock_slip",
+            "statement": "Rosa may move three crates to community-kitchen-stock."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 94,
+            "health_maximum": 100,
+            "satiety": 54,
+            "spirit": 67,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 4
+              },
+              {
+                "asset_id": "kitchen-tag",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "garden-meals",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "meal-crate",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "owner_kind": "Shop",
+            "owner_id": "community-kitchen-stock",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "meal-crate",
+                "quantity": 1
+              }
+            ]
+          }
+        ],
+        "restock_rule": {
+          "actor_id": "rosa",
+          "source_id": "garden-meals",
+          "destination_id": "community-kitchen-stock",
+          "asset_id": "meal-crate",
+          "quantity": 3
+        }
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b10-s06",
+      "actor_id": "farah",
+      "domain": "trade_harvest",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "Farah's berry consignment needs a witnessed weight certificate before the buyer closes the lot.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s06-f1",
+            "text": "Iris is serving at the town-square weigh table through tick 124."
+          },
+          {
+            "fact_id": "b10-s06-f2",
+            "text": "The certificate costs one coin and the table has four blank seals."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s06-f1",
+          "text": "Iris is serving at the town-square weigh table through tick 124."
+        },
+        {
+          "fact_id": "b10-s06-f2",
+          "text": "The certificate costs one coin and the table has four blank seals."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "goal_id": "b10-s06-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Obtain the lot certificate by tick 124."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s06",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "b10-s06-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b10-s06-dep",
+            "source_type": "commitment_record",
+            "subject": "berry-lot-sale",
+            "statement": "The signed sale requires a witnessed certificate before lot closure."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "farah",
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 71,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-square"
+          },
+          "inventory": [
+            {
+              "asset_id": "berry-consignment",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 3
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "businesslike"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s06-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Obtain the lot certificate by tick 124."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s06-f1",
+            "source_type": "weigh_table_roster",
+            "statement": "Iris is the witnessed-weigh provider now."
+          },
+          {
+            "fact_id": "b10-s06-f2",
+            "source_type": "posted_service_terms",
+            "statement": "One coin and one blank seal produce a weight certificate."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 71,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "berry-consignment",
+                "quantity": 1
+              },
+              {
+                "asset_id": "coin",
+                "quantity": 3
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "weigh-table-kit",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "blank-seal",
+                "quantity": 4
+              },
+              {
+                "asset_id": "coin",
+                "quantity": 0
+              }
+            ]
+          }
+        ],
+        "service": {
+          "service_id": "witnessed-lot-weighing",
+          "place_id": "town-square",
+          "provider_actor_ids": [
+            "iris"
+          ],
+          "provider_owner_kind": "Warehouse",
+          "provider_container_id": "weigh-table-kit",
+          "coin_fee": 1,
+          "customer_inputs": [],
+          "provider_inputs": [
+            {
+              "asset_id": "blank-seal",
+              "quantity": 1
+            }
+          ],
+          "customer_outputs": [
+            {
+              "asset_id": "weight-certificate",
+              "quantity": 1
+            }
+          ],
+          "target_item_type_ids": [],
+          "durability_restore": 0
+        }
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b10-s07",
+      "actor_id": "felix",
+      "domain": "care_household",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "The shared nursery needs its smoke-damaged bedding sanitised before the children return.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s07-f1",
+            "text": "Devin is listed for the nursery sanitation service at alice-home."
+          },
+          {
+            "fact_id": "b10-s07-f2",
+            "text": "The service uses one soap packet and costs two coin."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s07-f1",
+          "text": "Devin is listed for the nursery sanitation service at alice-home."
+        },
+        {
+          "fact_id": "b10-s07-f2",
+          "text": "The service uses one soap packet and costs two coin."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "goal_id": "b10-s07-goal",
+            "evidence_type": "routine_household_duty",
+            "statement": "Make the nursery ready before tick 130."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s07",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b10-s07-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b10-s07-dep",
+            "source_type": "resource_holder_observation",
+            "subject": "nursery-sanitation-kit",
+            "statement": "The service kit contains the soap packet needed for the nursery."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "felix",
+          "body": {
+            "health_current": 91,
+            "health_maximum": 100,
+            "satiety": 72,
+            "spirit": 58,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "alice-home"
+          },
+          "inventory": [
+            {
+              "asset_id": "nursery-key",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 5
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "protective"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s07-goal",
+            "evidence_type": "routine_household_duty",
+            "statement": "Make the nursery ready before tick 130."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s07-f1",
+            "source_type": "household_service_card",
+            "statement": "Devin may perform nursery sanitation at alice-home."
+          },
+          {
+            "fact_id": "b10-s07-f2",
+            "source_type": "posted_service_terms",
+            "statement": "The kit has soap and the fee is two coin."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 91,
+            "health_maximum": 100,
+            "satiety": 72,
+            "spirit": 58,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 5
+              },
+              {
+                "asset_id": "nursery-key",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "nursery-sanitation-kit",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 0
+              },
+              {
+                "asset_id": "soap-packet",
+                "quantity": 2
+              }
+            ]
+          }
+        ],
+        "service": {
+          "service_id": "nursery-sanitation",
+          "place_id": "alice-home",
+          "provider_actor_ids": [
+            "devin"
+          ],
+          "provider_owner_kind": "Warehouse",
+          "provider_container_id": "nursery-sanitation-kit",
+          "coin_fee": 2,
+          "customer_inputs": [],
+          "provider_inputs": [
+            {
+              "asset_id": "soap-packet",
+              "quantity": 1
+            }
+          ],
+          "customer_outputs": [
+            {
+              "asset_id": "sanitation-receipt",
+              "quantity": 1
+            }
+          ],
+          "target_item_type_ids": [],
+          "durability_restore": 0
+        }
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b10-s08",
+      "actor_id": "grace",
+      "domain": "obligation_logistics",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "Grace must lodge the original quay charter before the dock allocation meeting.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s08-f1",
+            "text": "The charter case is empty and its last signed checkout predates the current harbour office."
+          },
+          {
+            "fact_id": "b10-s08-f2",
+            "text": "No archive, household, shop or warehouse register lists the original charter."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s08-f1",
+          "text": "The charter case is empty and its last signed checkout predates the current harbour office."
+        },
+        {
+          "fact_id": "b10-s08-f2",
+          "text": "No archive, household, shop or warehouse register lists the original charter."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "goal_id": "b10-s08-goal",
+            "evidence_type": "routine_commitment",
+            "statement": "Lodge the original quay charter by tick 119."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s08",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "b10-s08-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b10-s08-dep",
+            "source_type": "commitment_record",
+            "subject": "dock-allocation-meeting",
+            "statement": "The meeting notice requires the original document, not Grace's copy."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "grace",
+          "body": {
+            "health_current": 97,
+            "health_maximum": 100,
+            "satiety": 60,
+            "spirit": 49,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-warehouse"
+          },
+          "inventory": [
+            {
+              "asset_id": "charter-copy",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 2
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "dutiful"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s08-goal",
+            "evidence_type": "routine_commitment",
+            "statement": "Lodge the original quay charter by tick 119."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s08-f1",
+            "source_type": "empty_case_observation",
+            "statement": "The labelled case contains no original charter."
+          },
+          {
+            "fact_id": "b10-s08-f2",
+            "source_type": "current_registry_search",
+            "statement": "All represented current stores lack the original charter."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 97,
+            "health_maximum": 100,
+            "satiety": 60,
+            "spirit": 49,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "charter-copy",
+                "quantity": 1
+              },
+              {
+                "asset_id": "coin",
+                "quantity": 2
+              }
+            ]
+          }
+        },
+        "asset_search": {
+          "asset_id": "original-quay-charter",
+          "represented_quantity": 0
+        }
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b10-s09",
+      "actor_id": "hugo",
+      "domain": "tools_maintenance",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "A kiln gauge needs its heat-zero calibration before the evening firing begins.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s09-f1",
+            "text": "The kiln remains above the safe calibration temperature until tick 210."
+          },
+          {
+            "fact_id": "b10-s09-f2",
+            "text": "The firing crew locks the kiln schedule at tick 195."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s09-f1",
+          "text": "The kiln remains above the safe calibration temperature until tick 210."
+        },
+        {
+          "fact_id": "b10-s09-f2",
+          "text": "The firing crew locks the kiln schedule at tick 195."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "goal_id": "b10-s09-goal",
+            "evidence_type": "background_maintenance_concern",
+            "statement": "Calibrate the kiln gauge before tick 195."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s09",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "hugo"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b10-s09-dep",
+            "source_type": "actor_assignment_notice",
+            "subject": "hugo",
+            "statement": "The firing roster assigns the gauge preparation to Hugo."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "hugo",
+          "body": {
+            "health_current": 89,
+            "health_maximum": 100,
+            "satiety": 57,
+            "spirit": 45,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "smithy"
+          },
+          "inventory": [
+            {
+              "asset_id": "kiln-gauge",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 4
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "methodical"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s09-goal",
+            "evidence_type": "background_maintenance_concern",
+            "statement": "Calibrate the kiln gauge before tick 195."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s09-f1",
+            "source_type": "kiln_temperature_log",
+            "statement": "Calibration is barred until tick 210."
+          },
+          {
+            "fact_id": "b10-s09-f2",
+            "source_type": "firing_roster",
+            "statement": "The relevant schedule closes at tick 195."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 89,
+            "health_maximum": 100,
+            "satiety": 57,
+            "spirit": 45,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 4
+              },
+              {
+                "asset_id": "kiln-gauge",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "temporal_gates": [
+          {
+            "gate_id": "kiln-safe-calibration-temperature",
+            "opens_at_tick": 210
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b10-s10",
+      "actor_id": "iris",
+      "domain": "food_production",
+      "decision_tick": 100,
+      "deadline_tick": 340,
+      "pressure_packet": {
+        "summary": "The inn asks Iris for a nut-free supper tray for an arriving guest.",
+        "public_facts": [
+          {
+            "fact_id": "b10-s10-f1",
+            "text": "The inn pantry has no sealed nut-free meal, clean grain or unused cooking oil."
+          },
+          {
+            "fact_id": "b10-s10-f2",
+            "text": "The general store and mill list no replenishment before tick 150."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b10-s10-f1",
+          "text": "The inn pantry has no sealed nut-free meal, clean grain or unused cooking oil."
+        },
+        {
+          "fact_id": "b10-s10-f2",
+          "text": "The general store and mill list no replenishment before tick 150."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "goal_id": "b10-s10-goal",
+            "evidence_type": "background_service_request",
+            "statement": "Supply a sealed nut-free supper tray by tick 126."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b10-s10",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b10-s10-dep"
+          },
+          "role_assignment": {
+            "organization_id": "b10-s10-dep",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "b10-s10-dep"
+          },
+          "raw_evidence": {
+            "source_id": "b10-s10-dep",
+            "source_type": "organization_membership_record",
+            "subject": "inn-supper-roster",
+            "statement": "Iris received the inn's supper request through the serving roster."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "iris",
+          "body": {
+            "health_current": 98,
+            "health_maximum": 100,
+            "satiety": 69,
+            "spirit": 63,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "inn"
+          },
+          "inventory": [
+            {
+              "asset_id": "serving-tray",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 8
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "hospitable"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b10-s10-goal",
+            "evidence_type": "background_service_request",
+            "statement": "Supply a sealed nut-free supper tray by tick 126."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b10-s10-f1",
+            "source_type": "pantry_count",
+            "statement": "No safe tray or complete safe input set is present."
+          },
+          {
+            "fact_id": "b10-s10-f2",
+            "source_type": "supplier_schedule",
+            "statement": "No represented supplier arrives before the request expires."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 100,
+        "actor": {
+          "body": {
+            "health_current": 98,
+            "health_maximum": 100,
+            "satiety": 69,
+            "spirit": 63,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 8
+              },
+              {
+                "asset_id": "serving-tray",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "represented_supply": [
+          {
+            "asset_id": "sealed-nut-free-meal",
+            "quantity": 0
+          },
+          {
+            "asset_id": "clean-grain",
+            "quantity": 0
+          },
+          {
+            "asset_id": "unused-cooking-oil",
+            "quantity": 0
+          }
+        ]
+      }
+    }
+  ]
+}

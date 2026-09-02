@@ -1,0 +1,1 @@
+{"schema_version":"alice.formal-model-profile.v1","profile_id":"formal-deepseek-v4-pro-current-timeout300","provider":"deepseek-anthropic-compatible","model":"deepseek-v4-pro","language":"English","thinking_effort":"high","max_output_tokens":16384,"timeout_seconds":300,"automatic_retry":true}

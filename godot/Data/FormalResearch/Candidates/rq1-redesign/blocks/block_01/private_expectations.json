@@ -1,0 +1,404 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_01",
+  "block_id": "block_01",
+  "condition_order": "agent_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b01-s01",
+      "actor_id": "emma",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "care_household",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "emma",
+        "pressure_id": "rq1-v2-b01-s01"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "kind": "NoGroundedPath",
+        "fact_ids": [
+          "b01s01-no-coin",
+          "b01s01-no-medicine",
+          "b01s01-no-source"
+        ],
+        "supported_verify_terminal": false,
+        "supported_plan_only_terminal": false
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b01-s02",
+      "actor_id": "alice",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "RequiresCapability",
+        "admission_role": "agent_only",
+        "domain": "obligation_logistics",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "alice",
+        "pressure_id": "rq1-v2-b01-s02"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "kind": "TemporalGate",
+        "fact_ids": [
+          "b01s02-permit-start",
+          "b01s02-now",
+          "b01s02-duty-active"
+        ],
+        "supported_verify_terminal": false,
+        "supported_plan_only_terminal": false
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b01-s03",
+      "actor_id": "silas",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "silas",
+        "pressure_id": "rq1-v2-b01-s03"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "kind": "VerificationRequired",
+        "fact_ids": [
+          "b01s03-roster-frayed",
+          "b01s03-receipt-restored",
+          "b01s03-inspection-missing"
+        ],
+        "supported_verify_terminal": false,
+        "supported_plan_only_terminal": false
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b01-s04",
+      "actor_id": "jonah",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "commit_listed_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ListedExchange",
+        "actor_id": "jonah",
+        "pressure_id": "rq1-v2-b01-s04"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ListedExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b01-s04-action",
+        "action_family": "ListedExchange",
+        "arguments": {
+          "listing_id": "mill-wheat-retail"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b01-s05",
+      "actor_id": "clara",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "trade_harvest",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "clara",
+        "pressure_id": "rq1-v2-b01-s05"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "kind": "NoGroundedPath",
+        "fact_ids": [
+          "b01s05-no-fruit",
+          "b01s05-no-coin",
+          "b01s05-no-harvest-source"
+        ],
+        "supported_verify_terminal": false,
+        "supported_plan_only_terminal": false
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b01-s06",
+      "actor_id": "rosa",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "care_household",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "rosa",
+        "pressure_id": "rq1-v2-b01-s06"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "kind": "TemporalGate",
+        "fact_ids": [
+          "b01s06-isolation-end",
+          "b01s06-now",
+          "b01s06-assigned"
+        ],
+        "supported_verify_terminal": false,
+        "supported_plan_only_terminal": false
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b01-s07",
+      "actor_id": "quinn",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "neither",
+        "domain": "obligation_logistics",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "quinn",
+        "pressure_id": "rq1-v2-b01-s07"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "kind": "NoGroundedPath",
+        "fact_ids": [
+          "b01s07-case-sealed",
+          "b01s07-document-family-count",
+          "b01s07-inventory-absence"
+        ],
+        "supported_verify_terminal": false,
+        "supported_plan_only_terminal": false
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b01-s08",
+      "actor_id": "dorian",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "dorian",
+        "pressure_id": "rq1-v2-b01-s08"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "kind": "VerificationRequired",
+        "fact_ids": [
+          "b01s08-shelf-zero",
+          "b01s08-intake-three",
+          "b01s08-count-missing"
+        ],
+        "supported_verify_terminal": false,
+        "supported_plan_only_terminal": false
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b01-s09",
+      "actor_id": "elin",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "food_production",
+        "task_family": "commit_listed_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ListedExchange",
+        "actor_id": "elin",
+        "pressure_id": "rq1-v2-b01-s09"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ListedExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b01-s09-action",
+        "action_family": "ListedExchange",
+        "arguments": {
+          "listing_id": "inn-noodles-retail"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b01-s10",
+      "actor_id": "grace",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_01",
+        "block_number": 1,
+        "owner_worker": "A",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "neither",
+        "domain": "trade_harvest",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "grace",
+        "pressure_id": "rq1-v2-b01-s10"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "kind": "TemporalGate",
+        "fact_ids": [
+          "b01s10-store-open",
+          "b01s10-now",
+          "b01s10-wheat"
+        ],
+        "supported_verify_terminal": false,
+        "supported_plan_only_terminal": false
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    }
+  ]
+}

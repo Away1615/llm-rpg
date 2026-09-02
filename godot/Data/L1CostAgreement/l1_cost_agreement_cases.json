@@ -1,0 +1,288 @@
+{
+  "protocol": "alice.l1_cost_agreement.cases.v1",
+  "defaults": {
+    "actor_id": "l1-study-actor",
+    "name": "Study Actor",
+    "personality_traits": ["practical", "careful"],
+    "aspirations": ["keep_daily_life_stable"],
+    "current_emotion": "Neutral",
+    "current_goal_refs": ["meet_current_need"],
+    "body": {"health": 80, "satiety": 60, "spirit": 60, "disease": "None"},
+    "inventory": [{"asset_id": "coin", "quantity": 10}]
+  },
+  "cases": [
+    {
+      "case_id": "choose-hunger-meal",
+      "group": "choose",
+      "domain": "hunger",
+      "subject_ref": "satiety-low",
+      "visible_failure_count": 0,
+      "body": {"health": 80, "satiety": 18, "spirit": 55, "disease": "None"},
+      "candidates": [
+        {"candidate_id": "hunger/eat-meal", "kind": "Action", "target_id": "meal", "label": "Eat one available meal now", "available": true, "unavailable_reason": null},
+        {"candidate_id": "hunger/rest", "kind": "Action", "target_id": "public-bench", "label": "Rest without obtaining food", "available": true, "unavailable_reason": null}
+      ]
+    },
+    {
+      "case_id": "choose-treatment-medicine",
+      "group": "choose",
+      "domain": "treatment",
+      "subject_ref": "visible-disease",
+      "visible_failure_count": 0,
+      "body": {"health": 45, "satiety": 55, "spirit": 45, "disease": "Fever"},
+      "inventory": [{"asset_id": "medicine", "quantity": 1}, {"asset_id": "meal", "quantity": 1}],
+      "candidates": [
+        {"candidate_id": "treatment/use-medicine", "kind": "Action", "target_id": "medicine", "label": "Use the medicine already in inventory", "available": true, "unavailable_reason": null},
+        {"candidate_id": "treatment/eat-meal", "kind": "Action", "target_id": "meal", "label": "Eat a meal that does not treat the visible disease", "available": true, "unavailable_reason": null}
+      ]
+    },
+    {
+      "case_id": "choose-rest-bed",
+      "group": "choose",
+      "domain": "rest",
+      "subject_ref": "spirit-low",
+      "visible_failure_count": 0,
+      "body": {"health": 80, "satiety": 70, "spirit": 12, "disease": "None"},
+      "candidates": [
+        {"candidate_id": "rest/use-bed", "kind": "Action", "target_id": "home-bed", "label": "Use the accessible bed to rest", "available": true, "unavailable_reason": null},
+        {"candidate_id": "rest/visit-shop", "kind": "Action", "target_id": "general-store", "label": "Visit the shop without resting", "available": true, "unavailable_reason": null}
+      ]
+    },
+    {
+      "case_id": "choose-work-use-tool",
+      "group": "choose",
+      "domain": "work-blocker",
+      "subject_ref": "missing-equipped-tool",
+      "visible_failure_count": 0,
+      "inventory": [{"asset_id": "coin", "quantity": 5}, {"asset_id": "axe", "quantity": 1}],
+      "candidates": [
+        {"candidate_id": "work/equip-axe", "kind": "Action", "target_id": "axe", "label": "Equip the owned axe required by the current work", "available": true, "unavailable_reason": null},
+        {"candidate_id": "work/wait", "kind": "Action", "target_id": "workplace", "label": "Wait without removing the visible work blocker", "available": true, "unavailable_reason": null}
+      ]
+    },
+    {
+      "case_id": "choose-commitment-deliver",
+      "group": "choose",
+      "domain": "commitment",
+      "subject_ref": "deliver-one-meal-today",
+      "visible_failure_count": 0,
+      "inventory": [{"asset_id": "meal", "quantity": 1}],
+      "candidates": [
+        {"candidate_id": "commitment/deliver-meal", "kind": "Action", "target_id": "creditor", "label": "Deliver the promised meal that is already held", "available": true, "unavailable_reason": null},
+        {"candidate_id": "commitment/store-meal", "kind": "Action", "target_id": "home-storage", "label": "Store the meal without fulfilling the current promise", "available": true, "unavailable_reason": null}
+      ]
+    },
+    {
+      "case_id": "choose-business-restock",
+      "group": "choose",
+      "domain": "business-stock",
+      "subject_ref": "shop-needs-fish",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "business/buy-fish", "kind": "Action", "target_id": "fish-market", "label": "Buy the fish stock requested by the shop", "available": true, "unavailable_reason": null},
+        {"candidate_id": "business/buy-timber", "kind": "Action", "target_id": "timber-yard", "label": "Buy timber that is not requested by the shop", "available": true, "unavailable_reason": null}
+      ]
+    },
+    {
+      "case_id": "choose-tool-repair",
+      "group": "choose",
+      "domain": "work-blocker",
+      "subject_ref": "damaged-pickaxe",
+      "visible_failure_count": 1,
+      "candidates": [
+        {"candidate_id": "tool/repair-pickaxe", "kind": "Action", "target_id": "blacksmith", "label": "Take the damaged pickaxe to the available repair service", "available": true, "unavailable_reason": null},
+        {"candidate_id": "tool/continue-mining", "kind": "Action", "target_id": "mine", "label": "Continue mining with the visibly unusable pickaxe", "available": false, "unavailable_reason": "tool durability is zero"}
+      ]
+    },
+    {
+      "case_id": "choose-two-valid-routes",
+      "group": "choose",
+      "domain": "aspiration",
+      "subject_ref": "reach-public-square",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "travel/north-road", "kind": "Action", "target_id": "public-square", "label": "Travel to the public square by the open north road", "available": true, "unavailable_reason": null},
+        {"candidate_id": "travel/south-road", "kind": "Action", "target_id": "public-square", "label": "Travel to the public square by the open south road", "available": true, "unavailable_reason": null}
+      ]
+    },
+    {
+      "case_id": "defer-shop-closed",
+      "group": "defer",
+      "domain": "business-stock",
+      "subject_ref": "shop-closed-until-morning",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "stock/buy-now", "kind": "Action", "target_id": "general-store", "label": "Buy stock from the closed shop", "available": false, "unavailable_reason": "shop closed until tick 120"},
+        {"candidate_id": "stock/collect-order", "kind": "Action", "target_id": "general-store", "label": "Collect the order from the closed shop", "available": false, "unavailable_reason": "shop closed until tick 120"}
+      ]
+    },
+    {
+      "case_id": "defer-action-cooldown",
+      "group": "defer",
+      "domain": "work-blocker",
+      "subject_ref": "machine-cooldown",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "work/use-machine-a", "kind": "Action", "target_id": "mill-machine", "label": "Use the machine before its cooldown ends", "available": false, "unavailable_reason": "machine cooldown until tick 90"},
+        {"candidate_id": "work/use-machine-b", "kind": "Action", "target_id": "mill-machine", "label": "Restart the same machine before its cooldown ends", "available": false, "unavailable_reason": "machine cooldown until tick 90"}
+      ]
+    },
+    {
+      "case_id": "defer-crop-growing",
+      "group": "defer",
+      "domain": "aspiration",
+      "subject_ref": "crop-not-ready",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "farm/harvest-east", "kind": "Action", "target_id": "east-field", "label": "Harvest the east crop before it is ready", "available": false, "unavailable_reason": "crop still growing"},
+        {"candidate_id": "farm/harvest-west", "kind": "Action", "target_id": "west-field", "label": "Harvest the west crop before it is ready", "available": false, "unavailable_reason": "crop still growing"}
+      ]
+    },
+    {
+      "case_id": "defer-insufficient-evidence",
+      "group": "defer",
+      "domain": "conversation",
+      "subject_ref": "unconfirmed-rumour",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "evidence/ask-witness", "kind": "Evidence", "target_id": "witness", "label": "A witness may be asked later, but is not present", "available": false, "unavailable_reason": "witness is not currently available"},
+        {"candidate_id": "evidence/check-ledger", "kind": "Evidence", "target_id": "private-ledger", "label": "The ledger cannot currently be accessed", "available": false, "unavailable_reason": "access unavailable until tick 150"}
+      ]
+    },
+    {
+      "case_id": "escalate-no-action-permission",
+      "group": "escalate",
+      "domain": "work-blocker",
+      "subject_ref": "required-area-permanently-inaccessible",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "blocker/enter-workshop", "kind": "Evidence", "target_id": "private-workshop", "label": "The only required workshop is not accessible to this actor", "available": false, "unavailable_reason": "actor has no access permission"},
+        {"candidate_id": "blocker/use-machine", "kind": "Evidence", "target_id": "private-machine", "label": "The only suitable machine is inside the inaccessible workshop", "available": false, "unavailable_reason": "actor has no access permission"}
+      ]
+    },
+    {
+      "case_id": "escalate-no-action-resource",
+      "group": "escalate",
+      "domain": "business-stock",
+      "subject_ref": "required-resource-does-not-exist",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "stock/find-required-item", "kind": "Evidence", "target_id": "required-item", "label": "No known source currently contains the required item", "available": false, "unavailable_reason": "required item is absent from all known sources"},
+        {"candidate_id": "stock/use-substitute", "kind": "Evidence", "target_id": "substitute", "label": "The known substitute is not accepted for this order", "available": false, "unavailable_reason": "substitute does not satisfy the order"}
+      ]
+    },
+    {
+      "case_id": "escalate-goal-conflict",
+      "group": "escalate",
+      "domain": "aspiration",
+      "subject_ref": "two-long-term-goals-conflict",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "goal/keep-farm", "kind": "Evidence", "target_id": "farm", "label": "Keeping the farm conflicts with the newly accepted long-term role", "available": false, "unavailable_reason": "requires changing the current long-term goal"},
+        {"candidate_id": "goal/take-role", "kind": "Evidence", "target_id": "clinic", "label": "Taking the clinic role conflicts with the current long-term farm goal", "available": false, "unavailable_reason": "requires changing the current long-term goal"}
+      ]
+    },
+    {
+      "case_id": "escalate-plan-invalidated",
+      "group": "escalate",
+      "domain": "work-blocker",
+      "subject_ref": "committed-plan-no-longer-reachable",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "plan/follow-old-route", "kind": "Evidence", "target_id": "closed-bridge", "label": "The current plan depends on a bridge that is no longer usable", "available": false, "unavailable_reason": "current plan must be replaced"},
+        {"candidate_id": "plan/continue-old-task", "kind": "Evidence", "target_id": "old-task", "label": "The current task cannot be completed under the existing plan", "available": false, "unavailable_reason": "current plan must be replaced"}
+      ]
+    },
+    {
+      "case_id": "escalate-commitment-deadline",
+      "group": "escalate",
+      "domain": "commitment",
+      "subject_ref": "promise-deadline-cannot-be-met-locally",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "commitment/promise-record", "kind": "Evidence", "target_id": "promise-17", "label": "A recorded promise is due before any local delivery action is possible", "available": false, "unavailable_reason": "deadline requires renegotiating the commitment"},
+        {"candidate_id": "commitment/contact-creditor", "kind": "Evidence", "target_id": "creditor", "label": "Changing the promise requires a strategic response", "available": false, "unavailable_reason": "commitment terms cannot be changed by a local action"}
+      ]
+    },
+    {
+      "case_id": "escalate-conflicting-commitments",
+      "group": "escalate",
+      "domain": "commitment",
+      "subject_ref": "two-promises-same-deadline",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "commitment/promise-a", "kind": "Evidence", "target_id": "creditor-a", "label": "Promise A and Promise B are both due at the same time", "available": false, "unavailable_reason": "fulfilling one commitment breaches the other"},
+        {"candidate_id": "commitment/promise-b", "kind": "Evidence", "target_id": "creditor-b", "label": "Promise B and Promise A are both due at the same time", "available": false, "unavailable_reason": "fulfilling one commitment breaches the other"}
+      ]
+    },
+    {
+      "case_id": "escalate-relationship-breach",
+      "group": "escalate",
+      "domain": "relationship",
+      "subject_ref": "close-friend-reports-betrayal",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "relationship/breach-report", "kind": "Evidence", "target_id": "close-friend", "label": "A close friend reports a serious breach that may change the relationship", "available": false, "unavailable_reason": "major relationship response is required"},
+        {"candidate_id": "relationship/shared-history", "kind": "Evidence", "target_id": "friendship-history", "label": "The long friendship makes a simple local reaction insufficient", "available": false, "unavailable_reason": "major relationship response is required"}
+      ]
+    },
+    {
+      "case_id": "escalate-relationship-proposal",
+      "group": "escalate",
+      "domain": "conversation",
+      "subject_ref": "marriage-proposal",
+      "visible_failure_count": 0,
+      "candidates": [
+        {"candidate_id": "relationship/proposal", "kind": "Evidence", "target_id": "partner", "label": "A partner has made a marriage proposal", "available": false, "unavailable_reason": "major relationship decision cannot be settled by a local action"},
+        {"candidate_id": "relationship/current-partnership", "kind": "Evidence", "target_id": "partnership", "label": "The current partnership is actor-visible evidence for the decision", "available": false, "unavailable_reason": "major relationship decision cannot be settled by a local action"}
+      ]
+    },
+    {
+      "case_id": "escalate-medical-deadline",
+      "group": "escalate",
+      "domain": "treatment",
+      "subject_ref": "illness-worsening-before-clinic-opens",
+      "visible_failure_count": 0,
+      "body": {"health": 20, "satiety": 50, "spirit": 25, "disease": "SevereFever"},
+      "candidates": [
+        {"candidate_id": "medical/closed-clinic", "kind": "Evidence", "target_id": "clinic", "label": "The illness will worsen before the clinic next opens", "available": false, "unavailable_reason": "medical deadline occurs before treatment becomes available"},
+        {"candidate_id": "medical/no-medicine", "kind": "Evidence", "target_id": "medicine", "label": "No suitable medicine is held or locally available", "available": false, "unavailable_reason": "medical deadline has no feasible local treatment"}
+      ]
+    },
+    {
+      "case_id": "escalate-body-deadline",
+      "group": "escalate",
+      "domain": "hunger",
+      "subject_ref": "critical-hunger-no-food-source",
+      "visible_failure_count": 0,
+      "body": {"health": 35, "satiety": 2, "spirit": 30, "disease": "None"},
+      "inventory": [],
+      "candidates": [
+        {"candidate_id": "body/no-food", "kind": "Evidence", "target_id": "food", "label": "Critical hunger is visible and no food is held", "available": false, "unavailable_reason": "body deadline occurs before a local food action is possible"},
+        {"candidate_id": "body/closed-food-source", "kind": "Evidence", "target_id": "meal-shop", "label": "The only known food source cannot be reached before the body deadline", "available": false, "unavailable_reason": "body deadline occurs before food becomes available"}
+      ]
+    },
+    {
+      "case_id": "escalate-repeated-failure-work",
+      "group": "escalate",
+      "domain": "work-blocker",
+      "subject_ref": "same-work-action-failed-three-times",
+      "visible_failure_count": 3,
+      "candidates": [
+        {"candidate_id": "failure/work-receipt-a", "kind": "Evidence", "target_id": "failed-action-a", "label": "The same visible work action has failed three times", "available": false, "unavailable_reason": "repeated visible failure"},
+        {"candidate_id": "failure/work-receipt-b", "kind": "Evidence", "target_id": "failed-action-b", "label": "Retrying the unchanged local action has not solved the blocker", "available": false, "unavailable_reason": "repeated visible failure"}
+      ]
+    },
+    {
+      "case_id": "escalate-repeated-failure-travel",
+      "group": "escalate",
+      "domain": "aspiration",
+      "subject_ref": "same-travel-plan-failed-twice",
+      "visible_failure_count": 2,
+      "candidates": [
+        {"candidate_id": "failure/travel-receipt-a", "kind": "Evidence", "target_id": "blocked-route", "label": "The actor has already seen two failures on the same route", "available": false, "unavailable_reason": "repeated visible failure"},
+        {"candidate_id": "failure/travel-receipt-b", "kind": "Evidence", "target_id": "unchanged-plan", "label": "The unchanged local plan repeats the failed route", "available": false, "unavailable_reason": "repeated visible failure"}
+      ]
+    }
+  ]
+}

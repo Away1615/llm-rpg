@@ -1,0 +1,3320 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_25",
+  "block_id": "block_25",
+  "decision_tick": 180,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": {
+      "ticks_per_day": 960,
+      "shops": [
+        {
+          "shop_id": "brackenford-general-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-smithy-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-clinic-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-mill-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-inn-shop",
+          "opens_at_tick": 144,
+          "closes_at_tick": 864
+        }
+      ],
+      "containers": [
+        {
+          "owner_kind": "Shop",
+          "owner_id": "merchant-stock",
+          "balances": {
+            "coin": 40,
+            "timber": 5,
+            "iron-ore": 5,
+            "herb": 5,
+            "seeds": 50,
+            "common-medicine": 5,
+            "advanced-medicine": 5,
+            "fishing-rod": 3,
+            "basket": 3
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "smithy-stock",
+          "balances": {
+            "coin": 30,
+            "axe": 3,
+            "pickaxe": 3,
+            "sickle": 3,
+            "hoe": 3,
+            "pot": 2
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "clinic-stock",
+          "balances": {
+            "coin": 20,
+            "common-medicine": 3,
+            "advanced-medicine": 3
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "mill-stock",
+          "balances": {
+            "coin": 20,
+            "wheat": 5,
+            "flour": 10
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "inn-stock",
+          "balances": {
+            "coin": 20,
+            "grilled-fish": 4,
+            "porridge": 4,
+            "noodles": 4,
+            "seafood-noodles": 4
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "woodlot",
+          "stock": 24,
+          "capacity": 24,
+          "refresh_at_tick": 960
+        },
+        {
+          "region_id": "mine",
+          "stock": 12,
+          "capacity": 12,
+          "refresh_at_tick": 1920
+        },
+        {
+          "region_id": "fishing-ground",
+          "stock": 20,
+          "capacity": 20,
+          "refresh_at_tick": 960
+        },
+        {
+          "region_id": "herb-garden",
+          "stock": 12,
+          "capacity": 12,
+          "refresh_at_tick": 1920
+        }
+      ],
+      "farm_plots": [
+        {
+          "plot_id": "farm-plot-2",
+          "stage": "Growing",
+          "growing_until_tick": 3840
+        },
+        {
+          "plot_id": "farm-plot-3",
+          "stage": "Growing",
+          "growing_until_tick": 1920
+        }
+      ],
+      "catalogue_scope": [
+        "ListedExchange",
+        "Craft",
+        "RegionOperation",
+        "AssetTransfer",
+        "ServiceExchange"
+      ]
+    }
+  },
+  "authority_setup": {
+    "source_state": {
+      "ticks_per_day": 960,
+      "shops": [
+        {
+          "shop_id": "brackenford-general-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-smithy-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-clinic-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-mill-shop",
+          "opens_at_tick": 192,
+          "closes_at_tick": 768
+        },
+        {
+          "shop_id": "brackenford-inn-shop",
+          "opens_at_tick": 144,
+          "closes_at_tick": 864
+        }
+      ],
+      "containers": [
+        {
+          "owner_kind": "Shop",
+          "owner_id": "merchant-stock",
+          "balances": {
+            "coin": 40,
+            "timber": 5,
+            "iron-ore": 5,
+            "herb": 5,
+            "seeds": 50,
+            "common-medicine": 5,
+            "advanced-medicine": 5,
+            "fishing-rod": 3,
+            "basket": 3
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "smithy-stock",
+          "balances": {
+            "coin": 30,
+            "axe": 3,
+            "pickaxe": 3,
+            "sickle": 3,
+            "hoe": 3,
+            "pot": 2
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "clinic-stock",
+          "balances": {
+            "coin": 20,
+            "common-medicine": 3,
+            "advanced-medicine": 3
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "mill-stock",
+          "balances": {
+            "coin": 20,
+            "wheat": 5,
+            "flour": 10
+          }
+        },
+        {
+          "owner_kind": "Shop",
+          "owner_id": "inn-stock",
+          "balances": {
+            "coin": 20,
+            "grilled-fish": 4,
+            "porridge": 4,
+            "noodles": 4,
+            "seafood-noodles": 4
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "woodlot",
+          "stock": 24,
+          "capacity": 24,
+          "refresh_at_tick": 960
+        },
+        {
+          "region_id": "mine",
+          "stock": 12,
+          "capacity": 12,
+          "refresh_at_tick": 1920
+        },
+        {
+          "region_id": "fishing-ground",
+          "stock": 20,
+          "capacity": 20,
+          "refresh_at_tick": 960
+        },
+        {
+          "region_id": "herb-garden",
+          "stock": 12,
+          "capacity": 12,
+          "refresh_at_tick": 1920
+        }
+      ],
+      "farm_plots": [
+        {
+          "plot_id": "farm-plot-2",
+          "stage": "Growing",
+          "growing_until_tick": 3840
+        },
+        {
+          "plot_id": "farm-plot-3",
+          "stage": "Growing",
+          "growing_until_tick": 1920
+        }
+      ],
+      "catalogue_scope": [
+        "ListedExchange",
+        "Craft",
+        "RegionOperation",
+        "AssetTransfer",
+        "ServiceExchange"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b25-s01",
+      "actor_id": "farah",
+      "domain": "trade_harvest",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "service/smith-customer-sickle",
+        "statement": "Farah has materials and fee for the sickle commissioned by the garden produce stall.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s01-f1",
+            "kind": "domain_fact",
+            "text": "Farah carries one iron ore, one timber, and five coin."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s01-f2",
+            "kind": "domain_fact",
+            "text": "Bram is an authorized provider."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s01-f3",
+            "kind": "domain_fact",
+            "text": "The service returns one sickle to the customer."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s01-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s01-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "timber": 1,
+                "iron-ore": 1
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s01-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 5
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s01-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "community-garden",
+                "farah-home",
+                "farah-private-room",
+                "inn",
+                "smithy",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "bram",
+                "kara",
+                "lucas",
+                "mira"
+              ],
+              "source_event_ids": [
+                "history/g02/e00",
+                "history/g02/e03",
+                "history/g02/e07",
+                "history/g02/e08",
+                "history/g02/e10",
+                "history/g02/e11",
+                "history/g02/e18",
+                "history/g02/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s01-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s01-f1",
+          "kind": "domain_fact",
+          "text": "Farah carries one iron ore, one timber, and five coin."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s01-f2",
+          "kind": "domain_fact",
+          "text": "Bram is an authorized provider."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s01-f3",
+          "kind": "domain_fact",
+          "text": "The service returns one sickle to the customer."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s01-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s01-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "timber": 1,
+              "iron-ore": 1
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s01-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 5
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s01-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "community-garden",
+              "farah-home",
+              "farah-private-room",
+              "inn",
+              "smithy",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "bram",
+              "kara",
+              "lucas",
+              "mira"
+            ],
+            "source_event_ids": [
+              "history/g02/e00",
+              "history/g02/e03",
+              "history/g02/e07",
+              "history/g02/e08",
+              "history/g02/e10",
+              "history/g02/e11",
+              "history/g02/e18",
+              "history/g02/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s01-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s01-actor-signal",
+            "description": "A produce-stall tool commission is ready for settlement."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s01",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/service/smith-customer-sickle"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "commitment",
+            "source_id": "commitment/service/smith-customer-sickle",
+            "affected_node": "pressure/rq1-v2-b25-s01",
+            "edge_kind": "BoundByCommitment"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "farah",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "timber": 1,
+            "iron-ore": 1
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 5
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "community-garden",
+            "farah-home",
+            "farah-private-room",
+            "inn",
+            "smithy",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "bram",
+            "kara",
+            "lucas",
+            "mira"
+          ],
+          "source_event_ids": [
+            "history/g02/e00",
+            "history/g02/e03",
+            "history/g02/e07",
+            "history/g02/e08",
+            "history/g02/e10",
+            "history/g02/e11",
+            "history/g02/e18",
+            "history/g02/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s01",
+            "description": "Commission one sickle from Bram."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ServiceExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b25-s01-action",
+            "label": "Commission a sickle from Bram",
+            "action_family": "ServiceExchange",
+            "availability_state": "ready",
+            "authority_reason": null
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/farah",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s01-f1",
+          "rq1-v2-b25-s01-f2",
+          "rq1-v2-b25-s01-f3",
+          "rq1-v2-b25-s01-body",
+          "rq1-v2-b25-s01-inventory",
+          "rq1-v2-b25-s01-currency",
+          "rq1-v2-b25-s01-knowledge",
+          "rq1-v2-b25-s01-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b25-s02",
+      "actor_id": "felix",
+      "domain": "care_household",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "fixture/felix-home-roof",
+        "statement": "Rain is entering the shared bedroom of Felix through a split fixed roof board.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s02-f1",
+            "kind": "domain_fact",
+            "text": "Felix carries timber and a saw."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s02-f2",
+            "kind": "domain_fact",
+            "text": "The damaged target is part of the house, not a carried item."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s02-f3",
+            "kind": "domain_fact",
+            "text": "No place-construction or roof-repair family is in the catalogue."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s02-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s02-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "timber": 2
+              },
+              "instances": [
+                {
+                  "item_instance_id": "felix-hoe",
+                  "item_type_id": "hoe",
+                  "durability": 100,
+                  "maximum_durability": 100
+                },
+                {
+                  "item_instance_id": "felix-saw",
+                  "item_type_id": "saw",
+                  "durability": 100,
+                  "maximum_durability": 100
+                }
+              ],
+              "equipped_hand_instance_id": "felix-hoe"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s02-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 9
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s02-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "carpentry",
+                "clara-home",
+                "community-garden",
+                "felix-private-room",
+                "inn",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "clara",
+                "dorian",
+                "grace",
+                "nolan"
+              ],
+              "source_event_ids": [
+                "history/g01/e00",
+                "history/g01/e03",
+                "history/g01/e07",
+                "history/g01/e08",
+                "history/g01/e10",
+                "history/g01/e11",
+                "history/g01/e18",
+                "history/g01/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s02-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "farm": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s02-f1",
+          "kind": "domain_fact",
+          "text": "Felix carries timber and a saw."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s02-f2",
+          "kind": "domain_fact",
+          "text": "The damaged target is part of the house, not a carried item."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s02-f3",
+          "kind": "domain_fact",
+          "text": "No place-construction or roof-repair family is in the catalogue."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s02-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s02-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "timber": 2
+            },
+            "instances": [
+              {
+                "item_instance_id": "felix-hoe",
+                "item_type_id": "hoe",
+                "durability": 100,
+                "maximum_durability": 100
+              },
+              {
+                "item_instance_id": "felix-saw",
+                "item_type_id": "saw",
+                "durability": 100,
+                "maximum_durability": 100
+              }
+            ],
+            "equipped_hand_instance_id": "felix-hoe"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s02-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 9
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s02-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "carpentry",
+              "clara-home",
+              "community-garden",
+              "felix-private-room",
+              "inn",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "clara",
+              "dorian",
+              "grace",
+              "nolan"
+            ],
+            "source_event_ids": [
+              "history/g01/e00",
+              "history/g01/e03",
+              "history/g01/e07",
+              "history/g01/e08",
+              "history/g01/e10",
+              "history/g01/e11",
+              "history/g01/e18",
+              "history/g01/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s02-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "farm": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s02-actor-signal",
+            "description": "An active household shelter need is worsening indoors."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s02",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "felix"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "assignment",
+            "source_id": "assignment/fixture/felix-home-roof",
+            "affected_node": "pressure/rq1-v2-b25-s02",
+            "edge_kind": "AssignedToActor"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "felix",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "timber": 2
+          },
+          "instances": [
+            {
+              "item_instance_id": "felix-hoe",
+              "item_type_id": "hoe",
+              "durability": 100,
+              "maximum_durability": 100
+            },
+            {
+              "item_instance_id": "felix-saw",
+              "item_type_id": "saw",
+              "durability": 100,
+              "maximum_durability": 100
+            }
+          ],
+          "equipped_hand_instance_id": "felix-hoe"
+        },
+        "currency": {
+          "coin": 9
+        },
+        "capabilities": {
+          "farm": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "carpentry",
+            "clara-home",
+            "community-garden",
+            "felix-private-room",
+            "inn",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "clara",
+            "dorian",
+            "grace",
+            "nolan"
+          ],
+          "source_event_ids": [
+            "history/g01/e00",
+            "history/g01/e03",
+            "history/g01/e07",
+            "history/g01/e08",
+            "history/g01/e10",
+            "history/g01/e11",
+            "history/g01/e18",
+            "history/g01/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s02",
+            "description": "Repair the fixed roof board."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/felix",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s02-f1",
+          "rq1-v2-b25-s02-f2",
+          "rq1-v2-b25-s02-f3",
+          "rq1-v2-b25-s02-body",
+          "rq1-v2-b25-s02-inventory",
+          "rq1-v2-b25-s02-currency",
+          "rq1-v2-b25-s02-knowledge",
+          "rq1-v2-b25-s02-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b25-s03",
+      "actor_id": "grace",
+      "domain": "obligation_logistics",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "service/smith-customer-hoe",
+        "statement": "Grace can settle the hoe order named on the next planting-shift equipment docket.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s03-f1",
+            "kind": "domain_fact",
+            "text": "Grace carries one iron ore, one timber, and five coin."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s03-f2",
+            "kind": "domain_fact",
+            "text": "Celia is an authorized provider."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s03-f3",
+            "kind": "domain_fact",
+            "text": "The service returns one hoe to the customer."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s03-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s03-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "timber": 1,
+                "iron-ore": 1
+              },
+              "instances": [
+                {
+                  "item_instance_id": "grace-sickle",
+                  "item_type_id": "sickle",
+                  "durability": 100,
+                  "maximum_durability": 100
+                }
+              ],
+              "equipped_hand_instance_id": "grace-sickle"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s03-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 5
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s03-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "clara-home",
+                "community-garden",
+                "grace-private-room",
+                "inn",
+                "smithy",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "celia",
+                "dorian",
+                "felix",
+                "hugo"
+              ],
+              "source_event_ids": [
+                "history/g01/e00",
+                "history/g01/e03",
+                "history/g01/e07",
+                "history/g01/e08",
+                "history/g01/e10",
+                "history/g01/e11",
+                "history/g01/e18",
+                "history/g01/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s03-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "farm": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s03-f1",
+          "kind": "domain_fact",
+          "text": "Grace carries one iron ore, one timber, and five coin."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s03-f2",
+          "kind": "domain_fact",
+          "text": "Celia is an authorized provider."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s03-f3",
+          "kind": "domain_fact",
+          "text": "The service returns one hoe to the customer."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s03-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s03-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "timber": 1,
+              "iron-ore": 1
+            },
+            "instances": [
+              {
+                "item_instance_id": "grace-sickle",
+                "item_type_id": "sickle",
+                "durability": 100,
+                "maximum_durability": 100
+              }
+            ],
+            "equipped_hand_instance_id": "grace-sickle"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s03-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 5
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s03-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "clara-home",
+              "community-garden",
+              "grace-private-room",
+              "inn",
+              "smithy",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "celia",
+              "dorian",
+              "felix",
+              "hugo"
+            ],
+            "source_event_ids": [
+              "history/g01/e00",
+              "history/g01/e03",
+              "history/g01/e07",
+              "history/g01/e08",
+              "history/g01/e10",
+              "history/g01/e11",
+              "history/g01/e18",
+              "history/g01/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s03-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "farm": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s03-actor-signal",
+            "description": "A hard planting-shift equipment handoff is due next."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s03",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/service/smith-customer-hoe"
+          },
+          "role_assignment": {
+            "organization_id": "organization/service/smith-customer-hoe",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/service/smith-customer-hoe"
+          },
+          "raw_evidence": {
+            "source_kind": "organization",
+            "source_id": "organization/service/smith-customer-hoe",
+            "affected_node": "pressure/rq1-v2-b25-s03",
+            "edge_kind": "MemberOfOrganization"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "grace",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "timber": 1,
+            "iron-ore": 1
+          },
+          "instances": [
+            {
+              "item_instance_id": "grace-sickle",
+              "item_type_id": "sickle",
+              "durability": 100,
+              "maximum_durability": 100
+            }
+          ],
+          "equipped_hand_instance_id": "grace-sickle"
+        },
+        "currency": {
+          "coin": 5
+        },
+        "capabilities": {
+          "farm": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "clara-home",
+            "community-garden",
+            "grace-private-room",
+            "inn",
+            "smithy",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "celia",
+            "dorian",
+            "felix",
+            "hugo"
+          ],
+          "source_event_ids": [
+            "history/g01/e00",
+            "history/g01/e03",
+            "history/g01/e07",
+            "history/g01/e08",
+            "history/g01/e10",
+            "history/g01/e11",
+            "history/g01/e18",
+            "history/g01/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s03",
+            "description": "Commission the docketed hoe from Celia."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ServiceExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b25-s03-action",
+            "label": "Commission a hoe from Celia",
+            "action_family": "ServiceExchange",
+            "availability_state": "ready",
+            "authority_reason": null
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/grace",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s03-f1",
+          "rq1-v2-b25-s03-f2",
+          "rq1-v2-b25-s03-f3",
+          "rq1-v2-b25-s03-body",
+          "rq1-v2-b25-s03-inventory",
+          "rq1-v2-b25-s03-currency",
+          "rq1-v2-b25-s03-knowledge",
+          "rq1-v2-b25-s03-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b25-s04",
+      "actor_id": "hugo",
+      "domain": "tools_maintenance",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "fixture/general-store-scale",
+        "statement": "The general-store counter scale is jammed and cannot weigh the next iron shipment.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s04-f1",
+            "kind": "domain_fact",
+            "text": "The scale is a fixed shop fixture."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s04-f2",
+            "kind": "domain_fact",
+            "text": "Tool repair services accept only carried item instances."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s04-f3",
+            "kind": "domain_fact",
+            "text": "No shop-fixture maintenance family is in the catalogue."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s04-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 85,
+              "health_maximum": 100,
+              "satiety": 24,
+              "spirit": 49,
+              "disease": "Ill",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s04-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {},
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s04-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 4
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s04-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "dorian-home",
+                "general-store",
+                "hugo-private-room",
+                "inn",
+                "smithy",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "bram",
+                "dorian",
+                "elin",
+                "iris"
+              ],
+              "source_event_ids": [
+                "history/g01/e00",
+                "history/g01/e03",
+                "history/g01/e07",
+                "history/g01/e08",
+                "history/g01/e10",
+                "history/g01/e11",
+                "history/g01/e18",
+                "history/g01/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s04-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s04-f1",
+          "kind": "domain_fact",
+          "text": "The scale is a fixed shop fixture."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s04-f2",
+          "kind": "domain_fact",
+          "text": "Tool repair services accept only carried item instances."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s04-f3",
+          "kind": "domain_fact",
+          "text": "No shop-fixture maintenance family is in the catalogue."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s04-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 85,
+            "health_maximum": 100,
+            "satiety": 24,
+            "spirit": 49,
+            "disease": "Ill",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s04-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {},
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s04-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 4
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s04-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "dorian-home",
+              "general-store",
+              "hugo-private-room",
+              "inn",
+              "smithy",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "bram",
+              "dorian",
+              "elin",
+              "iris"
+            ],
+            "source_event_ids": [
+              "history/g01/e00",
+              "history/g01/e03",
+              "history/g01/e07",
+              "history/g01/e08",
+              "history/g01/e10",
+              "history/g01/e11",
+              "history/g01/e18",
+              "history/g01/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s04-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s04-actor-signal",
+            "description": "The jammed scale blocks the receiving work of Hugo."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s04",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "pressure/rq1-v2-b25-s04"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "resource_holder",
+            "source_id": "resource_holder/fixture/general-store-scale",
+            "affected_node": "pressure/rq1-v2-b25-s04",
+            "edge_kind": "ControlsOrHoldsResource"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "hugo",
+        "body": {
+          "health_current": 85,
+          "health_maximum": 100,
+          "satiety": 24,
+          "spirit": 49,
+          "disease": "Ill",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {},
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 4
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "dorian-home",
+            "general-store",
+            "hugo-private-room",
+            "inn",
+            "smithy",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "bram",
+            "dorian",
+            "elin",
+            "iris"
+          ],
+          "source_event_ids": [
+            "history/g01/e00",
+            "history/g01/e03",
+            "history/g01/e07",
+            "history/g01/e08",
+            "history/g01/e10",
+            "history/g01/e11",
+            "history/g01/e18",
+            "history/g01/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s04",
+            "description": "Restore the fixed counter scale."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/hugo",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s04-f1",
+          "rq1-v2-b25-s04-f2",
+          "rq1-v2-b25-s04-f3",
+          "rq1-v2-b25-s04-body",
+          "rq1-v2-b25-s04-inventory",
+          "rq1-v2-b25-s04-currency",
+          "rq1-v2-b25-s04-knowledge",
+          "rq1-v2-b25-s04-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b25-s05",
+      "actor_id": "iris",
+      "domain": "food_production",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "container/Shop/inn-stock/flour",
+        "statement": "Iris has the three flour allocated by the mill for the inn production bin.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s05-f1",
+            "kind": "domain_fact",
+            "text": "Iris carries three flour."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s05-f2",
+            "kind": "domain_fact",
+            "text": "The destination is the configured inn-stock container."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s05-f3",
+            "kind": "domain_fact",
+            "text": "Self-owned asset transfer authorizes this exact quantity."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s05-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s05-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "flour": 3
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s05-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 11
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s05-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "dorian-home",
+                "inn",
+                "iris-private-room",
+                "mill",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "devin",
+                "elin",
+                "emma",
+                "hugo",
+                "jonah"
+              ],
+              "source_event_ids": [
+                "history/g01/e00",
+                "history/g01/e03",
+                "history/g01/e07",
+                "history/g01/e08",
+                "history/g01/e10",
+                "history/g01/e11",
+                "history/g01/e18",
+                "history/g01/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s05-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s05-f1",
+          "kind": "domain_fact",
+          "text": "Iris carries three flour."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s05-f2",
+          "kind": "domain_fact",
+          "text": "The destination is the configured inn-stock container."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s05-f3",
+          "kind": "domain_fact",
+          "text": "Self-owned asset transfer authorizes this exact quantity."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s05-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s05-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "flour": 3
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s05-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 11
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s05-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "dorian-home",
+              "inn",
+              "iris-private-room",
+              "mill",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "devin",
+              "elin",
+              "emma",
+              "hugo",
+              "jonah"
+            ],
+            "source_event_ids": [
+              "history/g01/e00",
+              "history/g01/e03",
+              "history/g01/e07",
+              "history/g01/e08",
+              "history/g01/e10",
+              "history/g01/e11",
+              "history/g01/e18",
+              "history/g01/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s05-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s05-actor-signal",
+            "description": "The inn production bin is waiting on a documented mill allocation."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s05",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/container/Shop/inn-stock/flour"
+          },
+          "role_assignment": {
+            "organization_id": "organization/container/Shop/inn-stock/flour",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/container/Shop/inn-stock/flour"
+          },
+          "raw_evidence": {
+            "source_kind": "organization",
+            "source_id": "organization/container/Shop/inn-stock/flour",
+            "affected_node": "pressure/rq1-v2-b25-s05",
+            "edge_kind": "MemberOfOrganization"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "iris",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "flour": 3
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 11
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "dorian-home",
+            "inn",
+            "iris-private-room",
+            "mill",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "devin",
+            "elin",
+            "emma",
+            "hugo",
+            "jonah"
+          ],
+          "source_event_ids": [
+            "history/g01/e00",
+            "history/g01/e03",
+            "history/g01/e07",
+            "history/g01/e08",
+            "history/g01/e10",
+            "history/g01/e11",
+            "history/g01/e18",
+            "history/g01/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s05",
+            "description": "Transfer three flour into inn stock."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b25-s05-action",
+            "label": "Transfer three flour to inn stock",
+            "action_family": "AssetTransfer",
+            "availability_state": "ready",
+            "authority_reason": null
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/iris",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s05-f1",
+          "rq1-v2-b25-s05-f2",
+          "rq1-v2-b25-s05-f3",
+          "rq1-v2-b25-s05-body",
+          "rq1-v2-b25-s05-inventory",
+          "rq1-v2-b25-s05-currency",
+          "rq1-v2-b25-s05-knowledge",
+          "rq1-v2-b25-s05-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b25-s06",
+      "actor_id": "jonah",
+      "domain": "trade_harvest",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "service/milling",
+        "statement": "Jonah can mill the wheat consignment before carrying the flour to the market kitchens.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s06-f1",
+            "kind": "domain_fact",
+            "text": "Jonah carries one wheat and one coin."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s06-f2",
+            "kind": "domain_fact",
+            "text": "Iris is an authorized milling provider."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s06-f3",
+            "kind": "domain_fact",
+            "text": "Milling returns two flour to Jonah."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s06-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s06-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "wheat": 1
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s06-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 1
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s06-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "elin-home",
+                "inn",
+                "jonah-private-room",
+                "mill",
+                "town-square",
+                "town-warehouse"
+              ],
+              "known_actor_ids": [
+                "elin",
+                "farah",
+                "iris",
+                "kara"
+              ],
+              "source_event_ids": [
+                "history/g02/e00",
+                "history/g02/e03",
+                "history/g02/e07",
+                "history/g02/e08",
+                "history/g02/e10",
+                "history/g02/e11",
+                "history/g02/e18",
+                "history/g02/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s06-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s06-f1",
+          "kind": "domain_fact",
+          "text": "Jonah carries one wheat and one coin."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s06-f2",
+          "kind": "domain_fact",
+          "text": "Iris is an authorized milling provider."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s06-f3",
+          "kind": "domain_fact",
+          "text": "Milling returns two flour to Jonah."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s06-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s06-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "wheat": 1
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s06-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 1
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s06-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "elin-home",
+              "inn",
+              "jonah-private-room",
+              "mill",
+              "town-square",
+              "town-warehouse"
+            ],
+            "known_actor_ids": [
+              "elin",
+              "farah",
+              "iris",
+              "kara"
+            ],
+            "source_event_ids": [
+              "history/g02/e00",
+              "history/g02/e03",
+              "history/g02/e07",
+              "history/g02/e08",
+              "history/g02/e10",
+              "history/g02/e11",
+              "history/g02/e18",
+              "history/g02/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s06-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s06-actor-signal",
+            "description": "A market-kitchen consignment requires processed flour, not raw wheat."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s06",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "jonah"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "assignment",
+            "source_id": "assignment/service/milling",
+            "affected_node": "pressure/rq1-v2-b25-s06",
+            "edge_kind": "AssignedToActor"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "jonah",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "wheat": 1
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 1
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "elin-home",
+            "inn",
+            "jonah-private-room",
+            "mill",
+            "town-square",
+            "town-warehouse"
+          ],
+          "known_actor_ids": [
+            "elin",
+            "farah",
+            "iris",
+            "kara"
+          ],
+          "source_event_ids": [
+            "history/g02/e00",
+            "history/g02/e03",
+            "history/g02/e07",
+            "history/g02/e08",
+            "history/g02/e10",
+            "history/g02/e11",
+            "history/g02/e18",
+            "history/g02/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s06",
+            "description": "Mill the consignment wheat into flour."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ServiceExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b25-s06-action",
+            "label": "Pay Iris to mill one wheat into two flour",
+            "action_family": "ServiceExchange",
+            "availability_state": "ready",
+            "authority_reason": null
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/jonah",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s06-f1",
+          "rq1-v2-b25-s06-f2",
+          "rq1-v2-b25-s06-f3",
+          "rq1-v2-b25-s06-body",
+          "rq1-v2-b25-s06-inventory",
+          "rq1-v2-b25-s06-currency",
+          "rq1-v2-b25-s06-knowledge",
+          "rq1-v2-b25-s06-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b25-s07",
+      "actor_id": "kara",
+      "domain": "care_household",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "service/smith-customer-axe",
+        "statement": "Kara has saved the materials and fee for the household firewood axe.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s07-f1",
+            "kind": "domain_fact",
+            "text": "Kara carries one iron ore, one timber, and five coin."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s07-f2",
+            "kind": "domain_fact",
+            "text": "Bram is an authorized provider."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s07-f3",
+            "kind": "domain_fact",
+            "text": "The service returns one axe to Kara."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s07-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s07-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1,
+                "seeds": 10,
+                "timber": 1,
+                "iron-ore": 1
+              },
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s07-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 5
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s07-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "community-garden",
+                "elin-home",
+                "inn",
+                "kara-private-room",
+                "smithy",
+                "town-square",
+                "woodlot"
+              ],
+              "known_actor_ids": [
+                "bram",
+                "farah",
+                "jonah",
+                "lucas"
+              ],
+              "source_event_ids": [
+                "history/g02/e00",
+                "history/g02/e03",
+                "history/g02/e07",
+                "history/g02/e08",
+                "history/g02/e10",
+                "history/g02/e11",
+                "history/g02/e18",
+                "history/g02/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s07-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "farm": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s07-f1",
+          "kind": "domain_fact",
+          "text": "Kara carries one iron ore, one timber, and five coin."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s07-f2",
+          "kind": "domain_fact",
+          "text": "Bram is an authorized provider."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s07-f3",
+          "kind": "domain_fact",
+          "text": "The service returns one axe to Kara."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s07-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s07-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1,
+              "seeds": 10,
+              "timber": 1,
+              "iron-ore": 1
+            },
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s07-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 5
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s07-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "community-garden",
+              "elin-home",
+              "inn",
+              "kara-private-room",
+              "smithy",
+              "town-square",
+              "woodlot"
+            ],
+            "known_actor_ids": [
+              "bram",
+              "farah",
+              "jonah",
+              "lucas"
+            ],
+            "source_event_ids": [
+              "history/g02/e00",
+              "history/g02/e03",
+              "history/g02/e07",
+              "history/g02/e08",
+              "history/g02/e10",
+              "history/g02/e11",
+              "history/g02/e18",
+              "history/g02/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s07-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "farm": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s07-actor-signal",
+            "description": "The household has no axe for its scheduled firewood collection."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s07",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "pressure/rq1-v2-b25-s07"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "resource_holder",
+            "source_id": "resource_holder/service/smith-customer-axe",
+            "affected_node": "pressure/rq1-v2-b25-s07",
+            "edge_kind": "ControlsOrHoldsResource"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "kara",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1,
+            "seeds": 10,
+            "timber": 1,
+            "iron-ore": 1
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 5
+        },
+        "capabilities": {
+          "farm": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "community-garden",
+            "elin-home",
+            "inn",
+            "kara-private-room",
+            "smithy",
+            "town-square",
+            "woodlot"
+          ],
+          "known_actor_ids": [
+            "bram",
+            "farah",
+            "jonah",
+            "lucas"
+          ],
+          "source_event_ids": [
+            "history/g02/e00",
+            "history/g02/e03",
+            "history/g02/e07",
+            "history/g02/e08",
+            "history/g02/e10",
+            "history/g02/e11",
+            "history/g02/e18",
+            "history/g02/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s07",
+            "description": "Commission one household axe."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ServiceExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b25-s07-action",
+            "label": "Commission an axe from Bram",
+            "action_family": "ServiceExchange",
+            "availability_state": "ready",
+            "authority_reason": null
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/kara",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s07-f1",
+          "rq1-v2-b25-s07-f2",
+          "rq1-v2-b25-s07-f3",
+          "rq1-v2-b25-s07-body",
+          "rq1-v2-b25-s07-inventory",
+          "rq1-v2-b25-s07-currency",
+          "rq1-v2-b25-s07-knowledge",
+          "rq1-v2-b25-s07-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b25-s08",
+      "actor_id": "lucas",
+      "domain": "obligation_logistics",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "vehicle/warehouse-handcart",
+        "statement": "Lucas is named to tow a loaded warehouse handcart to the woodlot, but vehicles are not represented by any current action family.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s08-f1",
+            "kind": "domain_fact",
+            "text": "The load is a handcart, not a fungible container asset."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s08-f2",
+            "kind": "domain_fact",
+            "text": "AssetTransfer does not move actors or vehicles."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s08-f3",
+            "kind": "domain_fact",
+            "text": "No tow or vehicle operation is in the catalogue."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s08-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s08-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1
+              },
+              "instances": [
+                {
+                  "item_instance_id": "lucas-axe",
+                  "item_type_id": "axe",
+                  "durability": 100,
+                  "maximum_durability": 100
+                }
+              ],
+              "equipped_hand_instance_id": "lucas-axe"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s08-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 13
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s08-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "farah-home",
+                "inn",
+                "lucas-private-room",
+                "town-square",
+                "town-warehouse",
+                "woodlot"
+              ],
+              "known_actor_ids": [
+                "elin",
+                "farah",
+                "jonah",
+                "mira",
+                "nolan"
+              ],
+              "source_event_ids": [
+                "history/g02/e00",
+                "history/g02/e03",
+                "history/g02/e07",
+                "history/g02/e08",
+                "history/g02/e10",
+                "history/g02/e11",
+                "history/g02/e18",
+                "history/g02/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s08-capabilities",
+            "kind": "actor_capabilities",
+            "value": {
+              "gather": 1
+            }
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s08-f1",
+          "kind": "domain_fact",
+          "text": "The load is a handcart, not a fungible container asset."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s08-f2",
+          "kind": "domain_fact",
+          "text": "AssetTransfer does not move actors or vehicles."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s08-f3",
+          "kind": "domain_fact",
+          "text": "No tow or vehicle operation is in the catalogue."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s08-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s08-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1
+            },
+            "instances": [
+              {
+                "item_instance_id": "lucas-axe",
+                "item_type_id": "axe",
+                "durability": 100,
+                "maximum_durability": 100
+              }
+            ],
+            "equipped_hand_instance_id": "lucas-axe"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s08-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 13
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s08-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "farah-home",
+              "inn",
+              "lucas-private-room",
+              "town-square",
+              "town-warehouse",
+              "woodlot"
+            ],
+            "known_actor_ids": [
+              "elin",
+              "farah",
+              "jonah",
+              "mira",
+              "nolan"
+            ],
+            "source_event_ids": [
+              "history/g02/e00",
+              "history/g02/e03",
+              "history/g02/e07",
+              "history/g02/e08",
+              "history/g02/e10",
+              "history/g02/e11",
+              "history/g02/e18",
+              "history/g02/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s08-capabilities",
+          "kind": "actor_capabilities",
+          "value": {
+            "gather": 1
+          }
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s08-actor-signal",
+            "description": "A named logistics assignment is active at the warehouse."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s08",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "pressure/rq1-v2-b25-s08"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "information_holder",
+            "source_id": "information_holder/vehicle/warehouse-handcart",
+            "affected_node": "pressure/rq1-v2-b25-s08",
+            "edge_kind": "HoldsRequiredInformation"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "lucas",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1
+          },
+          "instances": [
+            {
+              "item_instance_id": "lucas-axe",
+              "item_type_id": "axe",
+              "durability": 100,
+              "maximum_durability": 100
+            }
+          ],
+          "equipped_hand_instance_id": "lucas-axe"
+        },
+        "currency": {
+          "coin": 13
+        },
+        "capabilities": {
+          "gather": 1
+        },
+        "knowledge": {
+          "known_place_refs": [
+            "farah-home",
+            "inn",
+            "lucas-private-room",
+            "town-square",
+            "town-warehouse",
+            "woodlot"
+          ],
+          "known_actor_ids": [
+            "elin",
+            "farah",
+            "jonah",
+            "mira",
+            "nolan"
+          ],
+          "source_event_ids": [
+            "history/g02/e00",
+            "history/g02/e03",
+            "history/g02/e07",
+            "history/g02/e08",
+            "history/g02/e10",
+            "history/g02/e11",
+            "history/g02/e18",
+            "history/g02/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s08",
+            "description": "Tow the loaded handcart to the woodlot."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/lucas",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s08-f1",
+          "rq1-v2-b25-s08-f2",
+          "rq1-v2-b25-s08-f3",
+          "rq1-v2-b25-s08-body",
+          "rq1-v2-b25-s08-inventory",
+          "rq1-v2-b25-s08-currency",
+          "rq1-v2-b25-s08-knowledge",
+          "rq1-v2-b25-s08-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b25-s09",
+      "actor_id": "mira",
+      "domain": "tools_maintenance",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "item/mira-pot",
+        "statement": "The household pot carried by Mira is cracked, but the smith repair contract excludes non-durable pots.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s09-f1",
+            "kind": "domain_fact",
+            "text": "Mira carries the pot."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s09-f2",
+            "kind": "domain_fact",
+            "text": "Pot has no durability field in Authority state."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s09-f3",
+            "kind": "domain_fact",
+            "text": "Repair services accept only configured durable tool types."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s09-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 70,
+              "health_maximum": 100,
+              "satiety": 58,
+              "spirit": 18,
+              "disease": "SevereIllness",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s09-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {
+                "meal": 1
+              },
+              "instances": [
+                {
+                  "item_instance_id": "mira-pot",
+                  "item_type_id": "pot",
+                  "durability": null,
+                  "maximum_durability": null
+                }
+              ],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s09-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 7
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s09-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "community-garden",
+                "farah-home",
+                "inn",
+                "mira-private-room",
+                "smithy",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "bram",
+                "farah",
+                "lucas",
+                "nolan",
+                "opal"
+              ],
+              "source_event_ids": [
+                "history/g02/e00",
+                "history/g02/e03",
+                "history/g02/e07",
+                "history/g02/e08",
+                "history/g02/e10",
+                "history/g02/e11",
+                "history/g02/e18",
+                "history/g02/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s09-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s09-f1",
+          "kind": "domain_fact",
+          "text": "Mira carries the pot."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s09-f2",
+          "kind": "domain_fact",
+          "text": "Pot has no durability field in Authority state."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s09-f3",
+          "kind": "domain_fact",
+          "text": "Repair services accept only configured durable tool types."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s09-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s09-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {
+              "meal": 1
+            },
+            "instances": [
+              {
+                "item_instance_id": "mira-pot",
+                "item_type_id": "pot",
+                "durability": null,
+                "maximum_durability": null
+              }
+            ],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s09-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 7
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s09-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "community-garden",
+              "farah-home",
+              "inn",
+              "mira-private-room",
+              "smithy",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "bram",
+              "farah",
+              "lucas",
+              "nolan",
+              "opal"
+            ],
+            "source_event_ids": [
+              "history/g02/e00",
+              "history/g02/e03",
+              "history/g02/e07",
+              "history/g02/e08",
+              "history/g02/e10",
+              "history/g02/e11",
+              "history/g02/e18",
+              "history/g02/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s09-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s09-actor-signal",
+            "description": "The broken cooking vessel blocks a household meal."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s09",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/item/mira-pot"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "commitment",
+            "source_id": "commitment/item/mira-pot",
+            "affected_node": "pressure/rq1-v2-b25-s09",
+            "edge_kind": "BoundByCommitment"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "mira",
+        "body": {
+          "health_current": 70,
+          "health_maximum": 100,
+          "satiety": 58,
+          "spirit": 18,
+          "disease": "SevereIllness",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {
+            "meal": 1
+          },
+          "instances": [
+            {
+              "item_instance_id": "mira-pot",
+              "item_type_id": "pot",
+              "durability": null,
+              "maximum_durability": null
+            }
+          ],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 7
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "community-garden",
+            "farah-home",
+            "inn",
+            "mira-private-room",
+            "smithy",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "bram",
+            "farah",
+            "lucas",
+            "nolan",
+            "opal"
+          ],
+          "source_event_ids": [
+            "history/g02/e00",
+            "history/g02/e03",
+            "history/g02/e07",
+            "history/g02/e08",
+            "history/g02/e10",
+            "history/g02/e11",
+            "history/g02/e18",
+            "history/g02/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s09",
+            "description": "Repair the carried pot."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/mira",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s09-f1",
+          "rq1-v2-b25-s09-f2",
+          "rq1-v2-b25-s09-f3",
+          "rq1-v2-b25-s09-body",
+          "rq1-v2-b25-s09-inventory",
+          "rq1-v2-b25-s09-currency",
+          "rq1-v2-b25-s09-knowledge",
+          "rq1-v2-b25-s09-capabilities"
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b25-s10",
+      "actor_id": "nolan",
+      "domain": "food_production",
+      "decision_tick": 180,
+      "deadline_tick": 420,
+      "pressure_packet": {
+        "subject_ref": "listing/mill-flour-retail",
+        "statement": "Nolan has the meal-batch budget, but the mill counter has not opened for flour sales.",
+        "public_facts": [
+          {
+            "fact_id": "rq1-v2-b25-s10-f1",
+            "kind": "domain_fact",
+            "text": "The mill shop opens at tick 192."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s10-f2",
+            "kind": "domain_fact",
+            "text": "The current tick is 180."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s10-f3",
+            "kind": "domain_fact",
+            "text": "Nolan carries two coin for the posted flour price."
+          },
+          {
+            "fact_id": "rq1-v2-b25-s10-body",
+            "kind": "actor_body",
+            "value": {
+              "health_current": 100,
+              "health_maximum": 100,
+              "satiety": 55,
+              "spirit": 55,
+              "disease": "Healthy",
+              "movement_mode": "Land"
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s10-inventory",
+            "kind": "actor_inventory",
+            "value": {
+              "version": 1,
+              "equipment_version": 1,
+              "stacks": {},
+              "instances": [],
+              "equipped_hand_instance_id": null
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s10-currency",
+            "kind": "actor_currency",
+            "value": {
+              "coin": 2
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s10-knowledge",
+            "kind": "actor_knowledge",
+            "value": {
+              "known_place_refs": [
+                "brackenford-home-07",
+                "carpentry",
+                "inn",
+                "mill",
+                "nolan-private-room",
+                "town-square"
+              ],
+              "known_actor_ids": [
+                "devin",
+                "emma",
+                "mira",
+                "opal",
+                "pavel"
+              ],
+              "source_event_ids": [
+                "history/g03/e00",
+                "history/g03/e03",
+                "history/g03/e07",
+                "history/g03/e08",
+                "history/g03/e10",
+                "history/g03/e11",
+                "history/g03/e18",
+                "history/g03/e23"
+              ]
+            }
+          },
+          {
+            "fact_id": "rq1-v2-b25-s10-capabilities",
+            "kind": "actor_capabilities",
+            "value": {}
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "rq1-v2-b25-s10-f1",
+          "kind": "domain_fact",
+          "text": "The mill shop opens at tick 192."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s10-f2",
+          "kind": "domain_fact",
+          "text": "The current tick is 180."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s10-f3",
+          "kind": "domain_fact",
+          "text": "Nolan carries two coin for the posted flour price."
+        },
+        {
+          "fact_id": "rq1-v2-b25-s10-body",
+          "kind": "actor_body",
+          "value": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 55,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s10-inventory",
+          "kind": "actor_inventory",
+          "value": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": {},
+            "instances": [],
+            "equipped_hand_instance_id": null
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s10-currency",
+          "kind": "actor_currency",
+          "value": {
+            "coin": 2
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s10-knowledge",
+          "kind": "actor_knowledge",
+          "value": {
+            "known_place_refs": [
+              "brackenford-home-07",
+              "carpentry",
+              "inn",
+              "mill",
+              "nolan-private-room",
+              "town-square"
+            ],
+            "known_actor_ids": [
+              "devin",
+              "emma",
+              "mira",
+              "opal",
+              "pavel"
+            ],
+            "source_event_ids": [
+              "history/g03/e00",
+              "history/g03/e03",
+              "history/g03/e07",
+              "history/g03/e08",
+              "history/g03/e10",
+              "history/g03/e11",
+              "history/g03/e18",
+              "history/g03/e23"
+            ]
+          }
+        },
+        {
+          "fact_id": "rq1-v2-b25-s10-capabilities",
+          "kind": "actor_capabilities",
+          "value": {}
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "evidence_id": "rq1-v2-b25-s10-actor-signal",
+            "description": "The kitchen batch is waiting on one flour input."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b25-s10",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "pressure/rq1-v2-b25-s10"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_kind": "resource_holder",
+            "source_id": "resource_holder/listing/mill-flour-retail",
+            "affected_node": "pressure/rq1-v2-b25-s10",
+            "edge_kind": "ControlsOrHoldsResource"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "nolan",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 55,
+          "spirit": 55,
+          "disease": "Healthy",
+          "movement_mode": "Land"
+        },
+        "inventory": {
+          "version": 1,
+          "equipment_version": 1,
+          "stacks": {},
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 2
+        },
+        "capabilities": {},
+        "knowledge": {
+          "known_place_refs": [
+            "brackenford-home-07",
+            "carpentry",
+            "inn",
+            "mill",
+            "nolan-private-room",
+            "town-square"
+          ],
+          "known_actor_ids": [
+            "devin",
+            "emma",
+            "mira",
+            "opal",
+            "pavel"
+          ],
+          "source_event_ids": [
+            "history/g03/e00",
+            "history/g03/e03",
+            "history/g03/e07",
+            "history/g03/e08",
+            "history/g03/e10",
+            "history/g03/e11",
+            "history/g03/e18",
+            "history/g03/e23"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b25-s10",
+            "description": "Buy one flour after the mill counter opens."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "game_action_id": "rq1-v2-b25-s10-flour-retail",
+            "label": "Buy one flour from the mill",
+            "action_family": "ListedExchange",
+            "availability_state": "blocked",
+            "authority_reason": "shop is closed until tick 192"
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor/nolan",
+        "world_state_ref": "block_25",
+        "decision_tick": 180,
+        "public_fact_ids": [
+          "rq1-v2-b25-s10-f1",
+          "rq1-v2-b25-s10-f2",
+          "rq1-v2-b25-s10-f3",
+          "rq1-v2-b25-s10-body",
+          "rq1-v2-b25-s10-inventory",
+          "rq1-v2-b25-s10-currency",
+          "rq1-v2-b25-s10-knowledge",
+          "rq1-v2-b25-s10-capabilities"
+        ]
+      }
+    }
+  ]
+}

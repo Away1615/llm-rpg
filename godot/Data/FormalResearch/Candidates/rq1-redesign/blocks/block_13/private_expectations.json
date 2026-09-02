@@ -1,0 +1,454 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_13",
+  "block_id": "block_13",
+  "condition_order": "agent_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b13-s01",
+      "actor_id": "clara",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "tools_maintenance",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "clara",
+        "pressure_id": "rq1-v2-b13-s01"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "TemporalGate",
+        "visible_fact_ids": [
+          "b13s01-f1",
+          "b13s01-f2",
+          "b13s01-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The broken basket, listing, and retail lock are already observed. The counter reopens at 480 after kitchen preparation closes at 442, so a later purchase cannot satisfy this decision."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b13-s02",
+      "actor_id": "devin",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "RequiresCapability",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "devin",
+        "pressure_id": "rq1-v2-b13-s02"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "VerificationRequired",
+        "visible_fact_ids": [
+          "b13s02-f1",
+          "b13s02-f2",
+          "b13s02-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "Two current quality sources disagree on whether the exact flour batch is safe. No instrument-read or quality-test action is represented, and releasing it later would miss the food-production cutoff."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b13-s03",
+      "actor_id": "iris",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "both",
+        "domain": "trade_harvest",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "iris",
+        "pressure_id": "rq1-v2-b13-s03"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "VerificationRequired",
+        "visible_fact_ids": [
+          "b13s03-f1",
+          "b13s03-f2",
+          "b13s03-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The signed order and matching merchant cancellation disagree on the live purchase quantity. The action catalogue cannot authenticate either document, and no later plan can settle the disputed order before tick 448."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b13-s04",
+      "actor_id": "elin",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E2",
+        "event_edge_kind": "HoldsRequiredInformation",
+        "admission_role": "agent_only",
+        "domain": "care_household",
+        "task_family": "commit_service_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ServiceExchange",
+        "actor_id": "elin",
+        "pressure_id": "rq1-v2-b13-s04"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ServiceExchange",
+      "action_template": {
+        "game_action_id": "b13s04-a1",
+        "action_family": "ServiceExchange",
+        "arguments": {
+          "service_id": "milling",
+          "provider_actor_id": "devin",
+          "target_item_instance_id": null
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "coin": -1,
+          "wheat": -1,
+          "flour": 2
+        },
+        "container_balance_delta": {
+          "owner_kind": "Shop",
+          "owner_id": "mill-stock",
+          "balances": {
+            "coin": 1
+          }
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b13-s05",
+      "actor_id": "silas",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "obligation_logistics",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "silas",
+        "pressure_id": "rq1-v2-b13-s05"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "TemporalGate",
+        "visible_fact_ids": [
+          "b13s05-f1",
+          "b13s05-f2",
+          "b13s05-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The fishing-ground state is known: zero stock until tick 960. That gate is later than the clinic delivery deadline at 462, so waiting cannot yield a timely fish terminal."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b13-s06",
+      "actor_id": "farah",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E1",
+        "event_edge_kind": "AffectsPlace",
+        "admission_role": "neither",
+        "domain": "tools_maintenance",
+        "task_family": "commit_service_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ServiceExchange",
+        "actor_id": "farah",
+        "pressure_id": "rq1-v2-b13-s06"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ServiceExchange",
+      "action_template": {
+        "game_action_id": "b13s06-a1",
+        "action_family": "ServiceExchange",
+        "arguments": {
+          "service_id": "smith-customer-axe",
+          "provider_actor_id": "bram",
+          "target_item_instance_id": null
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "coin": -5,
+          "iron-ore": -1,
+          "timber": -1
+        },
+        "created_item_type_id": "axe",
+        "container_balance_delta": {
+          "owner_kind": "Shop",
+          "owner_id": "smithy-stock",
+          "balances": {
+            "coin": 5
+          }
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b13-s07",
+      "actor_id": "felix",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "food_production",
+        "task_family": "defer_verification_required",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "felix",
+        "pressure_id": "rq1-v2-b13-s07"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "VerificationRequired",
+        "visible_fact_ids": [
+          "b13s07-f1",
+          "b13s07-f2",
+          "b13s07-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The release card and attached quarantine seal give opposite current use states for one seed lot. No represented action can validate the lot, and postponing the decision would miss the sowing duty."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b13-s08",
+      "actor_id": "grace",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E2",
+        "event_edge_kind": "HoldsRequiredInformation",
+        "admission_role": "neither",
+        "domain": "trade_harvest",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "grace",
+        "pressure_id": "rq1-v2-b13-s08"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "NoGroundedPath",
+        "visible_fact_ids": [
+          "b13s08-f1",
+          "b13s08-f2",
+          "b13s08-f3"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "The buyer's word barley has no Authority asset identity, known source, holder, listing, recipe, or carried quantity. There is therefore no typed action or represented information-gathering path to execute."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b13-s09",
+      "actor_id": "hugo",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "care_household",
+        "task_family": "commit_service_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ServiceExchange",
+        "actor_id": "hugo",
+        "pressure_id": "rq1-v2-b13-s09"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ServiceExchange",
+      "action_template": {
+        "game_action_id": "b13s09-a1",
+        "action_family": "ServiceExchange",
+        "arguments": {
+          "service_id": "diagnosis",
+          "provider_actor_id": "pavel",
+          "target_item_instance_id": null
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": {
+        "actor_balance_delta": {
+          "coin": -2
+        },
+        "container_balance_delta": {
+          "owner_kind": "Shop",
+          "owner_id": "clinic-stock",
+          "balances": {
+            "coin": 2
+          }
+        }
+      },
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b13-s10",
+      "actor_id": "bram",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_13",
+        "block_number": 13,
+        "owner_worker": "C",
+        "worker_block_index": 3,
+        "condition_order": "agent_first",
+        "overlap_tier": 1,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "neither",
+        "domain": "obligation_logistics",
+        "task_family": "defer_temporal_gate",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "bram",
+        "pressure_id": "rq1-v2-b13-s10"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "reason_kind": "TemporalGate",
+        "visible_fact_ids": [
+          "b13s10-f1",
+          "b13s10-f2",
+          "b13s10-f3",
+          "b13s10-f4"
+        ],
+        "verify_supported": false,
+        "plan_only_supported": false,
+        "exclusion": "Bram's funds, the porridge listing, and the retail lock are known. The counter reopens at 510 after the crew's tick-476 cutoff, so a later purchase would not satisfy this obligation."
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    }
+  ]
+}

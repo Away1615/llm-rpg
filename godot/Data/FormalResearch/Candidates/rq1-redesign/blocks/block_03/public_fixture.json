@@ -1,0 +1,1913 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_03",
+  "block_id": "block_03",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b03-s01",
+      "actor_id": "emma",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "The inn's fixed east-oven latch has jammed during Emma's breakfast shift, and the meal trays are due at tick 318.",
+        "decision_deadline_tick": 318,
+        "facts": [
+          {
+            "fact_id": "b03s01-f1",
+            "kind": "ComponentObservation",
+            "subject_ref": "fixture/inn-east-oven/latch",
+            "predicate": "condition",
+            "value": "jammed",
+            "source_ref": "emma/direct-observation",
+            "observed_at_tick": 299
+          },
+          {
+            "fact_id": "b03s01-f2",
+            "kind": "ServiceScopeRecord",
+            "subject_ref": "service/repair-customer-material",
+            "predicate": "accepted_targets",
+            "value": [
+              "axe",
+              "pickaxe",
+              "sickle",
+              "hoe",
+              "fishing-rod",
+              "saw"
+            ],
+            "source_ref": "smithy/service-board",
+            "observed_at_tick": 294
+          },
+          {
+            "fact_id": "b03s01-f3",
+            "kind": "DutyRecord",
+            "subject_ref": "duty/inn-breakfast-east-oven",
+            "predicate": "due_at_tick",
+            "value": 318,
+            "source_ref": "organization/town-innkeepers",
+            "observed_at_tick": 288
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "CurrentWorkBlocker",
+          "fact_ids": [
+            "b03s01-f1",
+            "b03s01-f3"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "MemberOfOrganization",
+          "source_kind": "Organization",
+          "source_id": "organization/town-innkeepers",
+          "target_actor_id": "emma",
+          "fact_ids": [
+            "b03s01-f3"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s01-f1",
+          "kind": "ComponentObservation",
+          "subject_ref": "fixture/inn-east-oven/latch",
+          "predicate": "condition",
+          "value": "jammed",
+          "source_ref": "emma/direct-observation",
+          "observed_at_tick": 299
+        },
+        {
+          "fact_id": "b03s01-f2",
+          "kind": "ServiceScopeRecord",
+          "subject_ref": "service/repair-customer-material",
+          "predicate": "accepted_targets",
+          "value": [
+            "axe",
+            "pickaxe",
+            "sickle",
+            "hoe",
+            "fishing-rod",
+            "saw"
+          ],
+          "source_ref": "smithy/service-board",
+          "observed_at_tick": 294
+        },
+        {
+          "fact_id": "b03s01-f3",
+          "kind": "DutyRecord",
+          "subject_ref": "duty/inn-breakfast-east-oven",
+          "predicate": "due_at_tick",
+          "value": 318,
+          "source_ref": "organization/town-innkeepers",
+          "observed_at_tick": 288
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "CurrentWorkBlocker",
+            "fact_ids": [
+              "b03s01-f1",
+              "b03s01-f3"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s01",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/town-innkeepers"
+          },
+          "role_assignment": {
+            "organization_id": "organization/town-innkeepers",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/town-innkeepers"
+          },
+          "raw_evidence": {
+            "edge_kind": "MemberOfOrganization",
+            "source_kind": "Organization",
+            "source_id": "organization/town-innkeepers",
+            "target_actor_id": "emma",
+            "fact_ids": [
+              "b03s01-f3"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "emma",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 63,
+          "spirit": 46,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "meal": 1,
+            "fish": 2,
+            "wheat": 1,
+            "flour": 2
+          },
+          "instances": [
+            {
+              "item_instance_id": "emma-pot",
+              "item_type_id": "pot"
+            }
+          ],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 16
+        },
+        "capabilities": {
+          "cook": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "inn",
+            "smithy"
+          ],
+          "actor_refs": [
+            "clara",
+            "bram"
+          ],
+          "fact_ids": [
+            "b03s01-f1",
+            "b03s01-f2",
+            "b03s01-f3"
+          ],
+          "action_refs": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "FixtureComponent",
+            "object_id": "inn-east-oven-latch",
+            "condition": "jammed",
+            "portable": false,
+            "revision": 4
+          }
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b03-s02",
+      "actor_id": "alice",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Alice has the pickaxe and gathering skill to obtain ore for the mill's broken grinding tooth, but the mine is empty until after today's flour-production cutoff.",
+        "decision_deadline_tick": 330,
+        "facts": [
+          {
+            "fact_id": "b03s02-f1",
+            "kind": "ResourceObservation",
+            "subject_ref": "region/mine",
+            "predicate": "stock",
+            "value": 0,
+            "source_ref": "alice/direct-observation",
+            "observed_at_tick": 299
+          },
+          {
+            "fact_id": "b03s02-f2",
+            "kind": "ResourceSchedule",
+            "subject_ref": "region/mine",
+            "predicate": "refresh_at_tick",
+            "value": 960,
+            "source_ref": "mine/posted-cycle",
+            "observed_at_tick": 296
+          },
+          {
+            "fact_id": "b03s02-f3",
+            "kind": "ProductionDeadline",
+            "subject_ref": "mill/grinding-tooth-repair",
+            "predicate": "flour_cutoff_tick",
+            "value": 330,
+            "source_ref": "mill/work-note",
+            "observed_at_tick": 290
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "ReadyProductionGoal",
+          "fact_ids": [
+            "b03s02-f3"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "ControlsOrHoldsResource",
+          "source_kind": "ResourceRegion",
+          "source_id": "region/mine",
+          "target_actor_id": "alice",
+          "fact_ids": [
+            "b03s02-f1",
+            "b03s02-f2"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s02-f1",
+          "kind": "ResourceObservation",
+          "subject_ref": "region/mine",
+          "predicate": "stock",
+          "value": 0,
+          "source_ref": "alice/direct-observation",
+          "observed_at_tick": 299
+        },
+        {
+          "fact_id": "b03s02-f2",
+          "kind": "ResourceSchedule",
+          "subject_ref": "region/mine",
+          "predicate": "refresh_at_tick",
+          "value": 960,
+          "source_ref": "mine/posted-cycle",
+          "observed_at_tick": 296
+        },
+        {
+          "fact_id": "b03s02-f3",
+          "kind": "ProductionDeadline",
+          "subject_ref": "mill/grinding-tooth-repair",
+          "predicate": "flour_cutoff_tick",
+          "value": 330,
+          "source_ref": "mill/work-note",
+          "observed_at_tick": 290
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "ReadyProductionGoal",
+            "fact_ids": [
+              "b03s02-f3"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s02",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "region/mine"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_kind": "ControlsOrHoldsResource",
+            "source_kind": "ResourceRegion",
+            "source_id": "region/mine",
+            "target_actor_id": "alice",
+            "fact_ids": [
+              "b03s02-f1",
+              "b03s02-f2"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "alice",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 42,
+          "spirit": 58,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "meal": 1
+          },
+          "instances": [
+            {
+              "item_instance_id": "alice-pickaxe",
+              "item_type_id": "pickaxe"
+            }
+          ],
+          "equipped_hand_instance_id": "alice-pickaxe"
+        },
+        "currency": {
+          "coin": 8
+        },
+        "capabilities": {
+          "gather": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "mine",
+            "mill"
+          ],
+          "actor_refs": [
+            "devin"
+          ],
+          "fact_ids": [
+            "b03s02-f1",
+            "b03s02-f2",
+            "b03s02-f3"
+          ],
+          "action_refs": [
+            "b03s02-a1"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "Region",
+            "object_id": "mine",
+            "stock": 0,
+            "capacity": 12,
+            "refresh_at_tick": 960,
+            "revision": 7
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b03-s03",
+      "actor_id": "grace",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Grace holds two wheat sacks, but the farm ledger assigns them to her while the relief seal marks the same sacks as town-held stock.",
+        "decision_deadline_tick": 322,
+        "facts": [
+          {
+            "fact_id": "b03s03-f1",
+            "kind": "CustodyRecord",
+            "subject_ref": "lot/wheat-g03-17",
+            "predicate": "owner",
+            "value": "actor/grace",
+            "source_ref": "farm-ledger/page-41",
+            "observed_at_tick": 287
+          },
+          {
+            "fact_id": "b03s03-f2",
+            "kind": "SealObservation",
+            "subject_ref": "lot/wheat-g03-17",
+            "predicate": "owner",
+            "value": "organization/town-relief",
+            "source_ref": "grace/direct-observation",
+            "observed_at_tick": 299
+          },
+          {
+            "fact_id": "b03s03-f3",
+            "kind": "MarketWindow",
+            "subject_ref": "shop/general-store",
+            "predicate": "intake_closes_at_tick",
+            "value": 322,
+            "source_ref": "merchant-board",
+            "observed_at_tick": 292
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "ActiveConsignmentQuestion",
+          "fact_ids": [
+            "b03s03-f1",
+            "b03s03-f2"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "MemberOfOrganization",
+          "source_kind": "Organization",
+          "source_id": "organization/farm-workers",
+          "target_actor_id": "grace",
+          "fact_ids": [
+            "b03s03-f1"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s03-f1",
+          "kind": "CustodyRecord",
+          "subject_ref": "lot/wheat-g03-17",
+          "predicate": "owner",
+          "value": "actor/grace",
+          "source_ref": "farm-ledger/page-41",
+          "observed_at_tick": 287
+        },
+        {
+          "fact_id": "b03s03-f2",
+          "kind": "SealObservation",
+          "subject_ref": "lot/wheat-g03-17",
+          "predicate": "owner",
+          "value": "organization/town-relief",
+          "source_ref": "grace/direct-observation",
+          "observed_at_tick": 299
+        },
+        {
+          "fact_id": "b03s03-f3",
+          "kind": "MarketWindow",
+          "subject_ref": "shop/general-store",
+          "predicate": "intake_closes_at_tick",
+          "value": 322,
+          "source_ref": "merchant-board",
+          "observed_at_tick": 292
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "ActiveConsignmentQuestion",
+            "fact_ids": [
+              "b03s03-f1",
+              "b03s03-f2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s03",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/farm-workers"
+          },
+          "role_assignment": {
+            "organization_id": "organization/farm-workers",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/farm-workers"
+          },
+          "raw_evidence": {
+            "edge_kind": "MemberOfOrganization",
+            "source_kind": "Organization",
+            "source_id": "organization/farm-workers",
+            "target_actor_id": "grace",
+            "fact_ids": [
+              "b03s03-f1"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "grace",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 46,
+          "spirit": 29,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "meal": 1,
+            "wheat": 2
+          },
+          "instances": [
+            {
+              "item_instance_id": "grace-sickle",
+              "item_type_id": "sickle"
+            }
+          ],
+          "equipped_hand_instance_id": "grace-sickle"
+        },
+        "currency": {
+          "coin": 6
+        },
+        "capabilities": {
+          "farm": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "community-garden",
+            "general-store"
+          ],
+          "actor_refs": [
+            "felix",
+            "dorian"
+          ],
+          "fact_ids": [
+            "b03s03-f1",
+            "b03s03-f2",
+            "b03s03-f3"
+          ],
+          "action_refs": [
+            "b03s03-a1",
+            "b03s03-a2"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer",
+          "ListedExchange"
+        ],
+        "entries": [
+          {
+            "action_ref": "b03s03-a1",
+            "family": "ListedExchange",
+            "arguments": {
+              "listing_id": "merchant-wheat-buyback"
+            },
+            "grounding_fact_ids": [
+              "b03s03-f1",
+              "b03s03-f3"
+            ]
+          },
+          {
+            "action_ref": "b03s03-a2",
+            "family": "AssetTransfer",
+            "arguments": {
+              "source_kind": "Actor",
+              "source_id": "grace",
+              "destination_kind": "Warehouse",
+              "destination_id": "town-supply-stock",
+              "asset_id": "wheat",
+              "quantity": 2
+            },
+            "grounding_fact_ids": [
+              "b03s03-f2"
+            ]
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "CustodyDispute",
+            "object_id": "wheat-g03-17",
+            "recorded_claims": [
+              "actor/grace",
+              "organization/town-relief"
+            ],
+            "revision": 2
+          }
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b03-s04",
+      "actor_id": "silas",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Rosa cannot leave her sickbed before tick 326; Silas is at the inn and knows one porridge serving is available for four coins.",
+        "decision_deadline_tick": 326,
+        "facts": [
+          {
+            "fact_id": "b03s04-f1",
+            "kind": "HouseholdCareNote",
+            "subject_ref": "actor/rosa",
+            "predicate": "needs_food_by_tick",
+            "value": 326,
+            "source_ref": "rosa/message",
+            "observed_at_tick": 294
+          },
+          {
+            "fact_id": "b03s04-f2",
+            "kind": "ListingObservation",
+            "subject_ref": "listing/inn-porridge-retail",
+            "predicate": "offer",
+            "value": {
+              "asset_id": "porridge",
+              "quantity": 1,
+              "coin_price": 4
+            },
+            "source_ref": "inn/menu-board",
+            "observed_at_tick": 299
+          },
+          {
+            "fact_id": "b03s04-f3",
+            "kind": "PlaceObservation",
+            "subject_ref": "shop/brackenford-inn-shop",
+            "predicate": "open",
+            "value": true,
+            "source_ref": "silas/direct-observation",
+            "observed_at_tick": 299
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "ActiveCareCommitment",
+          "fact_ids": [
+            "b03s04-f1"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "AffectsPlace",
+          "source_kind": "PublicEvent",
+          "source_id": "event/inn-porridge-batch-ready",
+          "target_actor_id": "silas",
+          "fact_ids": [
+            "b03s04-f2",
+            "b03s04-f3"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s04-f1",
+          "kind": "HouseholdCareNote",
+          "subject_ref": "actor/rosa",
+          "predicate": "needs_food_by_tick",
+          "value": 326,
+          "source_ref": "rosa/message",
+          "observed_at_tick": 294
+        },
+        {
+          "fact_id": "b03s04-f2",
+          "kind": "ListingObservation",
+          "subject_ref": "listing/inn-porridge-retail",
+          "predicate": "offer",
+          "value": {
+            "asset_id": "porridge",
+            "quantity": 1,
+            "coin_price": 4
+          },
+          "source_ref": "inn/menu-board",
+          "observed_at_tick": 299
+        },
+        {
+          "fact_id": "b03s04-f3",
+          "kind": "PlaceObservation",
+          "subject_ref": "shop/brackenford-inn-shop",
+          "predicate": "open",
+          "value": true,
+          "source_ref": "silas/direct-observation",
+          "observed_at_tick": 299
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "ActiveCareCommitment",
+            "fact_ids": [
+              "b03s04-f1"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s04",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "event/inn-porridge-batch-ready"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_kind": "AffectsPlace",
+            "source_kind": "PublicEvent",
+            "source_id": "event/inn-porridge-batch-ready",
+            "target_actor_id": "silas",
+            "fact_ids": [
+              "b03s04-f2",
+              "b03s04-f3"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "silas",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 44,
+          "spirit": 33,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "meal": 1
+          },
+          "instances": [
+            {
+              "item_instance_id": "silas-fishing-rod",
+              "item_type_id": "fishing-rod"
+            }
+          ],
+          "equipped_hand_instance_id": "silas-fishing-rod"
+        },
+        "currency": {
+          "coin": 7
+        },
+        "capabilities": {
+          "gather": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "inn",
+            "brackenford-home-08"
+          ],
+          "actor_refs": [
+            "rosa",
+            "emma"
+          ],
+          "fact_ids": [
+            "b03s04-f1",
+            "b03s04-f2",
+            "b03s04-f3"
+          ],
+          "action_refs": [
+            "b03s04-a1"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "Shop",
+            "object_id": "inn-stock",
+            "shop_id": "brackenford-inn-shop",
+            "open": true,
+            "revision": 1,
+            "balances": {
+              "coin": 20,
+              "porridge": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b03-s05",
+      "actor_id": "dorian",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Dorian promised a replacement bridge pin by tick 324, but he holds none and knows no listing, recipe, service, or stocked source for that component.",
+        "decision_deadline_tick": 324,
+        "facts": [
+          {
+            "fact_id": "b03s05-f1",
+            "kind": "CommitmentRecord",
+            "subject_ref": "commitment/dorian-bridge-pin",
+            "predicate": "due_at_tick",
+            "value": 324,
+            "source_ref": "town-works/ledger",
+            "observed_at_tick": 270
+          },
+          {
+            "fact_id": "b03s05-f2",
+            "kind": "InventoryObservation",
+            "subject_ref": "actor/dorian/inventory",
+            "predicate": "bridge_pin_quantity",
+            "value": 0,
+            "source_ref": "dorian/direct-observation",
+            "observed_at_tick": 299
+          },
+          {
+            "fact_id": "b03s05-f3",
+            "kind": "CatalogueKnowledge",
+            "subject_ref": "actor/dorian/known-actions",
+            "predicate": "bridge_pin_sources",
+            "value": [],
+            "source_ref": "dorian/knowledge",
+            "observed_at_tick": 299
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "GeneralObligationGoal",
+          "fact_ids": [
+            "b03s05-f1"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "BoundByCommitment",
+          "source_kind": "Commitment",
+          "source_id": "commitment/dorian-bridge-pin",
+          "target_actor_id": "dorian",
+          "fact_ids": [
+            "b03s05-f1"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s05-f1",
+          "kind": "CommitmentRecord",
+          "subject_ref": "commitment/dorian-bridge-pin",
+          "predicate": "due_at_tick",
+          "value": 324,
+          "source_ref": "town-works/ledger",
+          "observed_at_tick": 270
+        },
+        {
+          "fact_id": "b03s05-f2",
+          "kind": "InventoryObservation",
+          "subject_ref": "actor/dorian/inventory",
+          "predicate": "bridge_pin_quantity",
+          "value": 0,
+          "source_ref": "dorian/direct-observation",
+          "observed_at_tick": 299
+        },
+        {
+          "fact_id": "b03s05-f3",
+          "kind": "CatalogueKnowledge",
+          "subject_ref": "actor/dorian/known-actions",
+          "predicate": "bridge_pin_sources",
+          "value": [],
+          "source_ref": "dorian/knowledge",
+          "observed_at_tick": 299
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "GeneralObligationGoal",
+            "fact_ids": [
+              "b03s05-f1"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s05",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/dorian-bridge-pin"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_kind": "BoundByCommitment",
+            "source_kind": "Commitment",
+            "source_id": "commitment/dorian-bridge-pin",
+            "target_actor_id": "dorian",
+            "fact_ids": [
+              "b03s05-f1"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "dorian",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 71,
+          "spirit": 65,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "meal": 1
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 24
+        },
+        "capabilities": {},
+        "knowledge": {
+          "place_refs": [
+            "general-store",
+            "town-square"
+          ],
+          "actor_refs": [
+            "hugo",
+            "bram"
+          ],
+          "fact_ids": [
+            "b03s05-f1",
+            "b03s05-f2",
+            "b03s05-f3"
+          ],
+          "action_refs": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "Commitment",
+            "object_id": "dorian-bridge-pin",
+            "state": "Active",
+            "due_at_tick": 324,
+            "required_asset_id": "bridge-pin",
+            "quantity": 1,
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b03-s06",
+      "actor_id": "pavel",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "The clinic treatment kit has no common-medicine charge left; Pavel has two herbs and the recorded compounding method needed to replenish it before rounds.",
+        "decision_deadline_tick": 336,
+        "facts": [
+          {
+            "fact_id": "b03s06-f1",
+            "kind": "StockObservation",
+            "subject_ref": "kit/clinic-rounds/common-medicine",
+            "predicate": "quantity",
+            "value": 0,
+            "source_ref": "pavel/direct-observation",
+            "observed_at_tick": 298
+          },
+          {
+            "fact_id": "b03s06-f2",
+            "kind": "RecipeRecord",
+            "subject_ref": "recipe/make-common-medicine",
+            "predicate": "inputs",
+            "value": {
+              "herb": 2
+            },
+            "source_ref": "quinn/clinic-formulary",
+            "observed_at_tick": 276
+          },
+          {
+            "fact_id": "b03s06-f3",
+            "kind": "CapabilityRecord",
+            "subject_ref": "actor/pavel",
+            "predicate": "medicine",
+            "value": 1,
+            "source_ref": "clinic-role-record",
+            "observed_at_tick": 260
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "RoutineKitMaintenanceGoal",
+          "fact_ids": [
+            "b03s06-f1"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "HoldsRequiredInformation",
+          "source_kind": "Actor",
+          "source_id": "actor/quinn",
+          "target_actor_id": "pavel",
+          "fact_ids": [
+            "b03s06-f2"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s06-f1",
+          "kind": "StockObservation",
+          "subject_ref": "kit/clinic-rounds/common-medicine",
+          "predicate": "quantity",
+          "value": 0,
+          "source_ref": "pavel/direct-observation",
+          "observed_at_tick": 298
+        },
+        {
+          "fact_id": "b03s06-f2",
+          "kind": "RecipeRecord",
+          "subject_ref": "recipe/make-common-medicine",
+          "predicate": "inputs",
+          "value": {
+            "herb": 2
+          },
+          "source_ref": "quinn/clinic-formulary",
+          "observed_at_tick": 276
+        },
+        {
+          "fact_id": "b03s06-f3",
+          "kind": "CapabilityRecord",
+          "subject_ref": "actor/pavel",
+          "predicate": "medicine",
+          "value": 1,
+          "source_ref": "clinic-role-record",
+          "observed_at_tick": 260
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "RoutineKitMaintenanceGoal",
+            "fact_ids": [
+              "b03s06-f1"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s06",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "actor/quinn"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_kind": "HoldsRequiredInformation",
+            "source_kind": "Actor",
+            "source_id": "actor/quinn",
+            "target_actor_id": "pavel",
+            "fact_ids": [
+              "b03s06-f2"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "pavel",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 52,
+          "spirit": 26,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "meal": 1,
+            "herb": 2
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 9
+        },
+        "capabilities": {
+          "medicine": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "town-clinic"
+          ],
+          "actor_refs": [
+            "quinn"
+          ],
+          "fact_ids": [
+            "b03s06-f1",
+            "b03s06-f2",
+            "b03s06-f3"
+          ],
+          "action_refs": [
+            "b03s06-a1"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "Recipe",
+            "object_id": "make-common-medicine",
+            "required_capability": {
+              "medicine": 1
+            },
+            "inputs": {
+              "herb": 2
+            },
+            "outputs": {
+              "common-medicine": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b03-s07",
+      "actor_id": "kara",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Kara is assigned to harvest farm plot 3 for the communal supper, but the crop remains in its growth interval beyond the kitchen cutoff.",
+        "decision_deadline_tick": 344,
+        "facts": [
+          {
+            "fact_id": "b03s07-f1",
+            "kind": "CommitmentRecord",
+            "subject_ref": "commitment/kara-supper-wheat",
+            "predicate": "due_at_tick",
+            "value": 344,
+            "source_ref": "community-kitchen/roster",
+            "observed_at_tick": 274
+          },
+          {
+            "fact_id": "b03s07-f2",
+            "kind": "FarmPlotObservation",
+            "subject_ref": "region/farm-plot-3",
+            "predicate": "stage",
+            "value": "Growing",
+            "source_ref": "kara/direct-observation",
+            "observed_at_tick": 299
+          },
+          {
+            "fact_id": "b03s07-f3",
+            "kind": "FarmPlotSchedule",
+            "subject_ref": "region/farm-plot-3",
+            "predicate": "growing_until_tick",
+            "value": 1920,
+            "source_ref": "farm-plot-3/state-marker",
+            "observed_at_tick": 299
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "PeripheralSupperGoal",
+          "fact_ids": [
+            "b03s07-f1"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "BoundByCommitment",
+          "source_kind": "Commitment",
+          "source_id": "commitment/kara-supper-wheat",
+          "target_actor_id": "kara",
+          "fact_ids": [
+            "b03s07-f1"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s07-f1",
+          "kind": "CommitmentRecord",
+          "subject_ref": "commitment/kara-supper-wheat",
+          "predicate": "due_at_tick",
+          "value": 344,
+          "source_ref": "community-kitchen/roster",
+          "observed_at_tick": 274
+        },
+        {
+          "fact_id": "b03s07-f2",
+          "kind": "FarmPlotObservation",
+          "subject_ref": "region/farm-plot-3",
+          "predicate": "stage",
+          "value": "Growing",
+          "source_ref": "kara/direct-observation",
+          "observed_at_tick": 299
+        },
+        {
+          "fact_id": "b03s07-f3",
+          "kind": "FarmPlotSchedule",
+          "subject_ref": "region/farm-plot-3",
+          "predicate": "growing_until_tick",
+          "value": 1920,
+          "source_ref": "farm-plot-3/state-marker",
+          "observed_at_tick": 299
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "PeripheralSupperGoal",
+            "fact_ids": [
+              "b03s07-f1"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s07",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/kara-supper-wheat"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_kind": "BoundByCommitment",
+            "source_kind": "Commitment",
+            "source_id": "commitment/kara-supper-wheat",
+            "target_actor_id": "kara",
+            "fact_ids": [
+              "b03s07-f1"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "kara",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 62,
+          "spirit": 40,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "meal": 1,
+            "seeds": 10
+          },
+          "instances": [
+            {
+              "item_instance_id": "kara-sickle",
+              "item_type_id": "sickle"
+            }
+          ],
+          "equipped_hand_instance_id": "kara-sickle"
+        },
+        "currency": {
+          "coin": 7
+        },
+        "capabilities": {
+          "farm": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "community-garden",
+            "farm-plot-3"
+          ],
+          "actor_refs": [
+            "felix"
+          ],
+          "fact_ids": [
+            "b03s07-f1",
+            "b03s07-f2",
+            "b03s07-f3"
+          ],
+          "action_refs": [
+            "b03s07-a1"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "FarmPlot",
+            "object_id": "farm-plot-3",
+            "stage": "Growing",
+            "growing_until_tick": 1920,
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b03-s08",
+      "actor_id": "celia",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Celia was assigned a timber sale, but the dispatch card names the smithy while the stamped bundle tag names the bridge crew as owner.",
+        "decision_deadline_tick": 328,
+        "facts": [
+          {
+            "fact_id": "b03s08-f1",
+            "kind": "AssignmentRecord",
+            "subject_ref": "assignment/celia-timber-sale",
+            "predicate": "assignee",
+            "value": "celia",
+            "source_ref": "smithy/dispatch-card",
+            "observed_at_tick": 284
+          },
+          {
+            "fact_id": "b03s08-f2",
+            "kind": "CustodyRecord",
+            "subject_ref": "lot/timber-c03-08",
+            "predicate": "owner",
+            "value": "shop/smithy-stock",
+            "source_ref": "smithy/dispatch-card",
+            "observed_at_tick": 284
+          },
+          {
+            "fact_id": "b03s08-f3",
+            "kind": "SealObservation",
+            "subject_ref": "lot/timber-c03-08",
+            "predicate": "owner",
+            "value": "organization/bridge-crew",
+            "source_ref": "celia/direct-observation",
+            "observed_at_tick": 299
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "PeripheralTradeAssignment",
+          "fact_ids": [
+            "b03s08-f1"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "AssignedToActor",
+          "source_kind": "Assignment",
+          "source_id": "assignment/celia-timber-sale",
+          "target_actor_id": "celia",
+          "fact_ids": [
+            "b03s08-f1"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s08-f1",
+          "kind": "AssignmentRecord",
+          "subject_ref": "assignment/celia-timber-sale",
+          "predicate": "assignee",
+          "value": "celia",
+          "source_ref": "smithy/dispatch-card",
+          "observed_at_tick": 284
+        },
+        {
+          "fact_id": "b03s08-f2",
+          "kind": "CustodyRecord",
+          "subject_ref": "lot/timber-c03-08",
+          "predicate": "owner",
+          "value": "shop/smithy-stock",
+          "source_ref": "smithy/dispatch-card",
+          "observed_at_tick": 284
+        },
+        {
+          "fact_id": "b03s08-f3",
+          "kind": "SealObservation",
+          "subject_ref": "lot/timber-c03-08",
+          "predicate": "owner",
+          "value": "organization/bridge-crew",
+          "source_ref": "celia/direct-observation",
+          "observed_at_tick": 299
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "PeripheralTradeAssignment",
+            "fact_ids": [
+              "b03s08-f1"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s08",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "celia"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_kind": "AssignedToActor",
+            "source_kind": "Assignment",
+            "source_id": "assignment/celia-timber-sale",
+            "target_actor_id": "celia",
+            "fact_ids": [
+              "b03s08-f1"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "celia",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 22,
+          "spirit": 70,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "timber": 1
+          },
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 5
+        },
+        "capabilities": {
+          "craft": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "smithy",
+            "general-store"
+          ],
+          "actor_refs": [
+            "bram",
+            "dorian"
+          ],
+          "fact_ids": [
+            "b03s08-f1",
+            "b03s08-f2",
+            "b03s08-f3"
+          ],
+          "action_refs": [
+            "b03s08-a1"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "CustodyDispute",
+            "object_id": "timber-c03-08",
+            "recorded_claims": [
+              "shop/smithy-stock",
+              "organization/bridge-crew"
+            ],
+            "revision": 2
+          }
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b03-s09",
+      "actor_id": "felix",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Felix's household has reserved the empty fourth plot for winter food; he has ten seeds, an equipped hoe, and the farm skill to plant it now.",
+        "decision_deadline_tick": 350,
+        "facts": [
+          {
+            "fact_id": "b03s09-f1",
+            "kind": "HouseholdNeed",
+            "subject_ref": "household/clara",
+            "predicate": "winter_seedbed_required",
+            "value": true,
+            "source_ref": "household-clara/pantry-note",
+            "observed_at_tick": 282
+          },
+          {
+            "fact_id": "b03s09-f2",
+            "kind": "FarmPlotObservation",
+            "subject_ref": "region/farm-plot-4",
+            "predicate": "stage",
+            "value": "Empty",
+            "source_ref": "felix/direct-observation",
+            "observed_at_tick": 299
+          },
+          {
+            "fact_id": "b03s09-f3",
+            "kind": "CapabilityRequirement",
+            "subject_ref": "region/farm-plot-4",
+            "predicate": "farm_minimum",
+            "value": 1,
+            "source_ref": "farm-plot-4/rule-card",
+            "observed_at_tick": 292
+          },
+          {
+            "fact_id": "b03s09-f4",
+            "kind": "InputRequirement",
+            "subject_ref": "region/farm-plot-4",
+            "predicate": "seeds_required",
+            "value": 10,
+            "source_ref": "farm-plot-4/rule-card",
+            "observed_at_tick": 292
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "LowSalienceHouseholdReserveGoal",
+          "fact_ids": [
+            "b03s09-f1"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "RequiresCapability",
+          "source_kind": "CapabilityRequirement",
+          "source_id": "capability/farm-plot-4",
+          "target_actor_id": "felix",
+          "fact_ids": [
+            "b03s09-f3"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s09-f1",
+          "kind": "HouseholdNeed",
+          "subject_ref": "household/clara",
+          "predicate": "winter_seedbed_required",
+          "value": true,
+          "source_ref": "household-clara/pantry-note",
+          "observed_at_tick": 282
+        },
+        {
+          "fact_id": "b03s09-f2",
+          "kind": "FarmPlotObservation",
+          "subject_ref": "region/farm-plot-4",
+          "predicate": "stage",
+          "value": "Empty",
+          "source_ref": "felix/direct-observation",
+          "observed_at_tick": 299
+        },
+        {
+          "fact_id": "b03s09-f3",
+          "kind": "CapabilityRequirement",
+          "subject_ref": "region/farm-plot-4",
+          "predicate": "farm_minimum",
+          "value": 1,
+          "source_ref": "farm-plot-4/rule-card",
+          "observed_at_tick": 292
+        },
+        {
+          "fact_id": "b03s09-f4",
+          "kind": "InputRequirement",
+          "subject_ref": "region/farm-plot-4",
+          "predicate": "seeds_required",
+          "value": 10,
+          "source_ref": "farm-plot-4/rule-card",
+          "observed_at_tick": 292
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "LowSalienceHouseholdReserveGoal",
+            "fact_ids": [
+              "b03s09-f1"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s09",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/farm-plot-4"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_kind": "RequiresCapability",
+            "source_kind": "CapabilityRequirement",
+            "source_id": "capability/farm-plot-4",
+            "target_actor_id": "felix",
+            "fact_ids": [
+              "b03s09-f3"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "felix",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 57,
+          "spirit": 72,
+          "disease": "Healthy"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {
+            "meal": 1,
+            "seeds": 10
+          },
+          "instances": [
+            {
+              "item_instance_id": "felix-hoe",
+              "item_type_id": "hoe"
+            }
+          ],
+          "equipped_hand_instance_id": "felix-hoe"
+        },
+        "currency": {
+          "coin": 9
+        },
+        "capabilities": {
+          "farm": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "community-garden",
+            "farm-plot-4"
+          ],
+          "actor_refs": [
+            "clara",
+            "grace"
+          ],
+          "fact_ids": [
+            "b03s09-f1",
+            "b03s09-f2",
+            "b03s09-f3",
+            "b03s09-f4"
+          ],
+          "action_refs": [
+            "b03s09-a1"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "FarmPlot",
+            "object_id": "farm-plot-4",
+            "stage": "Empty",
+            "seed_asset_id": "seeds",
+            "seed_quantity": 10,
+            "plant_tool_type_id": "hoe",
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b03-s10",
+      "actor_id": "clara",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Clara has been assigned to collect one flour sack for the inn's noodle order; the mill counter is open and lists the sack for two coins.",
+        "decision_deadline_tick": 332,
+        "facts": [
+          {
+            "fact_id": "b03s10-f1",
+            "kind": "AssignmentRecord",
+            "subject_ref": "assignment/clara-inn-flour",
+            "predicate": "assignee",
+            "value": "clara",
+            "source_ref": "inn/order-board",
+            "observed_at_tick": 280
+          },
+          {
+            "fact_id": "b03s10-f2",
+            "kind": "ListingObservation",
+            "subject_ref": "listing/mill-flour-retail",
+            "predicate": "offer",
+            "value": {
+              "asset_id": "flour",
+              "quantity": 1,
+              "coin_price": 2
+            },
+            "source_ref": "mill/counter-board",
+            "observed_at_tick": 298
+          },
+          {
+            "fact_id": "b03s10-f3",
+            "kind": "PlaceObservation",
+            "subject_ref": "shop/brackenford-mill-shop",
+            "predicate": "open",
+            "value": true,
+            "source_ref": "clara/direct-observation",
+            "observed_at_tick": 299
+          }
+        ],
+        "actor_local_signal": {
+          "kind": "LowSalienceErrand",
+          "fact_ids": [
+            "b03s10-f1"
+          ]
+        },
+        "dependency": {
+          "edge_kind": "AssignedToActor",
+          "source_kind": "Assignment",
+          "source_id": "assignment/clara-inn-flour",
+          "target_actor_id": "clara",
+          "fact_ids": [
+            "b03s10-f1"
+          ]
+        }
+      },
+      "public_facts": [
+        {
+          "fact_id": "b03s10-f1",
+          "kind": "AssignmentRecord",
+          "subject_ref": "assignment/clara-inn-flour",
+          "predicate": "assignee",
+          "value": "clara",
+          "source_ref": "inn/order-board",
+          "observed_at_tick": 280
+        },
+        {
+          "fact_id": "b03s10-f2",
+          "kind": "ListingObservation",
+          "subject_ref": "listing/mill-flour-retail",
+          "predicate": "offer",
+          "value": {
+            "asset_id": "flour",
+            "quantity": 1,
+            "coin_price": 2
+          },
+          "source_ref": "mill/counter-board",
+          "observed_at_tick": 298
+        },
+        {
+          "fact_id": "b03s10-f3",
+          "kind": "PlaceObservation",
+          "subject_ref": "shop/brackenford-mill-shop",
+          "predicate": "open",
+          "value": true,
+          "source_ref": "clara/direct-observation",
+          "observed_at_tick": 299
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "LowSalienceErrand",
+            "fact_ids": [
+              "b03s10-f1"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b03-s10",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "clara"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_kind": "AssignedToActor",
+            "source_kind": "Assignment",
+            "source_id": "assignment/clara-inn-flour",
+            "target_actor_id": "clara",
+            "fact_ids": [
+              "b03s10-f1"
+            ]
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "clara",
+        "body": {
+          "health_current": 100,
+          "health_maximum": 100,
+          "satiety": 31,
+          "spirit": 55,
+          "disease": "Ill"
+        },
+        "inventory": {
+          "revision": 1,
+          "equipment_revision": 1,
+          "stacks": {},
+          "instances": [],
+          "equipped_hand_instance_id": null
+        },
+        "currency": {
+          "coin": 10
+        },
+        "capabilities": {
+          "cook": 1
+        },
+        "knowledge": {
+          "place_refs": [
+            "inn",
+            "mill"
+          ],
+          "actor_refs": [
+            "emma",
+            "devin"
+          ],
+          "fact_ids": [
+            "b03s10-f1",
+            "b03s10-f2",
+            "b03s10-f3"
+          ],
+          "action_refs": [
+            "b03s10-a1"
+          ]
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "actor_state_ref": "actor_decision_view",
+        "actor_container_revision": 1,
+        "objects": [
+          {
+            "kind": "Shop",
+            "object_id": "mill-stock",
+            "shop_id": "brackenford-mill-shop",
+            "open": true,
+            "revision": 1,
+            "balances": {
+              "coin": 20,
+              "flour": 10
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

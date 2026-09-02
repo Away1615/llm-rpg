@@ -1,0 +1,1548 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_30",
+  "block_id": "block_30",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": {
+      "world_revision": 30
+    }
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b30-s01",
+      "actor_id": "opal",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Opal's wool lot must be weighed before the cooperative bid deposit closes.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s01-f1",
+            "text": "A beam crack has closed the town-square weigh shelter until tick 333."
+          },
+          {
+            "fact_id": "b30-s01-f2",
+            "text": "The cooperative accepts weights only from that sealed scale, and deposits close at tick 318."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s01-f1",
+          "text": "A beam crack has closed the town-square weigh shelter until tick 333."
+        },
+        {
+          "fact_id": "b30-s01-f2",
+          "text": "The cooperative accepts weights only from that sealed scale, and deposits close at tick 318."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "goal_id": "b30-s01-goal",
+            "evidence_type": "imminent_personal_commitment",
+            "statement": "Obtain a sealed wool weight before tick 318."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s01",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "b30-s01-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b30-s01-dep",
+            "source_type": "place_impact_notice",
+            "subject": "town-square-weigh-shelter",
+            "statement": "The beam closure removes the sole accepted weighing place during the bid window."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "opal",
+          "body": {
+            "health_current": 96,
+            "health_maximum": 100,
+            "satiety": 44,
+            "spirit": 59,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-square"
+          },
+          "inventory": [
+            {
+              "asset_id": "wool-lot",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 5
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "businesslike"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s01-goal",
+            "evidence_type": "imminent_personal_commitment",
+            "statement": "Obtain a sealed wool weight before tick 318."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s01-f1",
+            "source_type": "shelter_closure_notice",
+            "statement": "The weigh shelter remains shut until tick 333."
+          },
+          {
+            "fact_id": "b30-s01-f2",
+            "source_type": "cooperative_bid_terms",
+            "statement": "No alternate scale is accepted for the tick-318 deposit."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 96,
+            "health_maximum": 100,
+            "satiety": 44,
+            "spirit": 59,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 5
+              },
+              {
+                "asset_id": "wool-lot",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "temporal_gates": [
+          {
+            "gate_id": "town-square-weigh-shelter",
+            "opens_at_tick": 333
+          }
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b30-s02",
+      "actor_id": "pavel",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Pavel needs a sterile dressing pack for the household visiting round.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s02-f1",
+            "text": "The clinic steriliser's locked cycle finishes at tick 329."
+          },
+          {
+            "fact_id": "b30-s02-f2",
+            "text": "The visiting round departs at tick 317, and no other sterile pack is in current stock."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s02-f1",
+          "text": "The clinic steriliser's locked cycle finishes at tick 329."
+        },
+        {
+          "fact_id": "b30-s02-f2",
+          "text": "The visiting round departs at tick 317, and no other sterile pack is in current stock."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "goal_id": "b30-s02-goal",
+            "evidence_type": "urgent_household_care",
+            "statement": "Carry a sterile dressing pack on the tick-317 visiting round."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s02",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "b30-s02-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b30-s02-dep",
+            "source_type": "commitment_record",
+            "subject": "household-visiting-round",
+            "statement": "The clinic roster binds Pavel to the departure at tick 317."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "pavel",
+          "body": {
+            "health_current": 89,
+            "health_maximum": 100,
+            "satiety": 57,
+            "spirit": 41,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-clinic"
+          },
+          "inventory": [
+            {
+              "asset_id": "visit-list",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 4
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "supportive"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s02-goal",
+            "evidence_type": "urgent_household_care",
+            "statement": "Carry a sterile dressing pack on the tick-317 visiting round."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s02-f1",
+            "source_type": "steriliser_cycle_display",
+            "statement": "The locked cycle ends at tick 329."
+          },
+          {
+            "fact_id": "b30-s02-f2",
+            "source_type": "clinic_stock_and_roster",
+            "statement": "No pack is available before the visiting round leaves."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 89,
+            "health_maximum": 100,
+            "satiety": 57,
+            "spirit": 41,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 4
+              },
+              {
+                "asset_id": "visit-list",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "represented_supply": [
+          {
+            "asset_id": "sterile-dressing-pack",
+            "quantity": 0
+          }
+        ],
+        "temporal_gates": [
+          {
+            "gate_id": "clinic-steriliser-cycle",
+            "opens_at_tick": 329
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b30-s03",
+      "actor_id": "quinn",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Quinn is assigned to lodge a pasture grant whose two seal records disagree.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s03-f1",
+            "text": "The deed bears seal 4C, which the grant register assigns to the west pasture."
+          },
+          {
+            "fact_id": "b30-s03-f2",
+            "text": "The sealed survey sheet also bears 4C but assigns it to the river pasture."
+          },
+          {
+            "fact_id": "b30-s03-f3",
+            "text": "Only the district registrar can authenticate the seal pair, and no registrar entry is represented in the current catalogue."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s03-f1",
+          "text": "The deed bears seal 4C, which the grant register assigns to the west pasture."
+        },
+        {
+          "fact_id": "b30-s03-f2",
+          "text": "The sealed survey sheet also bears 4C but assigns it to the river pasture."
+        },
+        {
+          "fact_id": "b30-s03-f3",
+          "text": "Only the district registrar can authenticate the seal pair, and no registrar entry is represented in the current catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "goal_id": "b30-s03-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Lodge the grant only against an authenticated pasture by tick 321."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s03",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "quinn"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b30-s03-dep",
+            "source_type": "actor_assignment_notice",
+            "subject": "quinn",
+            "statement": "The filing roster assigns Quinn the deed without resolving its conflicting seals."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "quinn",
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 62,
+            "spirit": 54,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-square"
+          },
+          "inventory": [
+            {
+              "asset_id": "pasture-grant-deed",
+              "quantity": 1
+            },
+            {
+              "asset_id": "sealed-survey-sheet",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 6
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "formal"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s03-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Lodge the grant only against an authenticated pasture by tick 321."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s03-f1",
+            "source_type": "grant_register",
+            "statement": "Seal 4C maps to west pasture."
+          },
+          {
+            "fact_id": "b30-s03-f2",
+            "source_type": "sealed_survey_sheet",
+            "statement": "The same seal maps to river pasture."
+          },
+          {
+            "fact_id": "b30-s03-f3",
+            "source_type": "registry_authentication_rule",
+            "statement": "Quinn cannot choose a pasture from the conflicting authenticated-looking records."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 62,
+            "spirit": 54,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 6
+              },
+              {
+                "asset_id": "pasture-grant-deed",
+                "quantity": 1
+              },
+              {
+                "asset_id": "sealed-survey-sheet",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "grant_record": {
+          "seal_id": "4C",
+          "authenticated_pasture_id": null
+        }
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b30-s04",
+      "actor_id": "rosa",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Rosa must choose whether a replacement coupling is safe for the garden pump.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s04-f1",
+            "text": "The guild batch card marks coupling K-9 as pressure-rated bronze."
+          },
+          {
+            "fact_id": "b30-s04-f2",
+            "text": "The supplier tag on K-9 marks it as decorative brass."
+          },
+          {
+            "fact_id": "b30-s04-f3",
+            "text": "The guild materials examiner is the only represented authority for a conclusive test, but no examination entry is in the catalogue."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s04-f1",
+          "text": "The guild batch card marks coupling K-9 as pressure-rated bronze."
+        },
+        {
+          "fact_id": "b30-s04-f2",
+          "text": "The supplier tag on K-9 marks it as decorative brass."
+        },
+        {
+          "fact_id": "b30-s04-f3",
+          "text": "The guild materials examiner is the only represented authority for a conclusive test, but no examination entry is in the catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "goal_id": "b30-s04-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Fit only a pressure-rated coupling before tick 325."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s04",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b30-s04-dep"
+          },
+          "role_assignment": {
+            "organization_id": "b30-s04-dep",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "b30-s04-dep"
+          },
+          "raw_evidence": {
+            "source_id": "b30-s04-dep",
+            "source_type": "organization_membership_record",
+            "subject": "pump-maintenance-guild",
+            "statement": "The guild rule requires an examiner's material finding when batch records conflict."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "rosa",
+          "body": {
+            "health_current": 93,
+            "health_maximum": 100,
+            "satiety": 56,
+            "spirit": 65,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "community-garden"
+          },
+          "inventory": [
+            {
+              "asset_id": "coupling-k9",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 5
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "communal"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s04-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Fit only a pressure-rated coupling before tick 325."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s04-f1",
+            "source_type": "guild_batch_card",
+            "statement": "K-9 is recorded as pressure-rated bronze."
+          },
+          {
+            "fact_id": "b30-s04-f2",
+            "source_type": "supplier_tag",
+            "statement": "K-9 is also recorded as decorative brass."
+          },
+          {
+            "fact_id": "b30-s04-f3",
+            "source_type": "guild_material_rule",
+            "statement": "Rosa has no represented conclusive material test."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 93,
+            "health_maximum": 100,
+            "satiety": 56,
+            "spirit": 65,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 5
+              },
+              {
+                "asset_id": "coupling-k9",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "sealed_asset": {
+          "asset_id": "coupling-k9",
+          "certified_material": null
+        }
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b30-s05",
+      "actor_id": "silas",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Silas is assigned a smoked-fish crate for the relief wagon leaving at tick 322.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s05-f1",
+            "text": "The smokehouse cure log says the crate reaches its safe minimum cure at tick 338."
+          },
+          {
+            "fact_id": "b30-s05-f2",
+            "text": "The relief wagon leaves at tick 322 and no other cured-fish crate is in represented stock."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s05-f1",
+          "text": "The smokehouse cure log says the crate reaches its safe minimum cure at tick 338."
+        },
+        {
+          "fact_id": "b30-s05-f2",
+          "text": "The relief wagon leaves at tick 322 and no other cured-fish crate is in represented stock."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "goal_id": "b30-s05-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Supply a safely cured fish crate by tick 322."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s05",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "silas"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b30-s05-dep",
+            "source_type": "actor_assignment_notice",
+            "subject": "silas",
+            "statement": "The relief roster assigns the fish crate to Silas for the tick-322 wagon."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "silas",
+          "body": {
+            "health_current": 90,
+            "health_maximum": 100,
+            "satiety": 45,
+            "spirit": 52,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "fishing-ground"
+          },
+          "inventory": [
+            {
+              "asset_id": "relief-wagon-token",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 4
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "dutiful"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s05-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Supply a safely cured fish crate by tick 322."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s05-f1",
+            "source_type": "smokehouse_cure_log",
+            "statement": "The current crate is unsafe to release before tick 338."
+          },
+          {
+            "fact_id": "b30-s05-f2",
+            "source_type": "relief_stock_and_roster",
+            "statement": "The wagon leaves earlier and has no substitute crate."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 90,
+            "health_maximum": 100,
+            "satiety": 45,
+            "spirit": 52,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 4
+              },
+              {
+                "asset_id": "relief-wagon-token",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "represented_supply": [
+          {
+            "asset_id": "safely-cured-fish-crate",
+            "quantity": 0
+          }
+        ],
+        "temporal_gates": [
+          {
+            "gate_id": "smokehouse-safe-cure",
+            "opens_at_tick": 338
+          }
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b30-s06",
+      "actor_id": "aiko",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Aiko's stored barley needs a moisture certificate before a buyer accepts the lot.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s06-f1",
+            "text": "Opal is staffing the mill moisture-test desk through tick 327."
+          },
+          {
+            "fact_id": "b30-s06-f2",
+            "text": "The test consumes Aiko's barley sample, one drying strip and one coin."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s06-f1",
+          "text": "Opal is staffing the mill moisture-test desk through tick 327."
+        },
+        {
+          "fact_id": "b30-s06-f2",
+          "text": "The test consumes Aiko's barley sample, one drying strip and one coin."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "goal_id": "b30-s06-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Obtain the barley moisture certificate by tick 327."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s06",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b30-s06-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b30-s06-dep",
+            "source_type": "capability_requirement_record",
+            "subject": "grain-moisture-test",
+            "statement": "The buyer accepts the certificate produced by the listed grain-testing skill."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "aiko",
+          "body": {
+            "health_current": 97,
+            "health_maximum": 100,
+            "satiety": 53,
+            "spirit": 69,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "mill"
+          },
+          "inventory": [
+            {
+              "asset_id": "barley-sample",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 3
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "independent"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s06-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Obtain the barley moisture certificate by tick 327."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s06-f1",
+            "source_type": "mill_test_roster",
+            "statement": "Opal has the current grain-testing shift."
+          },
+          {
+            "fact_id": "b30-s06-f2",
+            "source_type": "moisture_test_method",
+            "statement": "The sample, drying strip and coin are sufficient for a certificate."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 97,
+            "health_maximum": 100,
+            "satiety": 53,
+            "spirit": 69,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "barley-sample",
+                "quantity": 1
+              },
+              {
+                "asset_id": "coin",
+                "quantity": 3
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "mill-moisture-desk",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 0
+              },
+              {
+                "asset_id": "drying-strip",
+                "quantity": 2
+              }
+            ]
+          }
+        ],
+        "service": {
+          "service_id": "barley-moisture-test",
+          "place_id": "mill",
+          "provider_actor_ids": [
+            "opal"
+          ],
+          "provider_owner_kind": "Warehouse",
+          "provider_container_id": "mill-moisture-desk",
+          "coin_fee": 1,
+          "customer_inputs": [
+            {
+              "asset_id": "barley-sample",
+              "quantity": 1
+            }
+          ],
+          "provider_inputs": [
+            {
+              "asset_id": "drying-strip",
+              "quantity": 1
+            }
+          ],
+          "customer_outputs": [
+            {
+              "asset_id": "barley-moisture-certificate",
+              "quantity": 1
+            }
+          ],
+          "target_item_type_ids": [],
+          "durability_restore": 0
+        }
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b30-s07",
+      "actor_id": "alice",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Alice needs to fill a household medicine card that names only the retired dosage code C7.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s07-f1",
+            "text": "The signed card specifies dosage code C7 but no medicine name or amount."
+          },
+          {
+            "fact_id": "b30-s07-f2",
+            "text": "The current clinic formulary begins at D1; no represented ledger or living prescriber maps C7 to a medicine."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s07-f1",
+          "text": "The signed card specifies dosage code C7 but no medicine name or amount."
+        },
+        {
+          "fact_id": "b30-s07-f2",
+          "text": "The current clinic formulary begins at D1; no represented ledger or living prescriber maps C7 to a medicine."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "goal_id": "b30-s07-goal",
+            "evidence_type": "routine_household_duty",
+            "statement": "Fill the medicine card with the named treatment by tick 324."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s07",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b30-s07-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b30-s07-dep",
+            "source_type": "information_holder_record",
+            "subject": "retired-prescriber-codebook",
+            "statement": "The missing retired codebook is the sole identified source for C7."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "alice",
+          "body": {
+            "health_current": 82,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 43,
+            "disease": "Sick"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-clinic"
+          },
+          "inventory": [
+            {
+              "asset_id": "medicine-card-c7",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 7
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "family-focused"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s07-goal",
+            "evidence_type": "routine_household_duty",
+            "statement": "Fill the medicine card with the named treatment by tick 324."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s07-f1",
+            "source_type": "signed_medicine_card",
+            "statement": "The only treatment identity is C7."
+          },
+          {
+            "fact_id": "b30-s07-f2",
+            "source_type": "current_formulary_search",
+            "statement": "No represented current source resolves C7."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 82,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 43,
+            "disease": "Sick"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 7
+              },
+              {
+                "asset_id": "medicine-card-c7",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "code_resolution": {
+          "code": "C7",
+          "represented_medicine_id": null
+        }
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b30-s08",
+      "actor_id": "bernard",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Bernard must settle a warehouse receipt whose sealed count disagrees with the current ledger.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s08-f1",
+            "text": "Receipt R-18 records twelve lamp-oil jars under an intact seal."
+          },
+          {
+            "fact_id": "b30-s08-f2",
+            "text": "The warehouse ledger for R-18 records nine jars and no issue entries."
+          },
+          {
+            "fact_id": "b30-s08-f3",
+            "text": "Settlement rules require an independent stock audit when sealed and ledger counts conflict; no audit entry is represented in the catalogue."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s08-f1",
+          "text": "Receipt R-18 records twelve lamp-oil jars under an intact seal."
+        },
+        {
+          "fact_id": "b30-s08-f2",
+          "text": "The warehouse ledger for R-18 records nine jars and no issue entries."
+        },
+        {
+          "fact_id": "b30-s08-f3",
+          "text": "Settlement rules require an independent stock audit when sealed and ledger counts conflict; no audit entry is represented in the catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "goal_id": "b30-s08-goal",
+            "evidence_type": "routine_commitment",
+            "statement": "Settle R-18 only for an established jar count by tick 326."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s08",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "b30-s08-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b30-s08-dep",
+            "source_type": "commitment_record",
+            "subject": "warehouse-receipt-r18",
+            "statement": "The settlement obligation remains open because its two binding count records conflict."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "bernard",
+          "body": {
+            "health_current": 99,
+            "health_maximum": 100,
+            "satiety": 60,
+            "spirit": 51,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-warehouse"
+          },
+          "inventory": [
+            {
+              "asset_id": "warehouse-receipt-r18",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 8
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "formal"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s08-goal",
+            "evidence_type": "routine_commitment",
+            "statement": "Settle R-18 only for an established jar count by tick 326."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s08-f1",
+            "source_type": "sealed_receipt",
+            "statement": "R-18 says twelve jars."
+          },
+          {
+            "fact_id": "b30-s08-f2",
+            "source_type": "warehouse_ledger",
+            "statement": "R-18 says nine jars with no issues."
+          },
+          {
+            "fact_id": "b30-s08-f3",
+            "source_type": "settlement_rule",
+            "statement": "Bernard cannot settle either count without the absent independent audit."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 99,
+            "health_maximum": 100,
+            "satiety": 60,
+            "spirit": 51,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 8
+              },
+              {
+                "asset_id": "warehouse-receipt-r18",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "receipt_record": {
+          "receipt_id": "R-18",
+          "audited_quantity": null
+        }
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b30-s09",
+      "actor_id": "bram",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Bram needs an annealed drive pin for the mill repair before the mechanic departs.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s09-f1",
+            "text": "The forge annealing cycle for the only drive pin finishes at tick 340."
+          },
+          {
+            "fact_id": "b30-s09-f2",
+            "text": "Removing the pin early voids its load rating, while the mill mechanic departs at tick 326."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s09-f1",
+          "text": "The forge annealing cycle for the only drive pin finishes at tick 340."
+        },
+        {
+          "fact_id": "b30-s09-f2",
+          "text": "Removing the pin early voids its load rating, while the mill mechanic departs at tick 326."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "goal_id": "b30-s09-goal",
+            "evidence_type": "background_maintenance_concern",
+            "statement": "Supply the rated drive pin before tick 326."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s09",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b30-s09-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b30-s09-dep",
+            "source_type": "capability_requirement_record",
+            "subject": "rated-drive-pin",
+            "statement": "The load rating requires completion of the skilled annealing cycle."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "bram",
+          "body": {
+            "health_current": 91,
+            "health_maximum": 100,
+            "satiety": 52,
+            "spirit": 58,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "smithy"
+          },
+          "inventory": [
+            {
+              "asset_id": "mill-repair-order",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 5
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "practical"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s09-goal",
+            "evidence_type": "background_maintenance_concern",
+            "statement": "Supply the rated drive pin before tick 326."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s09-f1",
+            "source_type": "forge_cycle_card",
+            "statement": "The annealing cycle ends at tick 340."
+          },
+          {
+            "fact_id": "b30-s09-f2",
+            "source_type": "load_rating_rule",
+            "statement": "No valid drive pin can be released during the mechanic's window."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 91,
+            "health_maximum": 100,
+            "satiety": 52,
+            "spirit": 58,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 5
+              },
+              {
+                "asset_id": "mill-repair-order",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "temporal_gates": [
+          {
+            "gate_id": "drive-pin-annealing-cycle",
+            "opens_at_tick": 340
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b30-s10",
+      "actor_id": "celia",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "summary": "Celia must decide whether a spice packet is safe for the communal allergy-sensitive stew.",
+        "public_facts": [
+          {
+            "fact_id": "b30-s10-f1",
+            "text": "The kitchen intake card marks packet S-3 as free of sesame."
+          },
+          {
+            "fact_id": "b30-s10-f2",
+            "text": "The supplier label on the sealed packet lists sesame meal."
+          },
+          {
+            "fact_id": "b30-s10-f3",
+            "text": "Kitchen rules require a certified allergen assay for conflicting sealed labels; no assay entry is represented in the catalogue."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b30-s10-f1",
+          "text": "The kitchen intake card marks packet S-3 as free of sesame."
+        },
+        {
+          "fact_id": "b30-s10-f2",
+          "text": "The supplier label on the sealed packet lists sesame meal."
+        },
+        {
+          "fact_id": "b30-s10-f3",
+          "text": "Kitchen rules require a certified allergen assay for conflicting sealed labels; no assay entry is represented in the catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "goal_id": "b30-s10-goal",
+            "evidence_type": "background_production_concern",
+            "statement": "Use only spice with established allergen contents by tick 323."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b30-s10",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b30-s10-dep"
+          },
+          "role_assignment": {
+            "organization_id": "b30-s10-dep",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "b30-s10-dep"
+          },
+          "raw_evidence": {
+            "source_id": "b30-s10-dep",
+            "source_type": "organization_membership_record",
+            "subject": "communal-kitchen-roster",
+            "statement": "The kitchen safety rule applies to Celia's assigned stew preparation."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "celia",
+          "body": {
+            "health_current": 98,
+            "health_maximum": 100,
+            "satiety": 65,
+            "spirit": 55,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "inn"
+          },
+          "inventory": [
+            {
+              "asset_id": "sealed-spice-s3",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 4
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "protective"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b30-s10-goal",
+            "evidence_type": "background_production_concern",
+            "statement": "Use only spice with established allergen contents by tick 323."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b30-s10-f1",
+            "source_type": "kitchen_intake_card",
+            "statement": "S-3 is recorded as sesame-free."
+          },
+          {
+            "fact_id": "b30-s10-f2",
+            "source_type": "supplier_label",
+            "statement": "S-3 is also recorded as containing sesame meal."
+          },
+          {
+            "fact_id": "b30-s10-f3",
+            "source_type": "allergen_safety_rule",
+            "statement": "Celia has no represented conclusive assay."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 300,
+        "actor": {
+          "body": {
+            "health_current": 98,
+            "health_maximum": 100,
+            "satiety": 65,
+            "spirit": 55,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 4
+              },
+              {
+                "asset_id": "sealed-spice-s3",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "sealed_asset": {
+          "asset_id": "sealed-spice-s3",
+          "certified_allergens": null
+        }
+      }
+    }
+  ]
+}

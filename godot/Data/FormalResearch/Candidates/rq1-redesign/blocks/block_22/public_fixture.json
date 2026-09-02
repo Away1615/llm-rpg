@@ -1,0 +1,2066 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_22",
+  "block_id": "block_22",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b22-s01",
+      "actor_id": "emma",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Bind the flood-route packet",
+        "situation": "Emma has the route map, wax strip and waterproof sleeve needed for the relief convoy packet.",
+        "immediate_objective": "Craft one sealed flood-route packet for the convoy leader.",
+        "subject_ref": "logistics/flood-route-packet",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s01/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The convoy route map has today's revision mark."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s01/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Emma carries the map and measured wax strip."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "immediate_self_state",
+            "source_ref": "actor/emma/logistics/flood-route-packet",
+            "fact_ids": [
+              "rq1-v2-b22-s01/fact/1",
+              "rq1-v2-b22-s01/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s01",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "resource/convoy-document-kit"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "ResourceCustody",
+            "source_kind": "Resource",
+            "source_id": "resource/convoy-document-kit",
+            "affected_actor_id": "emma"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "emma",
+        "self": {
+          "identity": {
+            "actor_id": "emma",
+            "name": "Emma",
+            "age": 55
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 63,
+            "spirit": 46,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "route-map",
+                "quantity": 2
+              },
+              {
+                "asset_id": "wax-strip",
+                "quantity": 1
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s01",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s01"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "Craft"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s01",
+            "label": "Craft one sealed flood-route packet for the convoy leader.",
+            "action_family": "Craft",
+            "arguments": {
+              "recipe_id": "wb-rq1-v2-b22-s01-recipe"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 63,
+            "spirit": 46,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "route-map",
+              "quantity": 2
+            },
+            {
+              "asset_id": "wax-strip",
+              "quantity": 1
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "route-map",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "sealed-flood-route-packet",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "wax-strip",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": {
+          "recipe_id": "wb-rq1-v2-b22-s01-recipe",
+          "place_id": null,
+          "required_capability_id": "craft",
+          "minimum_capability": 0,
+          "required_asset_id": null,
+          "inputs": [
+            {
+              "asset_id": "route-map",
+              "quantity": 2
+            },
+            {
+              "asset_id": "wax-strip",
+              "quantity": 1
+            }
+          ],
+          "outputs": [
+            {
+              "asset_id": "sealed-flood-route-packet",
+              "quantity": 1
+            }
+          ]
+        },
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b22-s02",
+      "actor_id": "pavel",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Make the pump calibration shim",
+        "situation": "Pavel has a brass blank and gauge rubbing for the clinic water-pump repair.",
+        "immediate_objective": "Craft one calibration shim matching the gauge rubbing.",
+        "subject_ref": "maintenance/pump-calibration-shim",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s02/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The repair card specifies one calibration shim."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s02/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Pavel carries the brass blank and current gauge rubbing."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "kind": "immediate_self_state",
+            "source_ref": "actor/pavel/maintenance/pump-calibration-shim",
+            "fact_ids": [
+              "rq1-v2-b22-s02/fact/1",
+              "rq1-v2-b22-s02/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s02",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/clinic-pump-repair"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "CommitmentBinding",
+            "source_kind": "Commitment",
+            "source_id": "commitment/clinic-pump-repair",
+            "affected_actor_id": "pavel"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "pavel",
+        "self": {
+          "identity": {
+            "actor_id": "pavel",
+            "name": "Pavel",
+            "age": 37
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 52,
+            "spirit": 26,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "brass-blank",
+                "quantity": 2
+              },
+              {
+                "asset_id": "gauge-rubbing",
+                "quantity": 1
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s02",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s02"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "Craft"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s02",
+            "label": "Craft one calibration shim matching the gauge rubbing.",
+            "action_family": "Craft",
+            "arguments": {
+              "recipe_id": "wb-rq1-v2-b22-s02-recipe"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 52,
+            "spirit": 26,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "brass-blank",
+              "quantity": 2
+            },
+            {
+              "asset_id": "gauge-rubbing",
+              "quantity": 1
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "brass-blank",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "gauge-rubbing",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "pump-calibration-shim",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": {
+          "recipe_id": "wb-rq1-v2-b22-s02-recipe",
+          "place_id": null,
+          "required_capability_id": "craft",
+          "minimum_capability": 0,
+          "required_asset_id": null,
+          "inputs": [
+            {
+              "asset_id": "brass-blank",
+              "quantity": 2
+            },
+            {
+              "asset_id": "gauge-rubbing",
+              "quantity": 1
+            }
+          ],
+          "outputs": [
+            {
+              "asset_id": "pump-calibration-shim",
+              "quantity": 1
+            }
+          ]
+        },
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b22-s03",
+      "actor_id": "aiko",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Harvest the greenhouse bean row",
+        "situation": "Aiko is assigned to the mature greenhouse bean row needed for tonight's kitchen allocation.",
+        "immediate_objective": "Harvest the marked row and carry the bean basket.",
+        "subject_ref": "region/greenhouse-bean-row",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s03/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The row marker assigns greenhouse row three to Aiko."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s03/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "The pods on the marked row are mature and unclaimed."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "active_goal_or_deadline",
+            "source_ref": "actor/aiko/region/greenhouse-bean-row",
+            "fact_ids": [
+              "rq1-v2-b22-s03/fact/1",
+              "rq1-v2-b22-s03/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s03",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "aiko"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "ActorAssignment",
+            "source_kind": "Assignment",
+            "source_id": "assignment/aiko-greenhouse-row",
+            "affected_actor_id": "aiko"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "aiko",
+        "self": {
+          "identity": {
+            "actor_id": "aiko",
+            "name": "Aiko",
+            "age": 24
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 18,
+            "spirit": 75,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s03",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s03"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "RegionOperation"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s03",
+            "label": "Harvest the marked row and carry the bean basket.",
+            "action_family": "RegionOperation",
+            "arguments": {
+              "region_id": "wb-rq1-v2-b22-s03-region"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 18,
+            "spirit": 75,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "greenhouse-bean-basket",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "mature-bean-pod",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": {
+          "region_id": "wb-rq1-v2-b22-s03-region",
+          "output_asset_id": "greenhouse-bean-basket",
+          "yield_quantity": 1,
+          "capacity": 3,
+          "refresh_ticks": 180,
+          "replenish_quantity": 1,
+          "operation_ticks": 12,
+          "interaction_range": 8.0,
+          "required_tool_type_id": "",
+          "required_capability_id": "gather",
+          "minimum_capability": 0,
+          "durability_cost": 0,
+          "world_x": 100.0,
+          "world_y": 100.0
+        },
+        "region_override": {
+          "stock": 3,
+          "refresh_at_ticks": null,
+          "revision": 1
+        },
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b22-s04",
+      "actor_id": "rosa",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Sort the reed auction lot",
+        "situation": "Rosa must separate the inspected reed bundles into the marked auction bay before bidding opens.",
+        "immediate_objective": "Complete the lot-sorting operation at the reed auction bay.",
+        "subject_ref": "region/reed-auction-bay",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s04/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "Rosa is listed on the harvest auction work board."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s04/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "The inspected bundles and empty marked bay are present."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "kind": "active_goal_or_deadline",
+            "source_ref": "actor/rosa/region/reed-auction-bay",
+            "fact_ids": [
+              "rq1-v2-b22-s04/fact/1",
+              "rq1-v2-b22-s04/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s04",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/harvest-auction-board"
+          },
+          "role_assignment": {
+            "organization_id": "organization/harvest-auction-board",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/harvest-auction-board"
+          },
+          "raw_evidence": {
+            "relation_kind": "OrganizationMembership",
+            "source_kind": "Organization",
+            "source_id": "organization/harvest-auction-board",
+            "affected_actor_id": "rosa"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "rosa",
+        "self": {
+          "identity": {
+            "actor_id": "rosa",
+            "name": "Rosa",
+            "age": 51
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 59,
+            "spirit": 48,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s04",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s04"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "RegionOperation"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s04",
+            "label": "Complete the lot-sorting operation at the reed auction bay.",
+            "action_family": "RegionOperation",
+            "arguments": {
+              "region_id": "wb-rq1-v2-b22-s04-region"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 59,
+            "spirit": 48,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "inspected-reed-bundle",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "sorted-reed-lot",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": {
+          "region_id": "wb-rq1-v2-b22-s04-region",
+          "output_asset_id": "sorted-reed-lot",
+          "yield_quantity": 1,
+          "capacity": 3,
+          "refresh_ticks": 180,
+          "replenish_quantity": 1,
+          "operation_ticks": 12,
+          "interaction_range": 8.0,
+          "required_tool_type_id": "",
+          "required_capability_id": "gather",
+          "minimum_capability": 0,
+          "durability_cost": 0,
+          "world_x": 100.0,
+          "world_y": 100.0
+        },
+        "region_override": {
+          "stock": 3,
+          "refresh_at_ticks": null,
+          "revision": 1
+        },
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b22-s05",
+      "actor_id": "silas",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Sanitize the shared cistern intake",
+        "situation": "Silas has access to the household cistern intake after a contamination flag was posted.",
+        "immediate_objective": "Flush and sanitize the marked intake before household use resumes.",
+        "subject_ref": "region/shared-cistern-intake",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s05/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The cistern intake carries a current contamination flag."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s05/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Silas has the sanitation procedure card for this intake."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "known_commitment_or_schedule",
+            "source_ref": "actor/silas/region/shared-cistern-intake",
+            "fact_ids": [
+              "rq1-v2-b22-s05/fact/1",
+              "rq1-v2-b22-s05/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s05",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/household-sanitation"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "CapabilityRequirement",
+            "source_kind": "Capability",
+            "source_id": "capability/household-sanitation",
+            "affected_actor_id": "silas"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "silas",
+        "self": {
+          "identity": {
+            "actor_id": "silas",
+            "name": "Silas",
+            "age": 58
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 44,
+            "spirit": 33,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s05",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s05"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "RegionOperation"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s05",
+            "label": "Flush and sanitize the marked intake before household use resumes.",
+            "action_family": "RegionOperation",
+            "arguments": {
+              "region_id": "wb-rq1-v2-b22-s05-region"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 44,
+            "spirit": 33,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "contamination-residue",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "sanitized-intake-token",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": {
+          "region_id": "wb-rq1-v2-b22-s05-region",
+          "output_asset_id": "sanitized-intake-token",
+          "yield_quantity": 1,
+          "capacity": 3,
+          "refresh_ticks": 180,
+          "replenish_quantity": 1,
+          "operation_ticks": 12,
+          "interaction_range": 8.0,
+          "required_tool_type_id": "",
+          "required_capability_id": "gather",
+          "minimum_capability": 0,
+          "durability_cost": 0,
+          "world_x": 100.0,
+          "world_y": 100.0
+        },
+        "region_override": {
+          "stock": 3,
+          "refresh_at_ticks": null,
+          "revision": 1
+        },
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b22-s06",
+      "actor_id": "quinn",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Assemble the cold-chain parcel",
+        "situation": "Quinn has insulated wraps and a cooling brick for a medicine delivery leaving by noon.",
+        "immediate_objective": "Craft one sealed cold-chain parcel for the courier.",
+        "subject_ref": "logistics/cold-chain-parcel",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s06/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The medicine ledger requires cold-chain packaging."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s06/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Quinn carries two wraps and one charged cooling brick."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "kind": "known_commitment_or_schedule",
+            "source_ref": "actor/quinn/logistics/cold-chain-parcel",
+            "fact_ids": [
+              "rq1-v2-b22-s06/fact/1",
+              "rq1-v2-b22-s06/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s06",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/medicine-cold-chain"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "CommitmentBinding",
+            "source_kind": "Commitment",
+            "source_id": "commitment/medicine-cold-chain",
+            "affected_actor_id": "quinn"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "quinn",
+        "self": {
+          "identity": {
+            "actor_id": "quinn",
+            "name": "Quinn",
+            "age": 44
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 27,
+            "spirit": 62,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "insulated-wrap",
+                "quantity": 2
+              },
+              {
+                "asset_id": "cooling-brick",
+                "quantity": 1
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s06",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s06"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "Craft"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s06",
+            "label": "Craft one sealed cold-chain parcel for the courier.",
+            "action_family": "Craft",
+            "arguments": {
+              "recipe_id": "wb-rq1-v2-b22-s06-recipe"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 27,
+            "spirit": 62,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "insulated-wrap",
+              "quantity": 2
+            },
+            {
+              "asset_id": "cooling-brick",
+              "quantity": 1
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "cooling-brick",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "insulated-wrap",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "sealed-cold-chain-parcel",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": {
+          "recipe_id": "wb-rq1-v2-b22-s06-recipe",
+          "place_id": null,
+          "required_capability_id": "craft",
+          "minimum_capability": 0,
+          "required_asset_id": null,
+          "inputs": [
+            {
+              "asset_id": "insulated-wrap",
+              "quantity": 2
+            },
+            {
+              "asset_id": "cooling-brick",
+              "quantity": 1
+            }
+          ],
+          "outputs": [
+            {
+              "asset_id": "sealed-cold-chain-parcel",
+              "quantity": 1
+            }
+          ]
+        },
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b22-s07",
+      "actor_id": "alice",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Send lift fasteners to the smithy",
+        "situation": "Alice holds the spare lift fasteners allocated to Celia's smithy repair bench.",
+        "immediate_objective": "Transfer the fasteners to Celia before the lift repair starts.",
+        "subject_ref": "transfer/lift-fasteners",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s07/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The repair picklist names Celia's bench as recipient."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s07/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Alice carries four sealed fastener sets."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "weak_local_context",
+            "source_ref": "actor/alice/transfer/lift-fasteners",
+            "fact_ids": [
+              "rq1-v2-b22-s07/fact/1",
+              "rq1-v2-b22-s07/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s07",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/mine-repair-picklist"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "InformationCustody",
+            "source_kind": "Information",
+            "source_id": "information/mine-repair-picklist",
+            "affected_actor_id": "alice"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "alice",
+        "self": {
+          "identity": {
+            "actor_id": "alice",
+            "name": "Alice",
+            "age": 20
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 42,
+            "spirit": 58,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "lift-fastener-set",
+                "quantity": 4
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s07",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s07"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "AssetTransfer"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s07",
+            "label": "Transfer the fasteners to Celia before the lift repair starts.",
+            "action_family": "AssetTransfer",
+            "arguments": {
+              "source_kind": "Actor",
+              "source_id": "alice",
+              "destination_kind": "Actor",
+              "destination_id": "celia",
+              "asset_id": "lift-fastener-set",
+              "quantity": 2
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 42,
+            "spirit": 58,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "lift-fastener-set",
+              "quantity": 4
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "lift-fastener-set",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [
+          {
+            "owner_kind": "Actor",
+            "owner_id": "celia",
+            "balances": []
+          }
+        ],
+        "recipe": null,
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b22-s08",
+      "actor_id": "bernard",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Book grain drying for the seed reserve",
+        "situation": "Bernard's seed reserve is damp and Devin's mill offers a registered low-heat drying service.",
+        "immediate_objective": "Purchase one drying batch before the reserve is sealed.",
+        "subject_ref": "service/seed-grain-drying",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s08/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The moisture strip marks the seed batch as damp."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s08/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "Devin is registered for the low-heat mill cycle."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "kind": "weak_local_context",
+            "source_ref": "actor/bernard/service/seed-grain-drying",
+            "fact_ids": [
+              "rq1-v2-b22-s08/fact/1",
+              "rq1-v2-b22-s08/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s08",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/low-heat-drying"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "CapabilityRequirement",
+            "source_kind": "Capability",
+            "source_id": "capability/low-heat-drying",
+            "affected_actor_id": "bernard"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "bernard",
+        "self": {
+          "identity": {
+            "actor_id": "bernard",
+            "name": "Bernard",
+            "age": 41
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 74,
+            "spirit": 34,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": [
+              {
+                "asset_id": "damp-seed-batch",
+                "quantity": 1
+              }
+            ]
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s08",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s08"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "ServiceExchange"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s08",
+            "label": "Purchase one drying batch before the reserve is sealed.",
+            "action_family": "ServiceExchange",
+            "arguments": {
+              "service_id": "wb-rq1-v2-b22-s08-service",
+              "provider_actor_id": "devin",
+              "target_item_instance_id": null
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 74,
+            "spirit": 34,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            },
+            {
+              "asset_id": "damp-seed-batch",
+              "quantity": 1
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "damp-seed-batch",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "dried-seed-batch",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": {
+          "service_id": "wb-rq1-v2-b22-s08-service",
+          "place_id": "mill",
+          "provider_actor_ids": [
+            "devin"
+          ],
+          "provider_owner_kind": "Shop",
+          "provider_container_id": "mill-stock",
+          "coin_fee": 2,
+          "customer_inputs": [
+            {
+              "asset_id": "damp-seed-batch",
+              "quantity": 1
+            }
+          ],
+          "provider_inputs": [],
+          "customer_outputs": [
+            {
+              "asset_id": "dried-seed-batch",
+              "quantity": 1
+            }
+          ],
+          "target_item_type_ids": [],
+          "durability_restore": 0
+        }
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b22-s09",
+      "actor_id": "grace",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Cut the mature thatching reed strip",
+        "situation": "Grace is assigned to the mature reed strip reserved for roof repairs.",
+        "immediate_objective": "Harvest the marked strip and produce one tied reed bundle.",
+        "subject_ref": "region/thatching-reed-strip",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s09/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The repair board assigns the marked strip to Grace."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s09/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "The reed heads on the marked strip are mature."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "background_context",
+            "source_ref": "actor/grace/region/thatching-reed-strip",
+            "fact_ids": [
+              "rq1-v2-b22-s09/fact/1",
+              "rq1-v2-b22-s09/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s09",
+          "edge_kind": "AssignedToActor",
+          "affected_node": {
+            "kind": "Actor",
+            "id": "grace"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "relation_kind": "ActorAssignment",
+            "source_kind": "Assignment",
+            "source_id": "assignment/grace-reed-strip",
+            "affected_actor_id": "grace"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "grace",
+        "self": {
+          "identity": {
+            "actor_id": "grace",
+            "name": "Grace",
+            "age": 35
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 46,
+            "spirit": 29,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s09",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s09"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [
+          "RegionOperation"
+        ],
+        "entries": [
+          {
+            "action_id": "action-rq1-v2-b22-s09",
+            "label": "Harvest the marked strip and produce one tied reed bundle.",
+            "action_family": "RegionOperation",
+            "arguments": {
+              "region_id": "wb-rq1-v2-b22-s09-region"
+            },
+            "validation_state": {
+              "available": true,
+              "reason": null
+            }
+          }
+        ]
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 46,
+            "spirit": 29,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "mature-thatching-reed",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "tied-thatching-reed",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": {
+          "region_id": "wb-rq1-v2-b22-s09-region",
+          "output_asset_id": "tied-thatching-reed",
+          "yield_quantity": 1,
+          "capacity": 3,
+          "refresh_ticks": 180,
+          "replenish_quantity": 1,
+          "operation_ticks": 12,
+          "interaction_range": 8.0,
+          "required_tool_type_id": "",
+          "required_capability_id": "gather",
+          "minimum_capability": 0,
+          "durability_cost": 0,
+          "world_x": 100.0,
+          "world_y": 100.0
+        },
+        "region_override": {
+          "stock": 3,
+          "refresh_at_ticks": null,
+          "revision": 1
+        },
+        "listing": null,
+        "service": null
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b22-s10",
+      "actor_id": "elin",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "title": "Pause the school escort with no authorized carrier",
+        "situation": "Elin has three children waiting after lessons, but her visible roster contains no authorized escort, active carriage service or safe transfer route.",
+        "immediate_objective": "Keep the children at the supervised school room while no grounded escort path exists.",
+        "subject_ref": "care/school-escort-gap",
+        "actor_visible_facts": [
+          {
+            "fact_id": "rq1-v2-b22-s10/fact/1",
+            "kind": "CurrentObservation",
+            "statement": "The children remain in the supervised school room."
+          },
+          {
+            "fact_id": "rq1-v2-b22-s10/fact/2",
+            "kind": "CurrentObservation",
+            "statement": "The current roster contains no authorized escort or active carriage service."
+          }
+        ]
+      },
+      "public_facts": [],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "kind": "background_context",
+            "source_ref": "actor/elin/care/school-escort-gap",
+            "fact_ids": [
+              "rq1-v2-b22-s10/fact/1",
+              "rq1-v2-b22-s10/fact/2"
+            ]
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b22-s10",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/school-household-roster"
+          },
+          "role_assignment": {
+            "organization_id": "organization/school-household-roster",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/school-household-roster"
+          },
+          "raw_evidence": {
+            "relation_kind": "OrganizationMembership",
+            "source_kind": "Organization",
+            "source_id": "organization/school-household-roster",
+            "affected_actor_id": "elin"
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "elin",
+        "self": {
+          "identity": {
+            "actor_id": "elin",
+            "name": "Elin",
+            "age": 22
+          },
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 54,
+            "spirit": 22,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "fungible_balances": []
+          },
+          "currency": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ],
+          "equipment": {
+            "version": 1,
+            "equipped_instance_id": null
+          }
+        },
+        "personality": {
+          "cognitive_function_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "trait_ids": [
+            "formal",
+            "pressure-aware"
+          ]
+        },
+        "active_goals": [
+          {
+            "goal_id": "goal-rq1-v2-b22-s10",
+            "objective_kind": "Experience",
+            "experience_id": "resolve-rq1-v2-b22-s10"
+          }
+        ],
+        "current_plan": null,
+        "knowledge": {
+          "known_target_spatial_state": [],
+          "known_opportunity_state": {
+            "damage": [],
+            "consumption": [],
+            "pickup": [],
+            "resource_yield": []
+          },
+          "known_attendance_destinations": []
+        }
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "now_tick": 300,
+        "ticks_per_day": 960,
+        "actor_state": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 54,
+            "spirit": 22,
+            "disease": "Healthy"
+          },
+          "balances": [
+            {
+              "asset_id": "coin",
+              "quantity": 8
+            }
+          ]
+        },
+        "asset_definitions": [
+          {
+            "asset_id": "arrival-receipt",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          },
+          {
+            "asset_id": "escort-roster",
+            "storage_kind": "Fungible",
+            "maximum_durability": null
+          }
+        ],
+        "container_overrides": [],
+        "recipe": null,
+        "region": null,
+        "region_override": null,
+        "listing": null,
+        "service": null
+      }
+    }
+  ]
+}

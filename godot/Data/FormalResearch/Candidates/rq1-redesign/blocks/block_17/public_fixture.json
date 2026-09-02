@@ -1,0 +1,1549 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_17",
+  "block_id": "block_17",
+  "decision_tick": 300,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": null
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b17-s01",
+      "actor_id": "farah",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s01",
+        "actor_id": "farah",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "bridge_freight_window",
+        "subject_ref": "east-bridge-freight-window",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Farah's builders roster calls for an east-bridge freight handoff, but the guarded window opens after its decision deadline.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s01/fact-1",
+          "rq1-v2-b17-s01/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s01/fact-1",
+          "source_event_id": "rq1-v2-b17-s01/event",
+          "text": "The handoff window opens at tick 340."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s01/fact-2",
+          "source_event_id": "rq1-v2-b17-s01/event",
+          "text": "This decision expires at tick 312, and no earlier freight terminal is registered."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "body_or_hard_obligation",
+            "source_ref": "rq1-v2-b17-s01/goal",
+            "description": "Handle the bridge freight duty within the stated time boundary."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s01",
+          "edge_kind": "MemberOfOrganization",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "organization/town-builders"
+          },
+          "role_assignment": {
+            "organization_id": "organization/town-builders",
+            "responsibility_kind": "Resource",
+            "responsibility_id": "organization/town-builders"
+          },
+          "raw_evidence": {
+            "edge_code": "organization_membership",
+            "source_event_id": "rq1-v2-b17-s01/event",
+            "source_kind": "OrganizationMembershipRecord",
+            "bridge_ref": "organization/town-builders",
+            "actor_visible_text": "The builders roster identifies Farah, while the bridge office posts tick 340 as the first freight handoff."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "farah",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/farah",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 49,
+            "spirit": 31,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 10
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:farah"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "farah-home",
+              "farah-private-room",
+              "community-garden",
+              "town-square",
+              "inn",
+              "east-bridge-freight-window"
+            ],
+            "known_actor_ids": [
+              "kara",
+              "lucas",
+              "mira"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s01/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/farah/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s01/goal",
+            "kind": "obligation_logistics",
+            "subject_ref": "east-bridge-freight-window",
+            "status": "Active",
+            "description": "Handle the bridge freight duty within the stated time boundary."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/0/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "east-bridge-freight-window",
+            "opens_at_tick": 340,
+            "decision_deadline_tick": 312,
+            "status": "sealed"
+          }
+        ]
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b17-s02",
+      "actor_id": "felix",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s02",
+        "actor_id": "felix",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "mill_hoist_seal",
+        "subject_ref": "mill-hoist-2",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "A vibration report affects mill hoist two, but town rules bar use until an independent safety seal is filed.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s02/fact-1",
+          "rq1-v2-b17-s02/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s02/fact-1",
+          "source_event_id": "rq1-v2-b17-s02/event",
+          "text": "Safety record hoist-seal-2 is not filed."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s02/fact-2",
+          "source_event_id": "rq1-v2-b17-s02/event",
+          "text": "Felix is not an inspector, and this bounded catalogue contains no inspection terminal."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "signal_class": "body_or_hard_obligation",
+            "source_ref": "rq1-v2-b17-s02/goal",
+            "description": "Keep the hoist task within the filed safety record."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s02",
+          "edge_kind": "AffectsPlace",
+          "affected_node": {
+            "kind": "Place",
+            "id": "place/mill-hoist-2"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "place_impact",
+            "source_event_id": "rq1-v2-b17-s02/event",
+            "source_kind": "PlaceStateEvent",
+            "bridge_ref": "place/mill-hoist-2",
+            "actor_visible_text": "The vibration event marks mill-hoist-2 and cites a missing independent safety seal."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "felix",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/felix",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 57,
+            "spirit": 72,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "felix-hoe",
+                "item_type_id": "hoe",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "felix-hoe"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 9
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            }
+          ],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:felix"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "clara-home",
+              "felix-private-room",
+              "community-garden",
+              "town-square",
+              "inn",
+              "mill-hoist-2"
+            ],
+            "known_actor_ids": [
+              "clara",
+              "grace",
+              "dorian"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s02/event"
+            ],
+            "unresolved_refs": [
+              "record/hoist-seal-2"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/felix/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s02/goal",
+            "kind": "tools_maintenance",
+            "subject_ref": "mill-hoist-2",
+            "status": "Active",
+            "description": "Keep the hoist task within the filed safety record."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/1/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "record_gate",
+            "record_id": "hoist-seal-2",
+            "required_signer_role": "town-safety-inspector",
+            "filed": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b17-s03",
+      "actor_id": "grace",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s03",
+        "actor_id": "grace",
+        "task_domain": "food_production",
+        "problem_kind": "field_meal_delivery",
+        "subject_ref": "felix-field-meal",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Grace promised to pass Felix the packed meal before his afternoon field shift.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s03/fact-1",
+          "rq1-v2-b17-s03/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s03/fact-1",
+          "source_event_id": "rq1-v2-b17-s03/event",
+          "text": "Grace holds one packed meal."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s03/fact-2",
+          "source_event_id": "rq1-v2-b17-s03/event",
+          "text": "Felix's actor container is registered and already holds one separate meal."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "active_goal",
+            "source_ref": "rq1-v2-b17-s03/goal",
+            "description": "Fulfil the field-meal promise."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s03",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/grace-felix-meal"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "rq1-v2-b17-s03/event",
+            "source_kind": "CommitmentRecord",
+            "bridge_ref": "commitment/grace-felix-meal",
+            "actor_visible_text": "The meal promise binds Grace to hand one packed meal to Felix by tick 312."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "grace",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/grace",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 46,
+            "spirit": 29,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [
+              {
+                "item_instance_id": "grace-sickle",
+                "item_type_id": "sickle",
+                "durability": 100,
+                "maximum_durability": 100,
+                "version": 1
+              }
+            ],
+            "equipped_hand_instance_id": "grace-sickle"
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            }
+          ],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:grace"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "clara-home",
+              "grace-private-room",
+              "community-garden",
+              "town-square",
+              "inn",
+              "felix-field-meal"
+            ],
+            "known_actor_ids": [
+              "felix",
+              "dorian",
+              "hugo"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s03/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/grace/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s03/goal",
+            "kind": "food_production",
+            "subject_ref": "felix-field-meal",
+            "status": "Active",
+            "description": "Fulfil the field-meal promise."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/2/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "asset_container",
+            "owner_kind": "Actor",
+            "owner_id": "grace",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 6
+              },
+              {
+                "asset_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "revision": 1
+          },
+          {
+            "kind": "asset_container",
+            "owner_kind": "Actor",
+            "owner_id": "felix",
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 9
+              },
+              {
+                "asset_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "revision": 1
+          }
+        ]
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b17-s04",
+      "actor_id": "hugo",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s04",
+        "actor_id": "hugo",
+        "task_domain": "trade_harvest",
+        "problem_kind": "unsigned_buyback_note",
+        "subject_ref": "marsh-reed-buyback",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Hugo has a note about a marsh-reed buyback, but it names no registered listing, stock, or buyer.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s04/fact-1",
+          "rq1-v2-b17-s04/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s04/fact-1",
+          "source_event_id": "rq1-v2-b17-s04/event",
+          "text": "No marsh-reed asset or listing exists in the current product catalogue."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s04/fact-2",
+          "source_event_id": "rq1-v2-b17-s04/event",
+          "text": "The note supplies no buyer actor or registered business container."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "signal_class": "active_goal",
+            "source_ref": "rq1-v2-b17-s04/goal",
+            "description": "Resolve the note without creating a buyer or listing."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s04",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/marsh-reed-note"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "information_custody",
+            "source_event_id": "rq1-v2-b17-s04/event",
+            "source_kind": "InformationCustodyRecord",
+            "bridge_ref": "information/marsh-reed-note",
+            "actor_visible_text": "Hugo holds the only note, and its buyer and listing fields are blank."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "hugo",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/hugo",
+        "self": {
+          "body": {
+            "health_current": 85,
+            "health_maximum": 100,
+            "satiety": 24,
+            "spirit": 49,
+            "disease": "Ill",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 4
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:hugo"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "dorian-home",
+              "hugo-private-room",
+              "general-store",
+              "town-square",
+              "inn",
+              "marsh-reed-buyback"
+            ],
+            "known_actor_ids": [
+              "dorian",
+              "iris",
+              "elin"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s04/event"
+            ],
+            "unresolved_refs": [
+              "asset/marsh-reed",
+              "listing/marsh-reed-buyback"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/hugo/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s04/goal",
+            "kind": "trade_harvest",
+            "subject_ref": "marsh-reed-buyback",
+            "status": "Active",
+            "description": "Resolve the note without creating a buyer or listing."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/3/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "reference_resolution",
+            "reference_id": "marsh-reed-buyback",
+            "registered_place": false,
+            "registered_actor": false,
+            "registered_container": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b17-s05",
+      "actor_id": "iris",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s05",
+        "actor_id": "iris",
+        "task_domain": "care_household",
+        "problem_kind": "cold_box_handoff",
+        "subject_ref": "clinic-cold-box-window",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Iris owes a household cold-box handoff, but the clinic releases sealed boxes only after this need expires.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s05/fact-1",
+          "rq1-v2-b17-s05/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s05/fact-1",
+          "source_event_id": "rq1-v2-b17-s05/event",
+          "text": "The clinic release ledger remains sealed until tick 360."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s05/fact-2",
+          "source_event_id": "rq1-v2-b17-s05/event",
+          "text": "The need expires at tick 312 and has no earlier registered terminal."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_schedule",
+            "source_ref": "rq1-v2-b17-s05/goal",
+            "description": "Respect the cold-box release boundary."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s05",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/iris-cold-box"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "rq1-v2-b17-s05/event",
+            "source_kind": "CommitmentRecord",
+            "bridge_ref": "commitment/iris-cold-box",
+            "actor_visible_text": "The handoff promise is current; the clinic release ledger starts at tick 360."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "iris",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/iris",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 66,
+            "spirit": 68,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 11
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:iris"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "dorian-home",
+              "iris-private-room",
+              "mill",
+              "town-square",
+              "inn",
+              "clinic-cold-box-window"
+            ],
+            "known_actor_ids": [
+              "hugo",
+              "elin",
+              "jonah"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s05/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/iris/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s05/goal",
+            "kind": "care_household",
+            "subject_ref": "clinic-cold-box-window",
+            "status": "Active",
+            "description": "Respect the cold-box release boundary."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/4/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "clinic-cold-box-window",
+            "opens_at_tick": 360,
+            "decision_deadline_tick": 312,
+            "status": "sealed"
+          }
+        ]
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b17-s06",
+      "actor_id": "jonah",
+      "domain": "obligation_logistics",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s06",
+        "actor_id": "jonah",
+        "task_domain": "obligation_logistics",
+        "problem_kind": "unregistered_route_crate",
+        "subject_ref": "route-crate-blue-4",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Jonah's route note mentions a blue crate, but no current container or holder owns that identifier.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s06/fact-1",
+          "rq1-v2-b17-s06/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s06/fact-1",
+          "source_event_id": "rq1-v2-b17-s06/event",
+          "text": "route-crate-blue-4 is absent from actor, shop, and warehouse containers."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s06/fact-2",
+          "source_event_id": "rq1-v2-b17-s06/event",
+          "text": "No destination transfer proposal can bind an absent source."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "signal_class": "current_schedule",
+            "source_ref": "rq1-v2-b17-s06/goal",
+            "description": "Do not route a crate that has no world identity."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s06",
+          "edge_kind": "ControlsOrHoldsResource",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "resource/route-crate-blue-4"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "resource_custody",
+            "source_event_id": "rq1-v2-b17-s06/event",
+            "source_kind": "AssetCustodyRecord",
+            "bridge_ref": "resource/route-crate-blue-4",
+            "actor_visible_text": "The route note claims custody, while the authority registry returns no holder for the crate."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "jonah",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/jonah",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 28,
+            "spirit": 60,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 5
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:jonah"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "elin-home",
+              "jonah-private-room",
+              "town-warehouse",
+              "town-square",
+              "inn",
+              "route-crate-blue-4"
+            ],
+            "known_actor_ids": [
+              "elin",
+              "kara",
+              "farah"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s06/event"
+            ],
+            "unresolved_refs": [
+              "route-crate-blue-4"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/jonah/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s06/goal",
+            "kind": "obligation_logistics",
+            "subject_ref": "route-crate-blue-4",
+            "status": "Active",
+            "description": "Do not route a crate that has no world identity."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/5/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "reference_resolution",
+            "reference_id": "route-crate-blue-4",
+            "registered_place": false,
+            "registered_actor": false,
+            "registered_container": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b17-s07",
+      "actor_id": "kara",
+      "domain": "tools_maintenance",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s07",
+        "actor_id": "kara",
+        "task_domain": "tools_maintenance",
+        "problem_kind": "borrowed_plough_release",
+        "subject_ref": "borrowed-plough-3",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Kara promised to return a borrowed plough, but its post-repair inspection certificate has not been signed.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s07/fact-1",
+          "rq1-v2-b17-s07/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s07/fact-1",
+          "source_event_id": "rq1-v2-b17-s07/event",
+          "text": "Certificate plough-3-release is not filed."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s07/fact-2",
+          "source_event_id": "rq1-v2-b17-s07/event",
+          "text": "Only a guild equipment inspector may sign it; Kara has no such role or terminal."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "role_relevance",
+            "source_ref": "rq1-v2-b17-s07/goal",
+            "description": "Keep the return within the signed equipment record."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s07",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/kara-plough-return"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "rq1-v2-b17-s07/event",
+            "source_kind": "CommitmentRecord",
+            "bridge_ref": "commitment/kara-plough-return",
+            "actor_visible_text": "The return promise cites certificate plough-3-release, whose filed flag is false."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "kara",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/kara",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 62,
+            "spirit": 40,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              },
+              {
+                "item_type_id": "seeds",
+                "quantity": 10
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 7
+            }
+          ],
+          "capabilities": [
+            {
+              "capability_id": "farm",
+              "value": 1
+            }
+          ],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:kara"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "elin-home",
+              "kara-private-room",
+              "community-garden",
+              "town-square",
+              "inn",
+              "borrowed-plough-3"
+            ],
+            "known_actor_ids": [
+              "jonah",
+              "farah",
+              "lucas"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s07/event"
+            ],
+            "unresolved_refs": [
+              "record/plough-3-release"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/kara/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s07/goal",
+            "kind": "tools_maintenance",
+            "subject_ref": "borrowed-plough-3",
+            "status": "Active",
+            "description": "Keep the return within the signed equipment record."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/6/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "record_gate",
+            "record_id": "plough-3-release",
+            "required_signer_role": "guild-equipment-inspector",
+            "filed": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b17-s08",
+      "actor_id": "dorian",
+      "domain": "food_production",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s08",
+        "actor_id": "dorian",
+        "task_domain": "food_production",
+        "problem_kind": "oven_release_slot",
+        "subject_ref": "inn-oven-release-4",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Dorian holds the oven schedule, which shows the next licensed bake slot begins after the batch deadline.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s08/fact-1",
+          "rq1-v2-b17-s08/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s08/fact-1",
+          "source_event_id": "rq1-v2-b17-s08/event",
+          "text": "Oven four remains locked until tick 336."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s08/fact-2",
+          "source_event_id": "rq1-v2-b17-s08/event",
+          "text": "The batch need expires at tick 312, with no alternate oven terminal in the catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "signal_class": "role_relevance",
+            "source_ref": "rq1-v2-b17-s08/goal",
+            "description": "Use only the licensed oven slot for the batch."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s08",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "information/inn-oven-schedule"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "information_custody",
+            "source_event_id": "rq1-v2-b17-s08/event",
+            "source_kind": "InformationCustodyRecord",
+            "bridge_ref": "information/inn-oven-schedule",
+            "actor_visible_text": "The signed schedule gives tick 336 as the next release for oven four."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "dorian",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/dorian",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 71,
+            "spirit": 65,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 24
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:dorian"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "dorian-home",
+              "dorian-private-room",
+              "general-store",
+              "town-square",
+              "inn",
+              "inn-oven-release-4"
+            ],
+            "known_actor_ids": [
+              "grace",
+              "hugo",
+              "iris"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s08/event"
+            ],
+            "unresolved_refs": []
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/dorian/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s08/goal",
+            "kind": "food_production",
+            "subject_ref": "inn-oven-release-4",
+            "status": "Active",
+            "description": "Use only the licensed oven slot for the batch."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/7/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "time_gate",
+            "gate_id": "inn-oven-release-4",
+            "opens_at_tick": 336,
+            "decision_deadline_tick": 312,
+            "status": "locked"
+          }
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b17-s09",
+      "actor_id": "mira",
+      "domain": "trade_harvest",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s09",
+        "actor_id": "mira",
+        "task_domain": "trade_harvest",
+        "problem_kind": "nameless_fruit_buyer",
+        "subject_ref": "west-fruit-buyer",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Mira recalls a fruit-sale promise, but the buyer label does not resolve to an actor, shop, or listing.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s09/fact-1",
+          "rq1-v2-b17-s09/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s09/fact-1",
+          "source_event_id": "rq1-v2-b17-s09/event",
+          "text": "west-fruit-buyer resolves to no registered actor or business."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s09/fact-2",
+          "source_event_id": "rq1-v2-b17-s09/event",
+          "text": "No listed exchange in the catalogue uses that buyer label."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "known_fact_only",
+            "source_ref": "rq1-v2-b17-s09/goal",
+            "description": "Avoid inventing a counterparty for the fruit promise."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s09",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "commitment/mira-fruit-sale"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "commitment_binding",
+            "source_event_id": "rq1-v2-b17-s09/event",
+            "source_kind": "CommitmentRecord",
+            "bridge_ref": "commitment/mira-fruit-sale",
+            "actor_visible_text": "The promise names west-fruit-buyer without a world reference or fixed price listing."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "mira",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/mira",
+        "self": {
+          "body": {
+            "health_current": 70,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 18,
+            "disease": "SevereIllness",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 6
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:mira"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "farah-home",
+              "mira-private-room",
+              "community-garden",
+              "town-square",
+              "inn",
+              "west-fruit-buyer"
+            ],
+            "known_actor_ids": [
+              "lucas",
+              "nolan",
+              "opal"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s09/event"
+            ],
+            "unresolved_refs": [
+              "west-fruit-buyer"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/mira/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s09/goal",
+            "kind": "trade_harvest",
+            "subject_ref": "west-fruit-buyer",
+            "status": "Active",
+            "description": "Avoid inventing a counterparty for the fruit promise."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/8/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "reference_resolution",
+            "reference_id": "west-fruit-buyer",
+            "registered_place": false,
+            "registered_actor": false,
+            "registered_container": false
+          }
+        ]
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b17-s10",
+      "actor_id": "opal",
+      "domain": "care_household",
+      "decision_tick": 300,
+      "deadline_tick": 540,
+      "pressure_packet": {
+        "pressure_id": "rq1-v2-b17-s10",
+        "actor_id": "opal",
+        "task_domain": "care_household",
+        "problem_kind": "dose_chart_release",
+        "subject_ref": "household-dose-chart",
+        "decision_tick": 300,
+        "deadline_tick": 312,
+        "summary": "Opal can read the household dose chart, but a clinician's compatibility signoff is still missing.",
+        "actor_visible_fact_refs": [
+          "rq1-v2-b17-s10/fact-1",
+          "rq1-v2-b17-s10/fact-2"
+        ]
+      },
+      "public_facts": [
+        {
+          "evidence_id": "rq1-v2-b17-s10/fact-1",
+          "source_event_id": "rq1-v2-b17-s10/event",
+          "text": "Record dose-chart-signoff is not filed."
+        },
+        {
+          "evidence_id": "rq1-v2-b17-s10/fact-2",
+          "source_event_id": "rq1-v2-b17-s10/event",
+          "text": "No clinician-signoff terminal is present in Opal's bounded catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "signal_class": "known_fact_only",
+            "source_ref": "rq1-v2-b17-s10/goal",
+            "description": "Keep the household dose decision within the signed clinical record."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b17-s10",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "capability/clinical-signoff"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "edge_code": "capability_requirement",
+            "source_event_id": "rq1-v2-b17-s10/event",
+            "source_kind": "CapabilityRequirement",
+            "bridge_ref": "capability/clinical-signoff",
+            "actor_visible_text": "The chart requires a clinician signoff, and Opal's current capabilities contain no medicine entry."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "actor_id": "opal",
+        "base_profile_ref": "godot/Config/town_world.json#/population/actors/opal",
+        "self": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 44,
+            "disease": "Healthy",
+            "movement_mode": "Land"
+          },
+          "inventory": {
+            "version": 1,
+            "equipment_version": 1,
+            "stacks": [
+              {
+                "item_type_id": "meal",
+                "quantity": 1
+              }
+            ],
+            "instances": [],
+            "equipped_hand_instance_id": null
+          },
+          "currency": [
+            {
+              "currency_id": "coin",
+              "quantity": 12
+            }
+          ],
+          "capabilities": [],
+          "access_refs": [
+            "settlement:brackenford-town",
+            "actor:opal"
+          ],
+          "knowledge": {
+            "known_place_refs": [
+              "brackenford-home-07",
+              "opal-private-room",
+              "carpentry",
+              "town-square",
+              "inn",
+              "household-dose-chart"
+            ],
+            "known_actor_ids": [
+              "nolan",
+              "pavel",
+              "quinn"
+            ],
+            "source_event_ids": [
+              "rq1-v2-b17-s10/event"
+            ],
+            "unresolved_refs": [
+              "record/dose-chart-signoff"
+            ]
+          }
+        },
+        "personality_ref": "godot/Config/town_world.json#/population/actors/opal/personality",
+        "active_goals": [
+          {
+            "goal_id": "rq1-v2-b17-s10/goal",
+            "kind": "care_household",
+            "subject_ref": "household-dose-chart",
+            "status": "Active",
+            "description": "Keep the household dose decision within the signed clinical record."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "source_configuration_ref": "godot/Config/town_world.json",
+        "actor_state_pointer": "#/cases/9/actor_decision_view/self",
+        "decision_tick": 300,
+        "target_snapshots": [
+          {
+            "kind": "record_gate",
+            "record_id": "dose-chart-signoff",
+            "required_signer_role": "town-clinician",
+            "filed": false
+          }
+        ]
+      }
+    }
+  ]
+}

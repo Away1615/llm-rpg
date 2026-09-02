@@ -1,0 +1,407 @@
+{
+  "schema_version": "alice.rq1-30-block-private-expectations.v1",
+  "fixture_id": "brackenford-rq1-v2-block_04",
+  "block_id": "block_04",
+  "condition_order": "agent_first",
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b04-s01",
+      "actor_id": "pavel",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 1,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "agent_only",
+        "domain": "food_production",
+        "task_family": "commit_craft",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "Craft",
+        "actor_id": "pavel",
+        "pressure_id": "rq1-v2-b04-s01"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "Craft",
+      "action_template": {
+        "game_action_id": "rq1-v2-b04-s01-action",
+        "action_family": "Craft",
+        "arguments": {
+          "recipe_id": "cook-porridge"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b04-s02",
+      "actor_id": "aiko",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 2,
+        "agent_rank_band": "A0",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "trade_harvest",
+        "task_family": "commit_region_operation",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "RegionOperation",
+        "actor_id": "aiko",
+        "pressure_id": "rq1-v2-b04-s02"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "RegionOperation",
+      "action_template": {
+        "game_action_id": "rq1-v2-b04-s02-action",
+        "action_family": "RegionOperation",
+        "arguments": {
+          "region_id": "orchard"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b04-s03",
+      "actor_id": "opal",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 3,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E1",
+        "event_edge_kind": "AffectsPlace",
+        "admission_role": "agent_only",
+        "domain": "care_household",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "opal",
+        "pressure_id": "rq1-v2-b04-s03"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "rq1-v2-b04-s03-action",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "opal",
+          "destination_kind": "Actor",
+          "destination_id": "nolan",
+          "asset_id": "meal",
+          "quantity": 1
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b04-s04",
+      "actor_id": "mira",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 4,
+        "agent_rank_band": "A1",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "agent_only",
+        "domain": "obligation_logistics",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "mira",
+        "pressure_id": "rq1-v2-b04-s04"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "no_grounded_path",
+        "reason": "The actor-visible destination key resolves to no registered place, actor or container, so no typed world action can deliver this parcel.",
+        "basis_refs": [
+          "rq1-v2-b04-s04/fact-1",
+          "rq1-v2-b04-s04/fact-2",
+          "rq1-v2-b04-s04/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b04-s05",
+      "actor_id": "quinn",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 5,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "tools_maintenance",
+        "task_family": "commit_craft",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "Craft",
+        "actor_id": "quinn",
+        "pressure_id": "rq1-v2-b04-s05"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "Craft",
+      "action_template": {
+        "game_action_id": "rq1-v2-b04-s05-action",
+        "action_family": "Craft",
+        "arguments": {
+          "recipe_id": "craft-pickaxe"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b04-s06",
+      "actor_id": "felix",
+      "domain": "food_production",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 6,
+        "agent_rank_band": "A2",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "food_production",
+        "task_family": "commit_region_operation",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "RegionOperation",
+        "actor_id": "felix",
+        "pressure_id": "rq1-v2-b04-s06"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "RegionOperation",
+      "action_template": {
+        "game_action_id": "rq1-v2-b04-s06-action",
+        "action_family": "RegionOperation",
+        "arguments": {
+          "region_id": "farm-plot-1"
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b04-s07",
+      "actor_id": "jonah",
+      "domain": "trade_harvest",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 7,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E1",
+        "event_edge_kind": "ControlsOrHoldsResource",
+        "admission_role": "neither",
+        "domain": "trade_harvest",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "jonah",
+        "pressure_id": "rq1-v2-b04-s07"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "rq1-v2-b04-s07-action",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "jonah",
+          "destination_kind": "Warehouse",
+          "destination_id": "town-supply-stock",
+          "asset_id": "fish",
+          "quantity": 1
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b04-s08",
+      "actor_id": "nolan",
+      "domain": "care_household",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 8,
+        "agent_rank_band": "A3",
+        "event_rank_band": "E0",
+        "event_edge_kind": "BoundByCommitment",
+        "admission_role": "event_only",
+        "domain": "care_household",
+        "task_family": "commit_asset_transfer",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "AssetTransfer",
+        "actor_id": "nolan",
+        "pressure_id": "rq1-v2-b04-s08"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "AssetTransfer",
+      "action_template": {
+        "game_action_id": "rq1-v2-b04-s08-action",
+        "action_family": "AssetTransfer",
+        "arguments": {
+          "source_kind": "Actor",
+          "source_id": "nolan",
+          "destination_kind": "Actor",
+          "destination_id": "opal",
+          "asset_id": "common-medicine",
+          "quantity": 1
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b04-s09",
+      "actor_id": "bram",
+      "domain": "obligation_logistics",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 9,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E0",
+        "event_edge_kind": "AssignedToActor",
+        "admission_role": "event_only",
+        "domain": "obligation_logistics",
+        "task_family": "defer_no_grounded_path",
+        "expected_terminal": "JustifiedDefer",
+        "expected_action_family": null,
+        "actor_id": "bram",
+        "pressure_id": "rq1-v2-b04-s09"
+      },
+      "expected_terminal": "JustifiedDefer",
+      "expected_action_family": null,
+      "action_template": null,
+      "grounded_reason": {
+        "category": "no_grounded_path",
+        "reason": "The only recipient code closes over no current Authority identity, leaving no typed destination for the sealed cargo.",
+        "basis_refs": [
+          "rq1-v2-b04-s09/fact-1",
+          "rq1-v2-b04-s09/fact-2",
+          "rq1-v2-b04-s09/fact-3"
+        ]
+      },
+      "success_predicate": null,
+      "validator_precheck": null
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b04-s10",
+      "actor_id": "iris",
+      "domain": "tools_maintenance",
+      "matrix": {
+        "block_id": "block_04",
+        "block_number": 4,
+        "owner_worker": "D",
+        "worker_block_index": 1,
+        "condition_order": "agent_first",
+        "overlap_tier": 0,
+        "slot": 10,
+        "agent_rank_band": "A4",
+        "event_rank_band": "E2",
+        "event_edge_kind": "MemberOfOrganization",
+        "admission_role": "neither",
+        "domain": "tools_maintenance",
+        "task_family": "commit_service_exchange",
+        "expected_terminal": "AuthorityCommitted",
+        "expected_action_family": "ServiceExchange",
+        "actor_id": "iris",
+        "pressure_id": "rq1-v2-b04-s10"
+      },
+      "expected_terminal": "AuthorityCommitted",
+      "expected_action_family": "ServiceExchange",
+      "action_template": {
+        "game_action_id": "rq1-v2-b04-s10-action",
+        "action_family": "ServiceExchange",
+        "arguments": {
+          "service_id": "smith-customer-hoe",
+          "provider_actor_id": "bram",
+          "target_item_instance_id": null
+        },
+        "binding": null
+      },
+      "grounded_reason": null,
+      "success_predicate": null,
+      "validator_precheck": null
+    }
+  ]
+}

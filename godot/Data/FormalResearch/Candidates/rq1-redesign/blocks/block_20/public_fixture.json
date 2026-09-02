@@ -1,0 +1,1569 @@
+{
+  "schema_version": "alice.rq1-30-block-public-fixture.v1",
+  "fixture_id": "brackenford-rq1-v2-block_20",
+  "block_id": "block_20",
+  "decision_tick": 200,
+  "logical_l2_budget": 4,
+  "block_context": {
+    "source_context": {
+      "world_revision": 20
+    }
+  },
+  "authority_setup": {
+    "source_state": null
+  },
+  "cases": [
+    {
+      "slot": 1,
+      "pressure_id": "rq1-v2-b20-s01",
+      "actor_id": "aiko",
+      "domain": "trade_harvest",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "Aiko's first pear lot needs a grade seal before the afternoon auction book closes.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s01-f1",
+            "text": "Clara is staffing the orchard grading desk through tick 219."
+          },
+          {
+            "fact_id": "b20-s01-f2",
+            "text": "The desk charges two coin and has three unused grade seals."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s01-f1",
+          "text": "Clara is staffing the orchard grading desk through tick 219."
+        },
+        {
+          "fact_id": "b20-s01-f2",
+          "text": "The desk charges two coin and has three unused grade seals."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "goal_id": "b20-s01-goal",
+            "evidence_type": "imminent_personal_commitment",
+            "statement": "Obtain a grade certificate for the pear lot by tick 219."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s01",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b20-s01-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s01-dep",
+            "source_type": "capability_requirement_record",
+            "subject": "fruit-grading",
+            "statement": "The auction accepts a seal from a listed fruit grader."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "aiko",
+          "body": {
+            "health_current": 95,
+            "health_maximum": 100,
+            "satiety": 42,
+            "spirit": 64,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "orchard"
+          },
+          "inventory": [
+            {
+              "asset_id": "pear-lot",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 6
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "independent"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s01-goal",
+            "evidence_type": "imminent_personal_commitment",
+            "statement": "Obtain a grade certificate for the pear lot by tick 219."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s01-f1",
+            "source_type": "grading_desk_roster",
+            "statement": "Clara has the skill and current shift for fruit grading."
+          },
+          {
+            "fact_id": "b20-s01-f2",
+            "source_type": "posted_service_terms",
+            "statement": "Two coin and one desk seal produce the certificate."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 95,
+            "health_maximum": 100,
+            "satiety": 42,
+            "spirit": 64,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 6
+              },
+              {
+                "asset_id": "pear-lot",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "orchard-grading-desk",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 0
+              },
+              {
+                "asset_id": "grade-seal",
+                "quantity": 3
+              }
+            ]
+          }
+        ],
+        "service": {
+          "service_id": "orchard-lot-grading",
+          "place_id": "orchard",
+          "provider_actor_ids": [
+            "clara"
+          ],
+          "provider_owner_kind": "Warehouse",
+          "provider_container_id": "orchard-grading-desk",
+          "coin_fee": 2,
+          "customer_inputs": [],
+          "provider_inputs": [
+            {
+              "asset_id": "grade-seal",
+              "quantity": 1
+            }
+          ],
+          "customer_outputs": [
+            {
+              "asset_id": "pear-grade-certificate",
+              "quantity": 1
+            }
+          ],
+          "target_item_type_ids": [],
+          "durability_restore": 0
+        }
+      }
+    },
+    {
+      "slot": 2,
+      "pressure_id": "rq1-v2-b20-s02",
+      "actor_id": "alice",
+      "domain": "care_household",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "Alice needs the clinic's compounded fever syrup before the household night cart leaves.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s02-f1",
+            "text": "The clinic compounder began the mandatory cooling period at tick 192."
+          },
+          {
+            "fact_id": "b20-s02-f2",
+            "text": "The batch cannot be released before tick 232, while the night cart leaves at tick 218."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s02-f1",
+          "text": "The clinic compounder began the mandatory cooling period at tick 192."
+        },
+        {
+          "fact_id": "b20-s02-f2",
+          "text": "The batch cannot be released before tick 232, while the night cart leaves at tick 218."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A0",
+          "raw_evidence": {
+            "goal_id": "b20-s02-goal",
+            "evidence_type": "urgent_body_need",
+            "statement": "Bring the compounded syrup home before tick 218."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s02",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "b20-s02-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s02-dep",
+            "source_type": "commitment_record",
+            "subject": "clinic-syrup-token",
+            "statement": "The token binds Alice to the current batch and its release rule."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "alice",
+          "body": {
+            "health_current": 76,
+            "health_maximum": 100,
+            "satiety": 51,
+            "spirit": 38,
+            "disease": "Sick"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-clinic"
+          },
+          "inventory": [
+            {
+              "asset_id": "syrup-token",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 5
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "family-focused"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s02-goal",
+            "evidence_type": "urgent_body_need",
+            "statement": "Bring the compounded syrup home before tick 218."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s02-f1",
+            "source_type": "batch_card",
+            "statement": "The cooling period started at tick 192."
+          },
+          {
+            "fact_id": "b20-s02-f2",
+            "source_type": "clinic_release_rule",
+            "statement": "Release at tick 232 is the earliest permitted handover."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 76,
+            "health_maximum": 100,
+            "satiety": 51,
+            "spirit": 38,
+            "disease": "Sick"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 5
+              },
+              {
+                "asset_id": "syrup-token",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "temporal_gates": [
+          {
+            "gate_id": "fever-syrup-cooling-period",
+            "opens_at_tick": 232
+          }
+        ]
+      }
+    },
+    {
+      "slot": 3,
+      "pressure_id": "rq1-v2-b20-s03",
+      "actor_id": "bernard",
+      "domain": "obligation_logistics",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "Bernard must close the mill's grain bond with its original signed counterfoil.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s03-f1",
+            "text": "The mill ledger names the old bond clerk as the last holder of the counterfoil."
+          },
+          {
+            "fact_id": "b20-s03-f2",
+            "text": "The clerk left Brackenford and no current archive or household register contains the document."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s03-f1",
+          "text": "The mill ledger names the old bond clerk as the last holder of the counterfoil."
+        },
+        {
+          "fact_id": "b20-s03-f2",
+          "text": "The clerk left Brackenford and no current archive or household register contains the document."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "goal_id": "b20-s03-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Close the grain bond with the original counterfoil by tick 216."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s03",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b20-s03-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s03-dep",
+            "source_type": "information_holder_record",
+            "subject": "departed-bond-clerk",
+            "statement": "The only holder record points outside the represented current town."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "bernard",
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 63,
+            "spirit": 46,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "mill"
+          },
+          "inventory": [
+            {
+              "asset_id": "grain-bond-copy",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 9
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "formal"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s03-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Close the grain bond with the original counterfoil by tick 216."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s03-f1",
+            "source_type": "mill_ledger_entry",
+            "statement": "The departed clerk was the last recorded holder."
+          },
+          {
+            "fact_id": "b20-s03-f2",
+            "source_type": "current_registry_search",
+            "statement": "No represented present holder or stored original exists."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 100,
+            "health_maximum": 100,
+            "satiety": 63,
+            "spirit": 46,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 9
+              },
+              {
+                "asset_id": "grain-bond-copy",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "asset_search": {
+          "asset_id": "original-grain-bond-counterfoil",
+          "represented_quantity": 0
+        }
+      }
+    },
+    {
+      "slot": 4,
+      "pressure_id": "rq1-v2-b20-s04",
+      "actor_id": "bram",
+      "domain": "tools_maintenance",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "The smithy steam line needs its annual pressure sign-off before the morning work order closes.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s04-f1",
+            "text": "Only the certified pressure engineer may issue the sign-off."
+          },
+          {
+            "fact_id": "b20-s04-f2",
+            "text": "The engineer's recorded return is tick 235, thirteen ticks after work-order closure."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s04-f1",
+          "text": "Only the certified pressure engineer may issue the sign-off."
+        },
+        {
+          "fact_id": "b20-s04-f2",
+          "text": "The engineer's recorded return is tick 235, thirteen ticks after work-order closure."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A1",
+          "raw_evidence": {
+            "goal_id": "b20-s04-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Secure the pressure sign-off before tick 222."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s04",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b20-s04-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s04-dep",
+            "source_type": "capability_requirement_record",
+            "subject": "pressure-sign-off",
+            "statement": "The safety method card requires a certification Bram does not hold."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "bram",
+          "body": {
+            "health_current": 93,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 60,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "smithy"
+          },
+          "inventory": [
+            {
+              "asset_id": "pressure-log",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 4
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "practical"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s04-goal",
+            "evidence_type": "active_goal_deadline",
+            "statement": "Secure the pressure sign-off before tick 222."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s04-f1",
+            "source_type": "safety_method_card",
+            "statement": "The sign-off requires the certified pressure engineer."
+          },
+          {
+            "fact_id": "b20-s04-f2",
+            "source_type": "engineer_travel_board",
+            "statement": "That engineer returns at tick 235."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 93,
+            "health_maximum": 100,
+            "satiety": 55,
+            "spirit": 60,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 4
+              },
+              {
+                "asset_id": "pressure-log",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "temporal_gates": [
+          {
+            "gate_id": "certified-pressure-engineer-present",
+            "opens_at_tick": 235
+          }
+        ]
+      }
+    },
+    {
+      "slot": 5,
+      "pressure_id": "rq1-v2-b20-s05",
+      "actor_id": "celia",
+      "domain": "food_production",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "Celia must decide whether a grain sack can enter the nursery porridge batch.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s05-f1",
+            "text": "The mill dispatch card marks sack G-42 as oat-only."
+          },
+          {
+            "fact_id": "b20-s05-f2",
+            "text": "The receiving card for the same seal number records a barley blend, and the seal is intact."
+          },
+          {
+            "fact_id": "b20-s05-f3",
+            "text": "Only the district food sampler can certify the contents; no sampler or sampling entry is represented in the current catalogue."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s05-f1",
+          "text": "The mill dispatch card marks sack G-42 as oat-only."
+        },
+        {
+          "fact_id": "b20-s05-f2",
+          "text": "The receiving card for the same seal number records a barley blend, and the seal is intact."
+        },
+        {
+          "fact_id": "b20-s05-f3",
+          "text": "Only the district food sampler can certify the contents; no sampler or sampling entry is represented in the current catalogue."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "goal_id": "b20-s05-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Use only grain whose contents are established for the nursery batch."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s05",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b20-s05-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s05-dep",
+            "source_type": "information_holder_record",
+            "subject": "district-food-sampler",
+            "statement": "The sampling rule names an absent specialist as the source of a conclusive fact."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "celia",
+          "body": {
+            "health_current": 99,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 57,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "inn"
+          },
+          "inventory": [
+            {
+              "asset_id": "sealed-grain-g42",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 3
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "protective"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s05-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Use only grain whose contents are established for the nursery batch."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s05-f1",
+            "source_type": "mill_dispatch_card",
+            "statement": "G-42 is recorded as oat-only."
+          },
+          {
+            "fact_id": "b20-s05-f2",
+            "source_type": "receiving_card",
+            "statement": "G-42 is also recorded as a barley blend."
+          },
+          {
+            "fact_id": "b20-s05-f3",
+            "source_type": "food_sampling_rule",
+            "statement": "Celia cannot certify the sealed contents from either conflicting card."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 99,
+            "health_maximum": 100,
+            "satiety": 64,
+            "spirit": 57,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 3
+              },
+              {
+                "asset_id": "sealed-grain-g42",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "sealed_asset": {
+          "asset_id": "sealed-grain-g42",
+          "seal_intact": true,
+          "certified_contents": null
+        }
+      }
+    },
+    {
+      "slot": 6,
+      "pressure_id": "rq1-v2-b20-s06",
+      "actor_id": "clara",
+      "domain": "trade_harvest",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "Clara's berry crate needs cold-wrap packing before the outbound carrier's acceptance window closes.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s06-f1",
+            "text": "Farah is staffing the warehouse cold-wrap station through tick 224."
+          },
+          {
+            "fact_id": "b20-s06-f2",
+            "text": "Packing consumes Clara's berry crate, one cold wrap and one coin, then issues a sealed export crate."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s06-f1",
+          "text": "Farah is staffing the warehouse cold-wrap station through tick 224."
+        },
+        {
+          "fact_id": "b20-s06-f2",
+          "text": "Packing consumes Clara's berry crate, one cold wrap and one coin, then issues a sealed export crate."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A2",
+          "raw_evidence": {
+            "goal_id": "b20-s06-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Prepare the sealed export crate by tick 224."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s06",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "b20-s06-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s06-dep",
+            "source_type": "commitment_record",
+            "subject": "outbound-berry-carrier",
+            "statement": "The carrier booking binds Clara to the sealed-crate handover window."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "clara",
+          "body": {
+            "health_current": 97,
+            "health_maximum": 100,
+            "satiety": 59,
+            "spirit": 68,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-warehouse"
+          },
+          "inventory": [
+            {
+              "asset_id": "berry-crate",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 4
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "businesslike"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s06-goal",
+            "evidence_type": "current_responsibility",
+            "statement": "Prepare the sealed export crate by tick 224."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s06-f1",
+            "source_type": "packing_station_roster",
+            "statement": "Farah is the current cold-wrap provider."
+          },
+          {
+            "fact_id": "b20-s06-f2",
+            "source_type": "signed_carrier_terms",
+            "statement": "The listed packing inputs satisfy the outbound carrier."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 97,
+            "health_maximum": 100,
+            "satiety": 59,
+            "spirit": 68,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "berry-crate",
+                "quantity": 1
+              },
+              {
+                "asset_id": "coin",
+                "quantity": 4
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "cold-wrap-station",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 0
+              },
+              {
+                "asset_id": "cold-wrap",
+                "quantity": 3
+              }
+            ]
+          }
+        ],
+        "service": {
+          "service_id": "cold-wrap-packing",
+          "place_id": "town-warehouse",
+          "provider_actor_ids": [
+            "farah"
+          ],
+          "provider_owner_kind": "Warehouse",
+          "provider_container_id": "cold-wrap-station",
+          "coin_fee": 1,
+          "customer_inputs": [
+            {
+              "asset_id": "berry-crate",
+              "quantity": 1
+            }
+          ],
+          "provider_inputs": [
+            {
+              "asset_id": "cold-wrap",
+              "quantity": 1
+            }
+          ],
+          "customer_outputs": [
+            {
+              "asset_id": "sealed-export-crate",
+              "quantity": 1
+            }
+          ],
+          "target_item_type_ids": [],
+          "durability_restore": 0
+        }
+      }
+    },
+    {
+      "slot": 7,
+      "pressure_id": "rq1-v2-b20-s07",
+      "actor_id": "devin",
+      "domain": "care_household",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "A household well sample needs a reagent test before the evening water barrel is opened.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s07-f1",
+            "text": "Alice is the listed household water tester at alice-home through tick 230."
+          },
+          {
+            "fact_id": "b20-s07-f2",
+            "text": "The test uses Devin's sample, one clinic reagent and one coin."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s07-f1",
+          "text": "Alice is the listed household water tester at alice-home through tick 230."
+        },
+        {
+          "fact_id": "b20-s07-f2",
+          "text": "The test uses Devin's sample, one clinic reagent and one coin."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "goal_id": "b20-s07-goal",
+            "evidence_type": "routine_household_duty",
+            "statement": "Secure the well-sample certificate by tick 230."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s07",
+          "edge_kind": "RequiresCapability",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b20-s07-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s07-dep",
+            "source_type": "capability_requirement_record",
+            "subject": "household-water-test",
+            "statement": "The method card requires the water-testing skill held by Alice."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "devin",
+          "body": {
+            "health_current": 90,
+            "health_maximum": 100,
+            "satiety": 67,
+            "spirit": 54,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "alice-home"
+          },
+          "inventory": [
+            {
+              "asset_id": "well-water-sample",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 2
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "supportive"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s07-goal",
+            "evidence_type": "routine_household_duty",
+            "statement": "Secure the well-sample certificate by tick 230."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s07-f1",
+            "source_type": "household_health_roster",
+            "statement": "Alice has the listed test skill and current household shift."
+          },
+          {
+            "fact_id": "b20-s07-f2",
+            "source_type": "test_method_card",
+            "statement": "The sample, reagent and coin are sufficient for the certificate."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 90,
+            "health_maximum": 100,
+            "satiety": 67,
+            "spirit": 54,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 2
+              },
+              {
+                "asset_id": "well-water-sample",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "related_containers": [
+          {
+            "owner_kind": "Warehouse",
+            "owner_id": "household-test-kit",
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 0
+              },
+              {
+                "asset_id": "water-test-reagent",
+                "quantity": 2
+              }
+            ]
+          }
+        ],
+        "service": {
+          "service_id": "household-water-test",
+          "place_id": "alice-home",
+          "provider_actor_ids": [
+            "alice"
+          ],
+          "provider_owner_kind": "Warehouse",
+          "provider_container_id": "household-test-kit",
+          "coin_fee": 1,
+          "customer_inputs": [
+            {
+              "asset_id": "well-water-sample",
+              "quantity": 1
+            }
+          ],
+          "provider_inputs": [
+            {
+              "asset_id": "water-test-reagent",
+              "quantity": 1
+            }
+          ],
+          "customer_outputs": [
+            {
+              "asset_id": "water-safety-certificate",
+              "quantity": 1
+            }
+          ],
+          "target_item_type_ids": [],
+          "durability_restore": 0
+        }
+      }
+    },
+    {
+      "slot": 8,
+      "pressure_id": "rq1-v2-b20-s08",
+      "actor_id": "dorian",
+      "domain": "obligation_logistics",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "Dorian has a sealed parcel for the ridge survey camp, but its handover slip lacks a destination marker.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s08-f1",
+            "text": "The signed carriage promise names only 'ridge camp'; three camps use that description this week."
+          },
+          {
+            "fact_id": "b20-s08-f2",
+            "text": "No camp code, recipient name or route token appears in the parcel registers."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s08-f1",
+          "text": "The signed carriage promise names only 'ridge camp'; three camps use that description this week."
+        },
+        {
+          "fact_id": "b20-s08-f2",
+          "text": "No camp code, recipient name or route token appears in the parcel registers."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A3",
+          "raw_evidence": {
+            "goal_id": "b20-s08-goal",
+            "evidence_type": "routine_commitment",
+            "statement": "Complete the promised parcel handover by tick 220."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s08",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "b20-s08-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s08-dep",
+            "source_type": "commitment_record",
+            "subject": "ridge-parcel-carriage",
+            "statement": "The carriage promise is binding but lacks a resolvable recipient."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "dorian",
+          "body": {
+            "health_current": 98,
+            "health_maximum": 100,
+            "satiety": 61,
+            "spirit": 50,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "town-square"
+          },
+          "inventory": [
+            {
+              "asset_id": "sealed-ridge-parcel",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 5
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "dutiful"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s08-goal",
+            "evidence_type": "routine_commitment",
+            "statement": "Complete the promised parcel handover by tick 220."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s08-f1",
+            "source_type": "carriage_promise",
+            "statement": "The promise does not distinguish among three camps."
+          },
+          {
+            "fact_id": "b20-s08-f2",
+            "source_type": "parcel_registry",
+            "statement": "No represented current record resolves the destination."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 98,
+            "health_maximum": 100,
+            "satiety": 61,
+            "spirit": 50,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 5
+              },
+              {
+                "asset_id": "sealed-ridge-parcel",
+                "quantity": 1
+              }
+            ]
+          }
+        },
+        "destination_records": [
+          {
+            "label": "ridge camp",
+            "place_ids": [
+              "ridge-east",
+              "ridge-west",
+              "ridge-quarry"
+            ],
+            "resolved_place_id": null
+          }
+        ]
+      }
+    },
+    {
+      "slot": 9,
+      "pressure_id": "rq1-v2-b20-s09",
+      "actor_id": "elin",
+      "domain": "tools_maintenance",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "The mill's belt guard needs an obsolete split pin before the next flour run.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s09-f1",
+            "text": "The belt-guard drawing requires a seven-millimetre bronze split pin."
+          },
+          {
+            "fact_id": "b20-s09-f2",
+            "text": "The smithy, mill, warehouse and all represented actor inventories hold none, and no listed recipe makes it."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s09-f1",
+          "text": "The belt-guard drawing requires a seven-millimetre bronze split pin."
+        },
+        {
+          "fact_id": "b20-s09-f2",
+          "text": "The smithy, mill, warehouse and all represented actor inventories hold none, and no listed recipe makes it."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "goal_id": "b20-s09-goal",
+            "evidence_type": "background_maintenance_concern",
+            "statement": "Refit the belt guard before tick 226."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s09",
+          "edge_kind": "HoldsRequiredInformation",
+          "affected_node": {
+            "kind": "Resource",
+            "id": "b20-s09-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s09-dep",
+            "source_type": "information_holder_record",
+            "subject": "belt-guard-drawing",
+            "statement": "The drawing fixes the required part, while the current stock index has no matching source."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "elin",
+          "body": {
+            "health_current": 96,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 56,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "mill"
+          },
+          "inventory": [
+            {
+              "asset_id": "belt-guard",
+              "quantity": 1
+            }
+          ],
+          "currency": {
+            "coin": 7
+          }
+        },
+        "personality": {
+          "risk_tolerance": "cautious",
+          "social_orientation": "methodical"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s09-goal",
+            "evidence_type": "background_maintenance_concern",
+            "statement": "Refit the belt guard before tick 226."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s09-f1",
+            "source_type": "machine_drawing",
+            "statement": "Only the seven-millimetre bronze pin fits the guard."
+          },
+          {
+            "fact_id": "b20-s09-f2",
+            "source_type": "current_stock_index",
+            "statement": "No represented source or recipe supplies that pin."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 96,
+            "health_maximum": 100,
+            "satiety": 58,
+            "spirit": 56,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "belt-guard",
+                "quantity": 1
+              },
+              {
+                "asset_id": "coin",
+                "quantity": 7
+              }
+            ]
+          }
+        },
+        "asset_search": {
+          "asset_id": "bronze-split-pin-7mm",
+          "represented_quantity": 0,
+          "listed_recipe_count": 0
+        }
+      }
+    },
+    {
+      "slot": 10,
+      "pressure_id": "rq1-v2-b20-s10",
+      "actor_id": "emma",
+      "domain": "food_production",
+      "decision_tick": 200,
+      "deadline_tick": 440,
+      "pressure_packet": {
+        "summary": "Emma needs the inn's bake oven for the banquet loaves before dough proofing expires.",
+        "public_facts": [
+          {
+            "fact_id": "b20-s10-f1",
+            "text": "The oven's mandatory sanitation cycle runs until tick 236."
+          },
+          {
+            "fact_id": "b20-s10-f2",
+            "text": "The prepared dough must enter an oven by tick 221 and no other represented oven has capacity."
+          }
+        ]
+      },
+      "public_facts": [
+        {
+          "fact_id": "b20-s10-f1",
+          "text": "The oven's mandatory sanitation cycle runs until tick 236."
+        },
+        {
+          "fact_id": "b20-s10-f2",
+          "text": "The prepared dough must enter an oven by tick 221 and no other represented oven has capacity."
+        }
+      ],
+      "selection_inputs": {
+        "actor_local_evidence": {
+          "rank_band": "A4",
+          "raw_evidence": {
+            "goal_id": "b20-s10-goal",
+            "evidence_type": "background_production_concern",
+            "statement": "Bake the banquet loaves by tick 221."
+          }
+        },
+        "event_dependency": {
+          "source_kind": "Pressure",
+          "source_id": "rq1-v2-b20-s10",
+          "edge_kind": "BoundByCommitment",
+          "affected_node": {
+            "kind": "Commitment",
+            "id": "b20-s10-dep"
+          },
+          "role_assignment": null,
+          "raw_evidence": {
+            "source_id": "b20-s10-dep",
+            "source_type": "commitment_record",
+            "subject": "banquet-loaf-order",
+            "statement": "The banquet order and proofing timer set the production deadline."
+          }
+        }
+      },
+      "actor_decision_view": {
+        "self": {
+          "actor_id": "emma",
+          "body": {
+            "health_current": 94,
+            "health_maximum": 100,
+            "satiety": 48,
+            "spirit": 62,
+            "disease": "Healthy"
+          },
+          "traversal": {
+            "movement_mode": "Land",
+            "place_id": "inn"
+          },
+          "inventory": [
+            {
+              "asset_id": "proofed-dough",
+              "quantity": 4
+            }
+          ],
+          "currency": {
+            "coin": 3
+          }
+        },
+        "personality": {
+          "risk_tolerance": "steady",
+          "social_orientation": "hospitable"
+        },
+        "active_goals": [
+          {
+            "goal_id": "b20-s10-goal",
+            "evidence_type": "background_production_concern",
+            "statement": "Bake the banquet loaves by tick 221."
+          }
+        ],
+        "current_plan": null,
+        "current_step": null,
+        "knowledge": [
+          {
+            "fact_id": "b20-s10-f1",
+            "source_type": "oven_cycle_display",
+            "statement": "The bake oven remains locked until tick 236."
+          },
+          {
+            "fact_id": "b20-s10-f2",
+            "source_type": "proofing_timer",
+            "statement": "The dough expires fifteen ticks earlier."
+          }
+        ]
+      },
+      "action_catalogue": {
+        "supported_family_ids": [],
+        "entries": []
+      },
+      "authority_execution_state": {
+        "tick": 200,
+        "actor": {
+          "body": {
+            "health_current": 94,
+            "health_maximum": 100,
+            "satiety": 48,
+            "spirit": 62,
+            "disease": "Healthy"
+          },
+          "container": {
+            "revision": 1,
+            "balances": [
+              {
+                "asset_id": "coin",
+                "quantity": 3
+              },
+              {
+                "asset_id": "proofed-dough",
+                "quantity": 4
+              }
+            ]
+          }
+        },
+        "temporal_gates": [
+          {
+            "gate_id": "inn-oven-sanitation-cycle",
+            "opens_at_tick": 236
+          }
+        ]
+      }
+    }
+  ]
+}

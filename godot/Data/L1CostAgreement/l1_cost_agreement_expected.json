@@ -1,0 +1,29 @@
+{
+  "protocol": "alice.l1_cost_agreement.expected.v1",
+  "cases": [
+    {"case_id": "choose-hunger-meal", "decision": "choose", "acceptable_candidate_ids": ["hunger/eat-meal"], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "choose-treatment-medicine", "decision": "choose", "acceptable_candidate_ids": ["treatment/use-medicine"], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "choose-rest-bed", "decision": "choose", "acceptable_candidate_ids": ["rest/use-bed"], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "choose-work-use-tool", "decision": "choose", "acceptable_candidate_ids": ["work/equip-axe"], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "choose-commitment-deliver", "decision": "choose", "acceptable_candidate_ids": ["commitment/deliver-meal"], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "choose-business-restock", "decision": "choose", "acceptable_candidate_ids": ["business/buy-fish"], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "choose-tool-repair", "decision": "choose", "acceptable_candidate_ids": ["tool/repair-pickaxe"], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "choose-two-valid-routes", "decision": "choose", "acceptable_candidate_ids": ["travel/north-road", "travel/south-road"], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "defer-shop-closed", "decision": "defer", "acceptable_candidate_ids": [], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "defer-action-cooldown", "decision": "defer", "acceptable_candidate_ids": [], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "defer-crop-growing", "decision": "defer", "acceptable_candidate_ids": [], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "defer-insufficient-evidence", "decision": "defer", "acceptable_candidate_ids": [], "acceptable_reason_codes": [], "required_evidence_refs": []},
+    {"case_id": "escalate-no-action-permission", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["no_feasible_local_action"], "required_evidence_refs": ["blocker/enter-workshop", "blocker/use-machine"]},
+    {"case_id": "escalate-no-action-resource", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["no_feasible_local_action"], "required_evidence_refs": ["stock/find-required-item", "stock/use-substitute"]},
+    {"case_id": "escalate-goal-conflict", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["goal_or_plan_change", "no_feasible_local_action"], "required_evidence_refs": ["goal/keep-farm", "goal/take-role"]},
+    {"case_id": "escalate-plan-invalidated", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["goal_or_plan_change", "no_feasible_local_action"], "required_evidence_refs": ["plan/follow-old-route", "plan/continue-old-task"]},
+    {"case_id": "escalate-commitment-deadline", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["commitment_or_debt", "no_feasible_local_action"], "required_evidence_refs": ["commitment/promise-record", "commitment/contact-creditor"]},
+    {"case_id": "escalate-conflicting-commitments", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["commitment_or_debt", "no_feasible_local_action"], "required_evidence_refs": ["commitment/promise-a", "commitment/promise-b"]},
+    {"case_id": "escalate-relationship-breach", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["major_relationship", "no_feasible_local_action"], "required_evidence_refs": ["relationship/breach-report", "relationship/shared-history"]},
+    {"case_id": "escalate-relationship-proposal", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["major_relationship", "no_feasible_local_action"], "required_evidence_refs": ["relationship/proposal", "relationship/current-partnership"]},
+    {"case_id": "escalate-medical-deadline", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["medical_or_body_deadline", "no_feasible_local_action"], "required_evidence_refs": ["medical/closed-clinic", "medical/no-medicine"]},
+    {"case_id": "escalate-body-deadline", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["medical_or_body_deadline", "no_feasible_local_action"], "required_evidence_refs": ["body/no-food", "body/closed-food-source"]},
+    {"case_id": "escalate-repeated-failure-work", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["repeated_visible_failure", "no_feasible_local_action"], "required_evidence_refs": ["failure/work-receipt-a", "failure/work-receipt-b"]},
+    {"case_id": "escalate-repeated-failure-travel", "decision": "request_escalation", "acceptable_candidate_ids": [], "acceptable_reason_codes": ["repeated_visible_failure", "no_feasible_local_action"], "required_evidence_refs": ["failure/travel-receipt-a", "failure/travel-receipt-b"]}
+  ]
+}
