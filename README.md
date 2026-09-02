@@ -7,9 +7,9 @@ ALICE is a Godot 4.7 .NET demo of a persistent NPC town with bounded local and r
 - `godot/` — the runnable Demo, runtime configuration and shared model/runtime code.
 - `experiments/` — separate RQ1 and RQ2 launch modes plus the retained supplementary-study runners.
 - `results/` — one archive containing the latest retained machine-readable experiment batches.
+- `Allocating Bounded LLM Cognition in Persistent NPC Worlds Admission Policies and Memory Strategies for Grounded Action.pdf` — the dissertation.
 
-Runtime regression projects, writing material, source-paper copies and generated build/run directories are not
-retained.
+Runtime regression projects, writing material and generated build/run directories are not retained.
 
 ## Run the Demo
 
@@ -28,3 +28,8 @@ check:
 
 See [`godot/README.md`](godot/README.md) for runtime configuration, [`experiments/README.md`](experiments/README.md)
 for experiment commands, and [`results/README.md`](results/README.md) for the retained result archive.
+
+## License
+
+Source code is licensed under the [MIT License](LICENSE). The dissertation PDF and original research materials
+under `results/` are licensed under [CC BY 4.0](LICENSE-DOCUMENTATION.md), except where otherwise noted.
